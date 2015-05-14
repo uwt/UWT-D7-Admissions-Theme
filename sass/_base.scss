@@ -1,0 +1,224 @@
+//
+// To make it easier to use all variables and mixins in any Sass file in this
+// theme, each .scss file has a @import "base" declaration. And this _base.scss
+// file is in charge of importing all the other partials needed for the theme.
+//
+// This base partial is organized in this way:
+// - First we set any shared Sass variables.
+// - Next we import Compass plug-ins (Sass mixin libraries).
+// - Last we import a _custom.scss partial that includes our custom mixins.
+//
+
+
+//
+// Legacy IE support
+//
+// These variables are used by many mixins to add additional CSS to support
+// specific versions of IE or specific vendor prefixes.
+//
+// To turn on support for IE6 or IE7, set those variables to true.
+//
+// Zen does not require special handling for IE8 or later. But Compass uses that
+// variable for a couple edge cases. We include it for completeness sake. See
+// the documentation at http://compass-style.org/reference/compass/support/
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+
+
+
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+$base-font-size:   16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+$h1-font-size: 2    * $base-font-size;
+$h2-font-size: 1.5  * $base-font-size;
+$h3-font-size: 1.17 * $base-font-size;
+$h4-font-size: 1    * $base-font-size;
+$h5-font-size: 0.83 * $base-font-size;
+$h6-font-size: 0.75 * $base-font-size;
+
+// The following font family declarations are based on the Microsoft core web
+// fonts which are common fonts available on most computer systems. The DejaVu
+// and Nimbus Sans fonts are commonly available on Linux systems where the MS
+// fonts are less common. Tahoma and Helvetica are also widely available.
+//
+// A user's web browser will look at the comma-separated list and will
+// attempt to use each font in turn until it finds one that is available
+// on the user's computer. The final "generic" font (sans-serif, serif or
+// monospace) hints at what type of font to use if the web browser doesn't
+// find any of the fonts in the list.
+
+// First, let's create some font stacks.
+$times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+
+$verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+// Fontsquirrel full list in _fonts.scss
+
+// Primary Headlines
+$encode_sans_normal_bold  : "encode_sans_normal_bold", Arial, sans-serif;
+// Alternate Headines
+$encode_sans_normal_light : "encode_sans_normal_light", Arial, sans-serif;
+$uni_sans_regular         : "uni_sans_regular", Arial, sans-serif;
+$uni_sans_light           : "uni_sans_light", Arial, sans-serif;
+// Body
+$open_sans_regular        : "open_sans_regular", Arial, sans-serif;
+// Body Bold
+$open_sans_bold           : "open_sans_bold", Arial, sans-serif;
+// Body Italic
+$open_sans_italic         : "open_sans_italic", Arial, sans-serif;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+$courier                  : "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $open_sans_regular; // The font family set on the html element.
+$font-body:        $open_sans_regular;
+$font-monospace:   $courier;
+
+
+//
+// Colors, etc.
+//
+
+$purple        : #4B2E84;
+$purple_medium : #BEB6CE; // Custom color, not official brand
+
+$grey_light    : #D9D9D9;
+$grey_dark     : #444444;
+
+$gold          : #E8E3D3;
+$gold_metallic : #B7A57A;
+
+$gray          : red;
+$grey_medium   : red;
+
+$purple_light  : blue;
+
+$gold_light    : green;
+$gold_medium   : green;
+$gold_dark     : green;
+$gold_fade     : green;
+$gold_new      : green;
+$gold_pale     : green;
+
+
+$link_blue : #145F99; // Custom color, not official brand
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: 30px;
+
+@mixin breakpoint($point) {
+
+  @if $point == extra_narrow{
+    @media only screen and (min-width: 0px) and (max-width: 410px){
+      $zen-column-count: 1;
+      $zen-gutter-width: 10px;
+      @content;
+    }
+  }
+
+  @if $point == narrow {
+    @media only screen and (max-width: 724px) {
+      $zen-column-count: 1;
+      $zen-gutter-width: 10px;
+      @content;
+    }
+  }
+
+  @if $point == medium {
+    @media only screen and (min-width: 725px) {
+      $zen-column-count: 40;
+      $zen-gutter-width: 20px;
+      @content;
+    }
+  }
+  @if $point == widest {
+    @media only screen and (min-width: 975px) {
+      $zen-column-count: 40;
+      $zen-gutter-width: 20px;
+      @content;
+    }
+  }
+}
+
+@mixin extra_narrow{
+  html{
+    @include breakpoint(extra_narrow){
+      @content;
+    }
+    &.lt-ie9 & {
+      @content;
+    }
+  }
+}
+
+@mixin narrow{
+  html{
+    @include breakpoint(narrow){
+      @content;
+    }
+    &.lt-ie9 & {
+      @content;
+    }
+  }
+}
+
+@mixin medium{
+  html{
+    @include breakpoint(medium){
+      @content;
+    }
+    &.lt-ie9 & {
+      @content;
+    }
+  }
+}
+
+@mixin widest{
+  html{
+    @include breakpoint(widest){
+      @content;
+    }
+    &.lt-ie9 & {
+      @content;
+    }
+  }
+}
+
+
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+
+//
+// Partials to be shared with all .scss files.
+//
+
+@import "compass/support";  // Add Compass' IE and vendor prefix support variables.
+@import "compass/utilities/general/clearfix"; // Better than Drupal's clearfix.
+@import "compass/utilities/sprites"; // See http://compass-style.org/help/tutorials/spriting/
+@import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
+@import "compass/css3/transform";
+@import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
+@import "zen";              // Add the Zen Grids responsive layout mixins.
+
+
+//@import "custom";           // Import our custom mixins last.

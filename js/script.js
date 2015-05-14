@@ -14,10 +14,11 @@
 
 
 // To understand behaviors, see https://drupal.org/node/756722#behaviors
-Drupal.behaviors.my_custom_behavior = {
+Drupal.behaviors.searchFormMods = {
   attach: function(context, settings) {
-
-    // Place your code here.
+console.log("hey there!!");
+    var searchForm = $("#block-search-form");
+    searchForm.appendTo($(".block-menu-block .menu-block-wrapper"));
 
   }
 };

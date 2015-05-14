@@ -1,0 +1,63 @@
+/*
+Document   : uwtadmissions
+Created on : May 13, 2015, 11:35:33 AM
+Author     : jamesini
+Description:
+Purpose of the stylesheet follows.
+*/
+
+/*
+TODO customize this sample style
+Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+/* base has fonts, colors, and breakpoints.  It's an important one.*/
+@import "base";
+
+/* If set up correctly, put the narrowest breakpoints on top, then the wider breakpoints below (in the code).*/
+
+
+
+
+
+/******************************************************************************/
+/******************* EXTRA NARROW BREAKPOINT *************************/
+@import "_bp_extra_narrow"; // See ./sass/_bp_extra_narrow.scss
+
+/******************************************************************************/
+/************************* NARROW BREAKPOINT ***************************/
+@import "_bp_narrow"; // See ./sass/_bp_narrow.scss
+
+/******************************************************************************/
+/********************** MEDIUM BREAKPOINT *******************************/
+@import "_bp_medium"; // See ./sass/_bp_mediumt.scss
+
+/******************************************************************************/
+/********************** WIDEST BREAKPOINT ********************************/
+@import "_bp_widest"; // See ./sass/_bp_widest.scss
+
+/* Always apply these rules, regardless of breakpoint */
+
+html{
+  background: url(../images/lib_night.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+  font-family: open_sans_regular;
+  color:white;
+  h1{
+    font-family: encode_sans_normal_bold;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+  
+  #main{
+  }
+}

@@ -20,6 +20,15 @@
 // Optionally, add your own components here.
 @import "print";
 
+// Bring in our base settings
+@import "base";
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
+
+/* Brand Fonts */
+@import "fonts";
+
+/* The UWT Admissions Styles */
+@import "uwtadmissions"

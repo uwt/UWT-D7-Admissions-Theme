@@ -9,6 +9,34 @@
 
 
 /**
+ * Add several containers to the menu links so that they can be properly
+ *   centered horizontally and vertically and support CSS3 flyout menus.
+ */
+function uwtadmissions_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+  $hide_all_children = FALSE;
+  if (isset($element['#localized_options']['hide_all_children']) && $element['#localized_options']['hide_all_children'] == 1) {
+    $hide_all_children = TRUE;
+    $element['#attributes']['class'] = array_diff($element['#attributes']['class'], array('expanded', 'is-expanded'));
+  }
+
+  if ($element['#below'] && $hide_all_children == FALSE) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  $ret = '<li' . drupal_attributes($element['#attributes']) . '>';
+  $ret .= '<div class="outerContainer">';
+  $ret .= '<div class="innerContainer">';
+  $ret .= '<div class="element">';
+  $ret .= $output . $sub_menu;
+  $ret .= "</div></div></div>";
+  $ret .= "</li>\n";
+  return $ret;
+}
+
+/**
  * Override or insert variables into the maintenance page template.
  *
  * @param $variables
