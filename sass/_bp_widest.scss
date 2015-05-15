@@ -113,6 +113,8 @@
             border-bottom-left-radius: 3px;
             li{
               padding:0px;
+              float:none;
+              background-color: $gold;
               .outerContainer{
                 .innerContainer{
                   .element{
