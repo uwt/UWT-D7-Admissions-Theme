@@ -231,7 +231,7 @@ html.lt-ie9 html {
   html #navigation .region .menu li .menu li {
     padding: 0px;
     float: none;
-    background-color: #e8e3d3;
+    background-color: #b7a57a;
   }
   /* line 121, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:link, html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:visited {
@@ -417,7 +417,7 @@ html.lt-ie9 html #navigation .region .menu li .menu {
 html.lt-ie9 html #navigation .region .menu li .menu li {
   padding: 0px;
   float: none;
-  background-color: #e8e3d3;
+  background-color: #b7a57a;
 }
 /* line 121, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:link, html.lt-ie9 html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:visited {
