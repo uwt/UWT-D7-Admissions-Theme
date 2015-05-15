@@ -5,6 +5,19 @@
   }
   #main{
     padding-top:50px; /* This padding should match the height of the #navigation element */
+    // Adding the large block-W
+    background: url(../images/W_only_CMYK.png);
+    background-size: 297px 200px;
+    background-position: top 150px right 10px;
+    //background-position-x: 20px;
+    //background-position-y: 150px;
+    background-repeat: no-repeat;
+    #content{
+      background-color: white;
+      margin-top:300px;
+      border-top:20px solid $purple;
+
+    }
   }
   #navigation{
     /* Setting heights on the menu elements allows for vertical centering */
@@ -32,11 +45,16 @@
           width: 20px;
           height: 20px;
           position:absolute;
-          top: 3px;
+          top: 5px;
           right: 5px;
           text-indent:-999px;
           overflow:hidden;
           border:none;
+        }
+        input[type="text"]{
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
         }
       }
       .menu{
@@ -79,7 +97,7 @@
           }
           /* The flyout menu items */
           .menu{
-            border-top:12px solid $purple;
+            border-top:11px solid $purple;
             background-color: $gold_metallic;
             position: absolute;
             opacity:0;
@@ -121,6 +139,34 @@
             }
           }
         }
+      }
+    }
+  }
+
+  //Admissions homepage blocks
+  .adm-home-block{
+    background-color:white;
+    padding: 10px;
+    border:2px solid $purple;
+    height: 5em;
+    margin-bottom: 1em;
+    h2{
+      margin:0;
+      font-family: encode_sans_normal_light;
+      line-height:1.25em;
+      a:link,a:visited{
+        color: $purple;
+
+      }
+    }
+  }
+  .adm-home-btn-pane{
+    //background-color: lime;
+    ul{
+      padding-left:0;
+      margin-top: 0;
+      .uw-btn{
+        margin-right:0;
       }
     }
   }

@@ -13,15 +13,15 @@
 (function ($, Drupal, window, document, undefined) {
 
 
-// To understand behaviors, see https://drupal.org/node/756722#behaviors
-Drupal.behaviors.searchFormMods = {
-  attach: function(context, settings) {
-console.log("hey there!!");
-    var searchForm = $("#block-search-form");
-    searchForm.appendTo($(".block-menu-block .menu-block-wrapper"));
+  // To understand behaviors, see https://drupal.org/node/756722#behaviors
+  Drupal.behaviors.searchFormMods = {
+    attach: function(context, settings) {
+      //console.log("hey there!!");
+      var searchForm = $("#block-search-form");
+      searchForm.appendTo($(".block-menu-block .menu-block-wrapper"));
 
-  }
-};
+    }
+  };
 
 
 })(jQuery, Drupal, this, this.document);

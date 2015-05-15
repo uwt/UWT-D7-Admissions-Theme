@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains the theme's functions to manipulate Drupal's default markup.
@@ -6,7 +7,6 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728096
  */
-
 
 /**
  * Add several containers to the menu links so that they can be properly
@@ -45,14 +45,14 @@ function uwtadmissions_menu_link(array $variables) {
  *   The name of the template being rendered ("maintenance_page" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function uwtadmissions_preprocess_maintenance_page(&$variables, $hook) {
+  function uwtadmissions_preprocess_maintenance_page(&$variables, $hook) {
   // When a variable is manipulated or added in preprocess_html or
   // preprocess_page, that same work is probably needed for the maintenance page
   // as well, so we can just re-use those functions to do that work here.
   uwtadmissions_preprocess_html($variables, $hook);
   uwtadmissions_preprocess_page($variables, $hook);
-}
-// */
+  }
+  // */
 
 /**
  * Override or insert variables into the html templates.
@@ -62,15 +62,13 @@ function uwtadmissions_preprocess_maintenance_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function uwtadmissions_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
 
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
+  // Adding UW Assets
+  $data = array();
+  $data['type'] = 'external';
+  drupal_add_css('//uw.edu/assets/uw.css', $data);
 }
-// */
 
 /**
  * Override or insert variables into the page templates.
