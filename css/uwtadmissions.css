@@ -275,8 +275,14 @@ html.lt-ie9 html {
     margin-top: 0;
   }
   /* line 170, ../sass/_bp_widest.scss */
-  html .adm-home-btn-pane ul .uw-btn {
+  html .adm-home-btn-pane ul li {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* line 173, ../sass/_bp_widest.scss */
+  html .adm-home-btn-pane ul li .uw-btn {
     margin-right: 0;
+    width: 80%;
   }
 }
 /* line 195, ../sass/_base.scss */
@@ -461,8 +467,14 @@ html.lt-ie9 html .adm-home-btn-pane ul {
   margin-top: 0;
 }
 /* line 170, ../sass/_bp_widest.scss */
-html.lt-ie9 html .adm-home-btn-pane ul .uw-btn {
+html.lt-ie9 html .adm-home-btn-pane ul li {
+  width: 100%;
+  max-width: 100%;
+}
+/* line 173, ../sass/_bp_widest.scss */
+html.lt-ie9 html .adm-home-btn-pane ul li .uw-btn {
   margin-right: 0;
+  width: 80%;
 }
 
 /* Always apply these rules, regardless of breakpoint */
