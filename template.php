@@ -68,6 +68,7 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
   $data = array();
   $data['type'] = 'external';
   drupal_add_css('//uw.edu/assets/uw.css', $data);
+  drupal_add_js('//unslider.com/unslider.min.js', 'external');
 }
 
 /**

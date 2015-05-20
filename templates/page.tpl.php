@@ -9,6 +9,27 @@
 ?>
 
 <div id="page">
+  <div id="banner-container">
+    <div id="banner">
+      <ul>
+        <li style="background-image:url(/sites/all/themes/uwtadmissions/images/lib_night.jpg);">
+          <div class="adm-slide">
+            <div class="adm-slide-content"><h2>May 22</h2>Library at night<a href="bobo.html">Learn More</a></div>
+          </div>
+        </li>
+        <li style="background-image:url(/sites/all/themes/uwtadmissions/images/pac_ave.jpg);">
+          <div class="adm-slide">
+            <div class="adm-slide-content"><h2>Jun 14</h2>Pacific Ave Shops<a href="bobo.html">Learn More</a></div>
+          </div>
+        </li>
+        <li style="background-image:url(/sites/all/themes/uwtadmissions/images/fall_plaza.jpg);">
+          <div class="adm-slide">
+            <div class="adm-slide-content"><h2>Jul 6</h2>Plaza in Fall<a href="bobo.html">Learn More</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <header class="header" id="header" role="banner">
 
@@ -48,7 +69,7 @@
       </nav>
     <?php endif; ?>
 
-<?php print render($page['header']); ?>
+    <?php print render($page['header']); ?>
 
   </header>
 
@@ -69,13 +90,13 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-<?php print render($page['content']); ?>
-<?php print $feed_icons; ?>
+      <?php print render($page['content']); ?>
+      <?php print $feed_icons; ?>
     </div>
 
     <div id="navigation">
 
-        <?php if ($main_menu): ?>
+      <?php if ($main_menu): ?>
         <nav id="main-menu" role="navigation" tabindex="-1">
           <?php
           // This code snippet is hard to modify. We recommend turning off the
@@ -95,9 +116,9 @@
                   ));
           ?>
         </nav>
-<?php endif; ?>
+      <?php endif; ?>
 
-<?php print render($page['navigation']); ?>
+      <?php print render($page['navigation']); ?>
 
     </div>
 
@@ -107,16 +128,16 @@
     $sidebar_second = render($page['sidebar_second']);
     ?>
 
-      <?php if ($sidebar_first || $sidebar_second): ?>
+    <?php if ($sidebar_first || $sidebar_second): ?>
       <aside class="sidebars">
-      <?php print $sidebar_first; ?>
-  <?php print $sidebar_second; ?>
+        <?php print $sidebar_first; ?>
+        <?php print $sidebar_second; ?>
       </aside>
-  <?php endif; ?>
+    <?php endif; ?>
 
   </div>
 
-<?php print render($page['footer']); ?>
+  <?php print render($page['footer']); ?>
 
 </div>
 

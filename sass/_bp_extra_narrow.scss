@@ -1,28 +1,42 @@
 @include extra_narrow{
 
-  #header{
-    margin:0 0;
-    width:100%;
-    background-color:$purple;
-    h1{
-      font-size: 0.9em;
+
+  body{
+    #banner-container{
+      #banner{
+        ul{
+          li{
+            background-size:100% 25%;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+
+    #header{
+      margin:0 0;
+      width:100%;
+      background-color:$purple;
+      h1{
+        font-size: 0.9em;
+
+      }
 
     }
 
-  }
-
-  #main{
-    #page-title{
-      font-size:0.9em;
+    #main{
+      #page-title{
+        font-size:0.9em;
+      }
     }
-  }
 
-  /*******************************************************************************
-  ****************************** DEBUGGING ************************************
-  *******************************************************************************/
-  #main{
-    // background-color:#50C878; // Extra Narrow = Emerald
-  }
+    /*******************************************************************************
+    ****************************** DEBUGGING ************************************
+    *******************************************************************************/
+    #main{
+      // background-color:#50C878; // Extra Narrow = Emerald
+    }
 
-  ///////////// End @include extra_narrow
+    ///////////// End @include extra_narrow
+  }
 } ///////////////////////////////////////
