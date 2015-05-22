@@ -4,6 +4,11 @@
   #header{
     //margin-left:15px;
     padding-top:10px;
+    position:relative;
+    z-index: 1;
+    h1{
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
   }
   #main{
     padding-top:50px; /* This padding should match the height of the #navigation element */

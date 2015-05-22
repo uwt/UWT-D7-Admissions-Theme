@@ -32,10 +32,17 @@
       var bwSizeOrig =  $("#main").css("background-size");
       var bwSizeHeightOrigArr = bwSizeOrig.split(" ");
       var bwSizeHeightOrig =bwSizeHeightOrigArr[0];
-
       var bwPosOrig = $("#main").css("background-position");
+      
+      var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
+      var scSizeWidthOrig = $(".adm-slide-content"). outerWidth();
+      var scSizeTopOrig = $(".adm-slide-content").offset().top;
+
       var contentMarginTopOrig = $("#content").css('margin-top');
-     
+
+      var navHeight = $("#navigation").outerHeight();
+      var headerHeight = $("#header").outerHeight();
+
       // 1. Adjust the top-margin on the #content element. This will move the "fold" vertically
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
@@ -64,7 +71,6 @@
           });
 
           // Block W background position and scale
-         
           if(bwSizeHeight >= nmt){
             var ar = (bwSizeWidth / bwSizeHeight);
             bwSizeHeight = (nmt - 20);
@@ -75,14 +81,40 @@
             });
           }
 
-          var newBgPos = 'top ' + (nmt + 50 - bwSizeHeight) + 'px right 10px';
+          var newBgPos = 'top ' + (nmt + navHeight - bwSizeHeight) + 'px right 10px';
 
           $("#main").css({
             'background-position': newBgPos
           });
 
+          var scSizeHeight = $(".adm-slide-content").outerHeight();
+          console.log("headerHeight", headerHeight);
+          console.log("navHeight", navHeight);
+          var newSCTop = (headerHeight + navHeight);
+          console.log("scSizeHeightOrig", scSizeHeightOrig);
+          console.log("scSizeHeight", scSizeHeight);
+          console.log("nmt", nmt);
+
+          //newSCTop =
+          $(".adm-slide-content").css({
+            'top': newSCTop
+          });
+
+          if (scSizeHeight >= nmt){
+            $(".adm-slide-content").addClass('inline');
+            console.log("slide content taller than new margin top");
+            $(".adm-slide-content").css({
+              'height': nmt,
+              'width': '50%',
+              'font-size': '100%',
+            });
+          }
+
+
+
         // end medium-tall screens
         }else if(wh >= 600){  // Tall screens, use default margin top
+          console.log("top", scSizeTopOrig);
           $("#content").css({
             'margin-top':contentMarginTopOrig,
             'border-top':"20px solid #4B2E84"
@@ -91,7 +123,12 @@
             'background-position' : bwPosOrig,
             'background-size': bwSizeOrig
           });
-         
+          $(".adm-slide-content").css({
+            'height': scSizeHeightOrig,
+            'top': scSizeTopOrig,
+            'width':scSizeTopOrig
+          }).removeClass('inline');
+
         }else{// Short screens, use no margin top
           $("#content").css({
             'margin-top':0,

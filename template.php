@@ -49,6 +49,9 @@ function uwtadmissions_menu_link(array $variables) {
   // When a variable is manipulated or added in preprocess_html or
   // preprocess_page, that same work is probably needed for the maintenance page
   // as well, so we can just re-use those functions to do that work here.
+
+      
+
   uwtadmissions_preprocess_html($variables, $hook);
   uwtadmissions_preprocess_page($variables, $hook);
   }
@@ -81,7 +84,8 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
  */
 /* -- Delete this line if you want to use this function
 function uwtadmissions_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+
+  $variables['bobo'] = "Bobo wuz here, yo.";
 }
 // */
 

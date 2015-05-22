@@ -9,27 +9,8 @@
 ?>
 
 <div id="page">
-  <div id="banner-container">
-    <div id="banner">
-      <ul>
-        <li style="background-image:url(/sites/all/themes/uwtadmissions/images/backgrounds/lib_night.jpg);">
-          <div class="adm-slide">
-            <div class="adm-slide-content"><h2>May 22</h2>Library at night<a href="bobo.html">Learn More</a></div>
-          </div>
-        </li>
-        <li style="background-image:url(/sites/all/themes/uwtadmissions/images/backgrounds/pac_ave.jpg);">
-          <div class="adm-slide">
-            <div class="adm-slide-content"><h2>Jun 14</h2>Pacific Ave Shops<a href="bobo.html">Learn More</a></div>
-          </div>
-        </li>
-        <li style="background-image:url(/sites/all/themes/uwtadmissions/images/backgrounds/fall_plaza.jpg);">
-          <div class="adm-slide">
-            <div class="adm-slide-content"><h2>Jul 6</h2>Plaza in Fall<a href="bobo.html">Learn More</a></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+  <?php print render($page['banner']); ?>
 
   <header class="header" id="header" role="banner">
 
