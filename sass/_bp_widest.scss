@@ -1,6 +1,8 @@
 @include widest{
 
-
+  body{
+    background-color: $purple;
+  }
   #header{
     //margin-left:15px;
     padding-top:10px;

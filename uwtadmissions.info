@@ -49,8 +49,11 @@ stylesheets[all][] = system.menus.css
 stylesheets[all][] = system.messages.css
 stylesheets[all][] = system.theme.css
 
+stylesheets[all][] = css/jquery-ui.min.css
+
 ; Then we add our own stylesheet.
 stylesheets[all][] = css/styles.css
+
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -67,7 +70,7 @@ stylesheets[all][] = css/styles.css
 ; Optionally add some JavaScripts to your theme.
 
 scripts[] = js/script.js
-
+scripts[] = js/jquery-ui.min.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and

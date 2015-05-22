@@ -88,12 +88,12 @@
           });
 
           var scSizeHeight = $(".adm-slide-content").outerHeight();
-          console.log("headerHeight", headerHeight);
-          console.log("navHeight", navHeight);
+          //console.log("headerHeight", headerHeight);
+          //console.log("navHeight", navHeight);
           var newSCTop = (headerHeight + navHeight);
-          console.log("scSizeHeightOrig", scSizeHeightOrig);
-          console.log("scSizeHeight", scSizeHeight);
-          console.log("nmt", nmt);
+          //console.log("scSizeHeightOrig", scSizeHeightOrig);
+          // console.log("scSizeHeight", scSizeHeight);
+          //console.log("nmt", nmt);
 
           //newSCTop =
           $(".adm-slide-content").css({
@@ -102,7 +102,7 @@
 
           if (scSizeHeight >= nmt){
             $(".adm-slide-content").addClass('inline');
-            console.log("slide content taller than new margin top");
+            //console.log("slide content taller than new margin top");
             $(".adm-slide-content").css({
               'height': nmt,
               'width': '50%',
@@ -114,7 +114,7 @@
 
         // end medium-tall screens
         }else if(wh >= 600){  // Tall screens, use default margin top
-          console.log("top", scSizeTopOrig);
+          //console.log("tall screens");
           $("#content").css({
             'margin-top':contentMarginTopOrig,
             'border-top':"20px solid #4B2E84"
@@ -123,11 +123,19 @@
             'background-position' : bwPosOrig,
             'background-size': bwSizeOrig
           });
-          $(".adm-slide-content").css({
-            'height': scSizeHeightOrig,
-            'top': scSizeTopOrig,
-            'width':scSizeTopOrig
-          }).removeClass('inline');
+
+          //console.log("contentMarginTopOrig", contentMarginTopOrig);
+          $(".adm-slide-content")
+          .css({
+            'height': parseInt(contentMarginTopOrig) * 0.85
+          })
+          .removeClass('inline')
+          .position({
+            my: "left+20 top+20",
+            at: "left bottom",
+            of: $("#navigation"),
+            collision: "fit"
+          });
 
         }else{// Short screens, use no margin top
           $("#content").css({
