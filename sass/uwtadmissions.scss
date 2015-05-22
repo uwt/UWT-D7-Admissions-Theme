@@ -74,9 +74,11 @@ body{
         padding:0;
         /*
         */
-        li{
+        li{ // li has the background image
           float:left;
           list-style:none;
+          background-repeat: no-repeat;
+          background-size: cover;
           div.adm-slide{
             width:100%;
             /*
