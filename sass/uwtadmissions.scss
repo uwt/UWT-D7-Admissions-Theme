@@ -37,9 +37,6 @@ Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
 @import "_bp_widest"; // See ./sass/_bp_widest.scss
 
 /* Always apply these rules, regardless of breakpoint */
-
-
-
 body{
   font-family: open_sans_regular;
   color:white;
@@ -49,96 +46,4 @@ body{
     text-transform: uppercase;
     margin-top: 0;
   }
-#block-uwtfeatureslider-uwtfeatureslider{
-    margin-bottom:0;
-    }
-  #banner-container{
-    position:absolute;
-    top:0;
-    left:0;
-    margin:0;
-    padding:0;
-    width:100%;
-    #banner {
-      overflow: auto;
-      position: relative;
-      top:0;
-      left:0;
-      height:100%;
-      width:100%;
-      // z-index:5;
-      /*
-      */
-      ul{
-        margin:0;
-        padding:0;
-        /*
-        */
-        li{ // li has the background image
-          float:left;
-          list-style:none;
-          background-repeat: no-repeat;
-          background-size: cover;
-          div.adm-slide{
-            width:100%;
-            /*
-            */
-            height:466px;
-            div.adm-slide-content{
-              /**/
-              display: block;
-              position: relative;
-              z-index:10;
-              max-width:33%;
-              max-height:85%;
-              top: 270px;
-              left:20px;
-              padding: 10px;
-              color:white;
-              border: 2px solid white;
-              background-color: rgba(255,255,255,0.25);
-              text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-              font-size: 1.5em;
-              line-height:100%;
-
-              h2{
-                /**/
-                font-size: 1.5em;
-                line-height: 100%;
-                margin-top: 0;
-                margin-bottom: 10px;
-              }
-              p{
-                color: white;
-                margin: 0;
-              }
-              a:link,a:visited{
-                color:white;
-                font-size:0.85em;
-                text-transform: uppercase;
-                padding-top:10px;
-                &:after{
-                  content: " \203A";
-                }
-              }
-              &.inline{
-                *{
-                  display:inline;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  //#banner li { list-style: none; }
-  //#banner ul li { float: left; }
-
-  #main{
-  }
-
-
-
 }

@@ -20,24 +20,32 @@ Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
     ****************************** DEBUGGING ************************************
     *******************************************************************************/
   }
-  /* line 8, ../sass/_bp_extra_narrow.scss */
+  /* line 5, ../sass/_bp_extra_narrow.scss */
+  html body #block-uwtfeatureslider-uwtfeatureslider {
+    margin-bottom: 0;
+  }
+  /* line 11, ../sass/_bp_extra_narrow.scss */
   html body #banner-container #banner ul li {
     background-size: 100% 25%;
     background-repeat: no-repeat;
   }
-  /* line 16, ../sass/_bp_extra_narrow.scss */
+  /* line 19, ../sass/_bp_extra_narrow.scss */
   html body #header {
     margin: 0 0;
     width: 100%;
     background-color: #4b2e84;
   }
-  /* line 20, ../sass/_bp_extra_narrow.scss */
+  /* line 23, ../sass/_bp_extra_narrow.scss */
   html body #header h1 {
     font-size: 0.9em;
   }
-  /* line 28, ../sass/_bp_extra_narrow.scss */
+  /* line 31, ../sass/_bp_extra_narrow.scss */
   html body #main #page-title {
     font-size: 0.9em;
+  }
+  /* line 39, ../sass/_bp_extra_narrow.scss */
+  html body #main {
+    background-color: #50C878;
   }
 }
 /* line 4, ../sass/_bp_extra_narrow.scss */
@@ -46,24 +54,32 @@ html.lt-ie9 html body {
   ****************************** DEBUGGING ************************************
   *******************************************************************************/
 }
-/* line 8, ../sass/_bp_extra_narrow.scss */
+/* line 5, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html body #block-uwtfeatureslider-uwtfeatureslider {
+  margin-bottom: 0;
+}
+/* line 11, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html body #banner-container #banner ul li {
   background-size: 100% 25%;
   background-repeat: no-repeat;
 }
-/* line 16, ../sass/_bp_extra_narrow.scss */
+/* line 19, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html body #header {
   margin: 0 0;
   width: 100%;
   background-color: #4b2e84;
 }
-/* line 20, ../sass/_bp_extra_narrow.scss */
+/* line 23, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html body #header h1 {
   font-size: 0.9em;
 }
-/* line 28, ../sass/_bp_extra_narrow.scss */
+/* line 31, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html body #main #page-title {
   font-size: 0.9em;
+}
+/* line 39, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html body #main {
+  background-color: #50C878;
 }
 
 /******************************************************************************/
@@ -123,7 +139,94 @@ html.lt-ie9 html {
   html #header h1 {
     text-shadow: 1px 1px 1px black;
   }
-  /* line 15, ../sass/_bp_widest.scss */
+  /* line 16, ../sass/_bp_widest.scss */
+  html #banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  /* line 23, ../sass/_bp_widest.scss */
+  html #banner-container #banner {
+    overflow: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*
+    */
+  }
+  /* line 33, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul {
+    margin: 0;
+    padding: 0;
+    /*
+    */
+  }
+  /* line 38, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li {
+    float: left;
+    list-style: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* line 43, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide {
+    width: 100%;
+    /*
+    */
+    height: 486px;
+  }
+  /* line 48, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide div.adm-slide-content {
+    /**/
+    display: block;
+    position: relative;
+    z-index: 10;
+    max-width: 33%;
+    max-height: 85%;
+    top: 250px;
+    left: 20px;
+    padding: 10px;
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.25);
+    text-shadow: 1px 1px 1px black;
+    font-size: 1.5em;
+    line-height: 100%;
+  }
+  /* line 65, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide div.adm-slide-content h2 {
+    /**/
+    font-size: 1.5em;
+    line-height: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  /* line 72, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide div.adm-slide-content p {
+    color: white;
+    margin: 0;
+  }
+  /* line 76, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link, html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited {
+    color: white;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    padding-top: 10px;
+  }
+  /* line 81, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link:after, html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited:after {
+    content: " \203A";
+  }
+  /* line 86, ../sass/_bp_widest.scss */
+  html #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline * {
+    display: inline;
+  }
+  /* line 97, ../sass/_bp_widest.scss */
   html #main {
     padding-top: 50px;
     /* This padding should match the height of the #navigation element */
@@ -132,20 +235,20 @@ html.lt-ie9 html {
     background-position: top 190px right 10px;
     background-repeat: no-repeat;
   }
-  /* line 24, ../sass/_bp_widest.scss */
+  /* line 106, ../sass/_bp_widest.scss */
   html #main #content {
     background-color: white;
     margin-top: 300px;
     border-top: 20px solid #4b2e84;
   }
-  /* line 31, ../sass/_bp_widest.scss */
+  /* line 113, ../sass/_bp_widest.scss */
   html #navigation {
     /* Setting heights on the menu elements allows for vertical centering */
     background-color: #4b2e84;
     height: 50px;
     /* The overall height of the main purple menu */
   }
-  /* line 39, ../sass/_bp_widest.scss */
+  /* line 121, ../sass/_bp_widest.scss */
   html #navigation .region,
   html #navigation li,
   html #navigation .outerContainer,
@@ -155,7 +258,7 @@ html.lt-ie9 html {
   html #navigation .menu {
     height: 100%;
   }
-  /* line 45, ../sass/_bp_widest.scss */
+  /* line 127, ../sass/_bp_widest.scss */
   html #navigation .region #block-search-form {
     position: absolute;
     top: 10px;
@@ -163,7 +266,7 @@ html.lt-ie9 html {
     right: 10px;
     width: 150px;
   }
-  /* line 50, ../sass/_bp_widest.scss */
+  /* line 132, ../sass/_bp_widest.scss */
   html #navigation .region #block-search-form #edit-submit {
     background: url(../images/search-icon-large.png);
     background-repeat: no-repeat;
@@ -177,28 +280,28 @@ html.lt-ie9 html {
     overflow: hidden;
     border: none;
   }
-  /* line 63, ../sass/_bp_widest.scss */
+  /* line 145, ../sass/_bp_widest.scss */
   html #navigation .region #block-search-form input[type="text"] {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 70, ../sass/_bp_widest.scss */
+  /* line 152, ../sass/_bp_widest.scss */
   html #navigation .region .menu li {
     vertical-align: middle;
     /* The flyout menu items */
   }
-  /* line 72, ../sass/_bp_widest.scss */
+  /* line 154, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer {
     display: table;
   }
-  /* line 74, ../sass/_bp_widest.scss */
+  /* line 156, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer {
     /* We hover on the innerContainer */
     display: table-cell;
     vertical-align: middle;
   }
-  /* line 77, ../sass/_bp_widest.scss */
+  /* line 159, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer a:link, html #navigation .region .menu li .outerContainer .innerContainer a:visited {
     color: white;
     text-transform: uppercase;
@@ -208,7 +311,7 @@ html.lt-ie9 html {
     margin-left: 10px;
     margin-right: 10px;
   }
-  /* line 85, ../sass/_bp_widest.scss */
+  /* line 167, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer a:link:after, html #navigation .region .menu li .outerContainer .innerContainer a:visited:after {
     content: "";
     width: 8px;
@@ -218,20 +321,20 @@ html.lt-ie9 html {
     position: absolute;
     margin-left: 12px;
   }
-  /* line 95, ../sass/_bp_widest.scss */
+  /* line 177, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer:hover {
     /* We hover on the .innerContainer */
   }
-  /* line 97, ../sass/_bp_widest.scss */
+  /* line 179, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:link, html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:visited {
     color: #e8e3d3;
   }
-  /* line 101, ../sass/_bp_widest.scss */
+  /* line 183, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer:hover .menu {
     visibility: visible;
     opacity: 1;
   }
-  /* line 109, ../sass/_bp_widest.scss */
+  /* line 191, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu {
     border-top: 11px solid #4b2e84;
     background-color: #b7a57a;
@@ -248,31 +351,31 @@ html.lt-ie9 html {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
   }
-  /* line 124, ../sass/_bp_widest.scss */
+  /* line 206, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu li {
     padding: 0px;
     float: none;
     background-color: #b7a57a;
   }
-  /* line 131, ../sass/_bp_widest.scss */
+  /* line 213, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:link, html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:visited {
     color: white;
     padding-left: 5px;
   }
-  /* line 142, ../sass/_bp_widest.scss */
+  /* line 224, ../sass/_bp_widest.scss */
   html #navigation .region .menu li.first .outerContainer .innerContainer a:link, html #navigation .region .menu li.first .outerContainer .innerContainer a:visited {
     margin-left: 0;
   }
-  /* line 146, ../sass/_bp_widest.scss */
+  /* line 228, ../sass/_bp_widest.scss */
   html #navigation .region .menu li.last .outerContainer .innerContainer {
     /* Don't put a slash on the last item */
   }
-  /* line 149, ../sass/_bp_widest.scss */
+  /* line 231, ../sass/_bp_widest.scss */
   html #navigation .region .menu li.last .outerContainer .innerContainer a:link:after, html #navigation .region .menu li.last .outerContainer .innerContainer a:visited:after {
     width: 0px;
     /* This hides the slash */
   }
-  /* line 159, ../sass/_bp_widest.scss */
+  /* line 241, ../sass/_bp_widest.scss */
   html .adm-home-block {
     background-color: white;
     padding: 10px;
@@ -280,27 +383,27 @@ html.lt-ie9 html {
     height: 5em;
     margin-bottom: 1em;
   }
-  /* line 165, ../sass/_bp_widest.scss */
+  /* line 247, ../sass/_bp_widest.scss */
   html .adm-home-block h2 {
     margin: 0;
     font-family: encode_sans_normal_light;
     line-height: 1.25em;
   }
-  /* line 169, ../sass/_bp_widest.scss */
+  /* line 251, ../sass/_bp_widest.scss */
   html .adm-home-block h2 a:link, html .adm-home-block h2 a:visited {
     color: #4b2e84;
   }
-  /* line 177, ../sass/_bp_widest.scss */
+  /* line 259, ../sass/_bp_widest.scss */
   html .adm-home-btn-pane ul {
     padding-left: 0;
     margin-top: 0;
   }
-  /* line 180, ../sass/_bp_widest.scss */
+  /* line 262, ../sass/_bp_widest.scss */
   html .adm-home-btn-pane ul li {
     width: 100%;
     max-width: 100%;
   }
-  /* line 183, ../sass/_bp_widest.scss */
+  /* line 265, ../sass/_bp_widest.scss */
   html .adm-home-btn-pane ul li .uw-btn {
     margin-right: 0;
     width: 80%;
@@ -326,7 +429,94 @@ html.lt-ie9 html #header {
 html.lt-ie9 html #header h1 {
   text-shadow: 1px 1px 1px black;
 }
-/* line 15, ../sass/_bp_widest.scss */
+/* line 16, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* line 23, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner {
+  overflow: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /*
+  */
+}
+/* line 33, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul {
+  margin: 0;
+  padding: 0;
+  /*
+  */
+}
+/* line 38, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li {
+  float: left;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 43, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide {
+  width: 100%;
+  /*
+  */
+  height: 486px;
+}
+/* line 48, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content {
+  /**/
+  display: block;
+  position: relative;
+  z-index: 10;
+  max-width: 33%;
+  max-height: 85%;
+  top: 250px;
+  left: 20px;
+  padding: 10px;
+  color: white;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
+  line-height: 100%;
+}
+/* line 65, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content h2 {
+  /**/
+  font-size: 1.5em;
+  line-height: 100%;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/* line 72, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content p {
+  color: white;
+  margin: 0;
+}
+/* line 76, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link, html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited {
+  color: white;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+/* line 81, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link:after, html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited:after {
+  content: " \203A";
+}
+/* line 86, ../sass/_bp_widest.scss */
+html.lt-ie9 html #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline * {
+  display: inline;
+}
+/* line 97, ../sass/_bp_widest.scss */
 html.lt-ie9 html #main {
   padding-top: 50px;
   /* This padding should match the height of the #navigation element */
@@ -335,20 +525,20 @@ html.lt-ie9 html #main {
   background-position: top 190px right 10px;
   background-repeat: no-repeat;
 }
-/* line 24, ../sass/_bp_widest.scss */
+/* line 106, ../sass/_bp_widest.scss */
 html.lt-ie9 html #main #content {
   background-color: white;
   margin-top: 300px;
   border-top: 20px solid #4b2e84;
 }
-/* line 31, ../sass/_bp_widest.scss */
+/* line 113, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation {
   /* Setting heights on the menu elements allows for vertical centering */
   background-color: #4b2e84;
   height: 50px;
   /* The overall height of the main purple menu */
 }
-/* line 39, ../sass/_bp_widest.scss */
+/* line 121, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region,
 html.lt-ie9 html #navigation li,
 html.lt-ie9 html #navigation .outerContainer,
@@ -358,7 +548,7 @@ html.lt-ie9 html #navigation .block-menu-block,
 html.lt-ie9 html #navigation .menu {
   height: 100%;
 }
-/* line 45, ../sass/_bp_widest.scss */
+/* line 127, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region #block-search-form {
   position: absolute;
   top: 10px;
@@ -366,7 +556,7 @@ html.lt-ie9 html #navigation .region #block-search-form {
   right: 10px;
   width: 150px;
 }
-/* line 50, ../sass/_bp_widest.scss */
+/* line 132, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region #block-search-form #edit-submit {
   background: url(../images/search-icon-large.png);
   background-repeat: no-repeat;
@@ -380,28 +570,28 @@ html.lt-ie9 html #navigation .region #block-search-form #edit-submit {
   overflow: hidden;
   border: none;
 }
-/* line 63, ../sass/_bp_widest.scss */
+/* line 145, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region #block-search-form input[type="text"] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 70, ../sass/_bp_widest.scss */
+/* line 152, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li {
   vertical-align: middle;
   /* The flyout menu items */
 }
-/* line 72, ../sass/_bp_widest.scss */
+/* line 154, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer {
   display: table;
 }
-/* line 74, ../sass/_bp_widest.scss */
+/* line 156, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer {
   /* We hover on the innerContainer */
   display: table-cell;
   vertical-align: middle;
 }
-/* line 77, ../sass/_bp_widest.scss */
+/* line 159, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:link, html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:visited {
   color: white;
   text-transform: uppercase;
@@ -411,7 +601,7 @@ html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 85, ../sass/_bp_widest.scss */
+/* line 167, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:link:after, html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:visited:after {
   content: "";
   width: 8px;
@@ -421,20 +611,20 @@ html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:
   position: absolute;
   margin-left: 12px;
 }
-/* line 95, ../sass/_bp_widest.scss */
+/* line 177, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover {
   /* We hover on the .innerContainer */
 }
-/* line 97, ../sass/_bp_widest.scss */
+/* line 179, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:link, html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:visited {
   color: #e8e3d3;
 }
-/* line 101, ../sass/_bp_widest.scss */
+/* line 183, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover .menu {
   visibility: visible;
   opacity: 1;
 }
-/* line 109, ../sass/_bp_widest.scss */
+/* line 191, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu {
   border-top: 11px solid #4b2e84;
   background-color: #b7a57a;
@@ -451,31 +641,31 @@ html.lt-ie9 html #navigation .region .menu li .menu {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-/* line 124, ../sass/_bp_widest.scss */
+/* line 206, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu li {
   padding: 0px;
   float: none;
   background-color: #b7a57a;
 }
-/* line 131, ../sass/_bp_widest.scss */
+/* line 213, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:link, html.lt-ie9 html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:visited {
   color: white;
   padding-left: 5px;
 }
-/* line 142, ../sass/_bp_widest.scss */
+/* line 224, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li.first .outerContainer .innerContainer a:link, html.lt-ie9 html #navigation .region .menu li.first .outerContainer .innerContainer a:visited {
   margin-left: 0;
 }
-/* line 146, ../sass/_bp_widest.scss */
+/* line 228, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li.last .outerContainer .innerContainer {
   /* Don't put a slash on the last item */
 }
-/* line 149, ../sass/_bp_widest.scss */
+/* line 231, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li.last .outerContainer .innerContainer a:link:after, html.lt-ie9 html #navigation .region .menu li.last .outerContainer .innerContainer a:visited:after {
   width: 0px;
   /* This hides the slash */
 }
-/* line 159, ../sass/_bp_widest.scss */
+/* line 241, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-block {
   background-color: white;
   padding: 10px;
@@ -483,133 +673,42 @@ html.lt-ie9 html .adm-home-block {
   height: 5em;
   margin-bottom: 1em;
 }
-/* line 165, ../sass/_bp_widest.scss */
+/* line 247, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-block h2 {
   margin: 0;
   font-family: encode_sans_normal_light;
   line-height: 1.25em;
 }
-/* line 169, ../sass/_bp_widest.scss */
+/* line 251, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-block h2 a:link, html.lt-ie9 html .adm-home-block h2 a:visited {
   color: #4b2e84;
 }
-/* line 177, ../sass/_bp_widest.scss */
+/* line 259, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-btn-pane ul {
   padding-left: 0;
   margin-top: 0;
 }
-/* line 180, ../sass/_bp_widest.scss */
+/* line 262, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-btn-pane ul li {
   width: 100%;
   max-width: 100%;
 }
-/* line 183, ../sass/_bp_widest.scss */
+/* line 265, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-btn-pane ul li .uw-btn {
   margin-right: 0;
   width: 80%;
 }
 
 /* Always apply these rules, regardless of breakpoint */
-/* line 43, ../sass/uwtadmissions.scss */
+/* line 40, ../sass/uwtadmissions.scss */
 body {
   font-family: open_sans_regular;
   color: white;
   background-color: transparent;
 }
-/* line 47, ../sass/uwtadmissions.scss */
+/* line 44, ../sass/uwtadmissions.scss */
 body h1 {
   font-family: encode_sans_normal_bold;
   text-transform: uppercase;
   margin-top: 0;
-}
-/* line 52, ../sass/uwtadmissions.scss */
-body #block-uwtfeatureslider-uwtfeatureslider {
-  margin-bottom: 0;
-}
-/* line 55, ../sass/uwtadmissions.scss */
-body #banner-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-/* line 62, ../sass/uwtadmissions.scss */
-body #banner-container #banner {
-  overflow: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  /*
-  */
-}
-/* line 72, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul {
-  margin: 0;
-  padding: 0;
-  /*
-  */
-}
-/* line 77, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li {
-  float: left;
-  list-style: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/* line 82, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide {
-  width: 100%;
-  /*
-  */
-  height: 466px;
-}
-/* line 87, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide div.adm-slide-content {
-  /**/
-  display: block;
-  position: relative;
-  z-index: 10;
-  max-width: 33%;
-  max-height: 85%;
-  top: 270px;
-  left: 20px;
-  padding: 10px;
-  color: white;
-  border: 2px solid white;
-  background-color: rgba(255, 255, 255, 0.25);
-  text-shadow: 1px 1px 1px black;
-  font-size: 1.5em;
-  line-height: 100%;
-}
-/* line 104, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide div.adm-slide-content h2 {
-  /**/
-  font-size: 1.5em;
-  line-height: 100%;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-/* line 111, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide div.adm-slide-content p {
-  color: white;
-  margin: 0;
-}
-/* line 115, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link, body #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited {
-  color: white;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  padding-top: 10px;
-}
-/* line 120, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link:after, body #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited:after {
-  content: " \203A";
-}
-/* line 125, ../sass/uwtadmissions.scss */
-body #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline * {
-  display: inline;
 }

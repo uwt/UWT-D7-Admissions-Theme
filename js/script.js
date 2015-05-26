@@ -28,6 +28,10 @@
   // can see that there is content "below the fold"
   Drupal.behaviors.foldWorks = {
     attach: function(context, settings) {
+
+      console.log("window width", $(window).width())
+
+
       // Get some of the original CSS values so we can use them later
       var bwSizeOrig =  $("#main").css("background-size");
       var bwSizeHeightOrigArr = bwSizeOrig.split(" ");
@@ -47,101 +51,114 @@
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
-        var wh = $(window).height(); // Window Height
-        var cmt = parseInt($("#content").css("margin-top")); // #content margin top (more margin, more background pic shows)
-        var bw = {};
-        bw['backgroundColor'] = $("#main").css("background-image");
-        bw['backgroundSize'] = $("#main").css("background-size");
-        bw['backgroundPosition'] = $("#main").css("background-position");
+
+        if( $(window).width() >= 975){
+
+          var wh = $(window).height(); // Window Height
+          var cmt = parseInt($("#content").css("margin-top")); // #content margin top (more margin, more background pic shows)
+          var bw = {};
+          bw['backgroundColor'] = $("#main").css("background-image");
+          bw['backgroundSize'] = $("#main").css("background-size");
+          bw['backgroundPosition'] = $("#main").css("background-position");
 
 
-        var bwSizeArr = bw.backgroundSize.split(" ");
-        var bwSizeWidth = parseInt(bwSizeArr[0]);
-        var bwSizeHeight = parseInt(bwSizeArr[1]);
+          var bwSizeArr = bw.backgroundSize.split(" ");
+          var bwSizeWidth = parseInt(bwSizeArr[0]);
+          var bwSizeHeight = parseInt(bwSizeArr[1]);
 
+          var newSCTop = (headerHeight + navHeight + 10);
 
-        if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
+          if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
 
-          // 300 is the default margin-top set in the CSS
-          var nmt = wh - 300;
+            // 300 is the default margin-top set in the CSS
+            var nmt = wh - 300;
+            //console.log("#content MARGIN-TOP, BORDER-TOP being set");
+            $("#content").css({
+              'margin-top':nmt,
+              'border-top':"20px solid #4B2E84"
+            });
 
-          $("#content").css({
-            'margin-top':nmt,
-            'border-top':"20px solid #4B2E84"
-          });
-
-          // Block W background position and scale
-          if(bwSizeHeight >= nmt){
-            var ar = (bwSizeWidth / bwSizeHeight);
-            bwSizeHeight = (nmt - 20);
-            bwSizeWidth = (bwSizeHeight * ar);
-            bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
+            // Block W background position and scale
+            if(bwSizeHeight >= nmt){
+              var ar = (bwSizeWidth / bwSizeHeight);
+              bwSizeHeight = (nmt - 20);
+              bwSizeWidth = (bwSizeHeight * ar);
+              bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
+              //console.log("#main BACKGROUND-SIZE being set");
+              $("#main").css({
+                'background-size': bwSizeCss
+              });
+            }
+            console.log("#main BACKGROUND-POSITION being set");
+            var newBgPos = 'top ' + (nmt + navHeight - bwSizeHeight) + 'px right 10px';
+            console.log("newBgPos", newBgPos);
+            
             $("#main").css({
-              'background-size': bwSizeCss
+              'background-position': newBgPos
             });
-          }
 
-          var newBgPos = 'top ' + (nmt + navHeight - bwSizeHeight) + 'px right 10px';
+            var scSizeHeight = $(".adm-slide-content").outerHeight();
+            //console.log("scSizeHeight", scSizeHeight);
+            //console.log("headerHeight", headerHeight);
+            //console.log("new margin top", nmt);
+            //console.log("navHeight", navHeight + 10);
+          
+            //console.log("scSizeHeightOrig", scSizeHeightOrig);
+            // console.log("scSizeHeight", scSizeHeight);
+         
 
-          $("#main").css({
-            'background-position': newBgPos
-          });
-
-          var scSizeHeight = $(".adm-slide-content").outerHeight();
-          //console.log("headerHeight", headerHeight);
-          //console.log("navHeight", navHeight);
-          var newSCTop = (headerHeight + navHeight);
-          //console.log("scSizeHeightOrig", scSizeHeightOrig);
-          // console.log("scSizeHeight", scSizeHeight);
-          //console.log("nmt", nmt);
-
-          //newSCTop =
-          $(".adm-slide-content").css({
-            'top': newSCTop
-          });
-
-          if (scSizeHeight >= nmt){
-            $(".adm-slide-content").addClass('inline');
-            //console.log("slide content taller than new margin top");
+            //console.log(".adm-slide-content TOP being set (headerHeight + navHeight)");
             $(".adm-slide-content").css({
-              'height': nmt,
-              'width': '50%',
-              'font-size': '100%',
+              'top': newSCTop
             });
+            //console.log("new margin top (above if)", nmt);
+            if (scSizeHeight >= nmt){
+              $(".adm-slide-content").addClass('inline');
+              //console.log(".adm-slide-content HEIGHT, WIDTH, FONT-SIZE being set");
+              $(".adm-slide-content").css({
+                'height': nmt -20,
+                'max-width': '50%',
+                'font-size': '100%'
+              });
+            }
+          // end medium-tall screens
+
+          }else if(wh >= 600){  // Tall screens, use default margin top
+            //console.log("Tall Screen portion BEGIN");
+            //console.log("#content MARGIN-TOP, BORDER-TOP being set");
+            $("#content").css({
+              'margin-top':contentMarginTopOrig,
+              'border-top':"20px solid #4B2E84"
+            });
+            //console.log("#main BACKGROUND-POSITION, BACKGROUND-SIZE being set");
+            $("#main").css({
+              'background-position' : bwPosOrig,
+              'background-size': bwSizeOrig
+            });
+            //console.log("contentMarginTopOrig", contentMarginTopOrig)
+            //console.log(".adm-slide-content HEIGHT being set and .inline class being removed");
+            var ascTop = navHeight + headerHeight;
+            var bobo = 50;
+            //console.log("ascTop", ascTop);
+            //console.log("bobo", bobo);
+            //console.log("cmto - bobo", parseInt(contentMarginTopOrig) - bobo);
+            $(".adm-slide-content")
+            .css({
+              'height': parseInt(contentMarginTopOrig) - bobo,
+              'top': ascTop + (bobo * 0.5)
+            })
+            .removeClass('inline') ;
+          //console.log("Tall Screen portion END");
+           
+          }else{// Short screens, use no margin top
+            //console.log("Short Screen portion BEGIN");
+            //console.log("#content MARGIN-TOP, BORDER-TOP BEING SET");
+            $("#content").css({
+              'margin-top':0,
+              'border-top':0
+            });
+          //console.log("Short Screen portion END");
           }
-
-
-
-        // end medium-tall screens
-        }else if(wh >= 600){  // Tall screens, use default margin top
-          //console.log("tall screens");
-          $("#content").css({
-            'margin-top':contentMarginTopOrig,
-            'border-top':"20px solid #4B2E84"
-          });
-          $("#main").css({
-            'background-position' : bwPosOrig,
-            'background-size': bwSizeOrig
-          });
-
-          //console.log("contentMarginTopOrig", contentMarginTopOrig);
-          $(".adm-slide-content")
-          .css({
-            'height': parseInt(contentMarginTopOrig) * 0.85
-          })
-          .removeClass('inline')
-          .position({
-            my: "left+20 top+20",
-            at: "left bottom",
-            of: $("#navigation"),
-            collision: "fit"
-          });
-
-        }else{// Short screens, use no margin top
-          $("#content").css({
-            'margin-top':0,
-            'border-top':0
-          });
         }
       } // end of foldWork
 

@@ -12,6 +12,88 @@
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     }
   }
+
+  #banner-container{
+    position:absolute;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    width:100%;
+    #banner {
+      overflow: auto;
+      position: relative;
+      top:0;
+      left:0;
+      height:100%;
+      width:100%;
+      // z-index:5;
+      /*
+      */
+      ul{
+        margin:0;
+        padding:0;
+        /*
+        */
+        li{ // li has the background image
+          float:left;
+          list-style:none;
+          background-repeat: no-repeat;
+          background-size: cover;
+          div.adm-slide{
+            width:100%;
+            /*
+            */
+            height:486px;
+            div.adm-slide-content{
+              /**/
+              display: block;
+              position: relative;
+              z-index:10;
+              max-width:33%;
+              max-height:85%;
+              top: 250px;
+              left:20px;
+              padding: 10px;
+              color:white;
+              border: 2px solid white;
+              background-color: rgba(255,255,255,0.25);
+              text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+              font-size: 1.5em;
+              line-height:100%;
+
+              h2{
+                /**/
+                font-size: 1.5em;
+                line-height: 100%;
+                margin-top: 0;
+                margin-bottom: 10px;
+              }
+              p{
+                color: white;
+                margin: 0;
+              }
+              a:link,a:visited{
+                color:white;
+                font-size:0.85em;
+                text-transform: uppercase;
+                padding-top:10px;
+                &:after{
+                  content: " \203A";
+                }
+              }
+              &.inline{
+                *{
+                  display:inline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   #main{
     padding-top:50px; /* This padding should match the height of the #navigation element */
     // Adding the large block-W

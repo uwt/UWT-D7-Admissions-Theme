@@ -2,6 +2,9 @@
 
 
   body{
+    #block-uwtfeatureslider-uwtfeatureslider{
+      margin-bottom:0;
+    }
     #banner-container{
       #banner{
         ul{
@@ -34,7 +37,7 @@
     ****************************** DEBUGGING ************************************
     *******************************************************************************/
     #main{
-      // background-color:#50C878; // Extra Narrow = Emerald
+      background-color:#50C878; // Extra Narrow = Emerald
     }
 
     ///////////// End @include extra_narrow
