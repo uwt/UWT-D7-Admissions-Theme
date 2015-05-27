@@ -29,28 +29,33 @@
   Drupal.behaviors.foldWorks = {
     attach: function(context, settings) {
 
-      console.log("window width", $(window).width())
 
-
-      // Get some of the original CSS values so we can use them later
-      var bwSizeOrig =  $("#main").css("background-size");
-      var bwSizeHeightOrigArr = bwSizeOrig.split(" ");
-      var bwSizeHeightOrig =bwSizeHeightOrigArr[0];
-      var bwPosOrig = $("#main").css("background-position");
-      
-      var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
-      var scSizeWidthOrig = $(".adm-slide-content"). outerWidth();
-      var scSizeTopOrig = $(".adm-slide-content").offset().top;
-
-      var contentMarginTopOrig = $("#content").css('margin-top');
-
-      var navHeight = $("#navigation").outerHeight();
-      var headerHeight = $("#header").outerHeight();
 
       // 1. Adjust the top-margin on the #content element. This will move the "fold" vertically
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
+
+        //console.log("window width", $(window).width())
+
+
+        // Get some of the original CSS values so we can use them later
+        var bwSizeOrig =  $("#main").css("background-size");
+        var bwSizeHeightOrigArr = bwSizeOrig.split(" ");
+        var bwSizeHeightOrig =bwSizeHeightOrigArr[0];
+        var bwPosOrig = $("#main").css("background-position");
+
+        var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
+        var scSizeWidthOrig = $(".adm-slide-content"). outerWidth();
+        var scSizeTopOrig = $(".adm-slide-content").offset().top;
+
+        var contentMarginTopOrig = $("#content").css('margin-top');
+
+        console.log($(".adm-slide-content"));
+        var scHeight = $(".adm-slide-content").height();
+
+        var navHeight = $("#navigation").outerHeight();
+        var headerHeight = $("#header").outerHeight();
 
         if( $(window).width() >= 975){
 
@@ -69,14 +74,14 @@
           var newSCTop = (headerHeight + navHeight + 10);
 
           if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
-
+            console.log("Medium Screen portion BEGIN");
             // 300 is the default margin-top set in the CSS
             var nmt = wh - 300;
             //console.log("#content MARGIN-TOP, BORDER-TOP being set");
             $("#content").css({
-              'margin-top':nmt,
-              'border-top':"20px solid #4B2E84"
-            });
+              // 'margin-top':nmt,
+              // 'border-top':"20px solid #4B2E84"
+              });
 
             // Block W background position and scale
             if(bwSizeHeight >= nmt){
@@ -86,16 +91,16 @@
               bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
               //console.log("#main BACKGROUND-SIZE being set");
               $("#main").css({
-                'background-size': bwSizeCss
-              });
+                //  'background-size': bwSizeCss
+                });
             }
             console.log("#main BACKGROUND-POSITION being set");
             var newBgPos = 'top ' + (nmt + navHeight - bwSizeHeight) + 'px right 10px';
             console.log("newBgPos", newBgPos);
             
             $("#main").css({
-              'background-position': newBgPos
-            });
+              //   'background-position': newBgPos
+              });
 
             var scSizeHeight = $(".adm-slide-content").outerHeight();
             //console.log("scSizeHeight", scSizeHeight);
@@ -109,32 +114,38 @@
 
             //console.log(".adm-slide-content TOP being set (headerHeight + navHeight)");
             $(".adm-slide-content").css({
-              'top': newSCTop
-            });
+              //   'top': newSCTop
+              });
             //console.log("new margin top (above if)", nmt);
             if (scSizeHeight >= nmt){
               $(".adm-slide-content").addClass('inline');
               //console.log(".adm-slide-content HEIGHT, WIDTH, FONT-SIZE being set");
               $(".adm-slide-content").css({
-                'height': nmt -20,
-                'max-width': '50%',
-                'font-size': '100%'
-              });
+                //     'height': nmt -20,
+                //     'max-width': '50%',
+                //      'font-size': '100%'
+                });
             }
-          // end medium-tall screens
+            // end medium-tall screens
+            console.log("Medium Screen portion END");
 
           }else if(wh >= 600){  // Tall screens, use default margin top
-            //console.log("Tall Screen portion BEGIN");
+
+            console.log("Tall Screen portion BEGIN");
+            console.log("headerHeight", headerHeight);
+            console.log("scHeight", scHeight);
+            console.log("scSizeHeightOrig", scSizeHeightOrig);
+            console.log("calculated top", headerHeight - scSizeHeightOrig);
             //console.log("#content MARGIN-TOP, BORDER-TOP being set");
             $("#content").css({
-              'margin-top':contentMarginTopOrig,
-              'border-top':"20px solid #4B2E84"
-            });
+              //     'margin-top':contentMarginTopOrig,
+              //     'border-top':"20px solid #4B2E84"
+              });
             //console.log("#main BACKGROUND-POSITION, BACKGROUND-SIZE being set");
             $("#main").css({
-              'background-position' : bwPosOrig,
-              'background-size': bwSizeOrig
-            });
+              //     'background-position' : bwPosOrig,
+              //     'background-size': bwSizeOrig
+              });
             //console.log("contentMarginTopOrig", contentMarginTopOrig)
             //console.log(".adm-slide-content HEIGHT being set and .inline class being removed");
             var ascTop = navHeight + headerHeight;
@@ -144,20 +155,20 @@
             //console.log("cmto - bobo", parseInt(contentMarginTopOrig) - bobo);
             $(".adm-slide-content")
             .css({
-              'height': parseInt(contentMarginTopOrig) - bobo,
-              'top': ascTop + (bobo * 0.5)
+              'left': '20px',
+              'top': headerHeight - scSizeHeightOrig
             })
             .removeClass('inline') ;
-          //console.log("Tall Screen portion END");
+            console.log("Tall Screen portion END");
            
           }else{// Short screens, use no margin top
-            //console.log("Short Screen portion BEGIN");
+            console.log("Short Screen portion BEGIN");
             //console.log("#content MARGIN-TOP, BORDER-TOP BEING SET");
             $("#content").css({
-              'margin-top':0,
-              'border-top':0
-            });
-          //console.log("Short Screen portion END");
+              //       'margin-top':0,
+              //       'border-top':0
+              });
+            console.log("Short Screen portion END");
           }
         }
       } // end of foldWork

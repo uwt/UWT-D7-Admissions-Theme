@@ -3,88 +3,80 @@
   body{
     background-color: $purple;
   }
-  #header{
-    //margin-left:15px;
-    padding-top:10px;
-    position:relative;
-    z-index: 1;
-    h1{
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-    }
-  }
 
-  #banner-container{
-    position:absolute;
-    top:0;
-    left:0;
-    margin:0;
-    padding:0;
-    width:100%;
-    #banner {
-      overflow: auto;
-      position: relative;
+  .region-banner{
+    .block{margin-bottom:0;}
+    #banner-container{
+      position:absolute;
       top:0;
       left:0;
-      height:100%;
+      margin:0;
+      padding:0;
       width:100%;
-      // z-index:5;
-      /*
-      */
-      ul{
-        margin:0;
-        padding:0;
+      #banner {
+        overflow: auto;
+        position: relative;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        // z-index:5;
         /*
         */
-        li{ // li has the background image
-          float:left;
-          list-style:none;
-          background-repeat: no-repeat;
-          background-size: cover;
-          div.adm-slide{
-            width:100%;
-            /*
-            */
-            height:486px;
-            div.adm-slide-content{
-              /**/
-              display: block;
-              position: relative;
-              z-index:10;
-              max-width:33%;
-              max-height:85%;
-              top: 250px;
-              left:20px;
-              padding: 10px;
-              color:white;
-              border: 2px solid white;
-              background-color: rgba(255,255,255,0.25);
-              text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-              font-size: 1.5em;
-              line-height:100%;
-
-              h2{
+        ul{
+          margin:0;
+          padding:0;
+          /*
+          */
+          li{ // li has the background image
+            float:left;
+            list-style:none;
+            background-repeat: no-repeat;
+            background-size: cover;
+            div.adm-slide{
+              width:100%;
+              height:486px;
+              div.adm-slide-content{
                 /**/
-                font-size: 1.5em;
-                line-height: 100%;
-                margin-top: 0;
-                margin-bottom: 10px;
-              }
-              p{
-                color: white;
-                margin: 0;
-              }
-              a:link,a:visited{
+                display: block;
+                position: relative;
+                z-index:10;
+                max-width:33%;
+                max-height:85%;
+                top: 100px;
+                //left:20px;
+                padding: 10px;
                 color:white;
-                font-size:0.85em;
-                text-transform: uppercase;
-                padding-top:10px;
-                &:after{
-                  content: " \203A";
+                border: 2px solid white;
+                background-color: rgba(255,255,255,0.25);
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+                font-size: 1.5em;
+                line-height:100%;
+
+                h2{
+                  /**/
+                  font-size: 1.5em;
+                  line-height: 100%;
+                  margin-top: 0;
+                  margin-bottom: 10px;
                 }
-              }
-              &.inline{
-                *{
-                  display:inline;
+                p{
+                  color: white;
+                  margin: 0;
+                }
+                a:link,a:visited{
+                  color:white;
+                  font-size:0.85em;
+                  text-transform: uppercase;
+                  padding-top:10px;
+                  &:after{
+                    content: " \203A";
+                  }
+                }
+                &.inline{
+                  *{
+                    display:inline;
+                  }
                 }
               }
             }
@@ -93,24 +85,41 @@
       }
     }
   }
-
-  #main{
-    padding-top:50px; /* This padding should match the height of the #navigation element */
+  #header{
     // Adding the large block-W
     background: url(../images/W_only_CMYK.png);
     background-size: 257px 160px;
-    background-position: top 190px right 10px;
-    //background-position-x: 20px;
-    //background-position-y: 150px;
+    background-position: bottom 0px right 10px;
     background-repeat: no-repeat;
+    height:486px;
+
+    padding:0;
+    margin:0;
+    position:relative;
+    z-index: 1;
+    h1{
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+  }
+
+  #main{
+    padding-top:0px; /*  */
+    border-top:20px solid $purple;
+
+
     #content{
       background-color: white;
-      margin-top:300px;
-      border-top:20px solid $purple;
+      //margin-top:300px;
+      //border-top:20px solid $purple;
 
     }
   }
+
   #navigation{
+    top:90px;
+    z-index:1;
+    background-color:$purple;
+    height: 50px; /* The overall height of the main purple menu */
     /* Setting heights on the menu elements allows for vertical centering */
     .region,
     li,
@@ -121,8 +130,7 @@
     .menu{
       height:100%;
     }
-    background-color:$purple;
-    height: 50px; /* The overall height of the main purple menu */
+
     .region{
       #block-search-form{
         position: absolute;
