@@ -127,11 +127,14 @@
   }
 
   #navigation{
-    max-width:1200px;
+    width:100%;
     top:90px;
     z-index:1;
     background-color:$purple;
     height: 50px; /* The overall height of the main purple menu */
+    .region-navigation{
+      max-width:1200px;
+    }
     /* Setting heights on the menu elements allows for vertical centering */
     .region,
     li,
