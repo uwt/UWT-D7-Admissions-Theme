@@ -135,7 +135,7 @@
             console.log("headerHeight", headerHeight);
             console.log("scHeight", scHeight);
             console.log("scSizeHeightOrig", scSizeHeightOrig);
-            console.log("calculated top", headerHeight - scSizeHeightOrig);
+            
             //console.log("#content MARGIN-TOP, BORDER-TOP being set");
             $("#content").css({
               //     'margin-top':contentMarginTopOrig,
@@ -148,15 +148,13 @@
               });
             //console.log("contentMarginTopOrig", contentMarginTopOrig)
             //console.log(".adm-slide-content HEIGHT being set and .inline class being removed");
-            var ascTop = navHeight + headerHeight;
-            var bobo = 50;
-            //console.log("ascTop", ascTop);
-            //console.log("bobo", bobo);
-            //console.log("cmto - bobo", parseInt(contentMarginTopOrig) - bobo);
+            var ascTop = headerHeight - scSizeHeightOrig;
+
+            console.log("ascTop: headerHeight - scSizeHeightOrig = ", ascTop);
             $(".adm-slide-content")
             .css({
               'left': '20px',
-              'top': headerHeight - scSizeHeightOrig
+              'top': ascTop
             })
             .removeClass('inline') ;
             console.log("Tall Screen portion END");
