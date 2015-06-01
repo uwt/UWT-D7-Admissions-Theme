@@ -23,24 +23,29 @@
       var searchForm = $("#search form .container-inline");
       // Add a cute icon at the end of the menu
       var menu = $("#navigation .menu-block-wrapper > .menu");
-      
+      console.log("settings", settings);
+      var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
+      console.log("themeImages", themeImages);
       // Create the menu open button
-      var menuOpenBtn = $("<button/>",
-      {
-        text: "Search",
-        "class": "search-toggle"
+      var menuOpenListItem = $("<li>",{
+        width:"50px"
       });
-
-      // Create the menu close button
-      var menuCloseBtn = $("<button/>",
+      var menuOpenImg = $("<img />",
       {
-        text: "X",
-        "class": "search-toggle"
+        "src": themeImages + "/search-icon-large.png",
+        "class": "search-toggle open"
+      });
+      menuOpenListItem.append(menuOpenImg);
+      // Create the menu close button
+      var menuCloseIcon = $("<img />",
+      {
+        "src": themeImages + "/search-icon-close.png",
+        "class": "search-toggle close"
       });
 
       // Append the buttons to the elements
-      menu.append(menuOpenBtn);
-      searchForm.append(menuCloseBtn);
+      menu.append(menuOpenListItem);
+      searchForm.append(menuCloseIcon);
       
       // Event handler to show/hide the search region
       $(".search-toggle").click(function(){
@@ -61,7 +66,7 @@
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
-        var mainTop, navTop, navHeight, navBottom, verticalDiff;
+        var mainTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
         if( $(window).width() >= 975){
 
           var wh = $(window).height(); // Window Height
@@ -115,7 +120,7 @@
             
 
             //console.log("verticalDiff", verticalDiff);
-            var ascVertPadding = 10;
+            ascVertPadding = 10;
             if(verticalDiff >= 160){
               ascVertPadding += 40;
               $(".adm-slide-content").removeClass('inline');
@@ -157,16 +162,22 @@
             navBottom = navTop + navHeight;
             verticalDiff = (mainTop - navBottom)
 
+            ascVertPadding = 40;
 
 
-            console.log("ascTop: headerHeight - scSizeHeightOrig = ", ascTop);
+            var ascTop = navBottom + (ascVertPadding * 0.5);
+
+            console.log("navBottom", navBottom);
+            console.log("ascVertPadding",ascVertPadding);
+            console.log("ascTop", ascTop);
+            
             console.log("verticalDiff", verticalDiff);
            
             $(".adm-slide-content")
             .css({
               height: ascHeight,
               left: '20px',
-              top: navBottom + (ascVertPadding * 0.5) // 10 is 1/2 of the arbitrary 20 used when determining the ascHeight
+              top: ascTop
             })
             .removeClass('inline') ;
             console.log("Tall Screen portion END");

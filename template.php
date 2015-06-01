@@ -50,7 +50,7 @@ function uwtadmissions_menu_link(array $variables) {
   // preprocess_page, that same work is probably needed for the maintenance page
   // as well, so we can just re-use those functions to do that work here.
 
-      
+
 
   uwtadmissions_preprocess_html($variables, $hook);
   uwtadmissions_preprocess_page($variables, $hook);
@@ -69,9 +69,9 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
 
   // Adding UW Assets
   $data = array();
-  $data['type'] = 'external';
-  drupal_add_css('//uw.edu/assets/uw.css', $data);
-  drupal_add_js('//unslider.com/unslider.min.js', 'external');
+  drupal_add_css('//uw.edu/assets/uw.css', 'external');
+  //drupal_add_css(drupal_get_path('theme', 'uwtadmissions') . '/css/uw.css', 'file');
+  drupal_add_js(drupal_get_path('theme', 'uwtadmissions') . '/js/unslider.min.js', 'file');
 }
 
 /**

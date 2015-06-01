@@ -7,7 +7,7 @@
 
 
   #search{
-    position: relative;
+    position: fixed;
     left: 0;
     top: -150px; // Initial value. Changes to 0 by script.
     z-index: 2;
@@ -27,8 +27,31 @@
     transition: all 0.3s;
     form{
       color: $grey_dark;
+      .container-inline{
+        width:370px;
+        height:75px;
+        margin-top:50px;
+        margin-right:auto;
+        margin-left:auto;
+        #edit-search-block-form--2{
+          width:250px;
+        }
+        #edit-submit{
+          width:80px;
+        }
+        .search-toggle{
+          &.close{
+            width:30px;
+            height:30px;
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
     &.show-search{
+      position:fixed;
       top:0px;
       height:150px;
       border-style: solid;
@@ -42,6 +65,7 @@
       border-bottom-right-radius: 3px;
       border-bottom-left-radius: 3px;
     }
+
   }
 
 
@@ -180,10 +204,19 @@
 
     #content{
       background-color: white;
-      //margin-top:300px;
-      //border-top:20px solid $purple;
-
+      padding-top:20px;
+      h1{
+        &#page-title{
+          display:none
+        }
+      }
+      a{
+        &.uw-btn{
+          margin-bottom:20px;
+        }
+      }
     }
+
   }
 
   #navigation{
@@ -319,6 +352,17 @@
               width:0px; /* This hides the slash */
             }
           }
+        }
+
+      }
+    }
+    .search-toggle{
+      &.open{
+        width:30px;
+        height:30px;
+        margin-top: 10px;
+        &:hover{
+          cursor: pointer;
         }
       }
     }
