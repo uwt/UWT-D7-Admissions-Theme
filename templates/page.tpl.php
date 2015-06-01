@@ -8,6 +8,10 @@
  */
 ?>
 
+<div id="search">
+  <?php print render($page['search']); ?>
+</div>
+
 <div id="page">
 
   <?php print render($page['banner']); ?>

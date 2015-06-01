@@ -19,8 +19,34 @@
   Drupal.behaviors.searchFormMods = {
     attach: function(context, settings) {
     
-      var searchForm = $("#block-search-form");
-      searchForm.appendTo($(".block-menu-block .menu-block-wrapper"));
+      var searchRegion = $("#search");
+      var searchForm = $("#search form .container-inline");
+      // Add a cute icon at the end of the menu
+      var menu = $("#navigation .menu-block-wrapper > .menu");
+      
+      // Create the menu open button
+      var menuOpenBtn = $("<button/>",
+      {
+        text: "Search",
+        "class": "search-toggle"
+      });
+
+      // Create the menu close button
+      var menuCloseBtn = $("<button/>",
+      {
+        text: "X",
+        "class": "search-toggle"
+      });
+
+      // Append the buttons to the elements
+      menu.append(menuOpenBtn);
+      searchForm.append(menuCloseBtn);
+      
+      // Event handler to show/hide the search region
+      $(".search-toggle").click(function(){
+        searchRegion.toggleClass("show-search");
+      });
+
     } // end of attach
   };
 
@@ -35,130 +61,120 @@
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
-
-        //console.log("window width", $(window).width())
-
-
-        // Get some of the original CSS values so we can use them later
-        var bwSizeOrig =  $("#main").css("background-size");
-        var bwSizeHeightOrigArr = bwSizeOrig.split(" ");
-        var bwSizeHeightOrig =bwSizeHeightOrigArr[0];
-        var bwPosOrig = $("#main").css("background-position");
-
-        var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
-        var scSizeWidthOrig = $(".adm-slide-content"). outerWidth();
-        var scSizeTopOrig = $(".adm-slide-content").offset().top;
-
-        var contentMarginTopOrig = $("#content").css('margin-top');
-
-        console.log($(".adm-slide-content"));
-        var scHeight = $(".adm-slide-content").height();
-
-        var navHeight = $("#navigation").outerHeight();
-        var headerHeight = $("#header").outerHeight();
-
+        var mainTop, navTop, navHeight, navBottom, verticalDiff;
         if( $(window).width() >= 975){
 
           var wh = $(window).height(); // Window Height
-          var cmt = parseInt($("#content").css("margin-top")); // #content margin top (more margin, more background pic shows)
-          var bw = {};
-          bw['backgroundColor'] = $("#main").css("background-image");
-          bw['backgroundSize'] = $("#main").css("background-size");
-          bw['backgroundPosition'] = $("#main").css("background-position");
-
-
-          var bwSizeArr = bw.backgroundSize.split(" ");
-          var bwSizeWidth = parseInt(bwSizeArr[0]);
-          var bwSizeHeight = parseInt(bwSizeArr[1]);
-
-          var newSCTop = (headerHeight + navHeight + 10);
 
           if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
             console.log("Medium Screen portion BEGIN");
-            // 300 is the default margin-top set in the CSS
-            var nmt = wh - 300;
-            //console.log("#content MARGIN-TOP, BORDER-TOP being set");
-            $("#content").css({
-              // 'margin-top':nmt,
-              // 'border-top':"20px solid #4B2E84"
-              });
+            //console.log("window height", wh);
 
-            // Block W background position and scale
-            if(bwSizeHeight >= nmt){
-              var ar = (bwSizeWidth / bwSizeHeight);
-              bwSizeHeight = (nmt - 20);
-              bwSizeWidth = (bwSizeHeight * ar);
-              bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
-              //console.log("#main BACKGROUND-SIZE being set");
-              $("#main").css({
-                //  'background-size': bwSizeCss
-                });
+
+            // This determines how many vertical pixels of the "body content" is shown.
+            // 100 is an arbitrary number.
+            $("#header").css({
+              height: wh - 100
+            });
+
+
+            // Calculate the difference between the bottom of the navigation and the top of the #main
+            var bw = {};
+            bw['backgroundColor'] = $("#header").css("background-image");
+            bw['backgroundSize'] = $("#header").css("background-size");
+            bw['backgroundPosition'] = $("#header").css("background-position");
+
+
+            var bwSizeArr = bw.backgroundSize.split(" ");
+            var bwSizeWidth = parseInt(bwSizeArr[0]);
+            var bwSizeHeight = parseInt(bwSizeArr[1]);
+
+            mainTop = $("#main").offset().top;
+            navTop = $("#navigation").offset().top;
+            navHeight = $("#navigation").outerHeight();
+            navBottom = navTop + navHeight;
+            verticalDiff = (mainTop - navBottom)
+
+
+            var ar = (bwSizeWidth / bwSizeHeight);
+            bwSizeHeight = (verticalDiff - 20);
+            bwSizeWidth = (bwSizeHeight * ar);
+            var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
+            //console.log("#header BACKGROUND-SIZE being set");
+            var bwMaxHeight = 200;
+            if(bwSizeHeight <= bwMaxHeight){
+              $("#header").css({
+                'background-size': bwSizeCss
+              });
             }
-            console.log("#main BACKGROUND-POSITION being set");
-            var newBgPos = 'top ' + (nmt + navHeight - bwSizeHeight) + 'px right 10px';
-            console.log("newBgPos", newBgPos);
+
+            var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
+
+            var headerHeight = $("#header").outerHeight();
+            var ascTop = headerHeight - scSizeHeightOrig;
             
-            $("#main").css({
-              //   'background-position': newBgPos
-              });
 
-            var scSizeHeight = $(".adm-slide-content").outerHeight();
-            //console.log("scSizeHeight", scSizeHeight);
-            //console.log("headerHeight", headerHeight);
-            //console.log("new margin top", nmt);
-            //console.log("navHeight", navHeight + 10);
-          
-            //console.log("scSizeHeightOrig", scSizeHeightOrig);
-            // console.log("scSizeHeight", scSizeHeight);
-         
-
-            //console.log(".adm-slide-content TOP being set (headerHeight + navHeight)");
-            $(".adm-slide-content").css({
-              //   'top': newSCTop
-              });
-            //console.log("new margin top (above if)", nmt);
-            if (scSizeHeight >= nmt){
+            //console.log("verticalDiff", verticalDiff);
+            var ascVertPadding = 10;
+            if(verticalDiff >= 160){
+              ascVertPadding += 40;
+              $(".adm-slide-content").removeClass('inline');
+            }else{
               $(".adm-slide-content").addClass('inline');
-              //console.log(".adm-slide-content HEIGHT, WIDTH, FONT-SIZE being set");
-              $(".adm-slide-content").css({
-                //     'height': nmt -20,
-                //     'max-width': '50%',
-                //      'font-size': '100%'
-                });
             }
+
+            var ascHeight = verticalDiff - ascVertPadding;
+
+            $(".adm-slide-content")
+            .css({
+              fontSize: '1em',
+              height: ascHeight,
+              left: '20px',
+              top: navBottom + (ascVertPadding * 0.5) // 10 is 1/2 of the arbitrary 20 used when determining the ascHeight
+            });
+
+
             // end medium-tall screens
             console.log("Medium Screen portion END");
-
+            
+          /*
+             * TALL SCREENS BEGIN
+             */
           }else if(wh >= 600){  // Tall screens, use default margin top
 
             console.log("Tall Screen portion BEGIN");
-            console.log("headerHeight", headerHeight);
-            console.log("scHeight", scHeight);
-            console.log("scSizeHeightOrig", scSizeHeightOrig);
-            
-            //console.log("#content MARGIN-TOP, BORDER-TOP being set");
-            $("#content").css({
-              //     'margin-top':contentMarginTopOrig,
-              //     'border-top':"20px solid #4B2E84"
-              });
-            //console.log("#main BACKGROUND-POSITION, BACKGROUND-SIZE being set");
-            $("#main").css({
-              //     'background-position' : bwPosOrig,
-              //     'background-size': bwSizeOrig
-              });
-            //console.log("contentMarginTopOrig", contentMarginTopOrig)
-            //console.log(".adm-slide-content HEIGHT being set and .inline class being removed");
-            var ascTop = headerHeight - scSizeHeightOrig;
+            //console.log("headerHeight", headerHeight);
+            //console.log("scHeight", scHeight);
+            //console.log("scSizeHeightOrig", scSizeHeightOrig);
+
+            $("#header").css({
+              height: '500px' // 500 is what we set originally in the CSS
+            });
+
+            mainTop = $("#main").offset().top;
+            navTop = $("#navigation").offset().top;
+            navHeight = $("#navigation").outerHeight();
+            navBottom = navTop + navHeight;
+            verticalDiff = (mainTop - navBottom)
+
+
 
             console.log("ascTop: headerHeight - scSizeHeightOrig = ", ascTop);
+            console.log("verticalDiff", verticalDiff);
+           
             $(".adm-slide-content")
             .css({
-              'left': '20px',
-              'top': ascTop
+              height: ascHeight,
+              left: '20px',
+              top: navBottom + (ascVertPadding * 0.5) // 10 is 1/2 of the arbitrary 20 used when determining the ascHeight
             })
             .removeClass('inline') ;
             console.log("Tall Screen portion END");
-           
+
+          /*
+             * SHORT SCREENS BEGIN
+             */
+
           }else{// Short screens, use no margin top
             console.log("Short Screen portion BEGIN");
             //console.log("#content MARGIN-TOP, BORDER-TOP BEING SET");

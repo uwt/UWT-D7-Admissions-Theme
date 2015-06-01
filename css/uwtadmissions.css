@@ -129,11 +129,62 @@ html.lt-ie9 html {
   html body {
     background-color: #4b2e84;
   }
-  /* line 8, ../sass/_bp_widest.scss */
+  /* line 9, ../sass/_bp_widest.scss */
+  html #search {
+    position: relative;
+    left: 0;
+    top: -150px;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    height: 0px;
+    background-color: #444444;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  /* line 28, ../sass/_bp_widest.scss */
+  html #search form {
+    color: #444444;
+  }
+  /* line 31, ../sass/_bp_widest.scss */
+  html #search.show-search {
+    top: 0px;
+    height: 150px;
+    border-style: solid;
+    border-color: #e8e3d3;
+    border-width: 2px;
+    border-top-width: 0px;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  /* line 48, ../sass/_bp_widest.scss */
+  html #page {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  /* line 54, ../sass/_bp_widest.scss */
+  html #page.show-search {
+    position: relative;
+    top: 150px;
+  }
+  /* line 62, ../sass/_bp_widest.scss */
   html .region-banner .block {
     margin-bottom: 0;
   }
-  /* line 9, ../sass/_bp_widest.scss */
+  /* line 63, ../sass/_bp_widest.scss */
   html .region-banner #banner-container {
     position: absolute;
     top: 0;
@@ -142,7 +193,7 @@ html.lt-ie9 html {
     padding: 0;
     width: 100%;
   }
-  /* line 16, ../sass/_bp_widest.scss */
+  /* line 70, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner {
     overflow: auto;
     position: relative;
@@ -153,26 +204,29 @@ html.lt-ie9 html {
     /*
     */
   }
-  /* line 26, ../sass/_bp_widest.scss */
+  /* line 80, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul {
     margin: 0;
     padding: 0;
     /*
     */
   }
-  /* line 31, ../sass/_bp_widest.scss */
+  /* line 85, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li {
     float: left;
     list-style: none;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  /* line 36, ../sass/_bp_widest.scss */
+  /* line 90, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide {
     width: 100%;
     height: 500px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  /* line 39, ../sass/_bp_widest.scss */
+  /* line 96, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content {
     /**/
     display: block;
@@ -195,11 +249,11 @@ html.lt-ie9 html {
     -o-transition: all 0.3s;
     transition: all 0.3s;
   }
-  /* line 60, ../sass/_bp_widest.scss */
+  /* line 117, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content:hover {
     background-color: rgba(153, 153, 153, 0.85);
   }
-  /* line 63, ../sass/_bp_widest.scss */
+  /* line 120, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content h2 {
     /**/
     font-size: 1.5em;
@@ -207,72 +261,81 @@ html.lt-ie9 html {
     margin-top: 0;
     margin-bottom: 10px;
   }
-  /* line 70, ../sass/_bp_widest.scss */
+  /* line 127, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content p {
     color: white;
     margin: 0;
   }
-  /* line 74, ../sass/_bp_widest.scss */
+  /* line 131, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link, html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited {
     color: white;
-    font-size: 0.85em;
     text-transform: uppercase;
     padding-top: 10px;
   }
-  /* line 79, ../sass/_bp_widest.scss */
+  /* line 136, ../sass/_bp_widest.scss */
   html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link:after, html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited:after {
     content: " \203A";
   }
-  /* line 84, ../sass/_bp_widest.scss */
-  html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline * {
-    display: inline;
+  /* line 140, ../sass/_bp_widest.scss */
+  html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline {
+    padding: 0 0 0 5px;
   }
-  /* line 95, ../sass/_bp_widest.scss */
+  /* line 142, ../sass/_bp_widest.scss */
+  html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline h2, html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline div, html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline p, html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline a {
+    font-size: 0.9em;
+    display: inline;
+    padding: 0;
+  }
+  /* line 155, ../sass/_bp_widest.scss */
   html #header {
     background: url(../images/W_only_CMYK.png);
-    background-size: 257px 160px;
-    background-position: bottom 6px right 10px;
+    background-size: 297px 200px;
+    background-position: bottom 0px right 10px;
     background-repeat: no-repeat;
-    height: 486px;
+    height: 500px;
     padding: 0;
     margin: 0;
     position: relative;
     z-index: 1;
   }
-  /* line 107, ../sass/_bp_widest.scss */
+  /* line 167, ../sass/_bp_widest.scss */
   html #header h1 {
     text-shadow: 1px 1px 1px black;
     margin-bottom: 0;
   }
-  /* line 111, ../sass/_bp_widest.scss */
+  /* line 171, ../sass/_bp_widest.scss */
   html #header .block {
     margin-bottom: 0;
   }
-  /* line 116, ../sass/_bp_widest.scss */
+  /* line 176, ../sass/_bp_widest.scss */
   html #main {
     padding-top: 0px;
     /*  */
     border-top: 20px solid #4b2e84;
   }
-  /* line 121, ../sass/_bp_widest.scss */
+  /* line 181, ../sass/_bp_widest.scss */
   html #main #content {
     background-color: white;
   }
-  /* line 129, ../sass/_bp_widest.scss */
+  /* line 189, ../sass/_bp_widest.scss */
   html #navigation {
+    position: absolute;
     width: 100%;
     top: 90px;
+    left: 0px;
     z-index: 1;
     background-color: #4b2e84;
     height: 50px;
     /* The overall height of the main purple menu */
     /* Setting heights on the menu elements allows for vertical centering */
   }
-  /* line 135, ../sass/_bp_widest.scss */
+  /* line 197, ../sass/_bp_widest.scss */
   html #navigation .region-navigation {
     max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  /* line 145, ../sass/_bp_widest.scss */
+  /* line 209, ../sass/_bp_widest.scss */
   html #navigation .region,
   html #navigation li,
   html #navigation .outerContainer,
@@ -282,7 +345,7 @@ html.lt-ie9 html {
   html #navigation .menu {
     height: 100%;
   }
-  /* line 150, ../sass/_bp_widest.scss */
+  /* line 214, ../sass/_bp_widest.scss */
   html #navigation .region #block-search-form {
     position: absolute;
     top: 10px;
@@ -290,7 +353,7 @@ html.lt-ie9 html {
     right: 10px;
     width: 150px;
   }
-  /* line 155, ../sass/_bp_widest.scss */
+  /* line 219, ../sass/_bp_widest.scss */
   html #navigation .region #block-search-form #edit-submit {
     background: url(../images/search-icon-large.png);
     background-repeat: no-repeat;
@@ -304,28 +367,28 @@ html.lt-ie9 html {
     overflow: hidden;
     border: none;
   }
-  /* line 168, ../sass/_bp_widest.scss */
+  /* line 232, ../sass/_bp_widest.scss */
   html #navigation .region #block-search-form input[type="text"] {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 175, ../sass/_bp_widest.scss */
+  /* line 239, ../sass/_bp_widest.scss */
   html #navigation .region .menu li {
     vertical-align: middle;
     /* The flyout menu items */
   }
-  /* line 177, ../sass/_bp_widest.scss */
+  /* line 241, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer {
     display: table;
   }
-  /* line 179, ../sass/_bp_widest.scss */
+  /* line 243, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer {
     /* We hover on the innerContainer */
     display: table-cell;
     vertical-align: middle;
   }
-  /* line 182, ../sass/_bp_widest.scss */
+  /* line 246, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer a:link, html #navigation .region .menu li .outerContainer .innerContainer a:visited {
     color: white;
     text-transform: uppercase;
@@ -335,7 +398,7 @@ html.lt-ie9 html {
     margin-left: 10px;
     margin-right: 10px;
   }
-  /* line 190, ../sass/_bp_widest.scss */
+  /* line 254, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer a:link:after, html #navigation .region .menu li .outerContainer .innerContainer a:visited:after {
     content: "";
     width: 8px;
@@ -345,20 +408,20 @@ html.lt-ie9 html {
     position: absolute;
     margin-left: 12px;
   }
-  /* line 200, ../sass/_bp_widest.scss */
+  /* line 264, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer:hover {
     /* We hover on the .innerContainer */
   }
-  /* line 202, ../sass/_bp_widest.scss */
+  /* line 266, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:link, html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:visited {
     color: #e8e3d3;
   }
-  /* line 206, ../sass/_bp_widest.scss */
+  /* line 270, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .outerContainer .innerContainer:hover .menu {
     visibility: visible;
     opacity: 1;
   }
-  /* line 214, ../sass/_bp_widest.scss */
+  /* line 278, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu {
     border-top: 11px solid #4b2e84;
     background-color: #b7a57a;
@@ -375,31 +438,31 @@ html.lt-ie9 html {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
   }
-  /* line 229, ../sass/_bp_widest.scss */
+  /* line 293, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu li {
     padding: 0px;
     float: none;
     background-color: #b7a57a;
   }
-  /* line 236, ../sass/_bp_widest.scss */
+  /* line 300, ../sass/_bp_widest.scss */
   html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:link, html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:visited {
     color: white;
     padding-left: 5px;
   }
-  /* line 247, ../sass/_bp_widest.scss */
+  /* line 311, ../sass/_bp_widest.scss */
   html #navigation .region .menu li.first .outerContainer .innerContainer a:link, html #navigation .region .menu li.first .outerContainer .innerContainer a:visited {
     margin-left: 0;
   }
-  /* line 251, ../sass/_bp_widest.scss */
+  /* line 315, ../sass/_bp_widest.scss */
   html #navigation .region .menu li.last .outerContainer .innerContainer {
     /* Don't put a slash on the last item */
   }
-  /* line 254, ../sass/_bp_widest.scss */
+  /* line 318, ../sass/_bp_widest.scss */
   html #navigation .region .menu li.last .outerContainer .innerContainer a:link:after, html #navigation .region .menu li.last .outerContainer .innerContainer a:visited:after {
     width: 0px;
     /* This hides the slash */
   }
-  /* line 264, ../sass/_bp_widest.scss */
+  /* line 328, ../sass/_bp_widest.scss */
   html .adm-home-block {
     background-color: white;
     padding: 10px;
@@ -407,27 +470,27 @@ html.lt-ie9 html {
     height: 5em;
     margin-bottom: 1em;
   }
-  /* line 270, ../sass/_bp_widest.scss */
+  /* line 334, ../sass/_bp_widest.scss */
   html .adm-home-block h2 {
     margin: 0;
     font-family: encode_sans_normal_light;
     line-height: 1.25em;
   }
-  /* line 274, ../sass/_bp_widest.scss */
+  /* line 338, ../sass/_bp_widest.scss */
   html .adm-home-block h2 a:link, html .adm-home-block h2 a:visited {
     color: #4b2e84;
   }
-  /* line 282, ../sass/_bp_widest.scss */
+  /* line 346, ../sass/_bp_widest.scss */
   html .adm-home-btn-pane ul {
     padding-left: 0;
     margin-top: 0;
   }
-  /* line 285, ../sass/_bp_widest.scss */
+  /* line 349, ../sass/_bp_widest.scss */
   html .adm-home-btn-pane ul li {
     width: 100%;
     max-width: 100%;
   }
-  /* line 288, ../sass/_bp_widest.scss */
+  /* line 352, ../sass/_bp_widest.scss */
   html .adm-home-btn-pane ul li .uw-btn {
     margin-right: 0;
     width: 80%;
@@ -443,11 +506,62 @@ html.lt-ie9 html {
 html.lt-ie9 html body {
   background-color: #4b2e84;
 }
-/* line 8, ../sass/_bp_widest.scss */
+/* line 9, ../sass/_bp_widest.scss */
+html.lt-ie9 html #search {
+  position: relative;
+  left: 0;
+  top: -150px;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  height: 0px;
+  background-color: #444444;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 28, ../sass/_bp_widest.scss */
+html.lt-ie9 html #search form {
+  color: #444444;
+}
+/* line 31, ../sass/_bp_widest.scss */
+html.lt-ie9 html #search.show-search {
+  top: 0px;
+  height: 150px;
+  border-style: solid;
+  border-color: #e8e3d3;
+  border-width: 2px;
+  border-top-width: 0px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* line 48, ../sass/_bp_widest.scss */
+html.lt-ie9 html #page {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 54, ../sass/_bp_widest.scss */
+html.lt-ie9 html #page.show-search {
+  position: relative;
+  top: 150px;
+}
+/* line 62, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner .block {
   margin-bottom: 0;
 }
-/* line 9, ../sass/_bp_widest.scss */
+/* line 63, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container {
   position: absolute;
   top: 0;
@@ -456,7 +570,7 @@ html.lt-ie9 html .region-banner #banner-container {
   padding: 0;
   width: 100%;
 }
-/* line 16, ../sass/_bp_widest.scss */
+/* line 70, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner {
   overflow: auto;
   position: relative;
@@ -467,26 +581,29 @@ html.lt-ie9 html .region-banner #banner-container #banner {
   /*
   */
 }
-/* line 26, ../sass/_bp_widest.scss */
+/* line 80, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul {
   margin: 0;
   padding: 0;
   /*
   */
 }
-/* line 31, ../sass/_bp_widest.scss */
+/* line 85, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li {
   float: left;
   list-style: none;
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 36, ../sass/_bp_widest.scss */
+/* line 90, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide {
   width: 100%;
   height: 500px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 39, ../sass/_bp_widest.scss */
+/* line 96, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content {
   /**/
   display: block;
@@ -509,11 +626,11 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide di
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 60, ../sass/_bp_widest.scss */
+/* line 117, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content:hover {
   background-color: rgba(153, 153, 153, 0.85);
 }
-/* line 63, ../sass/_bp_widest.scss */
+/* line 120, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content h2 {
   /**/
   font-size: 1.5em;
@@ -521,72 +638,81 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide di
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 70, ../sass/_bp_widest.scss */
+/* line 127, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content p {
   color: white;
   margin: 0;
 }
-/* line 74, ../sass/_bp_widest.scss */
+/* line 131, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link, html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited {
   color: white;
-  font-size: 0.85em;
   text-transform: uppercase;
   padding-top: 10px;
 }
-/* line 79, ../sass/_bp_widest.scss */
+/* line 136, ../sass/_bp_widest.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:link:after, html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content a:visited:after {
   content: " \203A";
 }
-/* line 84, ../sass/_bp_widest.scss */
-html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline * {
-  display: inline;
+/* line 140, ../sass/_bp_widest.scss */
+html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline {
+  padding: 0 0 0 5px;
 }
-/* line 95, ../sass/_bp_widest.scss */
+/* line 142, ../sass/_bp_widest.scss */
+html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline h2, html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline div, html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline p, html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide div.adm-slide-content.inline a {
+  font-size: 0.9em;
+  display: inline;
+  padding: 0;
+}
+/* line 155, ../sass/_bp_widest.scss */
 html.lt-ie9 html #header {
   background: url(../images/W_only_CMYK.png);
-  background-size: 257px 160px;
-  background-position: bottom 6px right 10px;
+  background-size: 297px 200px;
+  background-position: bottom 0px right 10px;
   background-repeat: no-repeat;
-  height: 486px;
+  height: 500px;
   padding: 0;
   margin: 0;
   position: relative;
   z-index: 1;
 }
-/* line 107, ../sass/_bp_widest.scss */
+/* line 167, ../sass/_bp_widest.scss */
 html.lt-ie9 html #header h1 {
   text-shadow: 1px 1px 1px black;
   margin-bottom: 0;
 }
-/* line 111, ../sass/_bp_widest.scss */
+/* line 171, ../sass/_bp_widest.scss */
 html.lt-ie9 html #header .block {
   margin-bottom: 0;
 }
-/* line 116, ../sass/_bp_widest.scss */
+/* line 176, ../sass/_bp_widest.scss */
 html.lt-ie9 html #main {
   padding-top: 0px;
   /*  */
   border-top: 20px solid #4b2e84;
 }
-/* line 121, ../sass/_bp_widest.scss */
+/* line 181, ../sass/_bp_widest.scss */
 html.lt-ie9 html #main #content {
   background-color: white;
 }
-/* line 129, ../sass/_bp_widest.scss */
+/* line 189, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation {
+  position: absolute;
   width: 100%;
   top: 90px;
+  left: 0px;
   z-index: 1;
   background-color: #4b2e84;
   height: 50px;
   /* The overall height of the main purple menu */
   /* Setting heights on the menu elements allows for vertical centering */
 }
-/* line 135, ../sass/_bp_widest.scss */
+/* line 197, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region-navigation {
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 145, ../sass/_bp_widest.scss */
+/* line 209, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region,
 html.lt-ie9 html #navigation li,
 html.lt-ie9 html #navigation .outerContainer,
@@ -596,7 +722,7 @@ html.lt-ie9 html #navigation .block-menu-block,
 html.lt-ie9 html #navigation .menu {
   height: 100%;
 }
-/* line 150, ../sass/_bp_widest.scss */
+/* line 214, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region #block-search-form {
   position: absolute;
   top: 10px;
@@ -604,7 +730,7 @@ html.lt-ie9 html #navigation .region #block-search-form {
   right: 10px;
   width: 150px;
 }
-/* line 155, ../sass/_bp_widest.scss */
+/* line 219, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region #block-search-form #edit-submit {
   background: url(../images/search-icon-large.png);
   background-repeat: no-repeat;
@@ -618,28 +744,28 @@ html.lt-ie9 html #navigation .region #block-search-form #edit-submit {
   overflow: hidden;
   border: none;
 }
-/* line 168, ../sass/_bp_widest.scss */
+/* line 232, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region #block-search-form input[type="text"] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 175, ../sass/_bp_widest.scss */
+/* line 239, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li {
   vertical-align: middle;
   /* The flyout menu items */
 }
-/* line 177, ../sass/_bp_widest.scss */
+/* line 241, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer {
   display: table;
 }
-/* line 179, ../sass/_bp_widest.scss */
+/* line 243, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer {
   /* We hover on the innerContainer */
   display: table-cell;
   vertical-align: middle;
 }
-/* line 182, ../sass/_bp_widest.scss */
+/* line 246, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:link, html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:visited {
   color: white;
   text-transform: uppercase;
@@ -649,7 +775,7 @@ html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 190, ../sass/_bp_widest.scss */
+/* line 254, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:link:after, html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:visited:after {
   content: "";
   width: 8px;
@@ -659,20 +785,20 @@ html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer a:
   position: absolute;
   margin-left: 12px;
 }
-/* line 200, ../sass/_bp_widest.scss */
+/* line 264, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover {
   /* We hover on the .innerContainer */
 }
-/* line 202, ../sass/_bp_widest.scss */
+/* line 266, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:link, html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover > .element a:visited {
   color: #e8e3d3;
 }
-/* line 206, ../sass/_bp_widest.scss */
+/* line 270, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .outerContainer .innerContainer:hover .menu {
   visibility: visible;
   opacity: 1;
 }
-/* line 214, ../sass/_bp_widest.scss */
+/* line 278, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu {
   border-top: 11px solid #4b2e84;
   background-color: #b7a57a;
@@ -689,31 +815,31 @@ html.lt-ie9 html #navigation .region .menu li .menu {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-/* line 229, ../sass/_bp_widest.scss */
+/* line 293, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu li {
   padding: 0px;
   float: none;
   background-color: #b7a57a;
 }
-/* line 236, ../sass/_bp_widest.scss */
+/* line 300, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:link, html.lt-ie9 html #navigation .region .menu li .menu li .outerContainer .innerContainer .element a:visited {
   color: white;
   padding-left: 5px;
 }
-/* line 247, ../sass/_bp_widest.scss */
+/* line 311, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li.first .outerContainer .innerContainer a:link, html.lt-ie9 html #navigation .region .menu li.first .outerContainer .innerContainer a:visited {
   margin-left: 0;
 }
-/* line 251, ../sass/_bp_widest.scss */
+/* line 315, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li.last .outerContainer .innerContainer {
   /* Don't put a slash on the last item */
 }
-/* line 254, ../sass/_bp_widest.scss */
+/* line 318, ../sass/_bp_widest.scss */
 html.lt-ie9 html #navigation .region .menu li.last .outerContainer .innerContainer a:link:after, html.lt-ie9 html #navigation .region .menu li.last .outerContainer .innerContainer a:visited:after {
   width: 0px;
   /* This hides the slash */
 }
-/* line 264, ../sass/_bp_widest.scss */
+/* line 328, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-block {
   background-color: white;
   padding: 10px;
@@ -721,27 +847,27 @@ html.lt-ie9 html .adm-home-block {
   height: 5em;
   margin-bottom: 1em;
 }
-/* line 270, ../sass/_bp_widest.scss */
+/* line 334, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-block h2 {
   margin: 0;
   font-family: encode_sans_normal_light;
   line-height: 1.25em;
 }
-/* line 274, ../sass/_bp_widest.scss */
+/* line 338, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-block h2 a:link, html.lt-ie9 html .adm-home-block h2 a:visited {
   color: #4b2e84;
 }
-/* line 282, ../sass/_bp_widest.scss */
+/* line 346, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-btn-pane ul {
   padding-left: 0;
   margin-top: 0;
 }
-/* line 285, ../sass/_bp_widest.scss */
+/* line 349, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-btn-pane ul li {
   width: 100%;
   max-width: 100%;
 }
-/* line 288, ../sass/_bp_widest.scss */
+/* line 352, ../sass/_bp_widest.scss */
 html.lt-ie9 html .adm-home-btn-pane ul li .uw-btn {
   margin-right: 0;
   width: 80%;

@@ -4,6 +4,60 @@
     background-color: $purple;
   }
 
+
+
+  #search{
+    position: relative;
+    left: 0;
+    top: -150px; // Initial value. Changes to 0 by script.
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    height: 0px; // Initial value. Changes to 150px by script.
+    background-color: $grey_dark;
+    margin-left: auto;
+    margin-right: auto;
+    border: none; // Initial value. Changes by script.
+
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    form{
+      color: $grey_dark;
+    }
+    &.show-search{
+      top:0px;
+      height:150px;
+      border-style: solid;
+      border-color: $gold;
+      border-width: 2px;
+      border-top-width: 0px;
+      -webkit-border-bottom-right-radius: 3px;
+      -webkit-border-bottom-left-radius: 3px;
+      -moz-border-radius-bottomright: 3px;
+      -moz-border-radius-bottomleft: 3px;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+
+
+  #page{
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    &.show-search{
+      position:relative;
+      top: 150px;
+    }
+  }
+
+
   .region-banner{
     .block{margin-bottom:0;}
     #banner-container{
@@ -29,13 +83,16 @@
           /*
           */
           li{ // li has the background image
-            float:left;
-            list-style:none;
+            float: left;
+            list-style: none;
             background-repeat: no-repeat;
             background-size: cover;
             div.adm-slide{
-              width:100%;
-              height:500px;
+              width: 100%;
+              height: 500px;
+              max-width: 1200px;
+              margin-left: auto;
+              margin-right: auto;
               div.adm-slide-content{
                 /**/
                 display: block;
@@ -73,7 +130,7 @@
                 }
                 a:link,a:visited{
                   color:white;
-                  font-size:0.85em;
+
                   text-transform: uppercase;
                   padding-top:10px;
                   &:after{
@@ -81,8 +138,11 @@
                   }
                 }
                 &.inline{
-                  *{
+                  padding:0 0 0 5px;
+                  h2,div,p,a{
+                    font-size:0.9em;
                     display:inline;
+                    padding: 0;
                   }
                 }
               }
@@ -95,10 +155,10 @@
   #header{
     // Adding the large block-W
     background: url(../images/W_only_CMYK.png);
-    background-size: 257px 160px;
-    background-position: bottom 6px right 10px;
+    background-size: 297px 200px;
+    background-position: bottom 0px right 10px;
     background-repeat: no-repeat;
-    height:486px;
+    height:500px; // Matches height of sliding images
 
     padding:0;
     margin:0;
@@ -127,13 +187,17 @@
   }
 
   #navigation{
+    position: absolute;
     width:100%;
     top:90px;
+    left: 0px;
     z-index:1;
     background-color:$purple;
     height: 50px; /* The overall height of the main purple menu */
     .region-navigation{
       max-width:1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
     /* Setting heights on the menu elements allows for vertical centering */
     .region,
