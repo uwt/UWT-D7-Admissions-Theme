@@ -1987,7 +1987,7 @@ html.lt-ie9 html {
     position: fixed;
     left: 0;
     top: -150px;
-    z-index: 2;
+    z-index: 3;
     max-width: 1200px;
     width: 100%;
     height: 0px;
@@ -2110,7 +2110,7 @@ html.lt-ie9 html {
     /**/
     display: block;
     position: relative;
-    z-index: 10;
+    z-index: 2;
     max-width: 33%;
     max-height: 85%;
     height: 250px;
@@ -2409,7 +2409,7 @@ html.lt-ie9 html #search {
   position: fixed;
   left: 0;
   top: -150px;
-  z-index: 2;
+  z-index: 3;
   max-width: 1200px;
   width: 100%;
   height: 0px;
@@ -2532,7 +2532,7 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li div.adm-slide di
   /**/
   display: block;
   position: relative;
-  z-index: 10;
+  z-index: 2;
   max-width: 33%;
   max-height: 85%;
   height: 250px;
