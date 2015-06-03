@@ -67,7 +67,7 @@
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
         var mainTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
-        if( $(window).width() >= 975){
+        if( $(window).width() >= 725){
 
           var wh = $(window).height(); // Window Height
 
