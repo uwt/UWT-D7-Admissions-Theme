@@ -176,7 +176,7 @@
             $(".adm-slide-content")
             .css({
               height: ascHeight,
-              left: '20px',
+              left: '10px',
               top: ascTop
             })
             .removeClass('inline') ;
