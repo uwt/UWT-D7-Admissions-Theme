@@ -74,14 +74,15 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
   drupal_add_js(drupal_get_path('theme', 'uwtadmissions') . '/js/unslider.min.js', 'file');
 
   // Adding meta tag
-  $meta_width = array(
+  $meta_viewport = array(
       '#type' => 'html_tag',
       '#tag' => 'meta',
       '#attributes' => array(
+          'name' => 'viewport',
           'content' => 'width=device-width,initial-scale=1',
       ),
   );
-  drupal_add_html_head($meta_width, 'meta_width');
+  drupal_add_html_head($meta_viewport, 'meta_viewport');
 }
 
 /**
