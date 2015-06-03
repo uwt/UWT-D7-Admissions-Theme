@@ -66,7 +66,7 @@
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
-        var mainTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
+        var mainTop, ascTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
         if( $(window).width() >= 725){
 
           var wh = $(window).height(); // Window Height
@@ -116,7 +116,7 @@
             var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
 
             var headerHeight = $("#header").outerHeight();
-            var ascTop = headerHeight - scSizeHeightOrig;
+            ascTop = headerHeight - scSizeHeightOrig;
             
 
             //console.log("verticalDiff", verticalDiff);
@@ -139,8 +139,8 @@
             });
 
 
-            // end medium-tall screens
-           // console.log("Medium Screen portion END");
+          // end medium-tall screens
+          // console.log("Medium Screen portion END");
             
           /*
              * TALL SCREENS BEGIN
@@ -165,7 +165,7 @@
             ascVertPadding = 40;
 
 
-            var ascTop = navBottom + (ascVertPadding * 0.5);
+            ascTop = navBottom + (ascVertPadding * 0.5);
 
             //console.log("navBottom", navBottom);
             //console.log("ascVertPadding",ascVertPadding);
@@ -180,7 +180,7 @@
               top: ascTop
             })
             .removeClass('inline') ;
-           // console.log("Tall Screen portion END");
+          // console.log("Tall Screen portion END");
 
           /*
              * SHORT SCREENS BEGIN
@@ -193,7 +193,7 @@
               //       'margin-top':0,
               //       'border-top':0
               });
-            //console.log("Short Screen portion END");
+          //console.log("Short Screen portion END");
           }
         }
       } // end of foldWork
