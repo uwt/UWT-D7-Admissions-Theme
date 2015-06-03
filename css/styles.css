@@ -2219,7 +2219,7 @@ html.lt-ie9 html #main {
     width: 100%;
     top: 90px;
     left: 0px;
-    z-index: 1;
+    z-index: 2;
     background-color: #4b2e84;
     height: 50px;
     /* The overall height of the main purple menu */
@@ -2641,7 +2641,7 @@ html.lt-ie9 html #navigation {
   width: 100%;
   top: 90px;
   left: 0px;
-  z-index: 1;
+  z-index: 2;
   background-color: #4b2e84;
   height: 50px;
   /* The overall height of the main purple menu */
