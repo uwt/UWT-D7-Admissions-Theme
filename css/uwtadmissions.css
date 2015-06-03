@@ -29,21 +29,21 @@ Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
     background-size: 100% 25%;
     background-repeat: no-repeat;
   }
-  /* line 19, ../sass/_bp_extra_narrow.scss */
-  html body #header {
+  /* line 23, ../sass/_bp_extra_narrow.scss */
+  html body #page #header {
     margin: 0 0;
     width: 100%;
     background-color: #4b2e84;
   }
-  /* line 23, ../sass/_bp_extra_narrow.scss */
-  html body #header h1 {
-    font-size: 0.9em;
-  }
-  /* line 31, ../sass/_bp_extra_narrow.scss */
-  html body #main #page-title {
+  /* line 27, ../sass/_bp_extra_narrow.scss */
+  html body #page #header h1 {
     font-size: 0.9em;
   }
   /* line 39, ../sass/_bp_extra_narrow.scss */
+  html body #page #main #page-title {
+    font-size: 0.9em;
+  }
+  /* line 49, ../sass/_bp_extra_narrow.scss */
   html body #main {
     background-color: #50C878;
   }
@@ -63,21 +63,21 @@ html.lt-ie9 html body #banner-container #banner ul li {
   background-size: 100% 25%;
   background-repeat: no-repeat;
 }
-/* line 19, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html body #header {
+/* line 23, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html body #page #header {
   margin: 0 0;
   width: 100%;
   background-color: #4b2e84;
 }
-/* line 23, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html body #header h1 {
-  font-size: 0.9em;
-}
-/* line 31, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html body #main #page-title {
+/* line 27, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html body #page #header h1 {
   font-size: 0.9em;
 }
 /* line 39, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html body #page #main #page-title {
+  font-size: 0.9em;
+}
+/* line 49, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html body #main {
   background-color: #50C878;
 }
@@ -108,12 +108,20 @@ html.lt-ie9 html {
     ******************************* DEBUGGING ***********************************
     *******************************************************************************/
   }
+  /* line 7, ../sass/_bp_medium.scss */
+  html #main {
+    background-color: maroon;
+  }
 }
 /* line 184, ../sass/_base.scss */
 html.lt-ie9 html {
   /*******************************************************************************
   ******************************* DEBUGGING ***********************************
   *******************************************************************************/
+}
+/* line 7, ../sass/_bp_medium.scss */
+html.lt-ie9 html #main {
+  background-color: maroon;
 }
 
 /******************************************************************************/

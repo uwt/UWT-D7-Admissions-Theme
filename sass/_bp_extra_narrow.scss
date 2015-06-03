@@ -16,21 +16,31 @@
       }
     }
 
-    #header{
-      margin:0 0;
-      width:100%;
-      background-color:$purple;
-      h1{
-        font-size: 0.9em;
+
+    #page{
+      .region-banner{
+      }
+      #header{
+        margin:0 0;
+        width:100%;
+        background-color:$purple;
+        h1{
+          font-size: 0.9em;
+
+        }
 
       }
 
-    }
+      #navigation{
 
-    #main{
-      #page-title{
-        font-size:0.9em;
       }
+
+      #main{
+        #page-title{
+          font-size:0.9em;
+        }
+      }
+
     }
 
     /*******************************************************************************

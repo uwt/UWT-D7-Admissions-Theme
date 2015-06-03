@@ -72,6 +72,16 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
   drupal_add_css('//uw.edu/assets/uw.css', 'external');
   //drupal_add_css(drupal_get_path('theme', 'uwtadmissions') . '/css/uw.css', 'file');
   drupal_add_js(drupal_get_path('theme', 'uwtadmissions') . '/js/unslider.min.js', 'file');
+
+  // Adding meta tag
+  $meta_width = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+          'content' => 'width=device-width,initial-scale=1',
+      ),
+  );
+  drupal_add_html_head($meta_width, 'meta_width');
 }
 
 /**
