@@ -23,9 +23,9 @@
       var searchForm = $("#search form .container-inline");
       // Add a cute icon at the end of the menu
       var menu = $("#navigation .menu-block-wrapper > .menu");
-      console.log("settings", settings);
+      //console.log("settings", settings);
       var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
-      console.log("themeImages", themeImages);
+      //console.log("themeImages", themeImages);
       // Create the menu open button
       var menuOpenListItem = $("<li>",{
         width:"50px"
@@ -72,7 +72,7 @@
           var wh = $(window).height(); // Window Height
 
           if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
-            console.log("Medium Screen portion BEGIN");
+            //console.log("Medium Screen portion BEGIN");
             //console.log("window height", wh);
 
 
@@ -140,14 +140,14 @@
 
 
             // end medium-tall screens
-            console.log("Medium Screen portion END");
+           // console.log("Medium Screen portion END");
             
           /*
              * TALL SCREENS BEGIN
              */
           }else if(wh >= 600){  // Tall screens, use default margin top
 
-            console.log("Tall Screen portion BEGIN");
+            //console.log("Tall Screen portion BEGIN");
             //console.log("headerHeight", headerHeight);
             //console.log("scHeight", scHeight);
             //console.log("scSizeHeightOrig", scSizeHeightOrig);
@@ -167,11 +167,11 @@
 
             var ascTop = navBottom + (ascVertPadding * 0.5);
 
-            console.log("navBottom", navBottom);
-            console.log("ascVertPadding",ascVertPadding);
-            console.log("ascTop", ascTop);
+            //console.log("navBottom", navBottom);
+            //console.log("ascVertPadding",ascVertPadding);
+            //console.log("ascTop", ascTop);
             
-            console.log("verticalDiff", verticalDiff);
+            //console.log("verticalDiff", verticalDiff);
            
             $(".adm-slide-content")
             .css({
@@ -180,20 +180,20 @@
               top: ascTop
             })
             .removeClass('inline') ;
-            console.log("Tall Screen portion END");
+           // console.log("Tall Screen portion END");
 
           /*
              * SHORT SCREENS BEGIN
              */
 
           }else{// Short screens, use no margin top
-            console.log("Short Screen portion BEGIN");
+            //console.log("Short Screen portion BEGIN");
             //console.log("#content MARGIN-TOP, BORDER-TOP BEING SET");
             $("#content").css({
               //       'margin-top':0,
               //       'border-top':0
               });
-            console.log("Short Screen portion END");
+            //console.log("Short Screen portion END");
           }
         }
       } // end of foldWork
