@@ -1,55 +1,102 @@
 @include extra_narrow{
 
+  #search{
+    position:fixed;
+    top:-150px;
+    left:0;
+    width:100%;
+    height:150px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    &.show-search{
+      top:0px;
+    }
+  }
 
-  body{
-    #block-uwtfeatureslider-uwtfeatureslider{
+  #header{
+    position:absolute;
+    top:0;
+    left:0;
+    height:60px;
+    width:100%;
+    background-color:black;
+    h1{
+      font-size:1.1em;
+    }
+  }
+
+  #navigation{
+    position:absolute;
+    top:60px;
+    left:0;
+    height:30px;
+    width:100%;
+    padding:0;
+    background-color:$purple;
+    ul{
+      li{
+        display:none;
+        ul{
+          display:none;
+        }
+      }
+    }
+  }
+  .region-banner{
+    position:absolute;
+    top:90px;
+    .block{
       margin-bottom:0;
     }
     #banner-container{
+      position:absolute;
+      top:0;
+      left:0;
+      margin:0;
+      padding:0;
+      width:100%;
       #banner{
+        overflow:auto;
+        position:relative;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
         ul{
+          margin:0;
+          padding:0;
           li{
-            background-size:100% 25%;
+            height:150px;
+            float: left;
+            list-style: none;
             background-repeat: no-repeat;
+            background-size: cover;
           }
         }
       }
     }
-
-
-    #page{
-      .region-banner{
-      }
-      #header{
-        margin:0 0;
-        width:100%;
-        background-color:$purple;
-        h1{
-          font-size: 0.9em;
-
-        }
-
-      }
-
-      #navigation{
-
-      }
-
-      #main{
-        #page-title{
-          font-size:0.9em;
-        }
-      }
-
-    }
-
-    /*******************************************************************************
-    ****************************** DEBUGGING ************************************
-    *******************************************************************************/
-    #main{
-      background-color:#50C878; // Extra Narrow = Emerald
-    }
-
-    ///////////// End @include extra_narrow
   }
+  #main{
+    position:absolute;
+    top:260px;
+    left:0;
+    #content{
+      #page-title{
+        display:none;
+      }
+    }
+  }
+
+  /*******************************************************************************
+  ****************************** DEBUGGING ************************************
+  *******************************************************************************/
+  body{
+    background-color:#50C878; // Extra Narrow = Emerald
+  }
+
+  ///////////// End @include extra_narrow
+
 } ///////////////////////////////////////

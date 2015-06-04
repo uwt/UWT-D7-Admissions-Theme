@@ -18,39 +18,45 @@
   // Move the search form into the navigation for easier styling
   Drupal.behaviors.searchFormMods = {
     attach: function(context, settings) {
-    
-      var searchRegion = $("#search");
-      var searchForm = $("#search form .container-inline");
-      // Add a cute icon at the end of the menu
-      var menu = $("#navigation .menu-block-wrapper > .menu");
-      //console.log("settings", settings);
-      var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
-      //console.log("themeImages", themeImages);
-      // Create the menu open button
-      var menuOpenListItem = $("<li>",{
-        width:"50px"
-      });
-      var menuOpenImg = $("<img />",
-      {
-        "src": themeImages + "/search-icon-large.png",
-        "class": "search-toggle open"
-      });
-      menuOpenListItem.append(menuOpenImg);
-      // Create the menu close button
-      var menuCloseIcon = $("<img />",
-      {
-        "src": themeImages + "/search-icon-close.png",
-        "class": "search-toggle close"
-      });
 
-      // Append the buttons to the elements
-      menu.append(menuOpenListItem);
-      searchForm.append(menuCloseIcon);
+        var searchRegion = $("#search");
+        var searchForm = $("#search form .container-inline");
+        // Add a cute icon at the end of the menu
+        var menu = $("#navigation .menu-block-wrapper > .menu");
+        //console.log("settings", settings);
+        var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
+        //console.log("themeImages", themeImages);
+        // Create the menu open button
+        var searchOpenListItem = $("<li>",{
+          width: "25px"
+        });
+        searchOpenListItem.css({
+          "padding-right": "0px"
+        });
+        var menuOpenImg = $("<img />",
+        {
+          "src": themeImages + "/search-icon-large.png",
+          "class": "search-toggle open"
+        });
+        searchOpenListItem.append(menuOpenImg);
+        // Create the menu close button
+        var menuCloseIcon = $("<img />",
+        {
+          "src": themeImages + "/search-icon-close.png",
+          "class": "search-toggle close"
+        });
+
+        // Append the buttons to the elements
+        menu.append(searchOpenListItem);
+        searchForm.append(menuCloseIcon);
       
-      // Event handler to show/hide the search region
-      $(".search-toggle").click(function(){
-        searchRegion.toggleClass("show-search");
-      });
+        // Event handler to show/hide the search region
+        $(".search-toggle").click(function(){
+          searchRegion.toggleClass("show-search");
+        });
+
+
+
 
     } // end of attach
   };
@@ -67,12 +73,14 @@
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
         var mainTop, ascTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
-        if( $(window).width() >= 725){
+        var wiw = window.innerWidth;
+        
+        if(wiw >= 411){
 
           var wh = $(window).height(); // Window Height
 
           if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
-            //console.log("Medium Screen portion BEGIN");
+            console.log("Medium-tall screen portion BEGIN");
             //console.log("window height", wh);
 
 
@@ -139,18 +147,16 @@
             });
 
 
-          // end medium-tall screens
-          // console.log("Medium Screen portion END");
+            // end medium-tall screens
+            console.log("Medium-tall screen portion END");
             
           /*
              * TALL SCREENS BEGIN
              */
           }else if(wh >= 600){  // Tall screens, use default margin top
 
-            //console.log("Tall Screen portion BEGIN");
-            //console.log("headerHeight", headerHeight);
-            //console.log("scHeight", scHeight);
-            //console.log("scSizeHeightOrig", scSizeHeightOrig);
+            console.log("Tall-screen portion BEGIN");
+            //console.log("wiw", wiw)
 
             $("#header").css({
               height: '500px' // 500 is what we set originally in the CSS
@@ -180,7 +186,7 @@
               top: ascTop
             })
             .removeClass('inline') ;
-          // console.log("Tall Screen portion END");
+            console.log("Tall-screen portion END");
 
           /*
              * SHORT SCREENS BEGIN
@@ -209,12 +215,19 @@
   Drupal.behaviors.bannerSlider = {
     attach: function(context, settings) {
 
-      $('#banner').unslider({
-        speed : 2500,
-        delay : 10000,
-        dots : false,
-        flud : true
-      });
+      function applyUnSlider(){
+        var wiw = window.innerWidth;
+        $('#banner')
+        .width(wiw)
+        .unslider({
+          speed : 2500,
+          delay : 10000,
+          dots : false,
+          flud : true
+        });
+      }
+      $(window).resize(applyUnSlider);
+      applyUnSlider();
     } // end of attach
   }; // end of bannerSlider
 

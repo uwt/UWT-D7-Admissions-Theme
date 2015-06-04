@@ -123,7 +123,7 @@ $indent-amount: 30px;
 @mixin breakpoint($point) {
 
   @if $point == extra_narrow{
-    @media only screen and (min-width: 0px) and (max-width: 410px){
+    @media only screen and (min-width: 0px) and (max-width:410px) {
       $zen-column-count: 1;
       $zen-gutter-width: 10px;
       @content;
@@ -131,13 +131,15 @@ $indent-amount: 30px;
   }
 
   @if $point == narrow {
-    @media only screen and (max-width: 724px) {
+    @media only screen and (min-width: 411px) {
       $zen-column-count: 1;
       $zen-gutter-width: 10px;
       @content;
     }
   }
-
+  /*
+  * Medium has most of the goods.  Widest just adds a bit.
+  */
   @if $point == medium {
     @media only screen and (min-width: 725px) {
       $zen-column-count: 40;
