@@ -233,10 +233,40 @@
     z-index:2;
     background-color:$purple;
     height: 50px; /* The overall height of the main purple menu */
+
     .region-navigation{
       max-width:1200px;
       margin-left: auto;
       margin-right: auto;
+
+      // This is where we change the nav to mobile
+      &.mobilize{
+        -webkit-transition: all 0.75s ease;
+        -moz-transition: all 0.75s ease;
+        -ms-transition: all 0.75s ease;
+        -o-transition: all 0.75s ease;
+        transition: all 0.75s ease;
+        position:absolute;
+        &.hidden{
+          left:100%;
+        }
+        &.shown{
+          left:0%;
+          height:200px;
+          background-color:$purple;
+        }
+        ul{
+          li{
+          }
+        }
+      }
+    }
+    #nav-show-icon{
+      width: 100px;
+      &:hover{
+        cursor: pointer;
+        color: $gold;
+      }
     }
     /* Setting heights on the menu elements allows for vertical centering */
     .region,
@@ -372,6 +402,7 @@
         }
       }
     }
+
   }
 
   //Admissions homepage blocks

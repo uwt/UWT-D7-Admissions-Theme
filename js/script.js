@@ -12,52 +12,97 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
+  
 
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
 
-  // Move the search form into the navigation for easier styling
+  // Move the search form into the navigation for easier styling, (easier, yeah right)
   Drupal.behaviors.searchFormMods = {
     attach: function(context, settings) {
 
-        var searchRegion = $("#search");
-        var searchForm = $("#search form .container-inline");
-        // Add a cute icon at the end of the menu
-        var menu = $("#navigation .menu-block-wrapper > .menu");
-        //console.log("settings", settings);
-        var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
-        //console.log("themeImages", themeImages);
-        // Create the menu open button
-        var searchOpenListItem = $("<li>",{
-          width: "25px"
-        });
-        searchOpenListItem.css({
-          "padding-right": "0px"
-        });
-        var menuOpenImg = $("<img />",
-        {
-          "src": themeImages + "/search-icon-large.png",
-          "class": "search-toggle open"
-        });
-        searchOpenListItem.append(menuOpenImg);
-        // Create the menu close button
-        var menuCloseIcon = $("<img />",
-        {
-          "src": themeImages + "/search-icon-close.png",
-          "class": "search-toggle close"
-        });
 
-        // Append the buttons to the elements
-        menu.append(searchOpenListItem);
-        searchForm.append(menuCloseIcon);
+      var searchRegion = $("#search");
+      var searchForm = $("#search form .container-inline");
+      // Add a cute icon at the end of the menu
+      var menu = $("#navigation .menu-block-wrapper > .menu");
+      //console.log("settings", settings);
+      var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
+      //console.log("themeImages", themeImages);
+      // Create the menu open button
+      var searchOpenListItem = $("<li>",{
+        width: "25px",
+        id: "searchOpen"
+      });
+      searchOpenListItem.css({
+        "padding-right": "0px"
+      });
+      var menuOpenImg = $("<img />",
+      {
+        "src": themeImages + "/search-icon-large.png",
+        "class": "search-toggle open"
+      });
+      searchOpenListItem.append(menuOpenImg);
+      // Create the menu close button
+      var menuCloseIcon = $("<img />",
+      {
+        "src": themeImages + "/search-icon-close.png",
+        "class": "search-toggle close"
+      });
+
+      // Append the buttons to the elements
+      menu.append(searchOpenListItem);
+      searchForm.append(menuCloseIcon);
       
-        // Event handler to show/hide the search region
-        $(".search-toggle").click(function(){
-          searchRegion.toggleClass("show-search");
+      // Event handler to show/hide the search region
+      $(".search-toggle").click(function(){
+        searchRegion.toggleClass("show-search");
+      });
+
+
+
+
+    } // end of attach
+  };
+
+  // Modify the navigation menu styles.
+  // Essentially, when the window gets too narrow for normal navigation, apply a
+  // class to the navigation that will turn it mobiley.
+  Drupal.behaviors.searchNavMods = {
+    attach: function(context, settings) {
+
+      function applyNavMods(){
+        //console.log("applying NavMods...yay");
+        // Get the top level .menu only
+        var navMenu = $("#navigation .region-navigation .menu-block-wrapper > .menu");
+        // Get the list items of the top level .menu
+        var navMenuItems = $("#navigation .region-navigation .menu-block-wrapper > .menu > li");
+        // Get the width of the top level .menu
+        var navMenuWidth = navMenu.outerWidth();
+        console.log("navMenuWidth", navMenuWidth);
+        // Try to calculate the total width of all the menu items
+        var navMenuItemsWidth = 0;
+        console.log("PRE navMenuItemsWidth", navMenuItemsWidth);
+
+        navMenuItems.each(function(){
+          //console.log("this.text()", $(this).text());
+          //console.log("this outerWidth()", $(this).outerWidth());
+          navMenuItemsWidth += $(this).outerWidth();
+
         });
+        console.log("POST navMenuItemsWidth", navMenuItemsWidth);
+
+        if(navMenuItemsWidth > navMenuWidth){
+          console.log("Menu items are wider than menu. WRAPPING!!!");
+        }else{
+          console.log("Menu is wider than menu items. No wrapping");
+        }
+
+      }
 
 
 
-
+      $(window).resize(applyNavMods);
+      applyNavMods();
     } // end of attach
   };
 
