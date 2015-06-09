@@ -193,6 +193,9 @@
     h1{
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
       margin-bottom:0;
+      // To account for the "Menu & Search" button on narrow
+      margin-right: 160px; // <-- equals the outer width of #nav-opener
+      font-size: 1.75em;
     }
     .block{
       margin-bottom:0;
@@ -225,185 +228,84 @@
 
   }
 
-  #navigation{
-    position: absolute;
-    width:100%;
-    top:90px;
-    left: 0px;
-    z-index:2;
-    background-color:$purple;
-    height: 50px; /* The overall height of the main purple menu */
-
-    .region-navigation{
-      max-width:1200px;
-      margin-left: auto;
-      margin-right: auto;
-
-      // This is where we change the nav to mobile
-      &.mobilize{
-        -webkit-transition: all 0.75s ease;
-        -moz-transition: all 0.75s ease;
-        -ms-transition: all 0.75s ease;
-        -o-transition: all 0.75s ease;
-        transition: all 0.75s ease;
-        position:absolute;
-        &.hidden{
-          left:100%;
-        }
-        &.shown{
-          left:0%;
-          height:200px;
-          background-color:$purple;
-        }
-        ul{
-          li{
-          }
-        }
-      }
-    }
-    #nav-show-icon{
-      width: 100px;
-      &:hover{
-        cursor: pointer;
-        color: $gold;
-      }
-    }
-    /* Setting heights on the menu elements allows for vertical centering */
-    .region,
-    li,
-    .outerContainer,
-    .innerContainer,
-    .menu-block-wrapper,
-    .block-menu-block,
+  #navigation.mobilized{
+    padding:0;
     .menu{
-      height:100%;
-    }
 
-    .region{
-      #block-search-form{
-        position: absolute;
-        top: 10px; /* This vertically aligns the search form...might be too hard-codey though... */
-        right: 10px;
-        width: 150px;
-        #edit-submit{
-          background: url(../images/search-icon-large.png);
-          background-repeat: no-repeat;
-          background-size: 20px 20px;
-          width: 20px;
-          height: 20px;
-          position:absolute;
-          top: 5px;
-          right: 5px;
-          text-indent:-999px;
-          overflow:hidden;
-          border:none;
-        }
-        input[type="text"]{
-          -webkit-border-radius: 5px;
-          -moz-border-radius: 5px;
-          border-radius: 5px;
-        }
+      li{
+        padding-left: 10px;
+        width:100%;
+        height: 50px;
+        background-color: $gold;
+        color: $purple;
       }
       .menu{
-        li{
-          vertical-align: middle;
-          .outerContainer{
-            display: table;
-            .innerContainer{ /* We hover on the innerContainer */
-              display: table-cell;
-              vertical-align: middle;
-              a:link,a:visited{
-                color: white;
-                text-transform: uppercase;
-                font-family: encode_sans_normal_bold;
-                font-size: 0.75em;
-                text-decoration: none;
-                margin-left:10px;
-                margin-right:10px;
-                &:after{
-                  content: "";
-                  width: 8px;
-                  height: 20px;
-                  top: 16px;
-                  background: url('../images/slash.svg') no-repeat;
-                  position: absolute;
-                  margin-left:12px;
-                }
-              }
-              &:hover {/* We hover on the .innerContainer */
-                > .element{
-                  a:link,a:visited{
-                    color:$gold;
-                  }
-                }
-                .menu {
-                  visibility: visible;
-                  opacity: 1;
-                }
-              }
-            }
-          }
-          /* The flyout menu items */
-          .menu{
-            border-top:11px solid $purple;
-            background-color: $gold_metallic;
-            position: absolute;
-            opacity:0;
-            visibility:hidden;
-            -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
-            -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
-            -o-transition:  visibility 0.2s linear, opacity 0.2s linear;
-            -webkit-border-bottom-right-radius: 3px;
-            -webkit-border-bottom-left-radius: 3px;
-            -moz-border-radius-bottomright: 3px;
-            -moz-border-radius-bottomleft: 3px;
-            border-bottom-right-radius: 3px;
-            border-bottom-left-radius: 3px;
-            li{
-              padding:0px;
-              float:none;
-              background-color: $gold_metallic;
-              .outerContainer{
-                .innerContainer{
-                  .element{
-                    a:link,a:visited{
-                      color:white;
-                      padding-left:5px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        li.first .outerContainer .innerContainer{
-          a:link,a:visited{
-            margin-left:0;
-          }
-        }
-        li.last .outerContainer .innerContainer{ /* Don't put a slash on the last item */
-          a:link,a:visited{
-            //background-color:blue;
-            &:after{
-              width:0px; /* This hides the slash */
-            }
-          }
-        }
-
+        visibility:hidden;
       }
     }
-    .search-toggle{
-      &.open{
+
+    /* */
+    position: fixed;
+    width:50%;
+    right:-50%;
+    height: 100%;
+    top: 0;
+    background-color: $purple;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    &.show-nav{
+      z-index:2;
+      right:0%;
+      -webkit-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
+      -moz-box-shadow:    -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
+      box-shadow:         -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    }
+    #nav-closer{
+      .nav-closer-icon{
         width:30px;
         height:30px;
-        margin-top: 10px;
-        &:hover{
-          cursor: pointer;
-        }
+      }
+      //padding-left: 50px;
+      &:hover{
+        cursor: pointer;
+
       }
     }
-
   }
+  #nav-opener{
+    border: 2px solid $purple;
+    border-right: 0px;
+    width:120px;
+    font-size: 12px;
+    position: absolute;
+    z-index:1;
+    top: 40px;
+    right: 0px;
+    background-color:$gold;
+    color:$grey_dark;
+    padding: 10px;
+    -webkit-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    &:hover{
+      cursor: pointer;
+      background-color: $purple;
+      color: white;
+      border: none;
+      -webkit-box-shadow:  -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
+      -moz-box-shadow:    -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
+      box-shadow:         -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    }
+  }
+
+
+
 
   //Admissions homepage blocks
   .adm-home-block{

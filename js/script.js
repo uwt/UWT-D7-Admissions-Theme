@@ -71,33 +71,64 @@
     attach: function(context, settings) {
 
       function applyNavMods(){
-        //console.log("applying NavMods...yay");
-        // Get the top level .menu only
-        var navMenu = $("#navigation .region-navigation .menu-block-wrapper > .menu");
-        // Get the list items of the top level .menu
-        var navMenuItems = $("#navigation .region-navigation .menu-block-wrapper > .menu > li");
-        // Get the width of the top level .menu
-        var navMenuWidth = navMenu.outerWidth();
-        console.log("navMenuWidth", navMenuWidth);
-        // Try to calculate the total width of all the menu items
-        var navMenuItemsWidth = 0;
-        console.log("PRE navMenuItemsWidth", navMenuItemsWidth);
-
-        navMenuItems.each(function(){
-          //console.log("this.text()", $(this).text());
-          //console.log("this outerWidth()", $(this).outerWidth());
-          navMenuItemsWidth += $(this).outerWidth();
-
-        });
-        console.log("POST navMenuItemsWidth", navMenuItemsWidth);
-
-        if(navMenuItemsWidth > navMenuWidth){
-          console.log("Menu items are wider than menu. WRAPPING!!!");
-        }else{
-          console.log("Menu is wider than menu items. No wrapping");
+        var wiw = window.innerWidth;
+       console.log("wiw", wiw);
+        if(wiw <= 724){  // If the window is at the narrow breakpoint or smaller
+          $("#navigation").addClass("mobilized");
+        }else{ // If the windows is wider than the narrow breakpoint
+          $("#navigation").removeClass("mobilized");
+          $("#navigation #block-search-form").appendTo($("#search .region-search"));
+          console.log("showing #searchOpen");
+          $("#searchOpen , .search-toggle").css({"display" : "inline-block"});
         }
 
-      }
+      
+        console.log("applyNavMods happens on resize, so watch out");
+        console.log("create the element that opens the navigation here...and remove it logically.");
+        if($("#nav-opener").length > 0){
+          console.log("The nav-opener exists");
+
+        }else{
+          /**/
+          console.log("The nav-opener does NOT exist.");
+          // Create the nav-opener element
+          var navOpener = $("<div></div>", {
+            id: "nav-opener"
+          }).click(function(){
+            // Show the navigation menu
+            $("#navigation").addClass("show-nav");
+            // Move the search into this menu
+            $("#block-search-form").appendTo($("#navigation .block-menu-block > .menu-block-wrapper > .menu"));
+            // Hide the close search button icon
+            $("#searchOpen , .search-toggle").css({"display": "none"});
+          })
+          .text("Menu & Search");
+          // Add it to the body
+          $("body").append(navOpener);
+
+          // Create the "close menu" item.
+          var navCloser = $("<li></li>",{
+            id : "nav-closer"
+          })
+          .text("Hide menu")
+          .click(function(){
+            // Hide the navigation menu
+            $("#navigation").removeClass("show-nav");
+          })
+          .prependTo(".region-navigation >.block-menu-block > .menu-block-wrapper > .menu");
+          // Create the menu close button
+          var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
+          var menuCloseIcon = $("<img />",
+          {
+            "src": themeImages + "/search-icon-close.png",
+            "class": "nav-closer-icon"
+          })
+          .prependTo(navCloser);
+
+        }
+       
+      } // End applyNavMods()
+  
 
 
 
@@ -120,7 +151,7 @@
         var mainTop, ascTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
         var wiw = window.innerWidth;
         
-        if(wiw >= 411){
+        if(wiw >= 725){
 
           var wh = $(window).height(); // Window Height
 
@@ -196,8 +227,8 @@
             console.log("Medium-tall screen portion END");
             
           /*
-             * TALL SCREENS BEGIN
-             */
+         * TALL SCREENS BEGIN
+         */
           }else if(wh >= 600){  // Tall screens, use default margin top
 
             console.log("Tall-screen portion BEGIN");
@@ -234,8 +265,8 @@
             console.log("Tall-screen portion END");
 
           /*
-             * SHORT SCREENS BEGIN
-             */
+         * SHORT SCREENS BEGIN
+         */
 
           }else{// Short screens, use no margin top
             //console.log("Short Screen portion BEGIN");
