@@ -148,14 +148,88 @@
       function foldWork(){
         var mainTop, ascTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
         var wiw = window.innerWidth;
+        var headerHeightOrig = 500; // Matches the CSS declaration.
+        var wh = $(window).height(); // Window Height
+        var mainToShow = 100; // Show 100px of the #main element
+
 
         // Only position and resize wlements when we are in narrow or wider breakpoints
         if(wiw >= 411){ // 411px wide is the low end of the narrow breakpoint
+          console.log("Medium-tall screen portion BEGIN\n");
 
-          var wh = $(window).height(); // Window Height
+          //console.log("wh", wh);
+          //console.log("wh - mainToShow ", wh - mainToShow);
+          //console.log("headerHeightOrig", parseInt(headerHeightOrig));
 
-          if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
-            console.log("Medium-tall screen portion BEGIN\n");
+          /*** Make sure we show the top X pixels of the #main element ***/
+          if((wh - mainToShow) < headerHeightOrig){
+            $("#header").css({
+              "height":  (wh - mainToShow) +"px"
+            });
+
+            
+          }
+          /***
+           Set the block W (bw) dimensions.
+          Keep the proper aspect ratio.
+          Make the W 25% as tall as the header.
+           ***/
+          var bw = {};
+          bw['backgroundImg'] = $("#header").css("background-image");
+          bw['backgroundSize'] = $("#header").css("background-size");
+          bw['backgroundPosition'] = $("#header").css("background-position");
+          //console.log("bw", bw);
+          var bwSizeArr = bw.backgroundSize.split(" ");
+          var bwSizeWidth = parseInt(bwSizeArr[0]);
+          var bwSizeHeight = parseInt(bwSizeArr[1]);
+          console.log("PRE MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
+          // ar = aspect ratio
+          var ar = (bwSizeWidth / bwSizeHeight);
+          //console.log("ar", ar);
+          bwSizeHeight = parseInt($("#header").css("height")) * 0.25;
+          bwSizeWidth = bwSizeHeight * ar;
+
+          console.log("POST MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
+          var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
+          $("#header").css({
+            'background-size': bwSizeCss
+          });
+          /***
+           End block W dimensions
+           ***/
+
+
+          // Place the admissions slide content relative to the region header
+          // hr = header region
+          var hr = $("#header .region-header");
+          var hrHeight = hr.outerHeight();
+          var hrTop = hr.offset().top;
+          var nr = $("#navigation");
+
+          var nrHeight = nr.outerHeight();
+          // the mobilized menu is tall, so when the mobilized menu is shown, just use 50px
+          if (nrHeight > 50){
+            nrHeight = 0;
+          }
+
+
+          //console.log("hrHeight", hrHeight);
+          //console.log("hrTop", hrTop);
+          //console.log("nrHeight", nrHeight);
+          console.log("bwSizeWidth", bwSizeWidth);
+          var ascMaxWidth = wiw - bwSizeWidth - 50;
+          var ascMaxHeight = parseInt($("#header").outerHeight());
+
+          // admissions-slide-content positioning
+          $(".adm-slide-content").css({
+            "top" : hrHeight + hrTop + nrHeight + 20,
+            "max-width" : ascMaxWidth + "px",
+            "max-height" : ascMaxHeight + "px"
+          });
+          
+
+
+          /*
             //console.log("window height", wh);
 
 
@@ -227,57 +301,11 @@
               top: navBottom + (ascVertPadding * 0.5) // 10 is 1/2 of the arbitrary 20 used when determining the ascHeight
             });
 
-
-            // end medium-tall screens
-            console.log("\nMedium-tall screen portion END");
+            */
+          // end medium-tall screens
+          console.log("\nMedium-tall screen portion END");
             
-          /*
-         * TALL SCREENS BEGIN
-         */
-          }else if(wh >= 600){  // Tall screens, use default margin top
 
-            console.log("Tall-screen portion BEGIN\n");
-            //console.log("wiw", wiw)
-
-            $("#header").css({
-              height: '500px' // 500 is what we set originally in the CSS
-            });
-
-            mainTop = $("#main").offset().top;
-            navTop = $("#navigation").offset().top;
-            navHeight = $("#navigation").outerHeight();
-            navBottom = navTop + navHeight;
-            verticalDiff = (mainTop - navBottom)
-
-            ascVertPadding = 40;
-
-
-            ascTop = navBottom + (ascVertPadding * 0.5);
-
-            //console.log("navBottom", navBottom);
-            //console.log("ascVertPadding",ascVertPadding);
-            //console.log("ascTop", ascTop);
-            
-            //console.log("verticalDiff", verticalDiff);
-           
-            $(".adm-slide-content")
-            .css({
-              height: ascHeight,
-              left: '10px',
-              top: ascTop
-            })
-            .removeClass('inline') ;
-            console.log("\nTall-screen portion END");
-
-          /*
-         * SHORT SCREENS BEGIN
-         */
-
-          }else{// Short screens, use no margin top
-            console.log("Short Screen portion BEGIN\n");
-
-            console.log("\nShort Screen portion END");
-          }
         }
       } // end of foldWork
 
@@ -298,7 +326,7 @@
         .width(wiw)
         .unslider({
           speed : 2500,
-          delay : 10000,
+          delay : 1000,
           dots : false,
           flud : true
         });
