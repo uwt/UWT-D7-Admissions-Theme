@@ -41,7 +41,8 @@
         "src": themeImages + "/search-icon-large.png",
         "class": "search-toggle open"
       });
-      searchOpenListItem.append(menuOpenImg);
+
+      searchOpenListItem.prepend(menuOpenImg);
       // Create the menu close button
       var menuCloseIcon = $("<img />",
       {
@@ -72,25 +73,20 @@
 
       function applyNavMods(){
         var wiw = window.innerWidth;
-       console.log("wiw", wiw);
         if(wiw <= 724){  // If the window is at the narrow breakpoint or smaller
           $("#navigation").addClass("mobilized");
         }else{ // If the windows is wider than the narrow breakpoint
           $("#navigation").removeClass("mobilized");
-          $("#navigation #block-search-form").appendTo($("#search .region-search"));
-          console.log("showing #searchOpen");
-          $("#searchOpen , .search-toggle").css({"display" : "inline-block"});
+          // Put the search form into the search region
+          $("#navigation #block-search-form").prependTo($("#search .region-search"));
+          $("#searchOpen , .search-toggle").css({
+            "display" : "inline-block"
+          });
         }
 
-      
-        console.log("applyNavMods happens on resize, so watch out");
-        console.log("create the element that opens the navigation here...and remove it logically.");
         if($("#nav-opener").length > 0){
-          console.log("The nav-opener exists");
 
         }else{
-          /**/
-          console.log("The nav-opener does NOT exist.");
           // Create the nav-opener element
           var navOpener = $("<div></div>", {
             id: "nav-opener"
@@ -98,9 +94,11 @@
             // Show the navigation menu
             $("#navigation").addClass("show-nav");
             // Move the search into this menu
-            $("#block-search-form").appendTo($("#navigation .block-menu-block > .menu-block-wrapper > .menu"));
+            $("#block-search-form").insertBefore($("#navigation .block-menu-block > .menu-block-wrapper > .menu"));
             // Hide the close search button icon
-            $("#searchOpen , .search-toggle").css({"display": "none"});
+            $("#searchOpen , .search-toggle").css({
+              "display": "none"
+            });
           })
           .text("Menu & Search");
           // Add it to the body
@@ -150,13 +148,14 @@
       function foldWork(){
         var mainTop, ascTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
         var wiw = window.innerWidth;
-        
-        if(wiw >= 725){
+
+        // Only position and resize wlements when we are in narrow or wider breakpoints
+        if(wiw >= 411){ // 411px wide is the low end of the narrow breakpoint
 
           var wh = $(window).height(); // Window Height
 
           if(wh >= 300 && wh <= 600){// Medium-tall screens, dynamically assign the margin top
-            console.log("Medium-tall screen portion BEGIN");
+            console.log("Medium-tall screen portion BEGIN\n");
             //console.log("window height", wh);
 
 
@@ -177,17 +176,23 @@
             var bwSizeArr = bw.backgroundSize.split(" ");
             var bwSizeWidth = parseInt(bwSizeArr[0]);
             var bwSizeHeight = parseInt(bwSizeArr[1]);
-
+            console.log("bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
             mainTop = $("#main").offset().top;
             navTop = $("#navigation").offset().top;
             navHeight = $("#navigation").outerHeight();
+
             navBottom = navTop + navHeight;
+            console.log("navBottom", navBottom);
+            
             verticalDiff = (mainTop - navBottom)
+            console.log("verticalDiff - rut roh!", verticalDiff);
 
-
+            // ar = aspect ratio
             var ar = (bwSizeWidth / bwSizeHeight);
+            console.log("ar", ar);
             bwSizeHeight = (verticalDiff - 20);
             bwSizeWidth = (bwSizeHeight * ar);
+            console.log("bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
             var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
             //console.log("#header BACKGROUND-SIZE being set");
             var bwMaxHeight = 200;
@@ -224,14 +229,14 @@
 
 
             // end medium-tall screens
-            console.log("Medium-tall screen portion END");
+            console.log("\nMedium-tall screen portion END");
             
           /*
          * TALL SCREENS BEGIN
          */
           }else if(wh >= 600){  // Tall screens, use default margin top
 
-            console.log("Tall-screen portion BEGIN");
+            console.log("Tall-screen portion BEGIN\n");
             //console.log("wiw", wiw)
 
             $("#header").css({
@@ -262,20 +267,16 @@
               top: ascTop
             })
             .removeClass('inline') ;
-            console.log("Tall-screen portion END");
+            console.log("\nTall-screen portion END");
 
           /*
          * SHORT SCREENS BEGIN
          */
 
           }else{// Short screens, use no margin top
-            //console.log("Short Screen portion BEGIN");
-            //console.log("#content MARGIN-TOP, BORDER-TOP BEING SET");
-            $("#content").css({
-              //       'margin-top':0,
-              //       'border-top':0
-              });
-          //console.log("Short Screen portion END");
+            console.log("Short Screen portion BEGIN\n");
+
+            console.log("\nShort Screen portion END");
           }
         }
       } // end of foldWork
