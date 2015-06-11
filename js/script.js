@@ -155,13 +155,16 @@
 
         // Only position and resize wlements when we are in narrow or wider breakpoints
         if(wiw >= 411){ // 411px wide is the low end of the narrow breakpoint
-          console.log("Medium-tall screen portion BEGIN\n");
+          console.log("\nMedium-tall screen portion BEGIN\n");
 
           //console.log("wh", wh);
           //console.log("wh - mainToShow ", wh - mainToShow);
           //console.log("headerHeightOrig", parseInt(headerHeightOrig));
 
-          /*** Make sure we show the top X pixels of the #main element ***/
+          /* Make sure we show the top X pixels of the #main element
+           * #header height controls how far up or down #main is on the screen
+
+           */
           if((wh - mainToShow) < headerHeightOrig){
             $("#header").css({
               "height":  (wh - mainToShow) +"px"
@@ -169,11 +172,15 @@
 
             
           }
-          /***
-           Set the block W (bw) dimensions.
-          Keep the proper aspect ratio.
-          Make the W 25% as tall as the header.
-           ***/
+          /*
+           * Set the block W (bw) dimensions.
+           * Keep the proper aspect ratio.
+           * Make the W 25% as tall as the header. 25% is arbitrary. I could change.
+           * The top of header is the top of the viewport, the bottom goes to the top
+           * of the #main element.
+           */
+          var wHeight = 0.25;
+          // bw = Block W
           var bw = {};
           bw['backgroundImg'] = $("#header").css("background-image");
           bw['backgroundSize'] = $("#header").css("background-size");
@@ -182,30 +189,36 @@
           var bwSizeArr = bw.backgroundSize.split(" ");
           var bwSizeWidth = parseInt(bwSizeArr[0]);
           var bwSizeHeight = parseInt(bwSizeArr[1]);
-          console.log("PRE MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
+          //console.log("PRE MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
           // ar = aspect ratio
           var ar = (bwSizeWidth / bwSizeHeight);
           //console.log("ar", ar);
-          bwSizeHeight = parseInt($("#header").css("height")) * 0.25;
+          bwSizeHeight = parseInt($("#header").css("height")) * wHeight;
           bwSizeWidth = bwSizeHeight * ar;
 
-          console.log("POST MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
+          //console.log("POST MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
           var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
           $("#header").css({
             'background-size': bwSizeCss
           });
-          /***
-           End block W dimensions
-           ***/
+          /*
+           * End block W dimensions
+           */
 
 
+          /*
+           * Admissions slide content mods.
+           * We want to control the size and position of the text that appears
+           * over the slideshow.
+           */
           // Place the admissions slide content relative to the region header
-          // hr = header region
-          var hr = $("#header .region-header");
+          // hr = Header Region
+          var hr = $("#header .region-header h1");
           var hrHeight = hr.outerHeight();
           var hrTop = hr.offset().top;
+          
+          // nr = Navigation Region
           var nr = $("#navigation");
-
           var nrHeight = nr.outerHeight();
           // the mobilized menu is tall, so when the mobilized menu is shown, just use 50px
           if (nrHeight > 50){
@@ -213,20 +226,42 @@
           }
 
 
-          //console.log("hrHeight", hrHeight);
-          //console.log("hrTop", hrTop);
-          //console.log("nrHeight", nrHeight);
-          console.log("bwSizeWidth", bwSizeWidth);
-          var ascMaxWidth = wiw - bwSizeWidth - 50;
-          var ascMaxHeight = parseInt($("#header").outerHeight());
+          console.log("hrHeight", hrHeight);
+          console.log("hrTop", hrTop);
+          console.log("nrHeight", nrHeight);
+          //console.log("bwSizeWidth", bwSizeWidth);
+          var ascWidth = 0;
+          var ascHeight = 0;
+          $(".adm-slide-content").each(function(){
+            var widest = 0;
 
-          // admissions-slide-content positioning
+            $(this).find("p,h2").each(function(){
+
+              ascWidth = $(this).outerWidth();
+
+              if(widest > ascWidth){
+                widest = ascWidth;
+              }
+
+              ascHeight += $(this).outerHeight();
+
+            });
+          });
+  
+          var ascMaxWidth = ascWidth;
+          var ascMaxHeight = ascHeight;
+
+          console.log("hrHeight + hrTop + nrHeight + 20", hrHeight + hrTop + nrHeight + 20);
+
+          // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
             "top" : hrHeight + hrTop + nrHeight + 20,
             "max-width" : ascMaxWidth + "px",
             "max-height" : ascMaxHeight + "px"
           });
           
+
+
 
 
           /*
@@ -303,7 +338,7 @@
 
             */
           // end medium-tall screens
-          console.log("\nMedium-tall screen portion END");
+          console.log("\nMedium-tall screen portion END\n");
             
 
         }
@@ -326,7 +361,7 @@
         .width(wiw)
         .unslider({
           speed : 2500,
-          delay : 1000,
+          delay : 150000,
           dots : false,
           flud : true
         });
