@@ -121,14 +121,13 @@
               margin-right: auto;
               div.adm-slide-content{
                 h2,p,a{
-                  display:inline-block;
+                  //display:inline-block;
                 }
-                /**/
                 display: block;
                 position: relative;
                 z-index:2;
-                max-height:200px;
-                max-width:85%;
+                //max-height:200px;
+                //max-width:85%;
                 margin-left: 10px;
                 margin-right:10px;
                 padding: 10px;

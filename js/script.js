@@ -226,10 +226,17 @@
 
           var ascWidth = 0;
           var ascHeight = 0;
-          $(".adm-slide-content").each(function(){
-            //console.log("adm-slide-content outerHeight()", $(this).outerHeight());
-            console.log("adm-slide-content top", $(this).offset().top);
 
+          $(".adm-slide-content").each(function(){
+            //console.log("this parent()", $(this).parent());
+            //console.log("this  outerWidth()", $(this).outerWidth());
+
+         console.log("parent outerWidth", $(this).parent().outerWidth());
+         console.log("minus");
+                    console.log("bw width", bwSizeWidth);
+           ascWidth = $(this).parent().outerWidth() - bwSizeWidth;
+           console.log("equals");
+           console.log("ascWidth", ascWidth);
 
         });  // end of each() .adm-slide-content
   
@@ -238,8 +245,8 @@
 
           // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
-            "top" : hrHeight + hrTop + nrHeight + 20//,
-            //"max-width" : "50%",
+            "top" : hrHeight + hrTop + nrHeight + 20,
+            "max-width" : ascWidth//,
             //"max-height" : "30%"
           });
 
@@ -267,7 +274,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 92000,
+          delay : 2000,
           dots : false,
           flud : true
         });
