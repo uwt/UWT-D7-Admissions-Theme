@@ -105,7 +105,7 @@
           $("body").append(navOpener);
 
           // Create the "close menu" item.
-          var navCloser = $("<li></li>",{
+          var navCloser = $("<div></div>",{
             id : "nav-closer"
           })
           .text("Hide menu")
@@ -113,7 +113,7 @@
             // Hide the navigation menu
             $("#navigation").removeClass("show-nav");
           })
-          .prependTo(".region-navigation >.block-menu-block > .menu-block-wrapper > .menu");
+          .prependTo("#navigation");
           // Create the menu close button
           var themeImages = settings.basePath + "sites/all/themes/" + settings.ajaxPageState.theme + "/images/";
           var menuCloseIcon = $("<img />",
@@ -226,19 +226,20 @@
           }
 
 
-          console.log("hrHeight", hrHeight);
-          console.log("hrTop", hrTop);
-          console.log("nrHeight", nrHeight);
+          //console.log("hrHeight", hrHeight);
+          //console.log("hrTop", hrTop);
+          //console.log("nrHeight", nrHeight);
           //console.log("bwSizeWidth", bwSizeWidth);
           var ascWidth = 0;
           var ascHeight = 0;
           $(".adm-slide-content").each(function(){
-            var widest = 0;
+            console.log("this", $(this).outerWidth());
+            var widest = $(this).outerWidth();
 
             $(this).find("p,h2").each(function(){
 
               ascWidth = $(this).outerWidth();
-
+              console.log("widest: " + widest + " ascWidth: " + ascWidth);
               if(widest > ascWidth){
                 widest = ascWidth;
               }
@@ -251,7 +252,9 @@
           var ascMaxWidth = ascWidth;
           var ascMaxHeight = ascHeight;
 
-          console.log("hrHeight + hrTop + nrHeight + 20", hrHeight + hrTop + nrHeight + 20);
+          console.log("ascMaxWidth", ascMaxWidth);
+
+          //console.log("hrHeight + hrTop + nrHeight + 20", hrHeight + hrTop + nrHeight + 20);
 
           // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
