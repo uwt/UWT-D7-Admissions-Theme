@@ -2404,7 +2404,7 @@ html {
   html #nav-opener {
     border: 2px solid #4b2e84;
     border-right: 0px;
-    width: 50px;
+    width: 15%;
     font-size: 12px;
     position: absolute;
     z-index: 1;
@@ -2770,7 +2770,7 @@ html.lt-ie9 html #navigation.mobilized #block-search-form {
 html.lt-ie9 html #nav-opener {
   border: 2px solid #4b2e84;
   border-right: 0px;
-  width: 50px;
+  width: 15%;
   font-size: 12px;
   position: absolute;
   z-index: 1;

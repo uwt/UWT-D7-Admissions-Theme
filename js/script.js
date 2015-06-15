@@ -157,9 +157,6 @@
         if(wiw >= 411){ // 411px wide is the low end of the narrow breakpoint
           console.log("\nMedium-tall screen portion BEGIN\n");
 
-          //console.log("wh", wh);
-          //console.log("wh - mainToShow ", wh - mainToShow);
-          //console.log("headerHeightOrig", parseInt(headerHeightOrig));
 
           /* Make sure we show the top X pixels of the #main element
            * #header height controls how far up or down #main is on the screen
@@ -216,7 +213,8 @@
           var hr = $("#header .region-header h1");
           var hrHeight = hr.outerHeight();
           var hrTop = hr.offset().top;
-          
+          var mainTop = $("#main").offset().top;
+          console.log("mainTop", mainTop);
           // nr = Navigation Region
           var nr = $("#navigation");
           var nrHeight = nr.outerHeight();
@@ -226,120 +224,25 @@
           }
 
 
-          //console.log("hrHeight", hrHeight);
-          //console.log("hrTop", hrTop);
-          //console.log("nrHeight", nrHeight);
-          //console.log("bwSizeWidth", bwSizeWidth);
           var ascWidth = 0;
           var ascHeight = 0;
           $(".adm-slide-content").each(function(){
-            console.log("this", $(this).outerWidth());
-            var widest = $(this).outerWidth();
+            //console.log("adm-slide-content outerHeight()", $(this).outerHeight());
+            console.log("adm-slide-content top", $(this).offset().top);
 
-            $(this).find("p,h2").each(function(){
 
-              ascWidth = $(this).outerWidth();
-              console.log("widest: " + widest + " ascWidth: " + ascWidth);
-              if(widest > ascWidth){
-                widest = ascWidth;
-              }
-
-              ascHeight += $(this).outerHeight();
-
-            });
-          });
+        });  // end of each() .adm-slide-content
   
-          var ascMaxWidth = ascWidth;
-          var ascMaxHeight = ascHeight;
-
-          console.log("ascMaxWidth", ascMaxWidth);
 
           //console.log("hrHeight + hrTop + nrHeight + 20", hrHeight + hrTop + nrHeight + 20);
 
           // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
-            "top" : hrHeight + hrTop + nrHeight + 20,
-            "max-width" : ascMaxWidth + "px",
-            "max-height" : ascMaxHeight + "px"
+            "top" : hrHeight + hrTop + nrHeight + 20//,
+            //"max-width" : "50%",
+            //"max-height" : "30%"
           });
-          
 
-
-
-
-          /*
-            //console.log("window height", wh);
-
-
-            // This determines how many vertical pixels of the "body content" is shown.
-            // 100 is an arbitrary number.
-            $("#header").css({
-              height: wh - 100
-            });
-
-
-            // Calculate the difference between the bottom of the navigation and the top of the #main
-            var bw = {};
-            bw['backgroundColor'] = $("#header").css("background-image");
-            bw['backgroundSize'] = $("#header").css("background-size");
-            bw['backgroundPosition'] = $("#header").css("background-position");
-
-
-            var bwSizeArr = bw.backgroundSize.split(" ");
-            var bwSizeWidth = parseInt(bwSizeArr[0]);
-            var bwSizeHeight = parseInt(bwSizeArr[1]);
-            console.log("bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
-            mainTop = $("#main").offset().top;
-            navTop = $("#navigation").offset().top;
-            navHeight = $("#navigation").outerHeight();
-
-            navBottom = navTop + navHeight;
-            console.log("navBottom", navBottom);
-            
-            verticalDiff = (mainTop - navBottom)
-            console.log("verticalDiff - rut roh!", verticalDiff);
-
-            // ar = aspect ratio
-            var ar = (bwSizeWidth / bwSizeHeight);
-            console.log("ar", ar);
-            bwSizeHeight = (verticalDiff - 20);
-            bwSizeWidth = (bwSizeHeight * ar);
-            console.log("bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
-            var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
-            //console.log("#header BACKGROUND-SIZE being set");
-            var bwMaxHeight = 200;
-            if(bwSizeHeight <= bwMaxHeight){
-              $("#header").css({
-                'background-size': bwSizeCss
-              });
-            }
-
-            var scSizeHeightOrig = $(".adm-slide-content").outerHeight();
-
-            var headerHeight = $("#header").outerHeight();
-            ascTop = headerHeight - scSizeHeightOrig;
-            
-
-            //console.log("verticalDiff", verticalDiff);
-            ascVertPadding = 10;
-            if(verticalDiff >= 160){
-              ascVertPadding += 40;
-              $(".adm-slide-content").removeClass('inline');
-            }else{
-              $(".adm-slide-content").addClass('inline');
-            }
-
-            var ascHeight = verticalDiff - ascVertPadding;
-
-            $(".adm-slide-content")
-            .css({
-              fontSize: '1em',
-              height: ascHeight,
-              left: '20px',
-              top: navBottom + (ascVertPadding * 0.5) // 10 is 1/2 of the arbitrary 20 used when determining the ascHeight
-            });
-
-            */
           // end medium-tall screens
           console.log("\nMedium-tall screen portion END\n");
             
@@ -363,8 +266,8 @@
         $('#banner')
         .width(wiw)
         .unslider({
-          speed : 2500,
-          delay : 150000,
+          speed : 4500,
+          delay : 92000,
           dots : false,
           flud : true
         });
