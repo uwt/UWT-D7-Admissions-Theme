@@ -494,6 +494,7 @@ html {
     right: -50%;
     height: 100%;
     top: 0;
+    visibility: hidden;
     background-color: #4b2e84;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -516,29 +517,30 @@ html {
   html #navigation.mobilized .menu .menu {
     visibility: hidden;
   }
-  /* line 260, ../sass/_bp_narrow.scss */
+  /* line 261, ../sass/_bp_narrow.scss */
   html #navigation.mobilized.show-nav {
+    visibility: visible;
     z-index: 3;
     right: 0%;
     -webkit-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
   }
-  /* line 268, ../sass/_bp_narrow.scss */
+  /* line 270, ../sass/_bp_narrow.scss */
   html #navigation.mobilized #nav-closer .nav-closer-icon {
     width: 30px;
     height: 30px;
   }
-  /* line 273, ../sass/_bp_narrow.scss */
+  /* line 275, ../sass/_bp_narrow.scss */
   html #navigation.mobilized #nav-closer:hover {
     cursor: pointer;
   }
-  /* line 278, ../sass/_bp_narrow.scss */
+  /* line 280, ../sass/_bp_narrow.scss */
   html #navigation.mobilized #block-search-form {
     color: #444444;
     padding: 10px;
   }
-  /* line 283, ../sass/_bp_narrow.scss */
+  /* line 285, ../sass/_bp_narrow.scss */
   html #nav-opener {
     border: 2px solid #4b2e84;
     border-right: 0px;
@@ -555,7 +557,7 @@ html {
     -moz-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
   }
-  /* line 298, ../sass/_bp_narrow.scss */
+  /* line 300, ../sass/_bp_narrow.scss */
   html #nav-opener:hover {
     cursor: pointer;
     background-color: #4b2e84;
@@ -565,7 +567,7 @@ html {
     -moz-box-shadow: -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow: -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
   }
-  /* line 313, ../sass/_bp_narrow.scss */
+  /* line 315, ../sass/_bp_narrow.scss */
   html .adm-home-block {
     background-color: white;
     padding: 10px;
@@ -573,33 +575,33 @@ html {
     height: 5em;
     margin-bottom: 1em;
   }
-  /* line 319, ../sass/_bp_narrow.scss */
+  /* line 321, ../sass/_bp_narrow.scss */
   html .adm-home-block h2 {
     margin: 0;
     font-family: encode_sans_normal_light;
     line-height: 1.25em;
     font-size: 1.25em;
   }
-  /* line 324, ../sass/_bp_narrow.scss */
+  /* line 326, ../sass/_bp_narrow.scss */
   html .adm-home-block h2 a:link, html .adm-home-block h2 a:visited {
     color: #4b2e84;
   }
-  /* line 332, ../sass/_bp_narrow.scss */
+  /* line 334, ../sass/_bp_narrow.scss */
   html .adm-home-btn-pane ul {
     padding-left: 0;
     margin-top: 0;
   }
-  /* line 335, ../sass/_bp_narrow.scss */
+  /* line 337, ../sass/_bp_narrow.scss */
   html .adm-home-btn-pane ul li {
     width: 100%;
     max-width: 100%;
   }
-  /* line 338, ../sass/_bp_narrow.scss */
+  /* line 340, ../sass/_bp_narrow.scss */
   html .adm-home-btn-pane ul li .uw-btn {
     margin-right: 0;
     width: 80%;
   }
-  /* line 349, ../sass/_bp_narrow.scss */
+  /* line 351, ../sass/_bp_narrow.scss */
   html body {
     background-color: navy;
   }
@@ -851,6 +853,7 @@ html.lt-ie9 html #navigation.mobilized {
   right: -50%;
   height: 100%;
   top: 0;
+  visibility: hidden;
   background-color: #4b2e84;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -873,29 +876,30 @@ html.lt-ie9 html #navigation.mobilized .menu li {
 html.lt-ie9 html #navigation.mobilized .menu .menu {
   visibility: hidden;
 }
-/* line 260, ../sass/_bp_narrow.scss */
+/* line 261, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #navigation.mobilized.show-nav {
+  visibility: visible;
   z-index: 3;
   right: 0%;
   -webkit-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
-/* line 268, ../sass/_bp_narrow.scss */
+/* line 270, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #navigation.mobilized #nav-closer .nav-closer-icon {
   width: 30px;
   height: 30px;
 }
-/* line 273, ../sass/_bp_narrow.scss */
+/* line 275, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #navigation.mobilized #nav-closer:hover {
   cursor: pointer;
 }
-/* line 278, ../sass/_bp_narrow.scss */
+/* line 280, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #navigation.mobilized #block-search-form {
   color: #444444;
   padding: 10px;
 }
-/* line 283, ../sass/_bp_narrow.scss */
+/* line 285, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #nav-opener {
   border: 2px solid #4b2e84;
   border-right: 0px;
@@ -912,7 +916,7 @@ html.lt-ie9 html #nav-opener {
   -moz-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
-/* line 298, ../sass/_bp_narrow.scss */
+/* line 300, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #nav-opener:hover {
   cursor: pointer;
   background-color: #4b2e84;
@@ -922,7 +926,7 @@ html.lt-ie9 html #nav-opener:hover {
   -moz-box-shadow: -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow: -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
-/* line 313, ../sass/_bp_narrow.scss */
+/* line 315, ../sass/_bp_narrow.scss */
 html.lt-ie9 html .adm-home-block {
   background-color: white;
   padding: 10px;
@@ -930,33 +934,33 @@ html.lt-ie9 html .adm-home-block {
   height: 5em;
   margin-bottom: 1em;
 }
-/* line 319, ../sass/_bp_narrow.scss */
+/* line 321, ../sass/_bp_narrow.scss */
 html.lt-ie9 html .adm-home-block h2 {
   margin: 0;
   font-family: encode_sans_normal_light;
   line-height: 1.25em;
   font-size: 1.25em;
 }
-/* line 324, ../sass/_bp_narrow.scss */
+/* line 326, ../sass/_bp_narrow.scss */
 html.lt-ie9 html .adm-home-block h2 a:link, html.lt-ie9 html .adm-home-block h2 a:visited {
   color: #4b2e84;
 }
-/* line 332, ../sass/_bp_narrow.scss */
+/* line 334, ../sass/_bp_narrow.scss */
 html.lt-ie9 html .adm-home-btn-pane ul {
   padding-left: 0;
   margin-top: 0;
 }
-/* line 335, ../sass/_bp_narrow.scss */
+/* line 337, ../sass/_bp_narrow.scss */
 html.lt-ie9 html .adm-home-btn-pane ul li {
   width: 100%;
   max-width: 100%;
 }
-/* line 338, ../sass/_bp_narrow.scss */
+/* line 340, ../sass/_bp_narrow.scss */
 html.lt-ie9 html .adm-home-btn-pane ul li .uw-btn {
   margin-right: 0;
   width: 80%;
 }
-/* line 349, ../sass/_bp_narrow.scss */
+/* line 351, ../sass/_bp_narrow.scss */
 html.lt-ie9 html body {
   background-color: navy;
 }

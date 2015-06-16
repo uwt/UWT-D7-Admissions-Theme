@@ -248,6 +248,7 @@
     right:-50%;
     height: 100%;
     top: 0;
+    visibility:hidden;
     background-color: $purple;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -258,6 +259,7 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
     &.show-nav{
+      visibility:visible;
       z-index:3;
       right:0%;
       -webkit-box-shadow: -10px 0px 5px 0px rgba(50, 50, 50, 0.75);
