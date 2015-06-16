@@ -121,13 +121,11 @@
               margin-right: auto;
               div.adm-slide-content{
                 h2,p,a{
-                  //display:inline-block;
+
                 }
                 display: block;
                 position: relative;
                 z-index:2;
-                //max-height:200px;
-                //max-width:85%;
                 margin-left: 10px;
                 margin-right:10px;
                 padding: 10px;
@@ -135,7 +133,6 @@
                 border: 2px solid white;
                 background-color: rgba(255,255,255,0.25);
                 text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-                //font-size: 1.5em;
                 line-height:100%;
                 -webkit-transition: all 0.3s;
                 -moz-transition: all 0.3s;
@@ -146,8 +143,6 @@
                   background-color:rgba(153,153,153,0.85);
                 }
                 h2{
-                  /**/
-                  //font-size: 1.5em;
                   line-height: 100%;
                   margin-top: 0;
                   margin-bottom: 10px;
@@ -288,11 +283,11 @@
   #nav-opener{
     border: 2px solid $purple;
     border-right: 0px;
-    width:15%;
+    width:18%;
     font-size: 12px;
     position: absolute;
     z-index:1;
-    top: 40px;
+    top: 0px;
     right: 0px;
     background-color:$gold;
     color:$grey_dark;

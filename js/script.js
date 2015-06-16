@@ -192,9 +192,10 @@
           //console.log("ar", ar);
           bwSizeHeight = parseInt($("#header").css("height")) * wHeight;
           bwSizeWidth = bwSizeHeight * ar;
-
+          console.log("bwSizeWidth", bwSizeWidth);
           //console.log("POST MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
           var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
+
           $("#header").css({
             'background-size': bwSizeCss
           });
@@ -210,14 +211,15 @@
            */
           // Place the admissions slide content relative to the region header
           // hr = Header Region
-          var hr = $("#header .region-header h1");
-          var hrHeight = hr.outerHeight();
+          var hr = $("#header > .region-header");
+          var hrHeight = hr.outerHeight({margin: true});
           var hrTop = hr.offset().top;
           var mainTop = $("#main").offset().top;
-          console.log("mainTop", mainTop);
+          //console.log("mainTop", mainTop);
           // nr = Navigation Region
           var nr = $("#navigation");
-          var nrHeight = nr.outerHeight();
+          var nrTop = nr.offset().top;
+          var nrHeight = nr.outerHeight({margin: true});
           // the mobilized menu is tall, so when the mobilized menu is shown, just use 50px
           if (nrHeight > 50){
             nrHeight = 0;
@@ -229,25 +231,42 @@
 
           $(".adm-slide-content").each(function(){
             //console.log("this parent()", $(this).parent());
-            //console.log("this  outerWidth()", $(this).outerWidth());
+            //console.log("this  outerWidth()", $(this).outerWidth({margin: true}));
 
-         console.log("parent outerWidth", $(this).parent().outerWidth());
-         console.log("minus");
-                    console.log("bw width", bwSizeWidth);
-           ascWidth = $(this).parent().outerWidth() - bwSizeWidth;
-           console.log("equals");
-           console.log("ascWidth", ascWidth);
+            console.log("wiw", wiw);
 
-        });  // end of each() .adm-slide-content
+            var bobo = $("#header").css("background-size");
+            console.log("bobo", bobo);
+            console.log("bwSizeWidth", bwSizeWidth);
+            ascWidth = wiw - bwSizeWidth;
+            //console.log("equals");
+            console.log($(this).find('h2').text());
+            console.log("ascWidth", ascWidth);
+
+            $(this).css({
+              "max-width" : parseInt(ascWidth) + "px"
+            });
+
+            ascHeight = wh - mainToShow - $(this).innerHeight();
+
+
+
+         //console.log("ascHeight", ascHeight);
+
+          });  // end of each() .adm-slide-content
   
-
-          //console.log("hrHeight + hrTop + nrHeight + 20", hrHeight + hrTop + nrHeight + 20);
+          // Determine the top for the admission slide content
+          
+          //console.log("hrHeight", hrHeight);
+         // console.log("nrTop",nrTop);
+         // console.log("nrHeight",nrHeight);
+         // console.log("hrHeight + hrTop + nrHeight + nrTop", hrHeight + hrTop + nrHeight + nrTop);
 
           // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
-            "top" : hrHeight + hrTop + nrHeight + 20,
-            "max-width" : ascWidth//,
-            //"max-height" : "30%"
+            "top" : hrHeight + hrTop + nrHeight + nrTop + (nrHeight - nrTop),
+            "max-width" : ascWidth,
+            "max-height" : ascHeight
           });
 
           // end medium-tall screens
@@ -274,7 +293,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 2000,
+          delay : 92000,
           dots : false,
           flud : true
         });
