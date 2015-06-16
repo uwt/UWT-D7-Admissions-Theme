@@ -123,9 +123,14 @@
                 h2,p,a{
 
                 }
+
+                max-width:50%;
                 display: block;
                 position: relative;
-                z-index:2;
+                /* BEGIN DEBUG */
+                //z-index : 2;
+                z-index:20;
+                /* END DEBUG */
                 margin-left: 10px;
                 margin-right:10px;
                 padding: 10px;
@@ -190,9 +195,12 @@
     h1{
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
       margin-bottom:0;
+      margin-top:10px;
       // To account for the "Menu & Search" button on narrow
-      margin-right: 80px; // <-- equals the outer width of #nav-opener
+      //margin-right: 80px; // <-- equals the outer width of #nav-opener
       font-size: 1.75em;
+      //white-space: nowrap;
+      display:block;
     }
     .block{
       margin-bottom:0;
@@ -285,11 +293,11 @@
   #nav-opener{
     border: 2px solid $purple;
     border-right: 0px;
-    width:18%;
+    max-width:20%;
     font-size: 12px;
     position: absolute;
     z-index:1;
-    top: 0px;
+    top: 40px;
     right: 0px;
     background-color:$gold;
     color:$grey_dark;

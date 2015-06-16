@@ -192,7 +192,7 @@
           //console.log("ar", ar);
           bwSizeHeight = parseInt($("#header").css("height")) * wHeight;
           bwSizeWidth = bwSizeHeight * ar;
-          console.log("bwSizeWidth", bwSizeWidth);
+          //console.log("bwSizeWidth", bwSizeWidth);
           //console.log("POST MOD: bwSizeWidth: " + bwSizeWidth + " bwSizeHeight: " + bwSizeHeight);
           var bwSizeCss = bwSizeWidth + 'px ' + bwSizeHeight + 'px';
 
@@ -212,14 +212,18 @@
           // Place the admissions slide content relative to the region header
           // hr = Header Region
           var hr = $("#header > .region-header");
-          var hrHeight = hr.outerHeight({margin: true});
+          var hrHeight = hr.outerHeight({
+            margin: true
+          });
           var hrTop = hr.offset().top;
           var mainTop = $("#main").offset().top;
           //console.log("mainTop", mainTop);
           // nr = Navigation Region
           var nr = $("#navigation");
           var nrTop = nr.offset().top;
-          var nrHeight = nr.outerHeight({margin: true});
+          var nrHeight = nr.outerHeight({
+            margin: true
+          });
           // the mobilized menu is tall, so when the mobilized menu is shown, just use 50px
           if (nrHeight > 50){
             nrHeight = 0;
@@ -228,49 +232,74 @@
 
           var ascWidth = 0;
           var ascHeight = 0;
-
+          var ascTop = hrHeight + hrTop + nrHeight + nrTop + (nrHeight - nrTop);
           $(".adm-slide-content").each(function(){
             //console.log("this parent()", $(this).parent());
             //console.log("this  outerWidth()", $(this).outerWidth({margin: true}));
 
-            console.log("wiw", wiw);
+            //console.log("wiw", wiw);
 
-            var bobo = $("#header").css("background-size");
-            console.log("bobo", bobo);
-            console.log("bwSizeWidth", bwSizeWidth);
-            ascWidth = wiw - bwSizeWidth;
+
+            // console.log("bwSizeWidth", bwSizeWidth);
+            
             //console.log("equals");
-            console.log($(this).find('h2').text());
-            console.log("ascWidth", ascWidth);
+            //console.log($(this).find('h2').text());
+            //console.log("ascWidth", ascWidth);
+
+            /*
+            if(jQuery(this).isChildOverflowing('.adm-slide-content p')){
+              console.log("overflowing!!");
+            }else{
+              console.log("not overflowing");
+            }
+            */
+
+
+            //console.log("parseInt(ascWidth)", parseInt(ascWidth));
+            //console.log("wiw", wiw);
+
+            // If the width of the box is more than half the window width,
+            // cap the width at 50%. Otherwise, make it sized relative to the
+            // block W.
+            if((parseInt(ascWidth) * 2) > wiw){
+              ascWidth = "50%";
+            }else{
+              ascWidth = wiw - (bwSizeWidth * 1.5) + "px";
+            }
+            //console.log("ascWidth", ascWidth);
 
             $(this).css({
-              "max-width" : parseInt(ascWidth) + "px"
+              "max-width" : ascWidth
             });
 
-            ascHeight = wh - mainToShow - $(this).innerHeight();
+            //console.log("wh", wh);
+            //console.log("minus mainToShow", mainToShow);
+            //console.log("minus this.innerHeight()", $(this).innerHeight());
 
+            ascHeight = wh - mainToShow - ascTop;// - $(this).innerHeight();
 
-
-         //console.log("ascHeight", ascHeight);
+          //console.log("ascHeight", ascHeight);
 
           });  // end of each() .adm-slide-content
   
           // Determine the top for the admission slide content
           
           //console.log("hrHeight", hrHeight);
-         // console.log("nrTop",nrTop);
-         // console.log("nrHeight",nrHeight);
-         // console.log("hrHeight + hrTop + nrHeight + nrTop", hrHeight + hrTop + nrHeight + nrTop);
+          //console.log("hrTop", hrTop);
+          //console.log("nrHeight",nrHeight);
+          //console.log("nrTop",nrTop);
+          //console.log("(nrHeight - nrTop)", (nrHeight - nrTop));
+
+
 
           // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
-            "top" : hrHeight + hrTop + nrHeight + nrTop + (nrHeight - nrTop),
-            "max-width" : ascWidth,
+            "top" : ascTop,
             "max-height" : ascHeight
           });
 
-          // end medium-tall screens
-          console.log("\nMedium-tall screen portion END\n");
+        // end medium-tall screens
+        //console.log("\nMedium-tall screen portion END\n");
             
 
         }
@@ -293,7 +322,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 92000,
+          delay : 5000,
           dots : false,
           flud : true
         });
@@ -302,5 +331,13 @@
       applyUnSlider();
     } // end of attach
   }; // end of bannerSlider
+
+
+  jQuery.fn.isChildOverflowing = function (child) {
+    var p = jQuery(this).get(0);
+    var el = jQuery(child).get(0);
+    return (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
+    (el.offsetTop + el.offsetHeight > p.offsetTop + p.offsetHeight || el.offsetLeft + el.offsetWidth > p.offsetLeft + p.offsetWidth);
+  };
 
 })(jQuery, Drupal, this, this.document);
