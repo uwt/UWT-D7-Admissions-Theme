@@ -234,32 +234,22 @@
           var ascTop = hrHeight + hrTop + nrHeight + nrTop + (nrHeight - nrTop);
           $(".adm-slide-content").each(function(){
 
-            //console.log("this parent()", $(this).parent());
-            //console.log("this  outerWidth()", $(this).outerWidth({margin: true}));
 
-            //console.log("wiw", wiw);
+            var admFontSize = parseInt($(this).css("font-size"));
+            //console.log("admFontSize in each, before while", admFontSize);
+            //console.log("before while", jQuery(this).isChildOverflowing('.adm-slide-content a'));
 
+            // If the "read more" anchor is overflowing the adm-slide-content
+            // then reduce the font size.  I know, 75% is arbitrary. #dealWithIt.
+            // I tried many variations of the "shrink it till it fits" method but I
+            // just couldn't get it to work.
 
-           
-            
-            //console.log("equals");
-            //console.log($(this).find('h2').text());
-           
-
-            /*
-            if(jQuery(this).isChildOverflowing('.adm-slide-content p')){
-              console.log("overflowing!!");
-            }else{
-              console.log("not overflowing");
+            if(!jQuery(this).isChildOverflowing('.adm-slide-content a')){
+             jQuery(this).find('*').css({"font-size" : "75%"});
             }
-            */
+
 
             ascWidth = $(this).outerWidth();
-            //console.log("parseInt(ascWidth)", parseInt(ascWidth));
-            console.log("wiw", wiw);
-            console.log("ascWidth ORIG", ascWidth);
-            console.log("bwSizeWidth", bwSizeWidth);
-            console.log("ascWidth + bwSizeWidth", ascWidth + bwSizeWidth);
 
             // If the width of the box is more than half the window width,
             // cap the width at 50%. Otherwise, make it sized relative to the
@@ -270,30 +260,18 @@
               // The 40 is 4x10 px worth of padding/margin on the elements
               ascWidth = wiw - (bwSizeWidth + 40) + "px";
             }
-            console.log("ascWidth POST", ascWidth);
+            //console.log("ascWidth POST", ascWidth);
             $(this).css({
               "max-width" : ascWidth
             });
 
-            //console.log("wh", wh);
-            //console.log("minus mainToShow", mainToShow);
-            //console.log("minus this.innerHeight()", $(this).innerHeight());
-
             ascHeight = wh - mainToShow - ascTop;// - $(this).innerHeight();
 
-          //console.log("ascHeight", ascHeight);
+
 
           });  // end of each() .adm-slide-content
   
-          // Determine the top for the admission slide content
-          
-          //console.log("hrHeight", hrHeight);
-          //console.log("hrTop", hrTop);
-          //console.log("nrHeight",nrHeight);
-          //console.log("nrTop",nrTop);
-          //console.log("(nrHeight - nrTop)", (nrHeight - nrTop));
-
-
+          // Determine the top and height for the admission slide content
 
           // Set the width and position on the admissions slide content
           $(".adm-slide-content").css({
@@ -325,7 +303,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 2500,
+          delay : 25000,
           dots : false,
           flud : true
         });
@@ -339,8 +317,10 @@
   jQuery.fn.isChildOverflowing = function (child) {
     var p = jQuery(this).get(0);
     var el = jQuery(child).get(0);
-    return (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
+    return  (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
     (el.offsetTop + el.offsetHeight > p.offsetTop + p.offsetHeight || el.offsetLeft + el.offsetWidth > p.offsetLeft + p.offsetWidth);
+
+    
   };
 
 })(jQuery, Drupal, this, this.document);
