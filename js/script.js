@@ -146,7 +146,7 @@
       // 2. Resize the block W to an appropriate size.
       // 3. Reposition the block W. It cannot touch the top nav, and it has to touch
       function foldWork(){
-        var mainTop, ascTop, navTop, navHeight, navBottom, verticalDiff, ascVertPadding;
+        var  ascTop;
         var wiw = window.innerWidth;
         var headerHeightOrig = 500; // Matches the CSS declaration.
         var wh = $(window).height(); // Window Height
@@ -160,7 +160,6 @@
 
           /* Make sure we show the top X pixels of the #main element
            * #header height controls how far up or down #main is on the screen
-
            */
           if((wh - mainToShow) < headerHeightOrig){
             $("#header").css({
@@ -234,17 +233,18 @@
           var ascHeight = 0;
           var ascTop = hrHeight + hrTop + nrHeight + nrTop + (nrHeight - nrTop);
           $(".adm-slide-content").each(function(){
+
             //console.log("this parent()", $(this).parent());
             //console.log("this  outerWidth()", $(this).outerWidth({margin: true}));
 
             //console.log("wiw", wiw);
 
 
-            // console.log("bwSizeWidth", bwSizeWidth);
+           
             
             //console.log("equals");
             //console.log($(this).find('h2').text());
-            //console.log("ascWidth", ascWidth);
+           
 
             /*
             if(jQuery(this).isChildOverflowing('.adm-slide-content p')){
@@ -254,9 +254,12 @@
             }
             */
 
-
+            ascWidth = $(this).outerWidth();
             //console.log("parseInt(ascWidth)", parseInt(ascWidth));
-            //console.log("wiw", wiw);
+            console.log("wiw", wiw);
+            console.log("ascWidth ORIG", ascWidth);
+            console.log("bwSizeWidth", bwSizeWidth);
+            console.log("ascWidth + bwSizeWidth", ascWidth + bwSizeWidth);
 
             // If the width of the box is more than half the window width,
             // cap the width at 50%. Otherwise, make it sized relative to the
@@ -264,10 +267,10 @@
             if((parseInt(ascWidth) * 2) > wiw){
               ascWidth = "50%";
             }else{
-              ascWidth = wiw - (bwSizeWidth * 1.5) + "px";
+              // The 40 is 4x10 px worth of padding/margin on the elements
+              ascWidth = wiw - (bwSizeWidth + 40) + "px";
             }
-            //console.log("ascWidth", ascWidth);
-
+            console.log("ascWidth POST", ascWidth);
             $(this).css({
               "max-width" : ascWidth
             });
@@ -298,8 +301,8 @@
             "max-height" : ascHeight
           });
 
-        // end medium-tall screens
-        //console.log("\nMedium-tall screen portion END\n");
+          // end medium-tall screens
+          console.log("\nMedium-tall screen portion END\n");
             
 
         }
@@ -322,7 +325,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 5000,
+          delay : 2500,
           dots : false,
           flud : true
         });
