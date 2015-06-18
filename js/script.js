@@ -72,44 +72,30 @@
     attach: function(context, settings) {
 
       function applyNavMods(){
+        // Get the current window width
         var wiw = window.innerWidth;
-        if(wiw <= 724){  // If the window is at the narrow breakpoint or smaller
-          $("#navigation").addClass("mobilized");
-        }else{ // If the windows is wider than the narrow breakpoint
-          $("#navigation").removeClass("mobilized");
-          // Put the search form into the search region
-          $("#navigation #block-search-form").prependTo($("#search .region-search"));
-          $("#searchOpen , .search-toggle").css({
-            "display" : "inline-block"
-          });
-        }
 
-        if($("#nav-opener").length > 0){
-
-        }else{
+        // First we create the navigation opener element
+        if(!$("#nav-opener").length > 0){
           // Create the nav-opener element
           var navOpener = $("<div></div>", {
             id: "nav-opener"
-          }).click(function(){
-            // Show the navigation menu
-            $("#navigation").addClass("show-nav");
-            // Move the search into this menu
-            $("#block-search-form").insertBefore($("#navigation .block-menu-block > .menu-block-wrapper > .menu"));
-            // Hide the close search button icon
-            $("#searchOpen , .search-toggle").css({
-              "display": "none"
-            });
           })
           .text("Menu & Search");
-          // Add it to the body
-          $("body").append(navOpener);
+          // Add the navigation opener to the body
+          $("body").prepend(navOpener);
+        }
 
+        // Then we can create the navigation closer element
+        if(!$("#nav-closer").length > 0){
           // Create the "close menu" item.
           var navCloser = $("<div></div>",{
             id : "nav-closer"
           })
           .text("Hide menu")
           .click(function(){
+            // Hide the search region
+            $("#search #navigation").removeClass("show-search");
             // Hide the navigation menu
             $("#navigation").removeClass("show-nav");
           })
@@ -122,8 +108,72 @@
             "class": "nav-closer-icon"
           })
           .prependTo(navCloser);
-
         }
+
+        if (wiw <= 410){
+          /******************************************************
+           ********** EXTRA NARROW BREAKPOINT **********
+           *****************************************************/
+          console.log("apply the extra narrow nav mods");
+          // Move the navigation into the search region
+          $("#search").append($("#navigation"));
+
+          // Remove the extra search toggle
+          $("#navigation #searchOpen").remove();
+
+          // Move the nav/search closer to the top of the search region
+          $("#block-search-form").prepend($("#search .search-toggle"));
+
+          // Remove the extra nav closer
+          $("#navigation #nav-closer").remove();
+
+          // Apply the click handeler to the nav opener
+          $("#nav-opener").click(function(){
+            $("#search").addClass("show-search");
+          });
+
+          // Move the header before the region-banner
+          $("#page .region-banner").before($("#header"));
+
+
+
+        /**********************************************
+           ********** NARROW BREAKPOINT **********
+           *********************************************/
+        }else if(wiw <= 725){  // Narrow breakpoint
+          console.log("Apply the narrow nav mods");
+          $("#navigation").addClass("mobilized");
+          // Add the click handler to the nav opener
+          $("#nav-opener").click(function(){
+            console.log("navOpener Clickey");
+
+            // Show the navigation menu
+            $("#navigation").addClass("show-nav");
+
+            // Move the search into this menu
+            $("#block-search-form").insertBefore($("#navigation .block-menu-block > .menu-block-wrapper > .menu"));
+
+            // Hide the close search button icon
+            $("#searchOpen , .search-toggle").css({
+              "display": "none"
+            });
+          });
+
+
+        }else{ // If the windows is wider than the narrow breakpoint
+          $("#navigation").removeClass("mobilized");
+          // Put the search form into the search region
+          $("#navigation #block-search-form").prependTo($("#search .region-search"));
+          $("#searchOpen , .search-toggle").css({
+            "display" : "inline-block"
+          });
+        }
+
+
+
+        
+
+        
        
       } // End applyNavMods()
   
@@ -244,8 +294,13 @@
             // I tried many variations of the "shrink it till it fits" method but I
             // just couldn't get it to work.
 
-            if(!jQuery(this).isChildOverflowing('.adm-slide-content a')){
-             jQuery(this).find('*').css({"font-size" : "75%"});
+            if(!jQuery(this).isChildOverflowing('.adm-slide-content a') 
+              ||
+              !jQuery(this).isChildOverflowing('.adm-slide-content p')){
+              console.log(jQuery(this).find('*'));
+              jQuery(this).find('*').css({
+                "font-size" : "75%"
+              });
             }
 
 
@@ -303,7 +358,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 25000,
+          delay : 250000,
           dots : false,
           flud : true
         });
@@ -319,8 +374,6 @@
     var el = jQuery(child).get(0);
     return  (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
     (el.offsetTop + el.offsetHeight > p.offsetTop + p.offsetHeight || el.offsetLeft + el.offsetWidth > p.offsetLeft + p.offsetWidth);
-
-    
   };
 
 })(jQuery, Drupal, this, this.document);

@@ -1,25 +1,96 @@
 @include extra_narrow{
 
+  #page{
+    position: relative;
+  }
+
+  /******************************
+  ********** SEARCH **********
+  ******************************/
   #search{
     position:fixed;
-    top:-150px;
+    top:-100%;
     left:0;
     width:100%;
-    height:150px;
+    height:100%;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     &.show-search{
-      top:0px;
+      top:0%;
+      z-index: 1;
+      background-color: $grey_dark;
+      color: white;
+
+      ul{
+        width: 100%;
+        margin-top: 20px;
+        li{
+          float: none;
+          width:100%;
+          border-bottom: 1px solid $grey_light;
+          display: block;
+        }
+        ul{
+          display: none;
+        }
+      }
+      #nav-closer{
+        display: block;
+      }
+
+    }
+    .search-toggle{
+      width: 40px;
+      height: 40px;
+      float: left;
+    }
+    #block-search-form{
+      padding-top: 5px;
+      margin-bottom: 0;
+    }
+    /***********************************
+    ********** NAVIGATION **********
+    ***********************************/
+    #navigation{
+      width: 100%;
+      &.mobilized{
+        position:absolute;
+        top:60px;
+        left:0;
+        height:30px;
+        width:100%;
+        padding:0;
+        background-color:$purple;
+        ul{
+          li{
+            display:none;
+            ul{
+              display:none;
+            }
+          }
+
+        }
+
+        #nav-closer{
+          display: none;
+        }
+      }
     }
   }
 
+  /******************************
+  ********** HEADER **********
+  ******************************/
+
   #header{
-    position:absolute;
-    top:0;
-    left:0;
+    // tmp
+    //position:absolute;
+    //top:0px;
+    // /tmp
+    left:0px;
     height:60px;
     width:100%;
     background-color:black;
@@ -28,33 +99,42 @@
     }
   }
 
-  #navigation{
-    position:absolute;
-    top:60px;
-    left:0;
-    height:30px;
-    width:100%;
-    padding:0;
+
+
+  #nav-opener{
+    position:relative;
     background-color:$purple;
-    ul{
-      li{
-        display:none;
-        ul{
-          display:none;
-        }
-      }
-    }
+    z-index: 1;
+    padding-left: 10px;
   }
+
+
+
+
+  /**********************************************
+  ********** BANNER / SLIDESHOW **********
+  **********************************************/
   .region-banner{
-    position:absolute;
-    top:90px;
+    h2{
+      margin-top:10px;
+      margin-bottom: 10px;
+      font-size: 1.25em;
+      line-height: 1.25em;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+    // tmp
+    //position:absolute;
+    // top:90px;
+    // /tmp
     .block{
       margin-bottom:0;
     }
     #banner-container{
-      position:absolute;
-      top:0;
-      left:0;
+      // tmp
+      //position:absolute;
+      //top:0;
+      //left:0;
+      // /tmp
       margin:0;
       padding:0;
       width:100%;
@@ -66,23 +146,51 @@
         height:100%;
         width:100%;
         ul{
+
           margin:0;
           padding:0;
           li{
-            height:150px;
+
+            height:250px;
             float: left;
             list-style: none;
             background-repeat: no-repeat;
             background-size: cover;
+            .adm-slide{
+
+              .adm-slide-content{
+                padding-left: 10px;
+                padding-right: 10px;
+                a:link, a:visited{
+                  text-transform: uppercase;
+                  margin-top:10px;
+                  &:after{
+                    content: " \203A";
+                  }
+                }
+                p, a:visited, a:link{
+                  font-weight: bold;
+                  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+                  color:white;
+                  margin: 0;
+                }
+
+              }
+            }
           }
         }
       }
     }
   }
+
+  /***************************
+  ********** MAIN **********
+  ***************************/
+
   #main{
-    position:absolute;
-    top:260px;
-    left:0;
+    //position:relative;
+    //top:260px;/*tmp was 260*/
+    //left:0;
     #content{
       #page-title{
         display:none;
@@ -90,9 +198,9 @@
     }
   }
 
-  /*******************************************************************************
-  ****************************** DEBUGGING ************************************
-  *******************************************************************************/
+  /**********************************
+  ********** DEBUGGING **********
+  **********************************/
   body{
     background-color:#50C878; // Extra Narrow = Emerald
   }
