@@ -1,11 +1,16 @@
 @include extra_narrow{
-
+  body{
+    overflow-x:hidden;
+  }
   #page{
     position: relative;
   }
 
   #search-toggler{
-    height:2em;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height:2em; // <-- matches top of #header
     background-color:$purple;
     padding-left:10px;
     &:hover{
@@ -23,6 +28,7 @@
       }
     }
     &.search-opened{
+
       .icon{
         &:before{
           content:'\22A0';
@@ -54,31 +60,40 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
     .region-search{
-          color:$grey_dark;
-          }
+      color:$grey_dark;
+    }
     &.show-search{
       top:2em;
-      z-index: 1;
+      z-index: 2;
       background-color: $grey_dark;
       color: white;
 
-      ul{
-        width: 100%;
-        margin-top: 20px;
-        li{
-          float: none;
-          width:100%;
-          border-bottom: 1px solid $grey_light;
-          display: block;
-          height: 3em;
-          line-height: 3em;
-          background-color: $gold;
-          margin-bottom: 10px;
-          text-transform: uppercase;
-          padding-left: 10px;
-        }
+      /***********************************************
+      ********** SHOWING NAVIGATION **********
+      ***********************************************/
+      #navigation{
+        visibility: visible;
         ul{
-          display: none;
+          width: 100%;
+          margin-top: 20px;
+          li{
+            float: none;
+            width:100%;
+            border-bottom: 1px solid $grey_light;
+            display: block;
+            height: 3em;
+            line-height: 3em;
+            background-color: $gold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            padding-left: 10px;
+            a{
+              width:86%;
+            }
+          }
+          ul{
+            display: none;
+          }
         }
       }
       #nav-closer{
@@ -101,6 +116,7 @@
     #navigation{
       width: 100%;
       padding-left:0;
+      visibility: hidden;
       &.mobilized{
         position:absolute;
         top:60px;
@@ -131,16 +147,19 @@
   ******************************/
 
   #header{
-    // tmp
-    //position:absolute;
-    //top:0px;
-    // /tmp
-    left:0px;
-    height:60px;
+
+    position:relative;
+    top:2em; // <-- matches height of #search-toggler
+    height:100px;
     width:100%;
     background-color:black;
+    .block{
+      margin-bottom: 0;
+    }
     h1{
-      font-size:1.1em;
+      font-size:1em;
+      margin-bottom:0;
+      padding-bottom: 0;
     }
   }
 
@@ -233,9 +252,6 @@
   ***************************/
 
   #main{
-    //position:relative;
-    //top:260px;/*tmp was 260*/
-    //left:0;
     #content{
       #page-title{
         display:none;

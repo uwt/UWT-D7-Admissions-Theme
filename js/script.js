@@ -76,6 +76,10 @@
         // Get the current window width
         var wiw = window.innerWidth;
 
+        // Add the uw button styles to the nav links
+        $("#navigation .menu li a").addClass("uw-btn btn-sm");
+
+        // Make the search toggler functionality happen on click
         $("#search-toggler").click(function(){
           console.log("clicky!!");
           // Change verbiage...
