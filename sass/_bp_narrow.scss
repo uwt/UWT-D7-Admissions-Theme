@@ -50,8 +50,8 @@
   ****************************************************************/
   #search-n-nav{ // Search Closed
     position:fixed;
-    height:100%;
-    top: -100%;
+    height:500px;
+    top: -500px;
     z-index: 1;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -65,7 +65,7 @@
       width: 100%;
     }
     #search{
-
+      
     }
     #navigation{
       position: relative;

@@ -79,12 +79,9 @@
         // Add the uw button styles to the nav links
         $("#navigation .menu li a").addClass("uw-btn btn-sm");
 
+        
 
         // Remove the click handler before recreating it.
-        //var toggler = document.getElementById("search-toggler");
-        //console.log("toggler", toggler);
-        //var ev = $._data(toggler, "events");
-        //console.log("toggler events", ev);
         $("#search-toggler").unbind("click");
 
         // Make the search toggler functionality happen on click
