@@ -52,7 +52,7 @@ stylesheets[all][] = system.theme.css
 stylesheets[all][] = css/jquery-ui.min.css
 
 ; Then we add our own stylesheet.
-stylesheets[all][] = css/styles.css
+ stylesheets[all][] = css/styles.css
 
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.

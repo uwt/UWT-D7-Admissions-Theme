@@ -18,7 +18,7 @@
 
   // Move the search form into the navigation for easier styling, (easier, yeah right)
   Drupal.behaviors.searchFormMods = {
-    attach: function(context, settings) {
+    Xattach: function(context, settings) {
 
 
       var searchRegion = $("#search");
@@ -68,8 +68,32 @@
   // Modify the navigation menu styles.
   // Essentially, when the window gets too narrow for normal navigation, apply a
   // class to the navigation that will turn it mobiley.
+
   Drupal.behaviors.searchNavMods = {
-    attach: function(context, settings) {
+    attach: function(){
+      function applyNavMods(){
+        console.log("New applyNavMods");
+        // Get the current window width
+        var wiw = window.innerWidth;
+
+        $("#search-toggler").click(function(){
+          console.log("clicky!!");
+          // Change verbiage...
+          console.log("text is", $("#search-toggler span").text());
+          if($("#search-toggler .text").text() == 'Open'){
+          $("#search-toggler .text").text("Close");
+          $("#search-toggler").addClass("search-opened");
+          }else{
+            $("#search-toggler .text").text("Open");
+            $("#search-toggler").removeClass("search-opened");
+          }
+          $("#search").toggleClass("show-search");
+        });
+      }
+      $(window).resize(applyNavMods);
+      applyNavMods();
+    },
+    Xattach: function(context, settings) {
 
       function applyNavMods(){
         // Get the current window width
@@ -111,49 +135,51 @@
         }
 
         if (wiw <= 410){
-          /******************************************************
-           ********** EXTRA NARROW BREAKPOINT **********
-           *****************************************************/
+
           console.log("apply the extra narrow nav mods");
-          // Move the navigation into the search region
+
+          console.log("// Move the navigation into the search region");
           $("#search").append($("#navigation"));
 
-          // Remove the extra search toggle
+          console.log("// Remove the extra search toggle");
           $("#navigation #searchOpen").remove();
-
-          // Move the nav/search closer to the top of the search region
+          
+          console.log("// Move the nav/search closer to the top of the search region");
           $("#block-search-form").prepend($("#search .search-toggle"));
-
-          // Remove the extra nav closer
+          
+          console.log("// Remove the extra nav closer");
           $("#navigation #nav-closer").remove();
-
-          // Apply the click handeler to the nav opener
+          
+          console.log("// Apply the click handeler to the nav opener");
           $("#nav-opener").click(function(){
             $("#search").addClass("show-search");
           });
-
-          // Move the header before the region-banner
+          
+          console.log("// Move the header before the region-banner");
           $("#page .region-banner").before($("#header"));
 
 
 
-        /**********************************************
-           ********** NARROW BREAKPOINT **********
-           *********************************************/
+
         }else if(wiw <= 725){  // Narrow breakpoint
           console.log("Apply the narrow nav mods");
-          $("#navigation").addClass("mobilized");
-          // Add the click handler to the nav opener
-          $("#nav-opener").click(function(){
-            console.log("navOpener Clickey");
 
-            // Show the navigation menu
+          console.log(" // Move the search back into the navigation");
+          //$("#navigation").prepend($("#search"));
+          
+          console.log("// Prepend #nav-closer to  #search");
+          $("#search").prepend($("#nav-closer"));
+
+          console.log("// Add mobilized class to #navigation");
+          $("#navigation").addClass("mobilized");
+          
+          console.log("// Add the click handler to the nav opener");
+          $("#nav-opener").click(function(){
+
+            console.log(" // Show the navigation menu");
             $("#navigation").addClass("show-nav");
 
-            // Move the search into this menu
-            $("#block-search-form").insertBefore($("#navigation .block-menu-block > .menu-block-wrapper > .menu"));
-
-            // Hide the close search button icon
+            console.log("// Hide the close search button icon");
             $("#searchOpen , .search-toggle").css({
               "display": "none"
             });
@@ -180,15 +206,17 @@
 
 
 
-      $(window).resize(applyNavMods);
-      applyNavMods();
+
+
+
     } // end of attach
+
   };
 
   // We want to make sure that no matter how short a users screen is, in desktop mode, they
   // can see that there is content "below the fold"
   Drupal.behaviors.foldWorks = {
-    attach: function(context, settings) {
+    Xattach: function(context, settings) {
 
 
 

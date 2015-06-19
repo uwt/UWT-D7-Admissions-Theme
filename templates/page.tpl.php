@@ -8,19 +8,12 @@
  */
 ?>
 
-<div id="search">
-  <?php print render($page['search']); ?>
+<div id="search-toggler">
+  <span class="icon"></span><span class="text">Open</span> Menu &amp; Search
 </div>
 
-<div id="page">
-
-  <?php print render($page['banner']); ?>
-
-  <header class="header" id="header" role="banner">
-
-    <?php print render($page['header']); ?>
-
-  </header>
+<div id="search">
+  <?php print render($page['search']); ?>
 
   <div id="navigation">
 
@@ -49,6 +42,17 @@
     <?php print render($page['navigation']); ?>
 
   </div>
+
+</div>
+
+<header class="header" id="header" role="banner">
+  <?php print render($page['header']); ?>
+</header>
+
+<div id="page">
+
+  <?php print render($page['banner']); ?>
+
 
   <div id="main">
 

@@ -9,19 +9,17 @@
 
 
   #search{
-    position: fixed;
-    left: 0;
-    top: -150px; // Initial value. Changes to 0 by script.
+    position: relative;
+    //left: 0;
+    top: -200px; // Initial value. Changes to 0 by script.
     z-index: 3;
     max-width: 1200px;
     width: 100%;
-    height: 0px; // Initial value. Changes to 150px by script.
+    height: 200px; // Initial value. Changes to 200px by script.
     background-color: $grey_dark;
     margin-left: auto;
     margin-right: auto;
     border: none; // Initial value. Changes by script.
-
-
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -31,8 +29,8 @@
       color: $grey_dark;
       .container-inline{
         width:370px;
-        height:75px;
-        margin-top:50px;
+        //height:75px;
+        //margin-top:50px;
         margin-right:auto;
         margin-left:auto;
         #edit-search-block-form--2{
@@ -53,9 +51,9 @@
       }
     }
     &.show-search{
-      position:fixed;
+      position:relative;
       top:0px;
-      height:150px;
+      //height:150px;
       border-style: solid;
       border-color: $gold;
       border-width: 2px;
@@ -86,11 +84,13 @@
 
 
   .region-banner{
-    .block{margin-bottom:0;}
+    .block{
+          margin-bottom:0;
+          }
     #banner-container{
-      position:absolute;
-      top:0;
-      left:0;
+      position:relative;
+      //top:0;
+      //left:0;
       margin:0;
       padding:0;
       width:100%;
@@ -183,11 +183,11 @@
   }
   #header{
     // Adding the large block-W
-    background: url(../images/W_only_CMYK.png);
-    background-size: 297px 200px;
-    background-position: bottom 0px right 10px;
-    background-repeat: no-repeat;
-    height:500px; // Matches height of sliding images
+    //background: url(../images/W_only_CMYK.png);
+    //background-size: 297px 200px;
+    //background-position: bottom 0px right 10px;
+    //background-repeat: no-repeat;
+    //height:500px; // Matches height of sliding images
 
     padding:0;
     margin:0;
