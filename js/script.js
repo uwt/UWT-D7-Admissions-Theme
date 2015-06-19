@@ -79,10 +79,18 @@
         // Add the uw button styles to the nav links
         $("#navigation .menu li a").addClass("uw-btn btn-sm");
 
+
+        // Remove the click handler before recreating it.
+        //var toggler = document.getElementById("search-toggler");
+        //console.log("toggler", toggler);
+        //var ev = $._data(toggler, "events");
+        //console.log("toggler events", ev);
+        $("#search-toggler").unbind("click");
+
         // Make the search toggler functionality happen on click
         $("#search-toggler").click(function(){
           console.log("clicky!!");
-          // Change verbiage...
+          // Change verbiage and icon...
           console.log("text is", $("#search-toggler span").text());
           if($("#search-toggler .text").text() == 'Open'){
           $("#search-toggler .text").text("Close");
@@ -91,7 +99,7 @@
             $("#search-toggler .text").text("Open");
             $("#search-toggler").removeClass("search-opened");
           }
-          $("#search").toggleClass("show-search");
+          $("#search-n-nav").toggleClass("show-search");
         });
       }
       $(window).resize(applyNavMods);
@@ -123,7 +131,7 @@
           .text("Hide menu")
           .click(function(){
             // Hide the search region
-            $("#search #navigation").removeClass("show-search");
+            $("#search-n-nav #navigation").removeClass("show-search");
             // Hide the navigation menu
             $("#navigation").removeClass("show-nav");
           })

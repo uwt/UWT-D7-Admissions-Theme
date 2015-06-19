@@ -7,20 +7,23 @@
   }
 
   #search-toggler{
-    position: fixed;
+    position: relative;
     z-index: 1;
     width: 100%;
-    height:2em; // <-- matches top of #header
     background-color:$purple;
     padding-left:10px;
+    span{
+      vertical-align: text-bottom;
+    }
     &:hover{
       cursor:pointer;
     }
     .icon{
-      font-size:30px;
-      line-height: 30px;
+      font-size:40px;
+      line-height: 40px;
       margin:0;
       padding:0px 5px 0px 0px;
+      vertical-align: top;
     }
     .icon{
       &:before{
@@ -28,7 +31,7 @@
       }
     }
     &.search-opened{
-
+      position: fixed;
       .icon{
         &:before{
           content:'\22A0';
@@ -44,10 +47,10 @@
 
 
 
-  /******************************
-  ********** SEARCH **********
-  ******************************/
-  #search{
+  /****************************************************
+  ********** SEARCH-N-NAV CONTAINER **********
+  ****************************************************/
+  #search-n-nav{
     position:fixed;
     top:-100%;
     left:0;
@@ -63,7 +66,7 @@
       color:$grey_dark;
     }
     &.show-search{
-      top:2em;
+      top:40px;  // -> matches font-size and line-height on #search-toggler .icon
       z-index: 2;
       background-color: $grey_dark;
       color: white;
@@ -149,8 +152,8 @@
   #header{
 
     position:relative;
-    top:2em; // <-- matches height of #search-toggler
-    height:100px;
+    //top:2em; // <-- matches height of #search-toggler
+    //height:100px;
     width:100%;
     background-color:black;
     .block{

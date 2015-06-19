@@ -9,14 +9,15 @@
 ?>
 
 <div id="search-toggler">
-  <span class="icon"></span><span class="text">Open</span> Menu &amp; Search
+  <span class="icon"></span><span class="text">Open</span> <span>Menu &amp; Search</span>
 </div>
 
-<div id="search">
-  <?php print render($page['search']); ?>
+<div id="search-n-nav">
+  <div id="search">
+    <?php print render($page['search']); ?>
+  </div>
 
   <div id="navigation">
-
     <?php if ($main_menu): ?>
       <nav id="main-menu" role="navigation" tabindex="-1">
         <?php
