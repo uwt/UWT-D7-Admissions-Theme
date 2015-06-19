@@ -1933,7 +1933,7 @@ html {
   }
   /* line 36, ../sass/_bp_extra_narrow.scss */
   html #search-toggler.search-opened .icon:before {
-    content: '\22A0';
+    content: '\2297';
   }
   /* line 53, ../sass/_bp_extra_narrow.scss */
   html #search-n-nav {
@@ -2192,7 +2192,7 @@ html.lt-ie9 html #search-toggler.search-opened {
 }
 /* line 36, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-toggler.search-opened .icon:before {
-  content: '\22A0';
+  content: '\2297';
 }
 /* line 53, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-n-nav {
@@ -2408,10 +2408,12 @@ html {
     /****************************************************************
     ********** SEARCH AND NAVIGATION CONTAINER *********
     ****************************************************************/
+    /*******************************************************************************
+    ******************************* DEBUGGING ***********************************
+    *******************************************************************************/
   }
   /* line 4, ../sass/_bp_narrow.scss */
   html body {
-    background-color: #4b2e84;
     overflow-x: hidden;
   }
   /* line 13, ../sass/_bp_narrow.scss */
@@ -2449,7 +2451,7 @@ html {
   }
   /* line 42, ../sass/_bp_narrow.scss */
   html #search-toggler.search-opened .icon:before {
-    content: '\22A0';
+    content: '\2297';
   }
   /* line 52, ../sass/_bp_narrow.scss */
   html #search-n-nav {
@@ -2468,7 +2470,7 @@ html {
   html #search-n-nav.show-search {
     top: 40px;
     background-color: #444444;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: 250%;
   }
@@ -2496,12 +2498,6 @@ html {
   /* line 87, ../sass/_bp_narrow.scss */
   html #search-n-nav #navigation .menu li {
     float: none;
-  }
-  /* line 94, ../sass/_bp_narrow.scss */
-  html x {
-    /*******************************************************************************
-    ******************************* DEBUGGING ***********************************
-    *******************************************************************************/
   }
   /* line 95, ../sass/_bp_narrow.scss */
   html x #search {
@@ -2840,8 +2836,8 @@ html {
     margin-right: 0;
     width: 80%;
   }
-  /* line 444, ../sass/_bp_narrow.scss */
-  html x body {
+  /* line 448, ../sass/_bp_narrow.scss */
+  html body {
     background-color: navy;
   }
 }
@@ -2853,10 +2849,12 @@ html.lt-ie9 html {
   /****************************************************************
   ********** SEARCH AND NAVIGATION CONTAINER *********
   ****************************************************************/
+  /*******************************************************************************
+  ******************************* DEBUGGING ***********************************
+  *******************************************************************************/
 }
 /* line 4, ../sass/_bp_narrow.scss */
 html.lt-ie9 html body {
-  background-color: #4b2e84;
   overflow-x: hidden;
 }
 /* line 13, ../sass/_bp_narrow.scss */
@@ -2894,7 +2892,7 @@ html.lt-ie9 html #search-toggler.search-opened {
 }
 /* line 42, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #search-toggler.search-opened .icon:before {
-  content: '\22A0';
+  content: '\2297';
 }
 /* line 52, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #search-n-nav {
@@ -2913,7 +2911,7 @@ html.lt-ie9 html #search-n-nav {
 html.lt-ie9 html #search-n-nav.show-search {
   top: 40px;
   background-color: #444444;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 250%;
 }
@@ -2941,12 +2939,6 @@ html.lt-ie9 html #search-n-nav #navigation {
 /* line 87, ../sass/_bp_narrow.scss */
 html.lt-ie9 html #search-n-nav #navigation .menu li {
   float: none;
-}
-/* line 94, ../sass/_bp_narrow.scss */
-html.lt-ie9 html x {
-  /*******************************************************************************
-  ******************************* DEBUGGING ***********************************
-  *******************************************************************************/
 }
 /* line 95, ../sass/_bp_narrow.scss */
 html.lt-ie9 html x #search {
@@ -3285,8 +3277,8 @@ html.lt-ie9 html x .adm-home-btn-pane ul li .uw-btn {
   margin-right: 0;
   width: 80%;
 }
-/* line 444, ../sass/_bp_narrow.scss */
-html.lt-ie9 html x body {
+/* line 448, ../sass/_bp_narrow.scss */
+html.lt-ie9 html body {
   background-color: navy;
 }
 
