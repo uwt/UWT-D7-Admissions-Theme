@@ -17,6 +17,7 @@
     //height:2em; // <-- matches top of #header
     background-color:$purple;
     padding-left:10px;
+
     span{
       vertical-align: text-bottom;
     }
@@ -37,10 +38,10 @@
     }
     &.search-opened{ // search-n-nav is opened
       position: fixed;
-      z-index: 2;
+      z-index: 3;
       .icon{
         &:before{
-           content:'\2297';
+          content:'\2297';
         }
       }
     }
@@ -51,8 +52,8 @@
   ****************************************************************/
   #search-n-nav{ // Search Closed
     position:absolute;
-    height:500px;
-    top: -500px;
+    height:1000px;
+    top: -1000px;
     z-index: 1;
     padding-left: 10px;
     -webkit-transition: all 0.3s;
@@ -64,8 +65,11 @@
       top: 40px; // -> matches font-size and line-height on #search-toggler .icon
       background-color: $grey_dark;
       z-index: 2;
-      width: 100%;
+      width: 90%;
       height: 250%; // -> Arbitrarily large number.  Ugh.
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
       #navigation{
         visibility: visible;
       }

@@ -73,9 +73,19 @@
     attach: function(){
       function applyNavMods(){
         console.log("New applyNavMods");
-        // Get the current window width
+        // Get the current widths and heights of things
         var wiw = window.innerWidth;
-
+        var height = document.body.clientHeight;
+        console.log("height", height);
+        var stHeight = $("#search-toggler").outerHeight();
+        
+        // Make the search and navigation container as tall as the document
+        // and moved equally as far to the top...thus hiding the element.
+        $("#search-n-nav").css({
+          "height":height+"px",
+          "top":"-"+height+"px"
+        });
+        
         // Add the uw button styles to the nav links
         $("#navigation .menu li a").addClass("uw-btn btn-sm");
 
@@ -89,15 +99,23 @@
           console.log("clicky!!");
           // Change verbiage and icon...
           console.log("text is", $("#search-toggler span").text());
-          if($("#search-toggler .text").text() == 'Open'){
-          $("#search-toggler .text").text("Close");
-          $("#search-toggler").addClass("search-opened");
-          }else{
+          if($("#search-toggler .text").text() == 'Open'){ // search-n-nav is hidden
+            $("#search-toggler .text").text("Close");
+            $("#search-toggler").addClass("search-opened");
+            $("#search-n-nav").css({
+              "top":stHeight+"px"
+            });
+          }else{ // search-n-nav is displayed
             $("#search-toggler .text").text("Open");
             $("#search-toggler").removeClass("search-opened");
+            $("#search-n-nav").css({
+              "top":"-"+height+"px"
+            });
           }
+          // Toggle show-search
           $("#search-n-nav").toggleClass("show-search");
-        });
+
+        }); // End #search-toggler click handler
       }
       $(window).resize(applyNavMods);
       applyNavMods();

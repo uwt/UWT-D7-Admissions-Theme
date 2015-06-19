@@ -32,6 +32,7 @@
     }
     &.search-opened{
       position: fixed;
+      z-index:3;
       .icon{
         &:before{
           content:'\2297';
