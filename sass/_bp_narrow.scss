@@ -25,11 +25,14 @@
       cursor:pointer;
     }
     .icon{
-      font-size:40px;
-      line-height: 40px;
-      margin:0;
-      padding:0px 5px 0px 0px;
+      font-size: 30px;
+      line-height: 27px;
+      margin: 0;
+      padding: 0px 5px 0px 0px;
       vertical-align: top;
+      position: absolute;
+      right: 10px;
+      top: 0px;
     }
     .icon{
       &:before{
@@ -40,6 +43,9 @@
       position: fixed;
       z-index: 3;
       .icon{
+        font-size: 35px;
+        line-height: 28px;
+
         &:before{
           content:'\2297';
         }
@@ -63,7 +69,7 @@
     transition: all 0.3s;
     &.show-search{ // Search Opened
       top: 40px; // -> matches font-size and line-height on #search-toggler .icon
-      background-color: $grey_dark;
+      background-color: rgba(183, 165, 122, 0.93);
       z-index: 2;
       width: 90%;
       height: 250%; // -> Arbitrarily large number.  Ugh.
@@ -91,6 +97,33 @@
         li{
           float: none;
         }
+      }
+    }
+  }
+
+  #header{
+    background-color: rgba($grey_dark, 0.93);
+  }
+
+  #page{
+    #main{
+          margin-top:0;
+      padding-top:0;
+      #page-title{
+              color: $grey_dark;
+              }
+          }
+    .block{
+          margin-bottom:0;
+          }
+    #banner{
+      ul{
+        padding: 0;
+        margin:0;
+        h2{
+                  margin-top:0;
+          margin-bottom: 0;
+                  }
       }
     }
   }
@@ -450,7 +483,7 @@
   ******************************* DEBUGGING ***********************************
   *******************************************************************************/
   body {
-    background-color:navy; // Narrow = Navy
+    // background-color:navy; // Narrow = Navy
   }
 } ///////// End of narrow breakpoint
 
