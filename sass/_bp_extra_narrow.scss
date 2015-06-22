@@ -6,6 +6,22 @@
     position: relative;
   }
 
+  // #body-closer is the element that can be clicked on to close the navigation
+  #body-closer{
+    display:none;
+    width: 1px;
+    background-color:rgba(0,0,0,0.0);
+    &.shown{
+      display:block;
+      position: absolute;
+      width:20%; // <- assuming the #search-n-nav.show-search is 80%
+      right:0;
+      top: 0;
+      background-color: rgba($grey_light,0.93);
+      z-index:1;
+    }
+  }
+
   #search-toggler{
     position: relative;
     z-index: 1;
@@ -66,15 +82,19 @@
     .region-search{
       color:$grey_dark;
     }
+    /***********************************************
+    ********** SHOWING NAVIGATION **********
+    ***********************************************/
     &.show-search{
       top:40px;  // -> matches font-size and line-height on #search-toggler .icon
       z-index: 2;
-      background-color: $grey_dark;
+      background-color: rgba($gold_metallic,0.93);
       color: white;
+      width:80%;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
-      /***********************************************
-      ********** SHOWING NAVIGATION **********
-      ***********************************************/
       #navigation{
         visibility: visible;
         ul{

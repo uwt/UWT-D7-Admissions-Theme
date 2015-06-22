@@ -6,6 +6,22 @@
     overflow-x: hidden;
   }
 
+  // #body-closer is the element that can be clicked on to close the navigation
+  #body-closer{
+    display:none;
+    width: 1px;
+    background-color:rgba(0,0,0,0.0);
+    &.shown{
+      display:block;
+      position: absolute;
+      width:20%; // <- assuming the #search-n-nav.show-search is 80%
+      right:0;
+      top: 0;
+      background-color: rgba($grey_light,0.93);
+      z-index:1;
+    }
+  }
+
 
   /*****************************************
   ********** SEARCH TOGGLER **********
@@ -69,9 +85,9 @@
     transition: all 0.3s;
     &.show-search{ // Search Opened
       top: 40px; // -> matches font-size and line-height on #search-toggler .icon
-      background-color: rgba(183, 165, 122, 0.93);
+      background-color: rgba($gold_metallic, 0.93);
       z-index: 2;
-      width: 90%;
+      width: 80%;
       height: 250%; // -> Arbitrarily large number.  Ugh.
       -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
       -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -107,23 +123,23 @@
 
   #page{
     #main{
-          margin-top:0;
+      margin-top:0;
       padding-top:0;
       #page-title{
-              color: $grey_dark;
-              }
-          }
+        color: $grey_dark;
+      }
+    }
     .block{
-          margin-bottom:0;
-          }
+      margin-bottom:0;
+    }
     #banner{
       ul{
         padding: 0;
         margin:0;
         h2{
-                  margin-top:0;
+          margin-top:0;
           margin-bottom: 0;
-                  }
+        }
       }
     }
   }

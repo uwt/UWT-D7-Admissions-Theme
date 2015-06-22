@@ -89,28 +89,47 @@
         // Add the uw button styles to the nav links
         $("#navigation .menu li a").addClass("uw-btn btn-sm");
 
-        
-
+        // Create a div that we can click on that closes the nav menu
+        if($("#body-closer").length == 0){
+          var bodyCloser = $("<div></div>",{
+            id: "body-closer"
+          })
+          .css({
+            "height": height
+          })
+          .click(function(){
+            console.log("body closer clickey");
+            // Hide the search-n-nav
+            $("#search-toggler").trigger("click");
+          })
+          .appendTo($("body"));
+        }
         // Remove the click handler before recreating it.
         $("#search-toggler").unbind("click");
 
         // Make the search toggler functionality happen on click
         $("#search-toggler").click(function(){
-          console.log("clicky!!");
+          //console.log("search-toggler clicky!!");
           // Change verbiage and icon...
-          console.log("text is", $("#search-toggler span").text());
+          //console.log("text is", $("#search-toggler span").text());
           if($("#search-toggler .text").text() == 'Open'){ // search-n-nav is hidden
             $("#search-toggler .text").text("Close");
             $("#search-toggler").addClass("search-opened");
             $("#search-n-nav").css({
               "top":stHeight+"px"
             });
+            // Show the body closer
+            $("#body-closer").addClass("shown");
+
           }else{ // search-n-nav is displayed
             $("#search-toggler .text").text("Open");
             $("#search-toggler").removeClass("search-opened");
+            $("#body-closer").removeClass("shown");
             $("#search-n-nav").css({
               "top":"-"+height+"px"
             });
+            // Hide the body closer
+            $("body-closer").removeClass("shown");
           }
           // Toggle show-search
           $("#search-n-nav").toggleClass("show-search");
