@@ -91,7 +91,7 @@
 
         // Create a div that we can click on that closes the nav menu
         if($("#body-closer").length == 0){
-          var bodyCloser = $("<div></div>",{
+          $("<div></div>",{
             id: "body-closer"
           })
           .css({
@@ -115,8 +115,12 @@
           if($("#search-toggler .text").text() == 'Open'){ // search-n-nav is hidden
             $("#search-toggler .text").text("Close");
             $("#search-toggler").addClass("search-opened");
+            console.log($(document).scrollTop());
+            // When the search and nav element is shown, position it right below
+            // the search toggler
+            var snnTop = $(document).scrollTop() + stHeight + "px";
             $("#search-n-nav").css({
-              "top":stHeight+"px"
+              "top":snnTop
             });
             // Show the body closer
             $("#body-closer").addClass("shown");
@@ -136,8 +140,20 @@
 
         }); // End #search-toggler click handler
       }
+      // Apply the navigation modifies on load and window resize
       $(window).resize(applyNavMods);
       applyNavMods();
+
+      $(document).scroll(function(){
+        console.log("I be scrollin', yo.");
+        if($("#search-n-nav.show-search").length >= 1){
+        var snnTop = $(document).scrollTop() + $("#search-toggler").outerHeight() + "px"
+        $("#search-n-nav.show-search").css({
+          top: snnTop
+        });
+        }
+      });
+
     },
     Xattach: function(context, settings) {
 
@@ -432,7 +448,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 250000,
+          delay : 2500,
           dots : false,
           flud : true
         });
