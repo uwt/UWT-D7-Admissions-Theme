@@ -13,6 +13,7 @@
 </div>
 
 <div id="search-n-nav">
+  <h2>Search and Navigation</h2>
   <div id="search">
     <?php print render($page['search']); ?>
   </div>

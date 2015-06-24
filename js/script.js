@@ -144,16 +144,6 @@
       $(window).resize(applyNavMods);
       applyNavMods();
 
-      $(document).scroll(function(){
-        console.log("I be scrollin', yo.");
-        if($("#search-n-nav.show-search").length >= 1){
-        var snnTop = $(document).scrollTop() + $("#search-toggler").outerHeight() + "px"
-        $("#search-n-nav.show-search").css({
-          top: snnTop
-        });
-        }
-      });
-
     },
     Xattach: function(context, settings) {
 
