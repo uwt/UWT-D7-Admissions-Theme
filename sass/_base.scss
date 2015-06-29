@@ -89,9 +89,9 @@ $font-body:        $open_sans_regular;
 $font-monospace:   $courier;
 
 
-//
-// Colors, etc.
-//
+/********************************
+********** Colors, etc. **********
+********************************/
 
 $purple        : #4B2E84;
 $purple_medium : #BEB6CE; // Custom color, not official brand
@@ -120,10 +120,14 @@ $link_blue : #145F99; // Custom color, not official brand
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
+/************************************
+********** BREAKPOINTS **********
+************************************/
+
 @mixin breakpoint($point) {
 
   @if $point == extra_narrow{
-    @media only screen and (min-width: 0px) and (max-width:410px) {
+    @media only screen and (min-width: 0px) /*and (max-width:410px)*/ {
       $zen-column-count: 1;
       $zen-gutter-width: 10px;
       @content;
@@ -201,6 +205,9 @@ $indent-amount: 30px;
 }
 
 
+/*********************************************************************
+********** ALPHA BACKGROUND COLORS (USED? NO?) **********
+*********************************************************************/
 @mixin alpha-background-color($color, $background) {
   $percent: alpha($color) * 100%;
   $opaque: opacify($color, 1);
@@ -210,9 +217,20 @@ $indent-amount: 30px;
 }
 
 
-//
-// Partials to be shared with all .scss files.
-//
+/***************************************
+********** VERTICAL ALIGN **********
+***************************************/
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*************************************************************
+********** Partials to be shared with all .scss files **********
+*************************************************************/
 
 @import "compass/support";  // Add Compass' IE and vendor prefix support variables.
 @import "compass/utilities/general/clearfix"; // Better than Drupal's clearfix.
