@@ -49,11 +49,12 @@
 
 <header class="header" id="header" role="banner">
   <?php print render($page['header']); ?>
+<?php print render($page['banner']); ?>
 </header>
 
 <div id="page">
 
-  <?php print render($page['banner']); ?>
+  
 
 
   <div id="main">
