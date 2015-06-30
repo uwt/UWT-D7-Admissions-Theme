@@ -48,7 +48,15 @@
 </div>
 
 <header class="header" id="header" role="banner">
+  <?php
+  $themepath = path_to_theme('theme', 'uwtadmissions');
+  dpm($themepath);
+  ?>
+  <img id="header-block-w" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
+  <img id="header-wordmark" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
+  <h1>Undergraduate Admissions</h1>
   <?php print render($page['header']); ?>
+
 <?php print render($page['banner']); ?>
 </header>
 

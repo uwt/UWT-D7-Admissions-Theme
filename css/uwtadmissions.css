@@ -254,25 +254,27 @@ html {
     margin-bottom: 0;
   }
   /* line 206, ../sass/_bp_extra_narrow.scss */
-  html #header img {
-    padding-left: 10px;
+  html #header #header-block-w {
+    margin: 10px 0px;
+    width: 59.4px;
+    height: 40px;
   }
-  /* line 209, ../sass/_bp_extra_narrow.scss */
+  /* line 216, ../sass/_bp_extra_narrow.scss */
   html #header h1 {
     font-size: 110%;
     margin-bottom: 0;
     padding: 10px 0 10px 10px;
     background-color: #b7a57a;
-    color: #444444;
+    color: #FFF;
   }
-  /* line 220, ../sass/_bp_extra_narrow.scss */
+  /* line 227, ../sass/_bp_extra_narrow.scss */
   html #nav-opener {
     position: relative;
     background-color: #4b2e84;
     z-index: 1;
     padding-left: 10px;
   }
-  /* line 234, ../sass/_bp_extra_narrow.scss */
+  /* line 241, ../sass/_bp_extra_narrow.scss */
   html .region-banner h2 {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -280,17 +282,17 @@ html {
     line-height: 1.25em;
     text-shadow: 1px 1px 1px black;
   }
-  /* line 245, ../sass/_bp_extra_narrow.scss */
+  /* line 252, ../sass/_bp_extra_narrow.scss */
   html .region-banner .block {
     margin-bottom: 0;
   }
-  /* line 248, ../sass/_bp_extra_narrow.scss */
+  /* line 255, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container {
     margin: 0;
     padding: 0;
     width: 100%;
   }
-  /* line 257, ../sass/_bp_extra_narrow.scss */
+  /* line 264, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner {
     overflow: auto;
     position: relative;
@@ -299,12 +301,12 @@ html {
     height: 100%;
     width: 100%;
   }
-  /* line 264, ../sass/_bp_extra_narrow.scss */
+  /* line 271, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul {
     margin: 0;
     padding: 0;
   }
-  /* line 268, ../sass/_bp_extra_narrow.scss */
+  /* line 275, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li {
     height: 250px;
     float: left;
@@ -312,13 +314,13 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  /* line 275, ../sass/_bp_extra_narrow.scss */
+  /* line 282, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide {
     height: 100%;
     margin: 0;
     background-color: rgba(68, 68, 68, 0.25);
   }
-  /* line 279, ../sass/_bp_extra_narrow.scss */
+  /* line 286, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
     position: relative;
     top: 50%;
@@ -329,16 +331,16 @@ html {
     padding-left: 10px;
     padding-right: 10px;
   }
-  /* line 285, ../sass/_bp_extra_narrow.scss */
+  /* line 292, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited {
     text-transform: uppercase;
     margin-top: 10px;
   }
-  /* line 288, ../sass/_bp_extra_narrow.scss */
+  /* line 295, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link:after, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited:after {
     content: " \203A";
   }
-  /* line 292, ../sass/_bp_extra_narrow.scss */
+  /* line 299, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content p, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link {
     font-weight: bold;
     text-shadow: 1px 1px 1px #444444;
@@ -346,20 +348,20 @@ html {
     margin: 0;
     line-height: normal;
   }
-  /* line 314, ../sass/_bp_extra_narrow.scss */
+  /* line 321, ../sass/_bp_extra_narrow.scss */
   html #main #content #page-title {
     display: none;
   }
-  /* line 317, ../sass/_bp_extra_narrow.scss */
+  /* line 324, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block {
     margin: 10px 0;
     border: 2px solid #4b2e84;
   }
-  /* line 321, ../sass/_bp_extra_narrow.scss */
+  /* line 328, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block h2 {
     margin-left: 10px;
   }
-  /* line 323, ../sass/_bp_extra_narrow.scss */
+  /* line 330, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block h2 a:link, html #main #content .adm-home-block h2 a:visited {
     font-family: "uni_sans_light", Arial, sans-serif;
     color: #4b2e84;
@@ -584,25 +586,27 @@ html.lt-ie9 html #header .block {
   margin-bottom: 0;
 }
 /* line 206, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #header img {
-  padding-left: 10px;
+html.lt-ie9 html #header #header-block-w {
+  margin: 10px 0px;
+  width: 59.4px;
+  height: 40px;
 }
-/* line 209, ../sass/_bp_extra_narrow.scss */
+/* line 216, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #header h1 {
   font-size: 110%;
   margin-bottom: 0;
   padding: 10px 0 10px 10px;
   background-color: #b7a57a;
-  color: #444444;
+  color: #FFF;
 }
-/* line 220, ../sass/_bp_extra_narrow.scss */
+/* line 227, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #nav-opener {
   position: relative;
   background-color: #4b2e84;
   z-index: 1;
   padding-left: 10px;
 }
-/* line 234, ../sass/_bp_extra_narrow.scss */
+/* line 241, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner h2 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -610,17 +614,17 @@ html.lt-ie9 html .region-banner h2 {
   line-height: 1.25em;
   text-shadow: 1px 1px 1px black;
 }
-/* line 245, ../sass/_bp_extra_narrow.scss */
+/* line 252, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner .block {
   margin-bottom: 0;
 }
-/* line 248, ../sass/_bp_extra_narrow.scss */
+/* line 255, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container {
   margin: 0;
   padding: 0;
   width: 100%;
 }
-/* line 257, ../sass/_bp_extra_narrow.scss */
+/* line 264, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner {
   overflow: auto;
   position: relative;
@@ -629,12 +633,12 @@ html.lt-ie9 html .region-banner #banner-container #banner {
   height: 100%;
   width: 100%;
 }
-/* line 264, ../sass/_bp_extra_narrow.scss */
+/* line 271, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul {
   margin: 0;
   padding: 0;
 }
-/* line 268, ../sass/_bp_extra_narrow.scss */
+/* line 275, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li {
   height: 250px;
   float: left;
@@ -642,13 +646,13 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 275, ../sass/_bp_extra_narrow.scss */
+/* line 282, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide {
   height: 100%;
   margin: 0;
   background-color: rgba(68, 68, 68, 0.25);
 }
-/* line 279, ../sass/_bp_extra_narrow.scss */
+/* line 286, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
   position: relative;
   top: 50%;
@@ -659,16 +663,16 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 285, ../sass/_bp_extra_narrow.scss */
+/* line 292, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited {
   text-transform: uppercase;
   margin-top: 10px;
 }
-/* line 288, ../sass/_bp_extra_narrow.scss */
+/* line 295, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link:after, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited:after {
   content: " \203A";
 }
-/* line 292, ../sass/_bp_extra_narrow.scss */
+/* line 299, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content p, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link {
   font-weight: bold;
   text-shadow: 1px 1px 1px #444444;
@@ -676,20 +680,20 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-
   margin: 0;
   line-height: normal;
 }
-/* line 314, ../sass/_bp_extra_narrow.scss */
+/* line 321, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content #page-title {
   display: none;
 }
-/* line 317, ../sass/_bp_extra_narrow.scss */
+/* line 324, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block {
   margin: 10px 0;
   border: 2px solid #4b2e84;
 }
-/* line 321, ../sass/_bp_extra_narrow.scss */
+/* line 328, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block h2 {
   margin-left: 10px;
 }
-/* line 323, ../sass/_bp_extra_narrow.scss */
+/* line 330, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block h2 a:link, html.lt-ie9 html #main #content .adm-home-block h2 a:visited {
   font-family: "uni_sans_light", Arial, sans-serif;
   color: #4b2e84;

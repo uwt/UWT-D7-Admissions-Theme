@@ -203,15 +203,22 @@
     .block{
       margin-bottom: 0;
     }
-    img{
-      padding-left:10px;
+    #header-block-w{
+      //padding-left:10px;
+      margin: 10px 0px;
+      width:59.4px;
+      height:40px;
+      //natural size image 297x200
     }
+    #header-wordmark{
+          
+          }
     h1{
       font-size:110%;
       margin-bottom:0;
       padding: 10px 0 10px 10px;
       background-color:$gold_metallic;
-      color: $grey_dark;
+      color: #FFF;
     }
   }
 
