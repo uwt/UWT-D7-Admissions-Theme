@@ -150,6 +150,51 @@
         font-size: 25px;
       }
     }
+
+    /********************************************
+    ********** BANNER / UNSLIDER **********
+    ********************************************/
+
+    #banner{
+      ul{
+        overflow: auto;
+        position: relative;
+        li{
+          //list-style: none;
+          //float: left;
+          //background-size: cover;
+          height: 100%;
+          .adm-slide{
+
+            background-color: rgba($grey_dark,1);
+            .adm-slide-content{
+              width: 60%;
+              height: 60%;
+              border: 1px solid white;
+              background-color: rgba($grey_light, 0.5);
+              padding: 10px;
+              *{
+                color:white;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+              }
+              h2{
+                margin-top:0;
+                margin-bottom: 0;
+                font-size: 20px;
+                line-height: 20px;
+              }
+              p{
+                //margin: 0;
+                font-size: 17px;
+                line-height: 17px;
+              }
+            }
+          }
+        }
+
+      }
+    } // End #banner
+
   }
 
   #page{
@@ -164,50 +209,8 @@
 
     }
 
-    /********************************************
-    ********** BANNER / UNSLIDER **********
-    ********************************************/
 
-      #banner{
-        ul{
-          overflow: auto;
-          position: relative;
-          li{
-            //list-style: none;
-            //float: left;
-            //background-size: cover;
-            height: 100%;
-            .adm-slide{
-
-              background-color: rgba($grey_dark,1);
-              .adm-slide-content{
-                width: 60%;
-                height: 60%;
-                border: 1px solid white;
-                background-color: rgba($grey_light, 0.5);
-                padding: 10px;
-                *{
-                  color:white;
-                  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-                }
-                h2{
-                  margin-top:0;
-                  margin-bottom: 0;
-                  font-size: 20px;
-                  line-height: 20px;
-                }
-                p{
-                  //margin: 0;
-                  font-size: 17px;
-                  line-height: 17px;
-                }
-              }
-            }
-          }
-
-        }
-      }
-    }
+  }
 
 
 
