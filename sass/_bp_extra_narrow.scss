@@ -128,9 +128,15 @@
             margin-top:0px;
             li{
               padding-left: 10px;
+              padding-right:3px;
               a{
                 padding:5px 10px;
                 border-left: 2px solid $grey_dark;
+                background-color: $purple_medium;
+                &.uw-btn{
+                  &:before{
+                    background-color:gold;               }
+                }
               }
             }
           }
@@ -201,10 +207,9 @@
       padding-left:10px;
     }
     h1{
-      font-size:1em;
+      font-size:110%;
       margin-bottom:0;
-      padding-bottom: 0;
-      padding-left: 10px;
+      padding: 10px 0 10px 10px;
       background-color:$gold_metallic;
       color: $grey_dark;
     }
@@ -309,6 +314,18 @@
       #page-title{
         display:none;
       }
+      .adm-home-block{
+        margin: 10px 0;
+        border: 2px solid $purple;
+
+        h2{
+          margin-left: 10px;
+          a:link,a:visited{
+            font-family: $uni_sans_light;
+            color:$purple;
+          }
+        }
+      }
     }
   }
 
@@ -316,7 +333,7 @@
   ********** DEBUGGING **********
   **********************************/
   body{
-    background-color:#50C878; // Extra Narrow = Emerald
+    // background-color:#50C878; // Extra Narrow = Emerald
   }
 
   ///////////// End @include extra_narrow
