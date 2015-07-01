@@ -72,13 +72,26 @@
   Drupal.behaviors.searchNavMods = {
     attach: function(){
       function applyNavMods(){
-        console.log("New applyNavMods");
+        //console.log("New applyNavMods");
         // Get the current widths and heights of things
         var wiw = window.innerWidth;
+        // Get the height of the window (viewport)
+        var wih = window.innerHeight;
         var height = document.body.clientHeight;
-        console.log("height", height);
+        //console.log("document height", height);
+        //console.log("wih", wih);
+
         var stHeight = $("#search-toggler").outerHeight();
-        
+        // Dynamically set the height of the banner/slider
+        // Get the top position of the banner
+        var bannerTop = $("#banner ul li").offset().top;
+        // Set an arbitrary number of pixels to show below the banner
+        var showBelow = 35;
+        //console.log("bannerTop", bannerTop);
+        $("html .region-banner #banner-container #banner ul li").css({
+          "height": wih - bannerTop - showBelow
+        });
+
         // Make the search and navigation container as tall as the document
         // and moved equally as far to the top...thus hiding the element.
         $("#search-n-nav").css({
@@ -98,7 +111,7 @@
             "height": height
           })
           .click(function(){
-            console.log("body closer clickey");
+            //console.log("body closer clickey");
             // Hide the search-n-nav
             $("#search-toggler").trigger("click");
           })
@@ -115,12 +128,12 @@
           if($("#search-toggler .text").text() == 'Open'){ // search-n-nav is hidden
             $("#search-toggler .text").text("Close");
             $("#search-toggler").addClass("search-opened");
-            console.log($(document).scrollTop());
+            //console.log($(document).scrollTop());
             // When the search and nav element is shown, position it right below
             // the search toggler
             var snnTop = $(document).scrollTop() + stHeight + "px";
             $("#search-n-nav").css({
-              "top":snnTop
+              "top": snnTop
             });
             // Show the body closer
             $("#body-closer").addClass("shown");
@@ -439,8 +452,8 @@
         .unslider({
           speed : 4500,
           delay : 50000,
-          dots : false,
-          flud : true
+          dots : true,
+          fluid : true
         });
       }
       $(window).resize(applyUnSlider);

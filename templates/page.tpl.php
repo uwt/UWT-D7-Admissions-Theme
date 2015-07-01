@@ -8,9 +8,7 @@
  */
 ?>
 
-<div id="search-toggler">
-  <span class="icon"></span><span class="text">Open</span> <span>Menu &amp; Search</span>
-</div>
+
 
 <div id="search-n-nav">
   <h2>Menu &amp; Search</h2>
@@ -56,8 +54,15 @@
   <h1>Undergraduate Admissions</h1>
   <?php print render($page['header']); ?>
 
-  <?php print render($page['banner']); ?>
+
 </header>
+
+
+<div id="search-toggler">
+  <span class="icon"></span><span class="text">Open</span> <span>Menu &amp; Search</span>
+</div>
+
+<?php print render($page['banner']); ?>
 
 <div id="page">
 

@@ -89,9 +89,9 @@ $font-body:        $open_sans_regular;
 $font-monospace:   $courier;
 
 
-/********************************
-********** Colors, etc. **********
-********************************/
+/************************************\
+|********** COLORS, ETC. **********|
+\************************************/
 
 $purple        : #4B2E84;
 $purple_medium : #BEB6CE; // Custom color, not official brand
@@ -120,9 +120,9 @@ $link_blue : #145F99; // Custom color, not official brand
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
-/************************************
-********** BREAKPOINTS **********
-************************************/
+/*************************************\
+|********** BREAKPOINTS **********|
+\*************************************/
 
 @mixin breakpoint($point) {
 
@@ -205,9 +205,9 @@ $indent-amount: 30px;
 }
 
 
-/*********************************************************************
-********** ALPHA BACKGROUND COLORS (USED? NO?) **********
-*********************************************************************/
+/*********************************************************************\
+|********** ALPHA BACKGROUND COLORS (USED? NO?) **********|
+\*********************************************************************/
 @mixin alpha-background-color($color, $background) {
   $percent: alpha($color) * 100%;
   $opaque: opacify($color, 1);
@@ -217,9 +217,9 @@ $indent-amount: 30px;
 }
 
 
-/***************************************
-********** VERTICAL ALIGN **********
-***************************************/
+/****************************************\
+|********** VERTICAL ALIGN **********|
+\****************************************/
 @mixin vertical-align {
   position: relative;
   top: 50%;
@@ -228,9 +228,9 @@ $indent-amount: 30px;
   transform: translateY(-50%);
 }
 
-/*************************************************************
-********** Partials to be shared with all .scss files **********
-*************************************************************/
+/**************************************************************\
+|********** Partials to be shared with all .scss files **********|
+\**************************************************************/
 
 @import "compass/support";  // Add Compass' IE and vendor prefix support variables.
 @import "compass/utilities/general/clearfix"; // Better than Drupal's clearfix.

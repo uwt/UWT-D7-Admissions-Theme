@@ -39,11 +39,10 @@
       cursor:pointer;
     }
     .icon{
-      font-size:40px;
-      line-height: 40px;
+      font-size:30px;
+      line-height: normal;
       margin:0;
       padding:0px 5px 0px 0px;
-      vertical-align: top;
     }
     .icon{
       &:before{
@@ -53,6 +52,8 @@
     &.search-opened{
       position: fixed;
       z-index:3;
+      top: 0px;
+      left: 0px;
       .icon{
         &:before{
           content:'\2297';
@@ -68,9 +69,9 @@
 
 
 
-  /****************************************************
-  ********** SEARCH-N-NAV CONTAINER **********
-  ****************************************************/
+  /****************************************************\
+  |********** SEARCH-N-NAV CONTAINER **********|
+  \****************************************************/
   #search-n-nav{
     position:absolute;
     //top:-100%;
@@ -86,9 +87,9 @@
     .region-search{
       color:$grey_dark;
     }
-    /***********************************************
-    ********** SHOWING NAVIGATION **********
-    ***********************************************/
+    /***********************************************\
+    |********** SHOWING NAVIGATION **********|
+    \***********************************************/
     &.show-search{
       //top:40px;  // -> matches font-size and line-height on #search-toggler .icon
       z-index: 2;
@@ -117,9 +118,6 @@
             margin-bottom: 0px;
             text-transform: uppercase;
             padding-left: 10px;
-            //border-bottom: 1px solid $grey_light;
-            //height: 3em;
-            //background-color: $gold;
             a{
               width:75%;
               margin-bottom:10px;
@@ -160,9 +158,9 @@
       padding-top: 5px;
       margin-bottom: 0;
     }
-    /***********************************
-    ********** NAVIGATION **********
-    ***********************************/
+    /***********************************\
+    |********** NAVIGATION **********|
+    \***********************************/
     #navigation{
       width: 100%;
       padding-left:0;
@@ -192,9 +190,9 @@
     }
   }
 
-  /******************************
-  ********** HEADER **********
-  ******************************/
+  /******************************\
+  |********** HEADER **********|
+  \******************************/
 
   #header{
     // Allow for full-color background by removing padding.
@@ -208,7 +206,6 @@
       margin-bottom: 0;
     }
     #header-block-w{
-      //padding-left:10px;
       margin: 10px 0px;
       width:59.4px;
       height:40px;
@@ -226,8 +223,6 @@
     }
   }
 
-
-
   #nav-opener{
     position:relative;
     background-color:$purple;
@@ -238,9 +233,9 @@
 
 
 
-  /**********************************************
-  ********** BANNER / SLIDESHOW **********
-  **********************************************/
+  /**********************************************\
+  |********** BANNER / SLIDESHOW **********|
+  \**********************************************/
   .region-banner{
     h2{
       margin-top:10px;
@@ -249,19 +244,10 @@
       line-height: 1.25em;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     }
-    // tmp
-    //position:absolute;
-    // top:90px;
-    // /tmp
     .block{
       margin-bottom:0;
     }
     #banner-container{
-      // tmp
-      //position:absolute;
-      //top:0;
-      //left:0;
-      // /tmp
       margin:0;
       padding:0;
       width:100%;
@@ -273,12 +259,10 @@
         height:100%;
         width:100%;
         ul{
-
           margin:0;
           padding:0;
           li{
-
-            height:250px;
+            height:200px; // <- controls height of slideshow banner
             float: left;
             list-style: none;
             background-repeat: no-repeat;
@@ -286,7 +270,7 @@
             .adm-slide{
               height: 100%; // <- controls height of semi-opaque text box in front of banner image
               margin: -10px 0 0 0;
-              background-color: rgba($grey_dark, 0.25);
+
 
               // Adding the large block-W
               background: url(../images/W_only_CMYK.png);
@@ -299,7 +283,8 @@
                 margin-left:10px;
                 padding-left: 10px;
                 padding-right: 10px;
-                //height:80%;
+                width: 70%;
+                background-color: rgba($grey_dark, 0.25);
                 a:link, a:visited{
                   text-transform: uppercase;
                   margin-top:10px;
@@ -314,7 +299,6 @@
                   margin: 0;
                   line-height: normal;
                 }
-
               }
             }
           }
@@ -323,9 +307,9 @@
     }
   }
 
-  /***************************
-  ********** MAIN **********
-  ***************************/
+  /***************************\
+  |********** MAIN **********|
+  \***************************/
 
   #main{
     #content{
@@ -348,9 +332,9 @@
     }
   }
 
-  /**********************************
-  ********** DEBUGGING **********
-  **********************************/
+  /**********************************\
+  |********** DEBUGGING **********|
+  \**********************************/
   body{
     // background-color:#50C878; // Extra Narrow = Emerald
   }

@@ -2,7 +2,6 @@
 
 
   body{
-    //background-color: $purple;
     overflow-x: hidden;
   }
 
@@ -26,31 +25,21 @@
   }
 
 
-  /*****************************************
-  ********** SEARCH TOGGLER **********
-  *****************************************/
-  //X{ // surrounding this with "x" is testing to see if we can get rid of the block of SASS
-  #search-toggler{
-    position: fixed;
-    top:0;
-    z-index: 2;
-    //width: 100%;
-    //height:43px; // <-- matches margin-top of #header
-    //background-color:$purple;
-    //padding-left:10px;
+  /*****************************************\
+  |********** SEARCH TOGGLER **********|
+  \*****************************************/
 
+  #search-toggler {
+    //position: fixed;
+    //top:0;
+    z-index: 2;
     span{
-      //vertical-align: text-bottom;
     }
     &:hover{
-      //cursor:pointer;
     }
     .icon{
       font-size: 30px;
       line-height: 27px;
-      //margin: 0;
-      //padding: 0px 5px 0px 0px;
-      //vertical-align: top;
       position: absolute;
       right: 10px;
       top: 0px;
@@ -66,71 +55,46 @@
       .icon{
         font-size: 35px;
         line-height: 28px;
-
         &:before{
           content:'\2297';
         }
       }
     }
   }
-  // } // end X
-  /****************************************************************
-  ********** SEARCH AND NAVIGATION CONTAINER *********
-  ****************************************************************/
+
+  /****************************************************************\
+  |********** SEARCH AND NAVIGATION CONTAINER *********|
+  \****************************************************************/
   #search-n-nav{ // Search Closed
-    //position:absolute;
-    //height:1000px;
-    //top: -1000px;
-    //z-index: 1;
-    //padding-left: 10px;
-    //-webkit-transition: all 0.3s;
-    //-moz-transition: all 0.3s;
-    //-ms-transition: all 0.3s;
-    //-o-transition: all 0.3s;
-    //transition: all 0.3s;
+
     &.show-search{ // Search Opened
-      //top: 40px; // -> matches font-size and line-height on #search-toggler .icon
-      //background-color: rgba($gold_metallic, 0.93);
-      //z-index: 2;
-      //width: 80%;
-      //height: 250%; // -> Arbitrarily large number.  Ugh.
-      //-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      //-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      //box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
       h2{
         font-size: 30px;
         line-height: 30px;
-        //margin: 0;
       }
       #navigation{
-        //visibility: visible;
       }
     }
     #search{
       padding-top: 10px;
       color: $grey_dark;
       .block{
-        //margin-bottom: 0;
       }
     }
     #navigation{
       position: relative;
       top: 20px;
       height: 100%;
-      //visibility: hidden;
-      //padding-left:0;
       .menu{
         li{
           float: none;
           a{
-            //width:75%;
           }
         }
         .menu{
           li{
             padding-left:2em;
             a{
-
             }
           }
         }
@@ -138,34 +102,29 @@
     }
   }
 
-  /******************************
-  ********** HEADER **********
-  ******************************/
+  /******************************\
+  |********** HEADER **********|
+  \******************************/
   #header{
-    background-color: rgba($grey_dark, 0.93);
-    margin-top:32px; // <- matches height of #nav-toggler
+    //background-color: rgba($grey_dark, 0.93);
+    //margin-top:32px; // <- matches height of #nav-toggler
     .block{
       h1{
-        //margin-bottom: 10px;
         font-size: 25px;
       }
     }
 
-    /********************************************
-    ********** BANNER / UNSLIDER **********
-    ********************************************/
+    /********************************************\
+    |********** BANNER / UNSLIDER **********|
+    \********************************************/
 
     #banner{
       ul{
         overflow: auto;
         position: relative;
         li{
-          //list-style: none;
-          //float: left;
-          //background-size: cover;
           height: 100%;
           .adm-slide{
-
             background-color: rgba($grey_dark,1);
             .adm-slide-content{
               width: 60%;
@@ -184,19 +143,19 @@
                 line-height: 20px;
               }
               p{
-                //margin: 0;
                 font-size: 17px;
                 line-height: 17px;
               }
             }
           }
         }
-
       }
     } // End #banner
 
   }
-
+  /***************************\
+  |********** PAGE **********|
+  \***************************/
   #page{
     #main{
       margin-top:0;
@@ -206,10 +165,7 @@
       }
     }
     .block{
-
     }
-
-
   }
 
 
@@ -392,13 +348,6 @@
       }
     }
     #header{
-      // Adding the large block-W
-      //background: url(../images/W_only_CMYK.png);
-      //background-size: 297px 200px;
-      //background-position: bottom 0px right 10px;
-      //background-repeat: no-repeat;
-      //height:500px; // Matches height of sliding images
-
       padding:0;
       margin:0;
       position:relative;
@@ -410,7 +359,6 @@
         // To account for the "Menu & Search" button on narrow
         margin-right: 80px; // <-- equals the outer width of #nav-opener
         font-size: 1.75em;
-        //white-space: nowrap;
         display:block;
       }
       .block{
@@ -420,7 +368,7 @@
     }
 
     #main{
-      padding-top:0px; /*  */
+      padding-top:0px;
       border-top:20px solid $purple;
       position: relative ;
       z-index: 2;
@@ -572,7 +520,7 @@
   ******************************* DEBUGGING ***********************************
   *******************************************************************************/
   body {
-    background-color:navy; // Narrow = Navy
+    //background-color:navy; // Narrow = Navy
   }
 } ///////// End of narrow breakpoint
 
