@@ -261,9 +261,12 @@
     h2{
       margin-top:10px;
       margin-bottom: 10px;
-      font-size: 1.25em;
-      line-height: 1.25em;
+      font-size: 100%;
+      line-height: normal;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+    p{
+      font-size: 100%;
     }
     .block{
       margin-bottom:0;
@@ -300,14 +303,12 @@
               background-repeat: no-repeat;
 
               .adm-slide-content{
-                //@include vertical-align;
-
+                font-size: 70%;
                 position: relative;
-                top: 25%;
-                -webkit-transform: translateY(-25%);
-                -ms-transform: translateY(-25%);
-                transform: translateY(-25%);
-
+                top: 15%;
+                -webkit-transform: translateY(-15%);
+                -ms-transform: translateY(-15%);
+                transform: translateY(-15%);
                 margin-left:10px;
                 padding-left: 10px;
                 padding-right: 10px;
@@ -335,6 +336,7 @@
         .dots{ // UL banner/slider navigation
           position: absolute;
           bottom: 0px;
+          left: 0px;
           margin: 0;
           list-style: none;
           padding:0;
@@ -358,9 +360,7 @@
               margin-left: 0px;
             }
           }
-
         }
-
       }
     }
   }

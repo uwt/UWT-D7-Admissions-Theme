@@ -217,10 +217,10 @@ $indent-amount: 30px;
 }
 
 
-/****************************************\
-|********** VERTICAL ALIGN **********|
-\****************************************/
-@mixin vertical-align {
+/*************************************************\
+|********** VERTICAL ALIGN CENTER **********|
+\*************************************************/
+@mixin vertical-align-center {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);

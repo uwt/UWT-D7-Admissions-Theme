@@ -19,9 +19,9 @@ Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
 /*********************************************************************\
 |********** ALPHA BACKGROUND COLORS (USED? NO?) **********|
 \*********************************************************************/
-/****************************************\
-|********** VERTICAL ALIGN **********|
-\****************************************/
+/*************************************************\
+|********** VERTICAL ALIGN CENTER **********|
+\*************************************************/
 /**************************************************************\
 |********** Partials to be shared with all .scss files **********|
 \**************************************************************/
@@ -301,21 +301,25 @@ html {
   html .region-banner h2 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 1.25em;
-    line-height: 1.25em;
+    font-size: 100%;
+    line-height: normal;
     text-shadow: 1px 1px 1px black;
   }
   /* line 268, ../sass/_bp_extra_narrow.scss */
+  html .region-banner p {
+    font-size: 100%;
+  }
+  /* line 271, ../sass/_bp_extra_narrow.scss */
   html .region-banner .block {
     margin-bottom: 0;
   }
-  /* line 271, ../sass/_bp_extra_narrow.scss */
+  /* line 274, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container {
     margin: 0;
     padding: 0;
     width: 100%;
   }
-  /* line 275, ../sass/_bp_extra_narrow.scss */
+  /* line 278, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner {
     overflow: auto;
     position: relative;
@@ -324,12 +328,12 @@ html {
     height: 100%;
     width: 100%;
   }
-  /* line 282, ../sass/_bp_extra_narrow.scss */
+  /* line 285, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul {
     margin: 0;
     padding: 0;
   }
-  /* line 285, ../sass/_bp_extra_narrow.scss */
+  /* line 288, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li {
     height: 200px;
     float: left;
@@ -337,7 +341,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  /* line 291, ../sass/_bp_extra_narrow.scss */
+  /* line 294, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide {
     height: 100%;
     margin: 0;
@@ -346,13 +350,14 @@ html {
     background-position: bottom 0px right 10px;
     background-repeat: no-repeat;
   }
-  /* line 302, ../sass/_bp_extra_narrow.scss */
+  /* line 305, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
+    font-size: 70%;
     position: relative;
-    top: 25%;
-    -webkit-transform: translateY(-25%);
-    -ms-transform: translateY(-25%);
-    transform: translateY(-25%);
+    top: 15%;
+    -webkit-transform: translateY(-15%);
+    -ms-transform: translateY(-15%);
+    transform: translateY(-15%);
     margin-left: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -360,16 +365,16 @@ html {
     background-color: rgba(68, 68, 68, 0.25);
     border: 2px solid #FFF;
   }
-  /* line 317, ../sass/_bp_extra_narrow.scss */
+  /* line 318, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited {
     text-transform: uppercase;
     margin-top: 10px;
   }
-  /* line 320, ../sass/_bp_extra_narrow.scss */
+  /* line 321, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link:after, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited:after {
     content: " \203A";
   }
-  /* line 324, ../sass/_bp_extra_narrow.scss */
+  /* line 325, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content p, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link {
     font-weight: bold;
     text-shadow: 1px 1px 1px #444444;
@@ -377,17 +382,18 @@ html {
     margin: 0;
     line-height: normal;
   }
-  /* line 335, ../sass/_bp_extra_narrow.scss */
+  /* line 336, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots {
     position: absolute;
     bottom: 0px;
+    left: 0px;
     margin: 0;
     list-style: none;
     padding: 0;
     margin: 0 0 0 20px;
     background-color: rgba(75, 46, 132, 0.9);
   }
-  /* line 343, ../sass/_bp_extra_narrow.scss */
+  /* line 345, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li {
     font-size: 200%;
     width: 30px;
@@ -400,11 +406,11 @@ html {
     -o-transition: all 1s;
     transition: all 1s;
   }
-  /* line 354, ../sass/_bp_extra_narrow.scss */
+  /* line 356, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li.active {
     background-color: rgba(183, 165, 122, 0.75);
   }
-  /* line 357, ../sass/_bp_extra_narrow.scss */
+  /* line 359, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li:first-child {
     margin-left: 0px;
   }
@@ -691,21 +697,25 @@ html.lt-ie9 html #nav-opener {
 html.lt-ie9 html .region-banner h2 {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 1.25em;
-  line-height: 1.25em;
+  font-size: 100%;
+  line-height: normal;
   text-shadow: 1px 1px 1px black;
 }
 /* line 268, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html .region-banner p {
+  font-size: 100%;
+}
+/* line 271, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner .block {
   margin-bottom: 0;
 }
-/* line 271, ../sass/_bp_extra_narrow.scss */
+/* line 274, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container {
   margin: 0;
   padding: 0;
   width: 100%;
 }
-/* line 275, ../sass/_bp_extra_narrow.scss */
+/* line 278, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner {
   overflow: auto;
   position: relative;
@@ -714,12 +724,12 @@ html.lt-ie9 html .region-banner #banner-container #banner {
   height: 100%;
   width: 100%;
 }
-/* line 282, ../sass/_bp_extra_narrow.scss */
+/* line 285, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul {
   margin: 0;
   padding: 0;
 }
-/* line 285, ../sass/_bp_extra_narrow.scss */
+/* line 288, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li {
   height: 200px;
   float: left;
@@ -727,7 +737,7 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 291, ../sass/_bp_extra_narrow.scss */
+/* line 294, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide {
   height: 100%;
   margin: 0;
@@ -736,13 +746,14 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide {
   background-position: bottom 0px right 10px;
   background-repeat: no-repeat;
 }
-/* line 302, ../sass/_bp_extra_narrow.scss */
+/* line 305, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
+  font-size: 70%;
   position: relative;
-  top: 25%;
-  -webkit-transform: translateY(-25%);
-  -ms-transform: translateY(-25%);
-  transform: translateY(-25%);
+  top: 15%;
+  -webkit-transform: translateY(-15%);
+  -ms-transform: translateY(-15%);
+  transform: translateY(-15%);
   margin-left: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -750,16 +761,16 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-
   background-color: rgba(68, 68, 68, 0.25);
   border: 2px solid #FFF;
 }
-/* line 317, ../sass/_bp_extra_narrow.scss */
+/* line 318, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited {
   text-transform: uppercase;
   margin-top: 10px;
 }
-/* line 320, ../sass/_bp_extra_narrow.scss */
+/* line 321, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link:after, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited:after {
   content: " \203A";
 }
-/* line 324, ../sass/_bp_extra_narrow.scss */
+/* line 325, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content p, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link {
   font-weight: bold;
   text-shadow: 1px 1px 1px #444444;
@@ -767,17 +778,18 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-
   margin: 0;
   line-height: normal;
 }
-/* line 335, ../sass/_bp_extra_narrow.scss */
+/* line 336, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots {
   position: absolute;
   bottom: 0px;
+  left: 0px;
   margin: 0;
   list-style: none;
   padding: 0;
   margin: 0 0 0 20px;
   background-color: rgba(75, 46, 132, 0.9);
 }
-/* line 343, ../sass/_bp_extra_narrow.scss */
+/* line 345, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li {
   font-size: 200%;
   width: 30px;
@@ -790,11 +802,11 @@ html.lt-ie9 html .region-banner #banner-container #banner .dots li {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 354, ../sass/_bp_extra_narrow.scss */
+/* line 356, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li.active {
   background-color: rgba(183, 165, 122, 0.75);
 }
-/* line 357, ../sass/_bp_extra_narrow.scss */
+/* line 359, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li:first-child {
   margin-left: 0px;
 }
