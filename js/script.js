@@ -109,7 +109,7 @@
         // Make the search and navigation container as tall as the document
         // and moved equally as far to the top...thus hiding the element.
         $("#search-n-nav").css({
-          "height":height+"px",
+          //"height":height+"px",
           "top":"-"+height+"px"
         });
         
@@ -122,7 +122,7 @@
             id: "body-closer"
           })
           .css({
-            "height": height
+            //"height": height
           })
           .click(function(){
             //console.log("body closer clickey");
