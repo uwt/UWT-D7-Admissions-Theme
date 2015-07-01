@@ -300,7 +300,14 @@
               background-repeat: no-repeat;
 
               .adm-slide-content{
-                @include vertical-align;
+                //@include vertical-align;
+
+                position: relative;
+                top: 25%;
+                -webkit-transform: translateY(-25%);
+                -ms-transform: translateY(-25%);
+                transform: translateY(-25%);
+
                 margin-left:10px;
                 padding-left: 10px;
                 padding-right: 10px;
@@ -325,11 +332,30 @@
             }
           }
         }
-        .dots{
+        .dots{ // UL banner/slider navigation
           position: absolute;
           bottom: 0px;
           margin: 0;
+          list-style: none;
+          padding:0;
+          margin: 0 0 0 20px;
+          background-color: rgba($purple, 0.9);
+          li{
+            width: 20px;
+            float: left;
+            padding-left: 5px;
+            margin-left:2px;
+
+            &.active{
+              background-color: rgba($gold_metallic, 0.75);
+            }
+            &:first-child{
+              margin-left: 0px;
+            }
+          }
+
         }
+
       }
     }
   }

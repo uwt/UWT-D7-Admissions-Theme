@@ -100,7 +100,7 @@
         // Get the top position of the banner
         var bannerTop = $("#banner ul li").offset().top;
         // Set an arbitrary number of pixels to show below the banner
-        var showBelow = 35;
+        var showBelow = wih * 0.075;
         //console.log("bannerTop", bannerTop);
         $("html .region-banner #banner-container #banner ul li").css({
           "height": wih - bannerTop - showBelow
@@ -464,8 +464,8 @@
         $('#banner')
         .width(wiw)
         .unslider({
-          speed : 4500,
-          delay : 8500,
+          speed : 1500,
+          delay : 6500,
           dots : true,
           fluid : true
         });
