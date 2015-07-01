@@ -389,31 +389,37 @@ html {
   }
   /* line 343, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li {
-    width: 20px;
+    font-size: 200%;
+    width: 30px;
     float: left;
     padding-left: 5px;
     margin-left: 2px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
   }
-  /* line 349, ../sass/_bp_extra_narrow.scss */
+  /* line 354, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li.active {
     background-color: rgba(183, 165, 122, 0.75);
   }
-  /* line 352, ../sass/_bp_extra_narrow.scss */
+  /* line 357, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li:first-child {
     margin-left: 0px;
   }
-  /* line 372, ../sass/_bp_extra_narrow.scss */
+  /* line 377, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block {
     margin: 10px 0;
     border: 2px solid #4b2e84;
   }
-  /* line 375, ../sass/_bp_extra_narrow.scss */
+  /* line 380, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block h2 {
     margin-left: 10px;
     font-family: "uni_sans_light", Arial, sans-serif;
     color: #4b2e84;
   }
-  /* line 379, ../sass/_bp_extra_narrow.scss */
+  /* line 384, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block h2 a:link, html #main #content .adm-home-block h2 a:visited {
     font-family: "uni_sans_light", Arial, sans-serif;
     color: #4b2e84;
@@ -773,31 +779,37 @@ html.lt-ie9 html .region-banner #banner-container #banner .dots {
 }
 /* line 343, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li {
-  width: 20px;
+  font-size: 200%;
+  width: 30px;
   float: left;
   padding-left: 5px;
   margin-left: 2px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 }
-/* line 349, ../sass/_bp_extra_narrow.scss */
+/* line 354, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li.active {
   background-color: rgba(183, 165, 122, 0.75);
 }
-/* line 352, ../sass/_bp_extra_narrow.scss */
+/* line 357, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li:first-child {
   margin-left: 0px;
 }
-/* line 372, ../sass/_bp_extra_narrow.scss */
+/* line 377, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block {
   margin: 10px 0;
   border: 2px solid #4b2e84;
 }
-/* line 375, ../sass/_bp_extra_narrow.scss */
+/* line 380, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block h2 {
   margin-left: 10px;
   font-family: "uni_sans_light", Arial, sans-serif;
   color: #4b2e84;
 }
-/* line 379, ../sass/_bp_extra_narrow.scss */
+/* line 384, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block h2 a:link, html.lt-ie9 html #main #content .adm-home-block h2 a:visited {
   font-family: "uni_sans_light", Arial, sans-serif;
   color: #4b2e84;
