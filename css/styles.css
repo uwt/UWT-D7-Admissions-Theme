@@ -2258,7 +2258,7 @@ html {
     margin: 0;
     list-style: none;
     padding: 0;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 10px;
     background-color: rgba(75, 46, 132, 0.9);
   }
   /* line 345, ../sass/_bp_extra_narrow.scss */
@@ -2654,7 +2654,7 @@ html.lt-ie9 html .region-banner #banner-container #banner .dots {
   margin: 0;
   list-style: none;
   padding: 0;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
   background-color: rgba(75, 46, 132, 0.9);
 }
 /* line 345, ../sass/_bp_extra_narrow.scss */
