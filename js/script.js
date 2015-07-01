@@ -72,6 +72,20 @@
   Drupal.behaviors.searchNavMods = {
     attach: function(){
       function applyNavMods(){
+
+        /********************************************************\
+        |******** Show/hide the toggler based on scroll **********|
+        \********************************************************/
+
+        // @see http://wicky.nillia.ms/headroom.js/
+        // grab an element
+        var searchToggler = document.querySelector("#search-toggler");
+        // construct an instance of Headroom, passing the element
+        var headroom  = new Headroom(searchToggler);
+        // initialise
+        headroom.init();
+
+
         //console.log("New applyNavMods");
         // Get the current widths and heights of things
         var wiw = window.innerWidth;
@@ -451,7 +465,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 50000,
+          delay : 5000,
           dots : true,
           fluid : true
         });
@@ -468,5 +482,7 @@
     return  (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
     (el.offsetTop + el.offsetHeight > p.offsetTop + p.offsetHeight || el.offsetLeft + el.offsetWidth > p.offsetLeft + p.offsetWidth);
   };
+
+
 
 })(jQuery, Drupal, this, this.document);

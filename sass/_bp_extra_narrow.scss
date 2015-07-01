@@ -5,6 +5,7 @@
   #page{
     position: relative;
     border-top:20px solid $purple;
+    color: $grey_dark;
   }
 
   // #body-closer is the element that can be clicked on to close the navigation
@@ -59,6 +60,20 @@
           content:'\2297';
         }
       }
+    }
+    &.headroom{
+      transition: all 200ms linear;
+    }
+    &.headroom--pinned{
+      position: fixed;
+      top: 0px;
+    }
+    &.headroom--top{
+      position: relative;
+      top: inherit;
+    }
+    &.headroom--unpinned{
+
     }
   }
 
@@ -285,6 +300,7 @@
                 padding-right: 10px;
                 width: 70%;
                 background-color: rgba($grey_dark, 0.25);
+                border: 2px solid #FFF;
                 a:link, a:visited{
                   text-transform: uppercase;
                   margin-top:10px;
@@ -314,7 +330,7 @@
   #main{
     #content{
       #page-title{
-        display:none;
+        //display:none;
       }
       .adm-home-block{
         margin: 10px 0;
