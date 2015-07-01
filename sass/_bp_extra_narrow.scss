@@ -284,8 +284,8 @@
             background-size: cover;
             .adm-slide{
               height: 100%; // <- controls height of semi-opaque text box in front of banner image
-              margin: -10px 0 0 0;
-
+              //margin: -10px 0 0 0;
+              margin: 0;
 
               // Adding the large block-W
               background: url(../images/W_only_CMYK.png);

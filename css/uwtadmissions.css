@@ -337,7 +337,7 @@ html {
   /* line 285, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide {
     height: 100%;
-    margin: -10px 0 0 0;
+    margin: 0;
     background: url(../images/W_only_CMYK.png);
     background-size: 106px 72px;
     background-position: bottom 0px right 10px;
@@ -693,7 +693,7 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li {
 /* line 285, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide {
   height: 100%;
-  margin: -10px 0 0 0;
+  margin: 0;
   background: url(../images/W_only_CMYK.png);
   background-size: 106px 72px;
   background-position: bottom 0px right 10px;
