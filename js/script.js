@@ -465,7 +465,7 @@
         .width(wiw)
         .unslider({
           speed : 4500,
-          delay : 5000,
+          delay : 8500,
           dots : true,
           fluid : true
         });

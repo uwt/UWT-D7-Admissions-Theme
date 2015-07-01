@@ -120,10 +120,6 @@ html {
   html #search-toggler.search-opened .icon:before {
     content: '\2297';
   }
-  /* line 64, ../sass/_bp_extra_narrow.scss */
-  html #search-toggler.headroom {
-    transition: all 200ms linear;
-  }
   /* line 67, ../sass/_bp_extra_narrow.scss */
   html #search-toggler.headroom--pinned {
     position: fixed;
@@ -475,10 +471,6 @@ html.lt-ie9 html #search-toggler.search-opened {
 /* line 59, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-toggler.search-opened .icon:before {
   content: '\2297';
-}
-/* line 64, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #search-toggler.headroom {
-  transition: all 200ms linear;
 }
 /* line 67, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-toggler.headroom--pinned {
