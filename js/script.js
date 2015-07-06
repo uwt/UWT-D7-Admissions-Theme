@@ -110,7 +110,7 @@
         // and moved equally as far to the top...thus hiding the element.
         $("#search-n-nav").css({
           //"height":height+"px",
-          "top":"-"+height+"px"
+          //"top":"-"+height+"px"
         });
         
         // Add the uw button styles to the nav links
@@ -147,7 +147,7 @@
             // the search toggler
             var snnTop = $(document).scrollTop() + stHeight + "px";
             $("#search-n-nav").css({
-              "top": snnTop
+              //"top": snnTop
             });
             // Show the body closer
             $("#body-closer").addClass("shown");
