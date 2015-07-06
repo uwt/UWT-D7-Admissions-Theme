@@ -159,6 +159,7 @@ html {
   }
   /* line 113, ../sass/_bp_extra_narrow.scss */
   html #search-n-nav.show-search {
+    top: 32px;
     z-index: 2;
     background-color: rgba(183, 165, 122, 0.93);
     color: white;
@@ -555,6 +556,7 @@ html.lt-ie9 html #search-n-nav .region-search {
 }
 /* line 113, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-n-nav.show-search {
+  top: 32px;
   z-index: 2;
   background-color: rgba(183, 165, 122, 0.93);
   color: white;

@@ -111,7 +111,7 @@
     |********** SHOWING NAVIGATION **********|
     \***********************************************/
     &.show-search{
-      //top:40px;  // -> matches font-size and line-height on #search-toggler .icon
+      top:32px;  // -> matches font-size and line-height on #search-toggler .icon
       z-index: 2;
       background-color: rgba($gold_metallic,0.93);
       color: white;
