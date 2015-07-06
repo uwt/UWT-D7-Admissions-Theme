@@ -68,7 +68,7 @@ stylesheets[all][] = css/jquery-ui.min.css
 
 
 ; Optionally add some JavaScripts to your theme.
-scripts[] = js/headroom.min.js
+;scripts[] = js/headroom.min.js
 scripts[] = js/script.js
 scripts[] = js/jquery-ui.min.js
 
