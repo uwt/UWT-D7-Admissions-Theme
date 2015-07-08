@@ -115,6 +115,10 @@
       }
       $(window).resize(applyUnSlider);
       applyUnSlider();
+
+
+
+
     } // end of attach
   }; // end of bannerSlider
 

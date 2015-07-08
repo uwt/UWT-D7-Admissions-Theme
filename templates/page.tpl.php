@@ -51,7 +51,7 @@
   ?>
   <img id="header-block-w" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
   <img id="header-wordmark" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
-  <h1>Undergraduate Admissions</h1>
+  <h1><a href="/node/41272">Undergraduate Admissions</a></h1>
   <?php print render($page['header']); ?>
 
 
