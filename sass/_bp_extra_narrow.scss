@@ -22,6 +22,7 @@
       top: 0;
       background-color: rgba($grey_dark,0.75);
       z-index:1;
+      cursor: pointer;
     }
   }
 
@@ -138,8 +139,9 @@
               &.active{
                 color: $purple;
                 background-color: $gold;
+                border-left-width: 15px;
                 &:before{
-                  background-color: lime;
+                  background-color: $gold;
                 }
               }
             }
@@ -151,6 +153,7 @@
               padding-right:3px;
               a{
                 &.active{
+                  border-left-width: 15px;
                   &:before{
                     background-color: $gold;
                   }
