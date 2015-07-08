@@ -121,7 +121,7 @@
       #navigation{
         visibility: visible;
         padding-bottom:1em;
-        ul{
+        ul{ // 1st level menu items
           width: 100%;
           margin-top: 20px;
           li{
@@ -137,21 +137,51 @@
               margin-bottom:10px;
               &.active{
                 color: $purple;
+                background-color: $gold;
+                &:before{
+                  background-color: lime;
+                }
               }
             }
           }
-          ul{ // 2nd level menu item
+          ul{ // 2nd level menu items
             margin-top:0px;
             li{
               padding-left: 10px;
               padding-right:3px;
               a{
+                &.active{
+                  &:before{
+                    background-color: $gold;
+                  }
+                }
                 padding:5px 10px;
                 border-left: 2px solid $grey_dark;
                 background-color: $purple_medium;
                 &.uw-btn{
                   &:before{
-                    background-color:gold;
+                    //background-color:$gold;
+                    width: 40px;
+                    right: -38px;
+                  }
+                  &:after{
+                    right: -43px;
+                  }
+                }
+
+              }
+            }
+            ul{// 3rd level menu items
+              li{
+                a{
+                  &.uw-btn{
+                    &:before{
+                      width: 40px;
+                      right: -32px;
+                    }
+                    &:after{
+                      right: -36px;
+                    }
                   }
                 }
               }
@@ -180,28 +210,6 @@
       width: 100%;
       padding-left:0;
       visibility: hidden;
-      &.mobilized{
-        position:absolute;
-        top:60px;
-        left:0;
-        height:30px;
-        width:100%;
-        padding:0;
-        background-color:$purple;
-        ul{
-          li{
-            display:none;
-            ul{
-              display:none;
-            }
-          }
-
-        }
-
-        #nav-closer{
-          display: none;
-        }
-      }
     }
   }
 
