@@ -113,7 +113,7 @@
           fluid : true
         });
       }
-      $(window).resize(applyUnSlider);
+      //$(window).resize(applyUnSlider);
       applyUnSlider();
 
 
