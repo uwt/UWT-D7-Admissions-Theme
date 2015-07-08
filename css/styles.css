@@ -1948,7 +1948,7 @@ html {
     height: 100%;
     right: 0;
     top: 0;
-    background-color: rgba(217, 217, 217, 0.93);
+    background-color: rgba(68, 68, 68, 0.75);
     z-index: 1;
   }
   /* line 31, ../sass/_bp_extra_narrow.scss */
@@ -2345,7 +2345,7 @@ html.lt-ie9 html #body-closer.shown {
   height: 100%;
   right: 0;
   top: 0;
-  background-color: rgba(217, 217, 217, 0.93);
+  background-color: rgba(68, 68, 68, 0.75);
   z-index: 1;
 }
 /* line 31, ../sass/_bp_extra_narrow.scss */

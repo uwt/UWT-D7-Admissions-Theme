@@ -24,19 +24,6 @@
     attach: function(){
       function applyNavMods(){
 
-        /********************************************************\
-        |******** Show/hide the toggler based on scroll **********|
-        \********************************************************/
-
-        // @see http://wicky.nillia.ms/headroom.js/
-        // grab an element
-        //var searchToggler = document.querySelector("#search-toggler");
-        // construct an instance of Headroom, passing the element
-        //var headroom  = new Headroom(searchToggler);
-        // initialise
-        //headroom.init();
-
-
         //console.log("New applyNavMods");
         // Get the current widths and heights of things
         var wiw = window.innerWidth;
@@ -57,12 +44,6 @@
           "height": wih - bannerTop - showBelow
         });
 
-        // Make the search and navigation container as tall as the document
-        // and moved equally as far to the top...thus hiding the element.
-        $("#search-n-nav").css({
-          //"height":height+"px",
-          //"top":"-"+height+"px"
-          });
         
         // Add the uw button styles to the nav links
         $("#navigation .menu li a").addClass("uw-btn btn-sm");
@@ -93,25 +74,16 @@
           if($("#search-toggler .text").text() == 'Open'){ // search-n-nav is hidden
             $("#search-toggler .text").text("Close");
             $("#search-toggler").addClass("search-opened");
-            //console.log($(document).scrollTop());
-            // When the search and nav element is shown, position it right below
-            // the search toggler
-            var snnTop = $(document).scrollTop() + stHeight + "px";
-            $("#search-n-nav").css({
-              //"top": snnTop
-              });
+
             // Show the body closer
             $("#body-closer").addClass("shown");
 
           }else{ // search-n-nav is displayed
             $("#search-toggler .text").text("Open");
             $("#search-toggler").removeClass("search-opened");
-            $("#body-closer").removeClass("shown");
-            $("#search-n-nav").css({
-              //"top":"-"+height+"px"
-              });
+
             // Hide the body closer
-            $("body-closer").removeClass("shown");
+            $("#body-closer").removeClass("shown");
           }
           // Toggle show-search
           $("#search-n-nav").toggleClass("show-search");
