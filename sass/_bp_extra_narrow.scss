@@ -42,14 +42,13 @@
       cursor:pointer;
     }
     .icon{
-      font-size:30px;
+      font-size:25px;
       line-height: normal;
       margin:0;
       padding:0px 5px 0px 0px;
-    }
-    .icon{
+
       &:before{
-        content:'\25A4';
+        content:'\2261';
       }
     }
     &.search-opened{
@@ -393,6 +392,16 @@
           a:link,a:visited{
             font-family: $uni_sans_light;
             color:$purple;
+          }
+        }
+        ul{
+          padding-left: 0px;
+          margin-left: 10px;
+          list-style-type: none;
+          li{
+            a{
+              width: 80%;
+            }
           }
         }
       }
