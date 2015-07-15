@@ -1,6 +1,6 @@
 @include extra_narrow{
   body{
-    overflow-x:hidden;
+    overflow-x: hidden;
   }
   #page{
     position: relative;
@@ -10,11 +10,11 @@
 
   // #body-closer is the element that can be clicked on to close the navigation
   #body-closer{
-    display:none;
+    display: none;
     width: 1px;
-    background-color:rgba(0,0,0,0.0);
+    background-color: rgba(0,0,0,0.0);
     &.shown{
-      display:block;
+      display: block;
       position: fixed;
       width:100%;
       height:100%;
@@ -26,32 +26,36 @@
     }
   }
 
-  /******************************************\
-  |*********** SEARCH TOGGLER **********|
-  \******************************************/
-  #search-toggler{
+  /**************************************\
+  |*********** NAV TOGGLER **********|
+  \**************************************/
+  #nav-toggler{
     position: relative;
     z-index: 1;
     width: 100%;
     background-color:$purple;
-    padding-left:10px;
+    padding:5px 0px 5px 10px;
+    #st-container{
+      border: 1px solid white;
+      padding: 3px;
+      border-radius:3px;
+    }
     span{
-      vertical-align: text-bottom;
+      vertical-align: baseline;
     }
     &:hover{
       cursor:pointer;
     }
     .icon{
-      font-size:25px;
-      line-height: normal;
-      margin:0;
-      padding:0px 5px 0px 0px;
-
+      font-size: 20px;
+      /* line-height: normal; */
+      margin: 0;
+      padding: 0px 5px 0px 0px;
       &:before{
         content:'\2261';
       }
     }
-    &.search-opened{
+    &.nav-opened{ // was search-opened
       position: fixed;
       z-index:3;
       top: 0px;
@@ -72,7 +76,7 @@
     &.headroom--top{
       position: relative;
       top: inherit;
-      &.search-opened{
+      &.nav-opened{
         position: fixed;
         top: 0px;
       }
@@ -84,9 +88,9 @@
 
 
   /****************************************************\
-  |********** SEARCH-N-NAV CONTAINER **********|
+  |********** NAV-WRAPPER CONTAINER **********|
   \****************************************************/
-  #search-n-nav{
+  #nav-wrapper{
     position:absolute;
     //top:-100%;
     left:0;
@@ -104,8 +108,8 @@
     /***********************************************\
     |********** SHOWING NAVIGATION **********|
     \***********************************************/
-    &.show-search{
-      top:32px;  // -> matches font-size and line-height on #search-toggler .icon
+    &.show-navigation{
+      top:32px;  // -> matches font-size and line-height on #nav-toggler .icon
       z-index: 2;
       background-color: rgba($gold_metallic,0.93);
       color: white;
@@ -216,6 +220,37 @@
   }
 
   /******************************\
+  |********** SEARCH **********|
+  \******************************/
+  #search-wrapper{
+    height: 0px;
+    background-color: $grey_dark;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    &.search-visible{
+      height:50px;
+    }
+    .form-type-textfield{
+      margin: 10px;
+      width: 100%;
+      input{
+        width: 210px;
+      }
+    }
+
+    form{
+      color: $grey_dark;
+    }
+    .block{
+      margin-bottom:0px;
+      padding-top: 10px;
+    }
+  }
+
+  /******************************\
   |********** HEADER **********|
   \******************************/
 
@@ -227,6 +262,11 @@
     position:relative;
     width:100%;
     background-color:black;
+    #search-toggler{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
     .block{
       margin-bottom: 0;
     }

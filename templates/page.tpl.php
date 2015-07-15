@@ -9,34 +9,33 @@
 ?>
 
 
+<div id="search-wrapper">
+  <?php print render($page['search']); ?>
+</div>
 
-<div id="search-n-nav">
-  <h2>Menu &amp; Search</h2>
-  <div id="search">
-    <?php print render($page['search']); ?>
-  </div>
-
+<div id="nav-wrapper">
   <div id="navigation">
+    <h2>Menu</h2>
     <?php print render($page['navigation']); ?>
   </div>
-
 </div>
 
 <header class="header" id="header" role="banner">
+  <div id="search-toggler" class="fa fa-search fa-2x"></div>
   <?php
   $themepath = path_to_theme('theme', 'uwtadmissions');
   ?>
   <img id="header-block-w" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
   <img id="header-wordmark" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
   <h1><a href="/node/41272">Undergraduate Admissions</a></h1>
-  <?php print render($page['header']); ?>
 
+  <?php print render($page['header']); ?>
 
 </header>
 
 
-<div id="search-toggler">
-  <span class="icon"></span><span class="text">Open</span> <span>Menu &amp; Search</span>
+<div id="nav-toggler">
+  <span id="st-container"><span class="icon"></span><span class="text">Open</span> <span>Menu</span></span>
 </div>
 
 <?php print render($page['banner']); ?>

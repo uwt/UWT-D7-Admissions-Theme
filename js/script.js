@@ -24,16 +24,14 @@
     attach: function(){
       function applyNavMods(){
 
-        //console.log("New applyNavMods");
         // Get the current widths and heights of things
-        var wiw = window.innerWidth;
-        // Get the height of the window (viewport)
-        var wih = window.innerHeight;
-        var height = document.body.clientHeight;
-        //console.log("document height", height);
-        //console.log("wih", wih);
 
-        var stHeight = $("#search-toggler").outerHeight();
+        // Get the height of the window (viewport)
+
+        var wih = window.innerHeight;
+
+
+
         // Dynamically set the height of the banner/slider
         // Get the top position of the banner
         var bannerTop = $("#banner ul li").offset().top;
@@ -58,37 +56,47 @@
             })
           .click(function(){
             //console.log("body closer clickey");
-            // Hide the search-n-nav
-            $("#search-toggler").trigger("click");
+            // Hide the nav-wrapper
+            $("#nav-toggler").trigger("click");
           })
           .appendTo($("body"));
         }
         // Remove the click handler before recreating it.
-        $("#search-toggler").unbind("click");
+        $("#nav-toggler").unbind("click");
 
         // Make the search toggler functionality happen on click
-        $("#search-toggler").click(function(){
-          //console.log("search-toggler clicky!!");
+        $("#nav-toggler").click(function(){
+          //console.log("nav-toggler clicky!!");
           // Change verbiage and icon...
-          //console.log("text is", $("#search-toggler span").text());
-          if($("#search-toggler .text").text() == 'Open'){ // search-n-nav is hidden
-            $("#search-toggler .text").text("Close");
-            $("#search-toggler").addClass("search-opened");
+          //console.log("text is", $("#nav-toggler span").text());
+          if($("#nav-toggler .text").text() == 'Open'){ // nav-wrapper is hidden
+            $("#nav-toggler .text").text("Close");
+            $("#nav-toggler").addClass("nav-opened");
 
             // Show the body closer
             $("#body-closer").addClass("shown");
 
-          }else{ // search-n-nav is displayed
-            $("#search-toggler .text").text("Open");
-            $("#search-toggler").removeClass("search-opened");
+          }else{ // nav-wrapper is displayed
+            $("#nav-toggler .text").text("Open");
+            $("#nav-toggler").removeClass("nav-opened");
 
             // Hide the body closer
             $("#body-closer").removeClass("shown");
           }
-          // Toggle show-search
-          $("#search-n-nav").toggleClass("show-search");
+          // Toggle show-navigation
+          $("#nav-wrapper").toggleClass("show-navigation");
 
-        }); // End #search-toggler click handler
+        }); // End #nav-toggler click handler
+
+        // Apply the search-toggler click handler
+        $("#header #search-toggler").bind('click', function(){
+          $("#search-wrapper").toggleClass("search-visible");
+          $("#header #search-toggler").toggleClass("fa-search");
+          $("#header #search-toggler").toggleClass("fa-times");
+          $("#search-wrapper input.form-text").focus();
+
+        });
+
       }
       // Apply the navigation modifies on load and window resize
       $(window).resize(applyNavMods);

@@ -7,10 +7,10 @@
 
 
   /*****************************************\
-  |********** SEARCH TOGGLER **********|
+  |********** NAV TOGGLER **********|
   \*****************************************/
 
-  #search-toggler {
+  #nav-toggler {
     z-index: 2;
     span{
     }
@@ -27,7 +27,7 @@
       &:before{
       }
     }
-    &.search-opened{ // search-n-nav is opened
+    &.nav-opened{ // nav-wrapper is opened
       position: fixed;
       z-index: 3;
       .icon{
@@ -43,9 +43,9 @@
   /****************************************************************\
   |********** SEARCH AND NAVIGATION CONTAINER *********|
   \****************************************************************/
-  #search-n-nav{ // Search Closed
+  #nav-wrapper{ // Search Closed
 
-    &.show-search{ // Search Opened
+    &.show-navigation{ // Search Opened
       h2{
         font-size: 30px;
         line-height: 30px;
@@ -53,7 +53,7 @@
       #navigation{
       }
     }
-    #search{
+    #search-wrapper{
       padding-top: 10px;
       color: $grey_dark;
       .block{
