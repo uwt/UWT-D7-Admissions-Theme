@@ -91,12 +91,12 @@
   |********** NAV-WRAPPER CONTAINER **********|
   \****************************************************/
   #nav-wrapper{
+
     position:absolute;
-    //top:-100%;
-    left:0;
+    display: none;
+    visibility: hidden;
+
     padding-left:10px;
-    //width:100%;
-    //height:100%;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -105,10 +105,20 @@
     .region-search{
       color:$grey_dark;
     }
+    /***********************************\
+    |********** NAVIGATION **********|
+    \***********************************/
+    #navigation{
+      width: 100%;
+      padding-left:0;
+
+    }
     /***********************************************\
     |********** SHOWING NAVIGATION **********|
     \***********************************************/
     &.show-navigation{
+      visibility: visible;
+      display: block;
       top:32px;  // -> matches font-size and line-height on #nav-toggler .icon
       z-index: 2;
       background-color: rgba($gold_metallic,0.93);
@@ -123,7 +133,7 @@
         background-color: transparent;
       }
       #navigation{
-        visibility: visible;
+
         padding-bottom:1em;
         ul{ // 1st level menu items
           width: 100%;
@@ -209,14 +219,7 @@
       padding-top: 5px;
       margin-bottom: 0;
     }
-    /***********************************\
-    |********** NAVIGATION **********|
-    \***********************************/
-    #navigation{
-      width: 100%;
-      padding-left:0;
-      visibility: hidden;
-    }
+
   }
 
   /******************************\
