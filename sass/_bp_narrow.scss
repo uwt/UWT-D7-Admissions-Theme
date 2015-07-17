@@ -11,32 +11,38 @@
   \*****************************************/
 
   #nav-toggler {
+    /*
     z-index: 2;
+    */
     span{
     }
     &:hover{
     }
     .icon{
+      /*
       font-size: 30px;
       line-height: 27px;
       position: absolute;
       right: 10px;
       top: 0px;
+      */
     }
     .icon{
       &:before{
       }
     }
     &.nav-opened{ // nav-wrapper is opened
+      /*
       position: fixed;
       z-index: 3;
       .icon{
-        font-size: 35px;
-        line-height: 28px;
-        &:before{
-          content:'\2297';
-        }
+      font-size: 35px;
+      line-height: 28px;
+      &:before{
+      content:'\2297';
       }
+      }
+      */
     }
   }
 

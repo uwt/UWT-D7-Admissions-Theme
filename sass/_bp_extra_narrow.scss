@@ -271,6 +271,14 @@
       position: absolute;
       top: 10px;
       right: 10px;
+      -webkit-transition: all .8s ease-out;
+      -moz-transition: all .8s ease-out;
+      -ms-transition: all .8s ease-out;
+      -o-transition: all .8s ease-out;
+      transition: all .8s ease-in;
+      &.search-shown{
+        top: -45px;
+      }
     }
     .block{
       margin-bottom: 0;
