@@ -51,11 +51,7 @@
           $("<div></div>",{
             id: "body-closer"
           })
-          .css({
-            //"height": height
-            })
           .click(function(){
-            //console.log("body closer clickey");
             // Hide the nav-wrapper
             $("#nav-toggler").trigger("click");
           })
@@ -66,9 +62,7 @@
 
         // Make the search toggler functionality happen on click
         $("#nav-toggler").click(function(){
-          //console.log("nav-toggler clicky!!");
           // Change verbiage and icon...
-          //console.log("text is", $("#nav-toggler span").text());
           if($("#nav-toggler .text").text() == 'Open'){ // nav-wrapper is hidden
             $("#nav-toggler .text").text("Close");
             $("#nav-toggler").addClass("nav-opened");
@@ -95,16 +89,12 @@
       $(window).resize(applyNavMods);
       applyNavMods();
 
-
-      //console.log("Applying the search-toggler click handler");
       // Apply the search-toggler click handler
       $("#header #search-toggler").bind('click', function(){
-        //console.log("#search-toggler clicked...");
         $("#search-wrapper").toggleClass("search-visible");
         $("#header #search-toggler").toggleClass("fa-search");
         $("#header #search-toggler").toggleClass("fa-times");
         $("#search-wrapper input.form-text").focus();
-
       });
 
     } // End attach property
