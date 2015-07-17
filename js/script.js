@@ -93,6 +93,7 @@
       $("#header #search-toggler").bind('click', function(){
         $(this).toggleClass("search-shown");
         $("#search-wrapper").toggleClass("search-visible");
+        $("header").toggleClass("search-visible");
         $("#header #search-toggler").toggleClass("fa-search");
         $("#header #search-toggler").toggleClass("fa-times");
         $("#search-wrapper input.form-text").focus();
