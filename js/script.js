@@ -88,21 +88,26 @@
 
         }); // End #nav-toggler click handler
 
-        // Apply the search-toggler click handler
-        $("#header #search-toggler").bind('click', function(){
-          $("#search-wrapper").toggleClass("search-visible");
-          $("#header #search-toggler").toggleClass("fa-search");
-          $("#header #search-toggler").toggleClass("fa-times");
-          $("#search-wrapper input.form-text").focus();
 
-        });
 
       }
       // Apply the navigation modifies on load and window resize
       $(window).resize(applyNavMods);
       applyNavMods();
 
-    }
+
+      //console.log("Applying the search-toggler click handler");
+      // Apply the search-toggler click handler
+      $("#header #search-toggler").bind('click', function(){
+        //console.log("#search-toggler clicked...");
+        $("#search-wrapper").toggleClass("search-visible");
+        $("#header #search-toggler").toggleClass("fa-search");
+        $("#header #search-toggler").toggleClass("fa-times");
+        $("#search-wrapper input.form-text").focus();
+
+      });
+
+    } // End attach property
   };
 
   // Adding the slider functionality
