@@ -1025,13 +1025,13 @@ html {
     overflow-x: hidden;
   }
   /* line 13, ../sass/_bp_narrow.scss */
-  html #nav-toggler {
+  html x #nav-toggler {
     /*
     z-index: 2;
     */
   }
   /* line 21, ../sass/_bp_narrow.scss */
-  html #nav-toggler .icon {
+  html x #nav-toggler .icon {
     /*
     font-size: 30px;
     line-height: 27px;
@@ -1041,7 +1041,7 @@ html {
     */
   }
   /* line 34, ../sass/_bp_narrow.scss */
-  html #nav-toggler.nav-opened {
+  html x #nav-toggler.nav-opened {
     /*
     position: fixed;
     z-index: 3;
@@ -1055,54 +1055,54 @@ html {
     */
   }
   /* line 55, ../sass/_bp_narrow.scss */
-  html #nav-wrapper.show-navigation h2 {
+  html x #nav-wrapper.show-navigation h2 {
     font-size: 30px;
     line-height: 30px;
   }
   /* line 62, ../sass/_bp_narrow.scss */
-  html #nav-wrapper #search-wrapper {
+  html x #nav-wrapper #search-wrapper {
     padding-top: 10px;
     color: #444444;
   }
   /* line 68, ../sass/_bp_narrow.scss */
-  html #nav-wrapper #navigation {
+  html x #nav-wrapper #navigation {
     position: relative;
     top: 20px;
     height: 100%;
   }
   /* line 73, ../sass/_bp_narrow.scss */
-  html #nav-wrapper #navigation .menu li {
+  html x #nav-wrapper #navigation .menu li {
     float: none;
   }
   /* line 79, ../sass/_bp_narrow.scss */
-  html #nav-wrapper #navigation .menu .menu li {
+  html x #nav-wrapper #navigation .menu .menu li {
     padding-left: 2em;
   }
   /* line 92, ../sass/_bp_narrow.scss */
-  html #header {
+  html x #header {
     /********************************************\
     |********** BANNER / UNSLIDER **********|
     \********************************************/
   }
   /* line 96, ../sass/_bp_narrow.scss */
-  html #header .block h1 {
+  html x #header .block h1 {
     font-size: 25px;
   }
   /* line 106, ../sass/_bp_narrow.scss */
-  html #header #banner ul {
+  html x #header #banner ul {
     overflow: auto;
     position: relative;
   }
   /* line 109, ../sass/_bp_narrow.scss */
-  html #header #banner ul li {
+  html x #header #banner ul li {
     height: 100%;
   }
   /* line 111, ../sass/_bp_narrow.scss */
-  html #header #banner ul li .adm-slide {
+  html x #header #banner ul li .adm-slide {
     background-color: #444444;
   }
   /* line 113, ../sass/_bp_narrow.scss */
-  html #header #banner ul li .adm-slide .adm-slide-content {
+  html x #header #banner ul li .adm-slide .adm-slide-content {
     width: 60%;
     height: 60%;
     border: 1px solid white;
@@ -1110,29 +1110,29 @@ html {
     padding: 10px;
   }
   /* line 119, ../sass/_bp_narrow.scss */
-  html #header #banner ul li .adm-slide .adm-slide-content * {
+  html x #header #banner ul li .adm-slide .adm-slide-content * {
     color: white;
     text-shadow: 1px 1px 1px black;
   }
   /* line 123, ../sass/_bp_narrow.scss */
-  html #header #banner ul li .adm-slide .adm-slide-content h2 {
+  html x #header #banner ul li .adm-slide .adm-slide-content h2 {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 20px;
     line-height: 20px;
   }
   /* line 129, ../sass/_bp_narrow.scss */
-  html #header #banner ul li .adm-slide .adm-slide-content p {
+  html x #header #banner ul li .adm-slide .adm-slide-content p {
     font-size: 17px;
     line-height: 17px;
   }
   /* line 144, ../sass/_bp_narrow.scss */
-  html #page #main {
+  html x #page #main {
     margin-top: 0;
     padding-top: 0;
   }
   /* line 147, ../sass/_bp_narrow.scss */
-  html #page #main #page-title {
+  html x #page #main #page-title {
     color: #444444;
   }
   /* line 161, ../sass/_bp_narrow.scss */
@@ -1163,13 +1163,13 @@ html.lt-ie9 html body {
   overflow-x: hidden;
 }
 /* line 13, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-toggler {
+html.lt-ie9 html x #nav-toggler {
   /*
   z-index: 2;
   */
 }
 /* line 21, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-toggler .icon {
+html.lt-ie9 html x #nav-toggler .icon {
   /*
   font-size: 30px;
   line-height: 27px;
@@ -1179,7 +1179,7 @@ html.lt-ie9 html #nav-toggler .icon {
   */
 }
 /* line 34, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-toggler.nav-opened {
+html.lt-ie9 html x #nav-toggler.nav-opened {
   /*
   position: fixed;
   z-index: 3;
@@ -1193,54 +1193,54 @@ html.lt-ie9 html #nav-toggler.nav-opened {
   */
 }
 /* line 55, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation h2 {
+html.lt-ie9 html x #nav-wrapper.show-navigation h2 {
   font-size: 30px;
   line-height: 30px;
 }
 /* line 62, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-wrapper #search-wrapper {
+html.lt-ie9 html x #nav-wrapper #search-wrapper {
   padding-top: 10px;
   color: #444444;
 }
 /* line 68, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-wrapper #navigation {
+html.lt-ie9 html x #nav-wrapper #navigation {
   position: relative;
   top: 20px;
   height: 100%;
 }
 /* line 73, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-wrapper #navigation .menu li {
+html.lt-ie9 html x #nav-wrapper #navigation .menu li {
   float: none;
 }
 /* line 79, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #nav-wrapper #navigation .menu .menu li {
+html.lt-ie9 html x #nav-wrapper #navigation .menu .menu li {
   padding-left: 2em;
 }
 /* line 92, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header {
+html.lt-ie9 html x #header {
   /********************************************\
   |********** BANNER / UNSLIDER **********|
   \********************************************/
 }
 /* line 96, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header .block h1 {
+html.lt-ie9 html x #header .block h1 {
   font-size: 25px;
 }
 /* line 106, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul {
+html.lt-ie9 html x #header #banner ul {
   overflow: auto;
   position: relative;
 }
 /* line 109, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul li {
+html.lt-ie9 html x #header #banner ul li {
   height: 100%;
 }
 /* line 111, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul li .adm-slide {
+html.lt-ie9 html x #header #banner ul li .adm-slide {
   background-color: #444444;
 }
 /* line 113, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul li .adm-slide .adm-slide-content {
+html.lt-ie9 html x #header #banner ul li .adm-slide .adm-slide-content {
   width: 60%;
   height: 60%;
   border: 1px solid white;
@@ -1248,29 +1248,29 @@ html.lt-ie9 html #header #banner ul li .adm-slide .adm-slide-content {
   padding: 10px;
 }
 /* line 119, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul li .adm-slide .adm-slide-content * {
+html.lt-ie9 html x #header #banner ul li .adm-slide .adm-slide-content * {
   color: white;
   text-shadow: 1px 1px 1px black;
 }
 /* line 123, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul li .adm-slide .adm-slide-content h2 {
+html.lt-ie9 html x #header #banner ul li .adm-slide .adm-slide-content h2 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 20px;
   line-height: 20px;
 }
 /* line 129, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #header #banner ul li .adm-slide .adm-slide-content p {
+html.lt-ie9 html x #header #banner ul li .adm-slide .adm-slide-content p {
   font-size: 17px;
   line-height: 17px;
 }
 /* line 144, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #page #main {
+html.lt-ie9 html x #page #main {
   margin-top: 0;
   padding-top: 0;
 }
 /* line 147, ../sass/_bp_narrow.scss */
-html.lt-ie9 html #page #main #page-title {
+html.lt-ie9 html x #page #main #page-title {
   color: #444444;
 }
 /* line 161, ../sass/_bp_narrow.scss */

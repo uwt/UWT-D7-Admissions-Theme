@@ -10,7 +10,7 @@
   |********** NAV TOGGLER **********|
   \*****************************************/
 
-  #nav-toggler {
+ x #nav-toggler {
     /*
     z-index: 2;
     */
@@ -49,7 +49,7 @@
   /****************************************************************\
   |********** SEARCH AND NAVIGATION CONTAINER *********|
   \****************************************************************/
-  #nav-wrapper{ // Search Closed
+x #nav-wrapper{ // Search Closed
 
     &.show-navigation{ // Search Opened
       h2{
@@ -89,7 +89,7 @@
   /******************************\
   |********** HEADER **********|
   \******************************/
-  #header{
+x  #header{
     //background-color: rgba($grey_dark, 0.93);
     //margin-top:32px; // <- matches height of #nav-toggler
     .block{
@@ -140,7 +140,7 @@
   /***************************\
   |********** PAGE **********|
   \***************************/
-  #page{
+ x #page{
     #main{
       margin-top:0;
       padding-top:0;
