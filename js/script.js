@@ -85,7 +85,7 @@
 
 
       }
-      // Apply the navigation modifies on load and window resize
+      // Apply the navigation modifier on load and window resize
       $(window).resize(applyNavMods);
       applyNavMods();
 
@@ -96,6 +96,14 @@
         $("#header #search-toggler").toggleClass("fa-search");
         $("#header #search-toggler").toggleClass("fa-times");
         $("#search-wrapper input.form-text").focus();
+      });
+
+      // Apply the navigation item feedback spinners
+      $("#nav-wrapper .menu a").bind('click', function(e){
+        // Remove all existing feedback spinners
+        $("#nav-wrapper .menu a i").remove();
+        // Create a new feedback spinner
+        $(this).append(' <i class="fa fa-spinner fa-spin"></i>');
       });
 
     } // End attach property
