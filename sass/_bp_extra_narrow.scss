@@ -270,14 +270,15 @@
     width:100%;
     background-color:black;
     &.search-visible{
-          background-color:lime;
-          top:0px;
-          left: 0px;
-          }
+      //background-color:lime;
+      top:0px;
+      left: 0px;
+    }
     #search-toggler{
       position: absolute;
       top: 10px;
       right: 10px;
+      cursor: pointer;
       -webkit-transition: all .8s ease-out;
       -moz-transition: all .8s ease-out;
       -ms-transition: all .8s ease-out;

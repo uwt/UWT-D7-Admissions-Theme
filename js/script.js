@@ -103,8 +103,7 @@
       $("#nav-wrapper .menu a").bind('click', function(e){
         // Remove all existing feedback spinners
         $("#nav-wrapper .menu a i").remove();
-        // Create a new feedback spinnera
-        e.preventDefault();
+        // Create a new feedback spinner
         $(this).append(' <i class="fa fa-spinner fa-spin" style="font-size:2em;"></i>');
       });
 
