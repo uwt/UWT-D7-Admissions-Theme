@@ -3015,10 +3015,6 @@ html {
   html #page #main #page-title {
     color: #444444;
   }
-  /* line 161, ../sass/_bp_narrow.scss */
-  html body {
-    background-color: navy;
-  }
 }
 /* line 179, ../sass/_base.scss */
 html.lt-ie9 html {
@@ -3153,10 +3149,6 @@ html.lt-ie9 html #page #main {
 html.lt-ie9 html #page #main #page-title {
   color: #444444;
 }
-/* line 161, ../sass/_bp_narrow.scss */
-html.lt-ie9 html body {
-  background-color: navy;
-}
 
 /******************************************************************************/
 /********************** MEDIUM BREAKPOINT *******************************/
@@ -3184,10 +3176,6 @@ html {
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
     font-size: 200%;
   }
-  /* line 29, ../sass/_bp_medium.scss */
-  html body {
-    background-color: maroon;
-  }
 }
 /* line 190, ../sass/_base.scss */
 html.lt-ie9 html {
@@ -3206,10 +3194,6 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li {
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
   font-size: 200%;
 }
-/* line 29, ../sass/_bp_medium.scss */
-html.lt-ie9 html body {
-  background-color: maroon;
-}
 
 /******************************************************************************/
 /********************** WIDEST BREAKPOINT ********************************/
@@ -3226,20 +3210,12 @@ html {
     ******************************* DEBUGGING ***********************************
     *******************************************************************************/
   }
-  /* line 7, ../sass/_bp_widest.scss */
-  html body {
-    background-color: #C9A0DC;
-  }
 }
 /* line 201, ../sass/_base.scss */
 html.lt-ie9 html {
   /*******************************************************************************
   ******************************* DEBUGGING ***********************************
   *******************************************************************************/
-}
-/* line 7, ../sass/_bp_widest.scss */
-html.lt-ie9 html body {
-  background-color: #C9A0DC;
 }
 
 /* Always apply these rules, regardless of breakpoint */
