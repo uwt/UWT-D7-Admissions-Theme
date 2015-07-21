@@ -91,12 +91,13 @@
 
       // Apply the search-toggler click handler
       $("#header #search-toggler").bind('click', function(){
+        $("#search-wrapper input.form-text").focus();
         $(this).toggleClass("search-shown");
         $("#search-wrapper").toggleClass("search-visible");
         $("header").toggleClass("search-visible");
         $("#header #search-toggler").toggleClass("fa-search");
         $("#header #search-toggler").toggleClass("fa-times");
-        $("#search-wrapper input.form-text").focus();
+
       });
 
       // Apply the navigation item feedback spinners
@@ -134,15 +135,5 @@
 
     } // end of attach
   }; // end of bannerSlider
-
-
-  jQuery.fn.isChildOverflowing = function (child) {
-    var p = jQuery(this).get(0);
-    var el = jQuery(child).get(0);
-    return  (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
-    (el.offsetTop + el.offsetHeight > p.offsetTop + p.offsetHeight || el.offsetLeft + el.offsetWidth > p.offsetLeft + p.offsetWidth);
-  };
-
-
 
 })(jQuery, Drupal, this, this.document);
