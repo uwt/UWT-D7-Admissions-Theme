@@ -34,10 +34,16 @@
 
         // Dynamically set the height of the banner/slider
         // Get the top position of the banner
-        var bannerTop = $("#banner ul li").offset().top;
-        // Set an arbitrary number of pixels to show below the banner
+        var bannerTop = 200;
         var showBelow = wih * 0.075;
+        if($("banner ul li").length > 0){
+
+          bannerTop = $("#banner ul li").offset().top;
+        // Set an arbitrary number of pixels to show below the banner
+
         //console.log("bannerTop", bannerTop);
+
+        }
         $("html .region-banner #banner-container #banner ul li").css({
           "height": wih - bannerTop - showBelow
         });
