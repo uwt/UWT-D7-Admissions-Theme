@@ -15,23 +15,21 @@
 function uwtadmissions_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
-  $hide_all_children = FALSE;
-  if (isset($element['#localized_options']['hide_all_children']) && $element['#localized_options']['hide_all_children'] == 1) {
-    $hide_all_children = TRUE;
-    $element['#attributes']['class'] = array_diff($element['#attributes']['class'], array('expanded', 'is-expanded'));
-  }
 
-  if ($element['#below'] && $hide_all_children == FALSE) {
+  if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
   }
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-
+  // Create classes on the anchor tag
+  $options['attributes'] = array();
+  $options['attributes']['class'] = array('c-menu__link');
+  // Removing the classes from the <li> tag
+  $element['#attributes']['class'] = array();
+  $element['#attributes']['class'][] = 'c-menu__item';
+  
+  // $output is the anchor tag
+  $output = l($element['#title'], $element['#href'], $options);
   $ret = '<li' . drupal_attributes($element['#attributes']) . '>';
-  $ret .= '<div class="outerContainer">';
-  $ret .= '<div class="innerContainer">';
-  $ret .= '<div class="element">';
   $ret .= $output . $sub_menu;
-  $ret .= "</div></div></div>";
   $ret .= "</li>\n";
   return $ret;
 }

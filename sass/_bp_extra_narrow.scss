@@ -103,9 +103,6 @@
     -ms-transition: all 0.8s;
     -o-transition: all 0.8s;
     transition: all 0.8s;
-    .region-search{
-      color:$grey_dark;
-    }
     /***********************************\
     |********** NAVIGATION **********|
     \***********************************/
@@ -227,8 +224,18 @@
   }
 
   /******************************\
-  |********** SEARCH **********|
+  |*********** SEARCH ***********|
   \******************************/
+  
+  .region-search{
+    padding-top: 1em;
+color:$grey_dark;
+      .form-text{
+width: 50%;
+      }
+  }
+  
+  
   #search-wrapper{
     height: 0px;
     background-color: $grey_dark;

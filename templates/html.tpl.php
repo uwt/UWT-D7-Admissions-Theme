@@ -46,7 +46,8 @@
   <?php endif; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <?php if ($skip_link_text && $skip_link_anchor): ?>
+
+<?php if ($skip_link_text && $skip_link_anchor): ?>
     <p id="skip-link">
       <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
     </p>
@@ -54,5 +55,39 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+  <div id="c-mask" class="c-mask"></div>
+
+<script>
+// Instantiate the slide left menu
+var slideLeft = new Menu({
+wrapper: '#o-wrapper',
+type: 'slide-left',
+menuOpenerClass: '.c-button',
+maskId: '#c-mask'
+});
+var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+slideLeftBtn.addEventListener('click', function(e) {
+e.preventDefault;
+slideLeft.open();
+});
+
+// Instantiate the Push Top "menu" (i.e. the search)
+
+var pushTop = new Menu({
+wrapper: '#o-wrapper',
+type: 'push-top',
+menuOpenerClass: '.c-button',
+maskId: '#c-mask'
+});
+var pushTopBtn = document.querySelector('#c-button--push-top');
+
+pushTopBtn.addEventListener('click', function(e) {
+e.preventDefault;
+pushTop.open();
+});
+
+</script>
+
 </body>
 </html>
