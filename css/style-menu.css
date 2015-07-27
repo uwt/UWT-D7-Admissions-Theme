@@ -13,15 +13,13 @@
 /**************************************************************\
 |********** Partials to be shared with all .scss files **********|
 \**************************************************************/
-/* -----------------------------------------------------------------------------
-
-  SLIDE AND PUSH MENUS COMPONENT
-  
------------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------
+SLIDE AND PUSH MENUS COMPONENT
+---------------------------------------------------------------------------- */
 /**
- * Menu overview.
- */
-/* line 15, ../sass/_components.menus.scss */
+* Menu overview.
+*/
+/* line 13, ../sass/_components.menus.scss */
 .c-menu {
   position: fixed;
   z-index: 200;
@@ -29,12 +27,8 @@
   transition: transform 0.3s;
   -webkit-transition: -webkit-transform 0.3s;
 }
-/* line 21, ../sass/_components.menus.scss */
-.c-menu.c-menu--push-top {
-  background-color: #444444;
-}
 
-/* line 26, ../sass/_components.menus.scss */
+/* line 21, ../sass/_components.menus.scss */
 .c-menu__items {
   list-style: none;
   margin: 0;
@@ -42,18 +36,18 @@
 }
 
 /**
- * Left and right menus
- *
- * Slide and push menus coming in from the left and right inherit a lot of
- * common styles. We'll start each of them off by doing up the common styles
- * for each version, followed by individual styles.
- *
- * The various versions are governed by modifier classes.
- */
+* Left and right menus
+*
+* Slide and push menus coming in from the left and right inherit a lot of
+* common styles. We'll start each of them off by doing up the common styles
+* for each version, followed by individual styles.
+*
+* The various versions are governed by modifier classes.
+*/
 /**
- * Common modifiers for left/right menus.
- */
-/* line 46, ../sass/_components.menus.scss */
+* Common modifiers for left/right menus.
+*/
+/* line 41, ../sass/_components.menus.scss */
 .c-menu--slide-left,
 .c-menu--slide-right,
 .c-menu--push-left,
@@ -63,7 +57,7 @@
   overflow-y: scroll;
 }
 @media all and (min-width: 320px) {
-  /* line 46, ../sass/_components.menus.scss */
+  /* line 41, ../sass/_components.menus.scss */
   .c-menu--slide-left,
   .c-menu--slide-right,
   .c-menu--push-left,
@@ -72,7 +66,7 @@
   }
 }
 
-/* line 59, ../sass/_components.menus.scss */
+/* line 54, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__item,
 .c-menu--slide-right .c-menu__item,
 .c-menu--push-left .c-menu__item,
@@ -82,14 +76,14 @@
   border-top: solid 1px #B7A57A;
   border-bottom: solid 1px #4B2E84;
 }
-/* line 68, ../sass/_components.menus.scss */
+/* line 63, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__item:first-child,
 .c-menu--slide-right .c-menu__item:first-child,
 .c-menu--push-left .c-menu__item:first-child,
 .c-menu--push-right .c-menu__item:first-child {
   border-top: none;
 }
-/* line 72, ../sass/_components.menus.scss */
+/* line 67, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__item:last-child,
 .c-menu--slide-right .c-menu__item:last-child,
 .c-menu--push-left .c-menu__item:last-child,
@@ -97,7 +91,7 @@
   border-bottom: none;
 }
 
-/* line 77, ../sass/_components.menus.scss */
+/* line 72, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__link,
 .c-menu--slide-right .c-menu__link,
 .c-menu--push-left .c-menu__link,
@@ -107,7 +101,7 @@
   color: #fff;
 }
 
-/* line 86, ../sass/_components.menus.scss */
+/* line 81, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__close,
 .c-menu--slide-right .c-menu__close,
 .c-menu--push-left .c-menu__close,
@@ -118,9 +112,9 @@
 }
 
 /**
- * Slide/Push Menu Left.
- */
-/* line 99, ../sass/_components.menus.scss */
+* Slide/Push Menu Left.
+*/
+/* line 94, ../sass/_components.menus.scss */
 .c-menu--slide-left,
 .c-menu--push-left {
   top: 0;
@@ -129,7 +123,7 @@
   -webkit-transform: translateX(-100%);
 }
 @media all and (min-width: 320px) {
-  /* line 99, ../sass/_components.menus.scss */
+  /* line 94, ../sass/_components.menus.scss */
   .c-menu--slide-left,
   .c-menu--push-left {
     transform: translateX(-300px);
@@ -137,7 +131,7 @@
   }
 }
 
-/* line 113, ../sass/_components.menus.scss */
+/* line 108, ../sass/_components.menus.scss */
 .c-menu--slide-left.is-active,
 .c-menu--push-left.is-active {
   transform: translateX(0);
@@ -145,9 +139,9 @@
 }
 
 /**
- * Slide/Push Menu Right.
- */
-/* line 123, ../sass/_components.menus.scss */
+* Slide/Push Menu Right.
+*/
+/* line 118, ../sass/_components.menus.scss */
 .c-menu--slide-right,
 .c-menu--push-right {
   top: 0;
@@ -156,7 +150,7 @@
   -webkit-transform: translateX(100%);
 }
 @media all and (min-width: 320px) {
-  /* line 123, ../sass/_components.menus.scss */
+  /* line 118, ../sass/_components.menus.scss */
   .c-menu--slide-right,
   .c-menu--push-right {
     transform: translateX(300px);
@@ -164,7 +158,7 @@
   }
 }
 
-/* line 136, ../sass/_components.menus.scss */
+/* line 131, ../sass/_components.menus.scss */
 .c-menu--slide-right.is-active,
 .c-menu--push-right.is-active {
   transform: translateX(0);
@@ -172,18 +166,18 @@
 }
 
 /**
- * Top and bottom menus
- *
- * Slide and push menus coming in from the top and bottom inherit a lot of
- * common styles. We'll start each of them off by doing up the common styles
- * for each version, followed by individual styles.
- *
- * The various versions are governed by modifier classes.
+* Top and bottom menus
+*
+* Slide and push menus coming in from the top and bottom inherit a lot of
+* common styles. We'll start each of them off by doing up the common styles
+* for each version, followed by individual styles.
+*
+* The various versions are governed by modifier classes.
 
 /**
- * Common modifiers for top/bottom menus
- */
-/* line 155, ../sass/_components.menus.scss */
+* Common modifiers for top/bottom menus
+*/
+/* line 150, ../sass/_components.menus.scss */
 .c-menu--slide-top,
 .c-menu--slide-bottom,
 .c-menu--push-top,
@@ -195,7 +189,7 @@
   overflow-x: scroll;
 }
 
-/* line 166, ../sass/_components.menus.scss */
+/* line 161, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__items,
 .c-menu--slide-bottom .c-menu__items,
 .c-menu--push-top .c-menu__items,
@@ -204,7 +198,7 @@
   text-align: center;
 }
 
-/* line 174, ../sass/_components.menus.scss */
+/* line 169, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__item,
 .c-menu--slide-bottom .c-menu__item,
 .c-menu--push-top .c-menu__item,
@@ -213,7 +207,7 @@
   line-height: 150px;
 }
 
-/* line 182, ../sass/_components.menus.scss */
+/* line 177, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__link,
 .c-menu--slide-bottom .c-menu__link,
 .c-menu--push-top .c-menu__link,
@@ -223,7 +217,7 @@
   color: #fff;
 }
 
-/* line 191, ../sass/_components.menus.scss */
+/* line 186, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__close,
 .c-menu--slide-bottom .c-menu__close,
 .c-menu--push-top .c-menu__close,
@@ -235,16 +229,16 @@
   line-height: 150px;
 }
 
-/* line 201, ../sass/_components.menus.scss */
+/* line 196, ../sass/_components.menus.scss */
 .c-menu--push-top .c-menu__close {
   height: 60px;
   line-height: 60px;
 }
 
 /**
- * Slide/Push Menu Top.
- */
-/* line 210, ../sass/_components.menus.scss */
+* Slide/Push Menu Top.
+*/
+/* line 205, ../sass/_components.menus.scss */
 .c-menu--slide-top,
 .c-menu--push-top {
   top: 0;
@@ -253,7 +247,7 @@
   -webkit-transform: translateY(-150px);
 }
 
-/* line 218, ../sass/_components.menus.scss */
+/* line 213, ../sass/_components.menus.scss */
 .c-menu--slide-top.is-active,
 .c-menu--push-top.is-active {
   transform: translateY(0);
@@ -261,9 +255,9 @@
 }
 
 /**
- * Slide/Push Menu Bottom.
- */
-/* line 228, ../sass/_components.menus.scss */
+* Slide/Push Menu Bottom.
+*/
+/* line 223, ../sass/_components.menus.scss */
 .c-menu--slide-bottom,
 .c-menu--push-bottom {
   bottom: 0;
@@ -272,7 +266,7 @@
   -webkit-transform: translateY(150px);
 }
 
-/* line 236, ../sass/_components.menus.scss */
+/* line 231, ../sass/_components.menus.scss */
 .c-menu--slide-bottom.is-active,
 .c-menu--push-bottom.is-active {
   transform: translateY(0);
@@ -280,64 +274,64 @@
 }
 
 /**
- * Wrapper states.
- *
- * Various wrapper states occur depending on if a menu is pushing into view, in
- * which case, the wrapper has to be pushed by the respective distance.
- */
-/* line 249, ../sass/_components.menus.scss */
+* Wrapper states.
+*
+* Various wrapper states occur depending on if a menu is pushing into view, in
+* which case, the wrapper has to be pushed by the respective distance.
+*/
+/* line 244, ../sass/_components.menus.scss */
 .o-wrapper.has-push-left {
   transform: translateX(100%);
   -webkit-transform: translateX(100%);
 }
 @media all and (min-width: 320px) {
-  /* line 249, ../sass/_components.menus.scss */
+  /* line 244, ../sass/_components.menus.scss */
   .o-wrapper.has-push-left {
     transform: translateX(300px);
     -webkit-transform: translateX(300px);
   }
 }
 
-/* line 259, ../sass/_components.menus.scss */
+/* line 254, ../sass/_components.menus.scss */
 .o-wrapper.has-push-right {
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
 }
 @media all and (min-width: 320px) {
-  /* line 259, ../sass/_components.menus.scss */
+  /* line 254, ../sass/_components.menus.scss */
   .o-wrapper.has-push-right {
     transform: translateX(-300px);
     -webkit-transform: translateX(-300px);
   }
 }
 
-/* line 269, ../sass/_components.menus.scss */
+/* line 264, ../sass/_components.menus.scss */
 .o-wrapper.has-push-top {
   transform: translateY(150px);
   -webkit-transform: translateY(150px);
 }
 
-/* line 274, ../sass/_components.menus.scss */
+/* line 269, ../sass/_components.menus.scss */
 .o-wrapper.has-push-bottom {
   transform: translateY(-150px);
   -webkit-transform: translateY(-150px);
 }
 
 /**
- * Body states.
- *
- * When a menu is active, we want to hide the overflows on the body to prevent
- * awkward document scrolling.
- */
-/* line 286, ../sass/_components.menus.scss */
+* Body states.
+*
+* When a menu is active, we want to hide the overflows on the body to prevent
+* awkward document scrolling.
+*/
+/* line 281, ../sass/_components.menus.scss */
 body.has-active-menu {
   overflow: hidden;
 }
 
 /**
- * Close button resets.
- */
-/* line 294, ../sass/_components.menus.scss */
+* Close button resets.
+*/
+/* line 289, ../sass/_components.menus.scss */
 .c-menu__close {
   color: #fff;
   background-color: #4B2E84;
@@ -351,7 +345,7 @@ body.has-active-menu {
   cursor: pointer;
 }
 
-/* line 307, ../sass/_components.menus.scss */
+/* line 302, ../sass/_components.menus.scss */
 .c-menu__close:focus {
   outline: none;
 }

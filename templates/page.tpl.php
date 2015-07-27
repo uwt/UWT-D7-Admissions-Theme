@@ -9,16 +9,6 @@
 ?>
 
 <div id="o-wrapper" class="o-wrapper">
-<div class="c-buttons">
-<button id="c-button--slide-left" class="c-button">Open Menu</button>
-</div> <!-- c-buttons -->
-
-
-<div class="c-buttons">
-<button id="c-button--push-top" class="c-button">Open Search</button>
-</div> <!-- c-buttons -->
-
-
 
 <header class="header" id="header" role="banner">
 <?php
@@ -26,15 +16,27 @@ $themepath = path_to_theme('theme', 'uwtadmissions');
 ?>
 <img id="header-block-w" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
 <img id="header-wordmark" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
+
+<!-- Search Opener -->
+<div class="c-buttons">
+<button id="c-button--push-top" class="c-button">Open Search</button>
+</div> <!-- c-buttons -->
+<!-- End Search Opener -->
+
 <h1><a href="/node/41272">Undergraduate Admissions</a></h1>
 
-<?php //print render($page['header']); ?>
+<?php print render($page['header']); ?>
 
 </header>
 
 
+<!-- Menu Opener -->
+<div id="nav-opener" class="c-buttons">
+<button id="c-button--slide-left" class="c-button">Open Menu</button>
+</div> <!-- c-buttons -->
+<!-- End Menu Opener -->
 
-<?php //print render($page['banner']); ?>
+<?php print render($page['banner']); ?>
 
 <div id="page">
 <div id="main">

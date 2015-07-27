@@ -1897,12 +1897,9 @@ html {
 @media only screen and (min-width: 0px) {
   /* line 164, ../sass/_base.scss */
   html {
-    /**************************************\
-    |*********** NAV TOGGLER **********|
-    \**************************************/
-    /****************************************************\
-    |********** NAV-WRAPPER CONTAINER **********|
-    \****************************************************/
+    /*******************************\
+    |********** NAVIGATION *********|
+    \*******************************/
     /******************************\
     |*********** SEARCH ***********|
     \******************************/
@@ -1929,228 +1926,25 @@ html {
     border-top: 20px solid #4B2E84;
     color: #444444;
   }
-  /* line 12, ../sass/_bp_extra_narrow.scss */
-  html #body-closer {
-    display: none;
-    width: 1px;
-    background-color: transparent;
-  }
-  /* line 16, ../sass/_bp_extra_narrow.scss */
-  html #body-closer.shown {
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    background-color: rgba(68, 68, 68, 0.75);
-    z-index: 1;
-    cursor: pointer;
-  }
-  /* line 32, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler {
-    position: relative;
-    z-index: 1;
-    width: 100%;
+  /* line 15, ../sass/_bp_extra_narrow.scss */
+  html #nav-opener {
     background-color: #4B2E84;
-    padding: 5px 0px 5px 10px;
   }
-  /* line 38, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler #st-container {
-    border: 1px solid white;
-    padding: 3px;
-    border-radius: 3px;
+  /* line 17, ../sass/_bp_extra_narrow.scss */
+  html #nav-opener.c-buttons {
+    margin-bottom: inherit;
+    text-align: inherit;
   }
-  /* line 43, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler span {
-    vertical-align: baseline;
-  }
-  /* line 46, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler:hover {
-    cursor: pointer;
-  }
-  /* line 49, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler .icon {
-    font-size: 20px;
-    /* line-height: normal; */
-    margin: 0;
-    padding: 0px 5px 0px 0px;
-  }
-  /* line 54, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler .icon:before {
-    content: '\2261';
-  }
-  /* line 58, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler.nav-opened {
-    position: fixed;
-    z-index: 3;
-    top: 0px;
-    left: 0px;
-  }
-  /* line 64, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler.nav-opened .icon:before {
-    content: '\2297';
-  }
-  /* line 72, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler.headroom--pinned {
-    position: fixed;
-    top: 0px;
-  }
-  /* line 76, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler.headroom--top {
-    position: relative;
-    top: inherit;
-  }
-  /* line 79, ../sass/_bp_extra_narrow.scss */
-  html #nav-toggler.headroom--top.nav-opened {
-    position: fixed;
-    top: 0px;
-  }
-  /* line 93, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper {
-    position: absolute;
-    width: 0%;
-    opacity: 0;
-    padding-left: 10px;
-    -webkit-transition: all 0.8s;
-    -moz-transition: all 0.8s;
-    -ms-transition: all 0.8s;
-    -o-transition: all 0.8s;
-    transition: all 0.8s;
-    /***********************************\
-    |********** NAVIGATION **********|
-    \***********************************/
-    /***********************************************\
-    |********** SHOWING NAVIGATION **********|
-    \***********************************************/
-  }
-  /* line 109, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper #navigation {
-    width: 100%;
-    padding-left: 0;
-  }
-  /* line 117, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation {
-    opacity: 1;
-    top: 32px;
-    z-index: 2;
-    background-color: rgba(183, 165, 122, 0.93);
-    color: white;
-    width: 80%;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  }
-  /* line 129, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    background-color: transparent;
-  }
-  /* line 134, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation {
-    padding-bottom: 1em;
-  }
-  /* line 137, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul {
-    width: 100%;
-    margin-top: 20px;
-  }
-  /* line 140, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul li {
-    float: none;
-    width: 100%;
-    display: block;
-    line-height: normal;
-    margin-bottom: 0px;
-    text-transform: uppercase;
-    padding-left: 10px;
-  }
-  /* line 148, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul li a {
-    width: 75%;
-    margin-bottom: 10px;
-  }
-  /* line 151, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul li a.active {
-    color: #4B2E84;
-    background-color: #E8E3D3;
-    border-left-width: 15px;
-  }
-  /* line 155, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul li a.active:before {
-    background-color: #E8E3D3;
-  }
-  /* line 161, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul {
-    margin-top: 0px;
-  }
-  /* line 163, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li {
-    padding-left: 10px;
-    padding-right: 3px;
-  }
-  /* line 166, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li a {
-    padding: 5px 10px;
-    border-left: 2px solid #444444;
-    background-color: #BEB6CE;
-  }
-  /* line 167, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li a.active {
-    border-left-width: 15px;
-  }
-  /* line 169, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li a.active:before {
-    background-color: #E8E3D3;
-  }
-  /* line 177, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li a.uw-btn:before {
-    width: 40px;
-    right: -38px;
-  }
-  /* line 182, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li a.uw-btn:after {
-    right: -43px;
-  }
-  /* line 186, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul li a i {
-    color: white;
-  }
-  /* line 195, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul ul li a.uw-btn:before {
-    width: 40px;
-    right: -32px;
-  }
-  /* line 199, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #navigation ul ul ul li a.uw-btn:after {
-    right: -36px;
-  }
-  /* line 209, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper.show-navigation #nav-closer {
-    display: block;
-  }
-  /* line 214, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper .search-toggle {
-    width: 40px;
-    height: 40px;
-    float: left;
-  }
-  /* line 219, ../sass/_bp_extra_narrow.scss */
-  html #nav-wrapper #block-search-form {
-    padding-top: 5px;
-    margin-bottom: 0;
-  }
-  /* line 230, ../sass/_bp_extra_narrow.scss */
+  /* line 27, ../sass/_bp_extra_narrow.scss */
   html .region-search {
     padding-top: 1em;
     color: #444444;
   }
-  /* line 233, ../sass/_bp_extra_narrow.scss */
+  /* line 30, ../sass/_bp_extra_narrow.scss */
   html .region-search .form-text {
     width: 50%;
   }
-  /* line 239, ../sass/_bp_extra_narrow.scss */
+  /* line 36, ../sass/_bp_extra_narrow.scss */
   html #search-wrapper {
     height: 0px;
     background-color: #444444;
@@ -2160,29 +1954,29 @@ html {
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
   }
-  /* line 247, ../sass/_bp_extra_narrow.scss */
+  /* line 44, ../sass/_bp_extra_narrow.scss */
   html #search-wrapper.search-visible {
     height: 50px;
   }
-  /* line 250, ../sass/_bp_extra_narrow.scss */
+  /* line 47, ../sass/_bp_extra_narrow.scss */
   html #search-wrapper .form-type-textfield {
     margin: 10px;
     width: 100%;
   }
-  /* line 253, ../sass/_bp_extra_narrow.scss */
+  /* line 50, ../sass/_bp_extra_narrow.scss */
   html #search-wrapper .form-type-textfield input {
     width: 210px;
   }
-  /* line 258, ../sass/_bp_extra_narrow.scss */
+  /* line 55, ../sass/_bp_extra_narrow.scss */
   html #search-wrapper form {
     color: #444444;
   }
-  /* line 261, ../sass/_bp_extra_narrow.scss */
+  /* line 58, ../sass/_bp_extra_narrow.scss */
   html #search-wrapper .block {
     margin-bottom: 0px;
     padding-top: 10px;
   }
-  /* line 271, ../sass/_bp_extra_narrow.scss */
+  /* line 68, ../sass/_bp_extra_narrow.scss */
   html #header {
     padding-left: 0;
     padding-right: 0;
@@ -2190,38 +1984,30 @@ html {
     width: 100%;
     background-color: black;
   }
-  /* line 279, ../sass/_bp_extra_narrow.scss */
-  html #header.search-visible {
-    top: 0px;
-    left: 0px;
+  /* line 76, ../sass/_bp_extra_narrow.scss */
+  html #header .c-buttons {
+    text-align: inherit;
+    margin-bottom: 0px;
   }
-  /* line 284, ../sass/_bp_extra_narrow.scss */
-  html #header #search-toggler {
+  /* line 79, ../sass/_bp_extra_narrow.scss */
+  html #header .c-buttons .c-button {
+    padding: 0px;
+    border: none;
     position: absolute;
     top: 10px;
     right: 10px;
-    cursor: pointer;
-    -webkit-transition: all .8s ease-out;
-    -moz-transition: all .8s ease-out;
-    -ms-transition: all .8s ease-out;
-    -o-transition: all .8s ease-out;
-    transition: all .8s ease-in;
   }
-  /* line 294, ../sass/_bp_extra_narrow.scss */
-  html #header #search-toggler.search-shown {
-    top: -45px;
-  }
-  /* line 298, ../sass/_bp_extra_narrow.scss */
+  /* line 88, ../sass/_bp_extra_narrow.scss */
   html #header .block {
     margin-bottom: 0;
   }
-  /* line 301, ../sass/_bp_extra_narrow.scss */
+  /* line 91, ../sass/_bp_extra_narrow.scss */
   html #header #header-block-w {
     margin: 10px 0px;
     width: 59.4px;
     height: 40px;
   }
-  /* line 310, ../sass/_bp_extra_narrow.scss */
+  /* line 100, ../sass/_bp_extra_narrow.scss */
   html #header h1 {
     font-size: 110%;
     margin-bottom: 0;
@@ -2229,18 +2015,11 @@ html {
     background-color: #B7A57A;
     color: #FFF;
   }
-  /* line 316, ../sass/_bp_extra_narrow.scss */
+  /* line 106, ../sass/_bp_extra_narrow.scss */
   html #header h1 a:link, html #header h1 a:visited {
     color: #FFF;
   }
-  /* line 322, ../sass/_bp_extra_narrow.scss */
-  html #nav-opener {
-    position: relative;
-    background-color: #4B2E84;
-    z-index: 1;
-    padding-left: 10px;
-  }
-  /* line 336, ../sass/_bp_extra_narrow.scss */
+  /* line 120, ../sass/_bp_extra_narrow.scss */
   html .region-banner h2 {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -2248,21 +2027,21 @@ html {
     line-height: normal;
     text-shadow: 1px 1px 1px black;
   }
-  /* line 343, ../sass/_bp_extra_narrow.scss */
+  /* line 127, ../sass/_bp_extra_narrow.scss */
   html .region-banner p {
     font-size: 100%;
   }
-  /* line 346, ../sass/_bp_extra_narrow.scss */
+  /* line 130, ../sass/_bp_extra_narrow.scss */
   html .region-banner .block {
     margin-bottom: 0;
   }
-  /* line 349, ../sass/_bp_extra_narrow.scss */
+  /* line 133, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container {
     margin: 0;
     padding: 0;
     width: 100%;
   }
-  /* line 353, ../sass/_bp_extra_narrow.scss */
+  /* line 137, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner {
     overflow: auto;
     position: relative;
@@ -2271,12 +2050,12 @@ html {
     height: 100%;
     width: 100%;
   }
-  /* line 360, ../sass/_bp_extra_narrow.scss */
+  /* line 144, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul {
     margin: 0;
     padding: 0;
   }
-  /* line 363, ../sass/_bp_extra_narrow.scss */
+  /* line 147, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li {
     height: 200px;
     float: left;
@@ -2284,7 +2063,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  /* line 369, ../sass/_bp_extra_narrow.scss */
+  /* line 153, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide {
     height: 100%;
     margin: 0;
@@ -2293,7 +2072,7 @@ html {
     background-position: bottom 0px right 10px;
     background-repeat: no-repeat;
   }
-  /* line 380, ../sass/_bp_extra_narrow.scss */
+  /* line 164, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
     font-size: 100%;
     position: relative;
@@ -2308,16 +2087,16 @@ html {
     background-color: rgba(68, 68, 68, 0.25);
     border: 2px solid #FFF;
   }
-  /* line 393, ../sass/_bp_extra_narrow.scss */
+  /* line 177, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited {
     text-transform: uppercase;
     margin-top: 10px;
   }
-  /* line 396, ../sass/_bp_extra_narrow.scss */
+  /* line 180, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link:after, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited:after {
     content: " \203A";
   }
-  /* line 400, ../sass/_bp_extra_narrow.scss */
+  /* line 184, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content p, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited, html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link {
     font-weight: bold;
     text-shadow: 1px 1px 1px #444444;
@@ -2325,7 +2104,7 @@ html {
     margin: 0;
     line-height: normal;
   }
-  /* line 411, ../sass/_bp_extra_narrow.scss */
+  /* line 195, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots {
     position: absolute;
     bottom: 0px;
@@ -2336,7 +2115,7 @@ html {
     margin: 0 0 0 10px;
     background-color: rgba(75, 46, 132, 0.9);
   }
-  /* line 420, ../sass/_bp_extra_narrow.scss */
+  /* line 204, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li {
     font-size: 100%;
     width: 30px;
@@ -2350,49 +2129,46 @@ html {
     -o-transition: all 1s;
     transition: all 1s;
   }
-  /* line 432, ../sass/_bp_extra_narrow.scss */
+  /* line 216, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li.active {
     background-color: rgba(183, 165, 122, 0.75);
   }
-  /* line 435, ../sass/_bp_extra_narrow.scss */
+  /* line 219, ../sass/_bp_extra_narrow.scss */
   html .region-banner #banner-container #banner .dots li:first-child {
     margin-left: 0px;
   }
-  /* line 453, ../sass/_bp_extra_narrow.scss */
+  /* line 237, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block {
     margin: 10px 0;
     border: 2px solid #4B2E84;
   }
-  /* line 456, ../sass/_bp_extra_narrow.scss */
+  /* line 240, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block h2 {
     margin-left: 10px;
     font-family: "uni_sans_light", Arial, sans-serif;
     color: #4B2E84;
   }
-  /* line 460, ../sass/_bp_extra_narrow.scss */
+  /* line 244, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block h2 a:link, html #main #content .adm-home-block h2 a:visited {
     font-family: "uni_sans_light", Arial, sans-serif;
     color: #4B2E84;
   }
-  /* line 465, ../sass/_bp_extra_narrow.scss */
+  /* line 249, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block ul {
     padding-left: 0px;
     margin-left: 10px;
     list-style-type: none;
   }
-  /* line 470, ../sass/_bp_extra_narrow.scss */
+  /* line 254, ../sass/_bp_extra_narrow.scss */
   html #main #content .adm-home-block ul li a {
     width: 80%;
   }
 }
 /* line 168, ../sass/_base.scss */
 html.lt-ie9 html {
-  /**************************************\
-  |*********** NAV TOGGLER **********|
-  \**************************************/
-  /****************************************************\
-  |********** NAV-WRAPPER CONTAINER **********|
-  \****************************************************/
+  /*******************************\
+  |********** NAVIGATION *********|
+  \*******************************/
   /******************************\
   |*********** SEARCH ***********|
   \******************************/
@@ -2419,228 +2195,25 @@ html.lt-ie9 html #page {
   border-top: 20px solid #4B2E84;
   color: #444444;
 }
-/* line 12, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #body-closer {
-  display: none;
-  width: 1px;
-  background-color: transparent;
-}
-/* line 16, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #body-closer.shown {
-  display: block;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  right: 0;
-  top: 0;
-  background-color: rgba(68, 68, 68, 0.75);
-  z-index: 1;
-  cursor: pointer;
-}
-/* line 32, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler {
-  position: relative;
-  z-index: 1;
-  width: 100%;
+/* line 15, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html #nav-opener {
   background-color: #4B2E84;
-  padding: 5px 0px 5px 10px;
 }
-/* line 38, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler #st-container {
-  border: 1px solid white;
-  padding: 3px;
-  border-radius: 3px;
+/* line 17, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html #nav-opener.c-buttons {
+  margin-bottom: inherit;
+  text-align: inherit;
 }
-/* line 43, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler span {
-  vertical-align: baseline;
-}
-/* line 46, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler:hover {
-  cursor: pointer;
-}
-/* line 49, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler .icon {
-  font-size: 20px;
-  /* line-height: normal; */
-  margin: 0;
-  padding: 0px 5px 0px 0px;
-}
-/* line 54, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler .icon:before {
-  content: '\2261';
-}
-/* line 58, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler.nav-opened {
-  position: fixed;
-  z-index: 3;
-  top: 0px;
-  left: 0px;
-}
-/* line 64, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler.nav-opened .icon:before {
-  content: '\2297';
-}
-/* line 72, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler.headroom--pinned {
-  position: fixed;
-  top: 0px;
-}
-/* line 76, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler.headroom--top {
-  position: relative;
-  top: inherit;
-}
-/* line 79, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-toggler.headroom--top.nav-opened {
-  position: fixed;
-  top: 0px;
-}
-/* line 93, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper {
-  position: absolute;
-  width: 0%;
-  opacity: 0;
-  padding-left: 10px;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  transition: all 0.8s;
-  /***********************************\
-  |********** NAVIGATION **********|
-  \***********************************/
-  /***********************************************\
-  |********** SHOWING NAVIGATION **********|
-  \***********************************************/
-}
-/* line 109, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper #navigation {
-  width: 100%;
-  padding-left: 0;
-}
-/* line 117, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation {
-  opacity: 1;
-  top: 32px;
-  z-index: 2;
-  background-color: rgba(183, 165, 122, 0.93);
-  color: white;
-  width: 80%;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-/* line 129, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation h2 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: transparent;
-}
-/* line 134, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation {
-  padding-bottom: 1em;
-}
-/* line 137, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul {
-  width: 100%;
-  margin-top: 20px;
-}
-/* line 140, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul li {
-  float: none;
-  width: 100%;
-  display: block;
-  line-height: normal;
-  margin-bottom: 0px;
-  text-transform: uppercase;
-  padding-left: 10px;
-}
-/* line 148, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul li a {
-  width: 75%;
-  margin-bottom: 10px;
-}
-/* line 151, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul li a.active {
-  color: #4B2E84;
-  background-color: #E8E3D3;
-  border-left-width: 15px;
-}
-/* line 155, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul li a.active:before {
-  background-color: #E8E3D3;
-}
-/* line 161, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul {
-  margin-top: 0px;
-}
-/* line 163, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li {
-  padding-left: 10px;
-  padding-right: 3px;
-}
-/* line 166, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li a {
-  padding: 5px 10px;
-  border-left: 2px solid #444444;
-  background-color: #BEB6CE;
-}
-/* line 167, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li a.active {
-  border-left-width: 15px;
-}
-/* line 169, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li a.active:before {
-  background-color: #E8E3D3;
-}
-/* line 177, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li a.uw-btn:before {
-  width: 40px;
-  right: -38px;
-}
-/* line 182, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li a.uw-btn:after {
-  right: -43px;
-}
-/* line 186, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul li a i {
-  color: white;
-}
-/* line 195, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul ul li a.uw-btn:before {
-  width: 40px;
-  right: -32px;
-}
-/* line 199, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #navigation ul ul ul li a.uw-btn:after {
-  right: -36px;
-}
-/* line 209, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper.show-navigation #nav-closer {
-  display: block;
-}
-/* line 214, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper .search-toggle {
-  width: 40px;
-  height: 40px;
-  float: left;
-}
-/* line 219, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-wrapper #block-search-form {
-  padding-top: 5px;
-  margin-bottom: 0;
-}
-/* line 230, ../sass/_bp_extra_narrow.scss */
+/* line 27, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-search {
   padding-top: 1em;
   color: #444444;
 }
-/* line 233, ../sass/_bp_extra_narrow.scss */
+/* line 30, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-search .form-text {
   width: 50%;
 }
-/* line 239, ../sass/_bp_extra_narrow.scss */
+/* line 36, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-wrapper {
   height: 0px;
   background-color: #444444;
@@ -2650,29 +2223,29 @@ html.lt-ie9 html #search-wrapper {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* line 247, ../sass/_bp_extra_narrow.scss */
+/* line 44, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-wrapper.search-visible {
   height: 50px;
 }
-/* line 250, ../sass/_bp_extra_narrow.scss */
+/* line 47, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-wrapper .form-type-textfield {
   margin: 10px;
   width: 100%;
 }
-/* line 253, ../sass/_bp_extra_narrow.scss */
+/* line 50, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-wrapper .form-type-textfield input {
   width: 210px;
 }
-/* line 258, ../sass/_bp_extra_narrow.scss */
+/* line 55, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-wrapper form {
   color: #444444;
 }
-/* line 261, ../sass/_bp_extra_narrow.scss */
+/* line 58, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #search-wrapper .block {
   margin-bottom: 0px;
   padding-top: 10px;
 }
-/* line 271, ../sass/_bp_extra_narrow.scss */
+/* line 68, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #header {
   padding-left: 0;
   padding-right: 0;
@@ -2680,38 +2253,30 @@ html.lt-ie9 html #header {
   width: 100%;
   background-color: black;
 }
-/* line 279, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #header.search-visible {
-  top: 0px;
-  left: 0px;
+/* line 76, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html #header .c-buttons {
+  text-align: inherit;
+  margin-bottom: 0px;
 }
-/* line 284, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #header #search-toggler {
+/* line 79, ../sass/_bp_extra_narrow.scss */
+html.lt-ie9 html #header .c-buttons .c-button {
+  padding: 0px;
+  border: none;
   position: absolute;
   top: 10px;
   right: 10px;
-  cursor: pointer;
-  -webkit-transition: all .8s ease-out;
-  -moz-transition: all .8s ease-out;
-  -ms-transition: all .8s ease-out;
-  -o-transition: all .8s ease-out;
-  transition: all .8s ease-in;
 }
-/* line 294, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #header #search-toggler.search-shown {
-  top: -45px;
-}
-/* line 298, ../sass/_bp_extra_narrow.scss */
+/* line 88, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #header .block {
   margin-bottom: 0;
 }
-/* line 301, ../sass/_bp_extra_narrow.scss */
+/* line 91, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #header #header-block-w {
   margin: 10px 0px;
   width: 59.4px;
   height: 40px;
 }
-/* line 310, ../sass/_bp_extra_narrow.scss */
+/* line 100, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #header h1 {
   font-size: 110%;
   margin-bottom: 0;
@@ -2719,18 +2284,11 @@ html.lt-ie9 html #header h1 {
   background-color: #B7A57A;
   color: #FFF;
 }
-/* line 316, ../sass/_bp_extra_narrow.scss */
+/* line 106, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #header h1 a:link, html.lt-ie9 html #header h1 a:visited {
   color: #FFF;
 }
-/* line 322, ../sass/_bp_extra_narrow.scss */
-html.lt-ie9 html #nav-opener {
-  position: relative;
-  background-color: #4B2E84;
-  z-index: 1;
-  padding-left: 10px;
-}
-/* line 336, ../sass/_bp_extra_narrow.scss */
+/* line 120, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner h2 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -2738,21 +2296,21 @@ html.lt-ie9 html .region-banner h2 {
   line-height: normal;
   text-shadow: 1px 1px 1px black;
 }
-/* line 343, ../sass/_bp_extra_narrow.scss */
+/* line 127, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner p {
   font-size: 100%;
 }
-/* line 346, ../sass/_bp_extra_narrow.scss */
+/* line 130, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner .block {
   margin-bottom: 0;
 }
-/* line 349, ../sass/_bp_extra_narrow.scss */
+/* line 133, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container {
   margin: 0;
   padding: 0;
   width: 100%;
 }
-/* line 353, ../sass/_bp_extra_narrow.scss */
+/* line 137, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner {
   overflow: auto;
   position: relative;
@@ -2761,12 +2319,12 @@ html.lt-ie9 html .region-banner #banner-container #banner {
   height: 100%;
   width: 100%;
 }
-/* line 360, ../sass/_bp_extra_narrow.scss */
+/* line 144, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul {
   margin: 0;
   padding: 0;
 }
-/* line 363, ../sass/_bp_extra_narrow.scss */
+/* line 147, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li {
   height: 200px;
   float: left;
@@ -2774,7 +2332,7 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 369, ../sass/_bp_extra_narrow.scss */
+/* line 153, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide {
   height: 100%;
   margin: 0;
@@ -2783,7 +2341,7 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide {
   background-position: bottom 0px right 10px;
   background-repeat: no-repeat;
 }
-/* line 380, ../sass/_bp_extra_narrow.scss */
+/* line 164, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content {
   font-size: 100%;
   position: relative;
@@ -2798,16 +2356,16 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-
   background-color: rgba(68, 68, 68, 0.25);
   border: 2px solid #FFF;
 }
-/* line 393, ../sass/_bp_extra_narrow.scss */
+/* line 177, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited {
   text-transform: uppercase;
   margin-top: 10px;
 }
-/* line 396, ../sass/_bp_extra_narrow.scss */
+/* line 180, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link:after, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited:after {
   content: " \203A";
 }
-/* line 400, ../sass/_bp_extra_narrow.scss */
+/* line 184, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content p, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:visited, html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-slide-content a:link {
   font-weight: bold;
   text-shadow: 1px 1px 1px #444444;
@@ -2815,7 +2373,7 @@ html.lt-ie9 html .region-banner #banner-container #banner ul li .adm-slide .adm-
   margin: 0;
   line-height: normal;
 }
-/* line 411, ../sass/_bp_extra_narrow.scss */
+/* line 195, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots {
   position: absolute;
   bottom: 0px;
@@ -2826,7 +2384,7 @@ html.lt-ie9 html .region-banner #banner-container #banner .dots {
   margin: 0 0 0 10px;
   background-color: rgba(75, 46, 132, 0.9);
 }
-/* line 420, ../sass/_bp_extra_narrow.scss */
+/* line 204, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li {
   font-size: 100%;
   width: 30px;
@@ -2840,37 +2398,37 @@ html.lt-ie9 html .region-banner #banner-container #banner .dots li {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 432, ../sass/_bp_extra_narrow.scss */
+/* line 216, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li.active {
   background-color: rgba(183, 165, 122, 0.75);
 }
-/* line 435, ../sass/_bp_extra_narrow.scss */
+/* line 219, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html .region-banner #banner-container #banner .dots li:first-child {
   margin-left: 0px;
 }
-/* line 453, ../sass/_bp_extra_narrow.scss */
+/* line 237, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block {
   margin: 10px 0;
   border: 2px solid #4B2E84;
 }
-/* line 456, ../sass/_bp_extra_narrow.scss */
+/* line 240, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block h2 {
   margin-left: 10px;
   font-family: "uni_sans_light", Arial, sans-serif;
   color: #4B2E84;
 }
-/* line 460, ../sass/_bp_extra_narrow.scss */
+/* line 244, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block h2 a:link, html.lt-ie9 html #main #content .adm-home-block h2 a:visited {
   font-family: "uni_sans_light", Arial, sans-serif;
   color: #4B2E84;
 }
-/* line 465, ../sass/_bp_extra_narrow.scss */
+/* line 249, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block ul {
   padding-left: 0px;
   margin-left: 10px;
   list-style-type: none;
 }
-/* line 470, ../sass/_bp_extra_narrow.scss */
+/* line 254, ../sass/_bp_extra_narrow.scss */
 html.lt-ie9 html #main #content .adm-home-block ul li a {
   width: 80%;
 }
@@ -3249,15 +2807,13 @@ body h1 {
 /**************************************************************\
 |********** Partials to be shared with all .scss files **********|
 \**************************************************************/
-/* -----------------------------------------------------------------------------
-
-  SLIDE AND PUSH MENUS COMPONENT
-  
------------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------
+SLIDE AND PUSH MENUS COMPONENT
+---------------------------------------------------------------------------- */
 /**
- * Menu overview.
- */
-/* line 15, ../sass/_components.menus.scss */
+* Menu overview.
+*/
+/* line 13, ../sass/_components.menus.scss */
 .c-menu {
   position: fixed;
   z-index: 200;
@@ -3265,12 +2821,8 @@ body h1 {
   transition: transform 0.3s;
   -webkit-transition: -webkit-transform 0.3s;
 }
-/* line 21, ../sass/_components.menus.scss */
-.c-menu.c-menu--push-top {
-  background-color: #444444;
-}
 
-/* line 26, ../sass/_components.menus.scss */
+/* line 21, ../sass/_components.menus.scss */
 .c-menu__items {
   list-style: none;
   margin: 0;
@@ -3278,18 +2830,18 @@ body h1 {
 }
 
 /**
- * Left and right menus
- *
- * Slide and push menus coming in from the left and right inherit a lot of
- * common styles. We'll start each of them off by doing up the common styles
- * for each version, followed by individual styles.
- *
- * The various versions are governed by modifier classes.
- */
+* Left and right menus
+*
+* Slide and push menus coming in from the left and right inherit a lot of
+* common styles. We'll start each of them off by doing up the common styles
+* for each version, followed by individual styles.
+*
+* The various versions are governed by modifier classes.
+*/
 /**
- * Common modifiers for left/right menus.
- */
-/* line 46, ../sass/_components.menus.scss */
+* Common modifiers for left/right menus.
+*/
+/* line 41, ../sass/_components.menus.scss */
 .c-menu--slide-left,
 .c-menu--slide-right,
 .c-menu--push-left,
@@ -3299,7 +2851,7 @@ body h1 {
   overflow-y: scroll;
 }
 @media all and (min-width: 320px) {
-  /* line 46, ../sass/_components.menus.scss */
+  /* line 41, ../sass/_components.menus.scss */
   .c-menu--slide-left,
   .c-menu--slide-right,
   .c-menu--push-left,
@@ -3308,7 +2860,7 @@ body h1 {
   }
 }
 
-/* line 59, ../sass/_components.menus.scss */
+/* line 54, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__item,
 .c-menu--slide-right .c-menu__item,
 .c-menu--push-left .c-menu__item,
@@ -3318,14 +2870,14 @@ body h1 {
   border-top: solid 1px #B7A57A;
   border-bottom: solid 1px #4B2E84;
 }
-/* line 68, ../sass/_components.menus.scss */
+/* line 63, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__item:first-child,
 .c-menu--slide-right .c-menu__item:first-child,
 .c-menu--push-left .c-menu__item:first-child,
 .c-menu--push-right .c-menu__item:first-child {
   border-top: none;
 }
-/* line 72, ../sass/_components.menus.scss */
+/* line 67, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__item:last-child,
 .c-menu--slide-right .c-menu__item:last-child,
 .c-menu--push-left .c-menu__item:last-child,
@@ -3333,7 +2885,7 @@ body h1 {
   border-bottom: none;
 }
 
-/* line 77, ../sass/_components.menus.scss */
+/* line 72, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__link,
 .c-menu--slide-right .c-menu__link,
 .c-menu--push-left .c-menu__link,
@@ -3343,7 +2895,7 @@ body h1 {
   color: #fff;
 }
 
-/* line 86, ../sass/_components.menus.scss */
+/* line 81, ../sass/_components.menus.scss */
 .c-menu--slide-left .c-menu__close,
 .c-menu--slide-right .c-menu__close,
 .c-menu--push-left .c-menu__close,
@@ -3354,9 +2906,9 @@ body h1 {
 }
 
 /**
- * Slide/Push Menu Left.
- */
-/* line 99, ../sass/_components.menus.scss */
+* Slide/Push Menu Left.
+*/
+/* line 94, ../sass/_components.menus.scss */
 .c-menu--slide-left,
 .c-menu--push-left {
   top: 0;
@@ -3365,7 +2917,7 @@ body h1 {
   -webkit-transform: translateX(-100%);
 }
 @media all and (min-width: 320px) {
-  /* line 99, ../sass/_components.menus.scss */
+  /* line 94, ../sass/_components.menus.scss */
   .c-menu--slide-left,
   .c-menu--push-left {
     transform: translateX(-300px);
@@ -3373,7 +2925,7 @@ body h1 {
   }
 }
 
-/* line 113, ../sass/_components.menus.scss */
+/* line 108, ../sass/_components.menus.scss */
 .c-menu--slide-left.is-active,
 .c-menu--push-left.is-active {
   transform: translateX(0);
@@ -3381,9 +2933,9 @@ body h1 {
 }
 
 /**
- * Slide/Push Menu Right.
- */
-/* line 123, ../sass/_components.menus.scss */
+* Slide/Push Menu Right.
+*/
+/* line 118, ../sass/_components.menus.scss */
 .c-menu--slide-right,
 .c-menu--push-right {
   top: 0;
@@ -3392,7 +2944,7 @@ body h1 {
   -webkit-transform: translateX(100%);
 }
 @media all and (min-width: 320px) {
-  /* line 123, ../sass/_components.menus.scss */
+  /* line 118, ../sass/_components.menus.scss */
   .c-menu--slide-right,
   .c-menu--push-right {
     transform: translateX(300px);
@@ -3400,7 +2952,7 @@ body h1 {
   }
 }
 
-/* line 136, ../sass/_components.menus.scss */
+/* line 131, ../sass/_components.menus.scss */
 .c-menu--slide-right.is-active,
 .c-menu--push-right.is-active {
   transform: translateX(0);
@@ -3408,18 +2960,18 @@ body h1 {
 }
 
 /**
- * Top and bottom menus
- *
- * Slide and push menus coming in from the top and bottom inherit a lot of
- * common styles. We'll start each of them off by doing up the common styles
- * for each version, followed by individual styles.
- *
- * The various versions are governed by modifier classes.
+* Top and bottom menus
+*
+* Slide and push menus coming in from the top and bottom inherit a lot of
+* common styles. We'll start each of them off by doing up the common styles
+* for each version, followed by individual styles.
+*
+* The various versions are governed by modifier classes.
 
 /**
- * Common modifiers for top/bottom menus
- */
-/* line 155, ../sass/_components.menus.scss */
+* Common modifiers for top/bottom menus
+*/
+/* line 150, ../sass/_components.menus.scss */
 .c-menu--slide-top,
 .c-menu--slide-bottom,
 .c-menu--push-top,
@@ -3431,7 +2983,7 @@ body h1 {
   overflow-x: scroll;
 }
 
-/* line 166, ../sass/_components.menus.scss */
+/* line 161, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__items,
 .c-menu--slide-bottom .c-menu__items,
 .c-menu--push-top .c-menu__items,
@@ -3440,7 +2992,7 @@ body h1 {
   text-align: center;
 }
 
-/* line 174, ../sass/_components.menus.scss */
+/* line 169, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__item,
 .c-menu--slide-bottom .c-menu__item,
 .c-menu--push-top .c-menu__item,
@@ -3449,7 +3001,7 @@ body h1 {
   line-height: 150px;
 }
 
-/* line 182, ../sass/_components.menus.scss */
+/* line 177, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__link,
 .c-menu--slide-bottom .c-menu__link,
 .c-menu--push-top .c-menu__link,
@@ -3459,7 +3011,7 @@ body h1 {
   color: #fff;
 }
 
-/* line 191, ../sass/_components.menus.scss */
+/* line 186, ../sass/_components.menus.scss */
 .c-menu--slide-top .c-menu__close,
 .c-menu--slide-bottom .c-menu__close,
 .c-menu--push-top .c-menu__close,
@@ -3471,16 +3023,16 @@ body h1 {
   line-height: 150px;
 }
 
-/* line 201, ../sass/_components.menus.scss */
+/* line 196, ../sass/_components.menus.scss */
 .c-menu--push-top .c-menu__close {
   height: 60px;
   line-height: 60px;
 }
 
 /**
- * Slide/Push Menu Top.
- */
-/* line 210, ../sass/_components.menus.scss */
+* Slide/Push Menu Top.
+*/
+/* line 205, ../sass/_components.menus.scss */
 .c-menu--slide-top,
 .c-menu--push-top {
   top: 0;
@@ -3489,7 +3041,7 @@ body h1 {
   -webkit-transform: translateY(-150px);
 }
 
-/* line 218, ../sass/_components.menus.scss */
+/* line 213, ../sass/_components.menus.scss */
 .c-menu--slide-top.is-active,
 .c-menu--push-top.is-active {
   transform: translateY(0);
@@ -3497,9 +3049,9 @@ body h1 {
 }
 
 /**
- * Slide/Push Menu Bottom.
- */
-/* line 228, ../sass/_components.menus.scss */
+* Slide/Push Menu Bottom.
+*/
+/* line 223, ../sass/_components.menus.scss */
 .c-menu--slide-bottom,
 .c-menu--push-bottom {
   bottom: 0;
@@ -3508,7 +3060,7 @@ body h1 {
   -webkit-transform: translateY(150px);
 }
 
-/* line 236, ../sass/_components.menus.scss */
+/* line 231, ../sass/_components.menus.scss */
 .c-menu--slide-bottom.is-active,
 .c-menu--push-bottom.is-active {
   transform: translateY(0);
@@ -3516,64 +3068,64 @@ body h1 {
 }
 
 /**
- * Wrapper states.
- *
- * Various wrapper states occur depending on if a menu is pushing into view, in
- * which case, the wrapper has to be pushed by the respective distance.
- */
-/* line 249, ../sass/_components.menus.scss */
+* Wrapper states.
+*
+* Various wrapper states occur depending on if a menu is pushing into view, in
+* which case, the wrapper has to be pushed by the respective distance.
+*/
+/* line 244, ../sass/_components.menus.scss */
 .o-wrapper.has-push-left {
   transform: translateX(100%);
   -webkit-transform: translateX(100%);
 }
 @media all and (min-width: 320px) {
-  /* line 249, ../sass/_components.menus.scss */
+  /* line 244, ../sass/_components.menus.scss */
   .o-wrapper.has-push-left {
     transform: translateX(300px);
     -webkit-transform: translateX(300px);
   }
 }
 
-/* line 259, ../sass/_components.menus.scss */
+/* line 254, ../sass/_components.menus.scss */
 .o-wrapper.has-push-right {
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
 }
 @media all and (min-width: 320px) {
-  /* line 259, ../sass/_components.menus.scss */
+  /* line 254, ../sass/_components.menus.scss */
   .o-wrapper.has-push-right {
     transform: translateX(-300px);
     -webkit-transform: translateX(-300px);
   }
 }
 
-/* line 269, ../sass/_components.menus.scss */
+/* line 264, ../sass/_components.menus.scss */
 .o-wrapper.has-push-top {
   transform: translateY(150px);
   -webkit-transform: translateY(150px);
 }
 
-/* line 274, ../sass/_components.menus.scss */
+/* line 269, ../sass/_components.menus.scss */
 .o-wrapper.has-push-bottom {
   transform: translateY(-150px);
   -webkit-transform: translateY(-150px);
 }
 
 /**
- * Body states.
- *
- * When a menu is active, we want to hide the overflows on the body to prevent
- * awkward document scrolling.
- */
-/* line 286, ../sass/_components.menus.scss */
+* Body states.
+*
+* When a menu is active, we want to hide the overflows on the body to prevent
+* awkward document scrolling.
+*/
+/* line 281, ../sass/_components.menus.scss */
 body.has-active-menu {
   overflow: hidden;
 }
 
 /**
- * Close button resets.
- */
-/* line 294, ../sass/_components.menus.scss */
+* Close button resets.
+*/
+/* line 289, ../sass/_components.menus.scss */
 .c-menu__close {
   color: #fff;
   background-color: #4B2E84;
@@ -3587,7 +3139,7 @@ body.has-active-menu {
   cursor: pointer;
 }
 
-/* line 307, ../sass/_components.menus.scss */
+/* line 302, ../sass/_components.menus.scss */
 .c-menu__close:focus {
   outline: none;
 }

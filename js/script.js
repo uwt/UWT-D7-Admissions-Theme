@@ -21,7 +21,7 @@
   // class to the navigation that will turn it mobiley.
 
   Drupal.behaviors.searchNavMods = {
-    attach: function(){
+    Xattach: function(){
       function applyNavMods(){
 
         // Get the current widths and heights of things

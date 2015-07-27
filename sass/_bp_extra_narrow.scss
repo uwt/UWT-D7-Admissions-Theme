@@ -8,234 +8,31 @@
     color: $grey_dark;
   }
 
-  // #body-closer is the element that can be clicked on to close the navigation
-  #body-closer{
-    display: none;
-    width: 1px;
-    background-color: rgba(0,0,0,0.0);
-    &.shown{
-      display: block;
-      position: fixed;
-      width:100%;
-      height:100%;
-      right:0;
-      top: 0;
-      background-color: rgba($grey_dark,0.75);
-      z-index:1;
-      cursor: pointer;
-    }
-  }
+  /*******************************\
+  |********** NAVIGATION *********|
+  \*******************************/
 
-  /**************************************\
-  |*********** NAV TOGGLER **********|
-  \**************************************/
-  #nav-toggler{
-    position: relative;
-    z-index: 1;
-    width: 100%;
+  #nav-opener{
     background-color:$purple;
-    padding:5px 0px 5px 10px;
-    #st-container{
-      border: 1px solid white;
-      padding: 3px;
-      border-radius:3px;
+    &.c-buttons{
+      margin-bottom: inherit;
+      text-align: inherit;
     }
-    span{
-      vertical-align: baseline;
-    }
-    &:hover{
-      cursor:pointer;
-    }
-    .icon{
-      font-size: 20px;
-      /* line-height: normal; */
-      margin: 0;
-      padding: 0px 5px 0px 0px;
-      &:before{
-        content:'\2261';
-      }
-    }
-    &.nav-opened{ // was search-opened
-      position: fixed;
-      z-index:3;
-      top: 0px;
-      left: 0px;
-      .icon{
-        &:before{
-          content:'\2297';
-        }
-      }
-    }
-    &.headroom{
-
-    }
-    &.headroom--pinned{
-      position: fixed;
-      top: 0px;
-    }
-    &.headroom--top{
-      position: relative;
-      top: inherit;
-      &.nav-opened{
-        position: fixed;
-        top: 0px;
-      }
-    }
-    &.headroom--unpinned{
-
-    }
-  }
-
-
-  /****************************************************\
-  |********** NAV-WRAPPER CONTAINER **********|
-  \****************************************************/
-  #nav-wrapper{
-
-    position:absolute;
-    //display: none;
-    //visibility: hidden;
-    width:0%;
-    opacity:0;
-    padding-left:10px;
-    -webkit-transition: all 0.8s;
-    -moz-transition: all 0.8s;
-    -ms-transition: all 0.8s;
-    -o-transition: all 0.8s;
-    transition: all 0.8s;
-    /***********************************\
-    |********** NAVIGATION **********|
-    \***********************************/
-    #navigation{
-      width: 100%;
-      padding-left:0;
-
-    }
-    /***********************************************\
-    |********** SHOWING NAVIGATION **********|
-    \***********************************************/
-    &.show-navigation{
-      //visibility: visible;
-      //display: block;
-      opacity: 1;
-      top:32px;  // -> matches font-size and line-height on #nav-toggler .icon
-      z-index: 2;
-      background-color: rgba($gold_metallic,0.93);
-      color: white;
-      width:80%;
-      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      h2{
-        margin-top: 0px;
-        margin-bottom: 0px;
-        background-color: transparent;
-      }
-      #navigation{
-
-        padding-bottom:1em;
-        ul{ // 1st level menu items
-          width: 100%;
-          margin-top: 20px;
-          li{
-            float: none;
-            width:100%;
-            display: block;
-            line-height: normal;
-            margin-bottom: 0px;
-            text-transform: uppercase;
-            padding-left: 10px;
-            a{
-              width:75%;
-              margin-bottom:10px;
-              &.active{
-                color: $purple;
-                background-color: $gold;
-                border-left-width: 15px;
-                &:before{
-                  background-color: $gold;
-                }
-              }
-            }
-          }
-          ul{ // 2nd level menu items
-            margin-top:0px;
-            li{
-              padding-left: 10px;
-              padding-right:3px;
-              a{
-                &.active{
-                  border-left-width: 15px;
-                  &:before{
-                    background-color: $gold;
-                  }
-                }
-                padding:5px 10px;
-                border-left: 2px solid $grey_dark;
-                background-color: $purple_medium;
-                &.uw-btn{
-                  &:before{
-                    //background-color:$gold;
-                    width: 40px;
-                    right: -38px;
-                  }
-                  &:after{
-                    right: -43px;
-                  }
-                }
-                i{ // The feedback spinner
-                  color: white;
-                }
-              }
-            }
-            ul{// 3rd level menu items
-              li{
-                a{
-                  &.uw-btn{
-                    &:before{
-                      width: 40px;
-                      right: -32px;
-                    }
-                    &:after{
-                      right: -36px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      #nav-closer{
-        display: block;
-      }
-
-    }
-    .search-toggle{
-      width: 40px;
-      height: 40px;
-      float: left;
-    }
-    #block-search-form{
-      padding-top: 5px;
-      margin-bottom: 0;
-    }
-
   }
 
   /******************************\
   |*********** SEARCH ***********|
   \******************************/
-  
+
   .region-search{
     padding-top: 1em;
-color:$grey_dark;
-      .form-text{
-width: 50%;
-      }
+    color:$grey_dark;
+    .form-text{
+      width: 50%;
+    }
   }
-  
-  
+
+
   #search-wrapper{
     height: 0px;
     background-color: $grey_dark;
@@ -276,25 +73,18 @@ width: 50%;
     position:relative;
     width:100%;
     background-color:black;
-    &.search-visible{
-      //background-color:lime;
-      top:0px;
-      left: 0px;
-    }
-    #search-toggler{
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      -webkit-transition: all .8s ease-out;
-      -moz-transition: all .8s ease-out;
-      -ms-transition: all .8s ease-out;
-      -o-transition: all .8s ease-out;
-      transition: all .8s ease-in;
-      &.search-shown{
-        top: -45px;
+    .c-buttons{
+      text-align: inherit;
+      margin-bottom: 0px;
+      .c-button{
+        padding: 0px;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
+
     .block{
       margin-bottom: 0;
     }
@@ -319,12 +109,6 @@ width: 50%;
     }
   }
 
-  #nav-opener{
-    position:relative;
-    background-color:$purple;
-    z-index: 1;
-    padding-left: 10px;
-  }
 
 
 
@@ -409,80 +193,80 @@ width: 50%;
           }
         }
         .dots{ // UL banner/slider navigation
-          position: absolute;
-          bottom: 0px;
-          left: 0px;
-          margin: 0;
-          list-style: none;
-          padding:0;
-          margin: 0 0 0 10px;
-          background-color: rgba($purple, 0.9);
-          li{
-            font-size: 100%;
-            width: 30px;
-            float: left;
-            padding-left: 10px;
-            margin-left:2px;
-            cursor: pointer;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -ms-transition: all 1s;
-            -o-transition: all 1s;
-            transition: all 1s;
-            &.active{
-              background-color: rgba($gold_metallic, 0.75);
-            }
-            &:first-child{
-              margin-left: 0px;
-            }
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        margin: 0;
+        list-style: none;
+        padding:0;
+        margin: 0 0 0 10px;
+        background-color: rgba($purple, 0.9);
+        li{
+          font-size: 100%;
+          width: 30px;
+          float: left;
+          padding-left: 10px;
+          margin-left:2px;
+          cursor: pointer;
+          -webkit-transition: all 1s;
+          -moz-transition: all 1s;
+          -ms-transition: all 1s;
+          -o-transition: all 1s;
+          transition: all 1s;
+          &.active{
+            background-color: rgba($gold_metallic, 0.75);
+          }
+          &:first-child{
+            margin-left: 0px;
           }
         }
       }
     }
   }
+}
 
-  /***************************\
-  |********** MAIN **********|
-  \***************************/
+/***************************\
+|********** MAIN **********|
+\***************************/
 
-  #main{
-    #content{
-      #page-title{
-        //display:none;
-      }
-      .adm-home-block{
-        margin: 10px 0;
-        border: 2px solid $purple;
-        h2{
-          margin-left: 10px;
+#main{
+  #content{
+    #page-title{
+      //display:none;
+    }
+    .adm-home-block{
+      margin: 10px 0;
+      border: 2px solid $purple;
+      h2{
+        margin-left: 10px;
+        font-family: $uni_sans_light;
+        color:$purple;
+        a:link,a:visited{
           font-family: $uni_sans_light;
           color:$purple;
-          a:link,a:visited{
-            font-family: $uni_sans_light;
-            color:$purple;
-          }
         }
-        ul{
-          padding-left: 0px;
-          margin-left: 10px;
-          list-style-type: none;
-          li{
-            a{
-              width: 80%;
-            }
+      }
+      ul{
+        padding-left: 0px;
+        margin-left: 10px;
+        list-style-type: none;
+        li{
+          a{
+            width: 80%;
           }
         }
       }
     }
   }
+}
 
-  /**********************************\
-  |********** DEBUGGING **********|
-  \**********************************/
-  body{
-    // background-color:#50C878; // Extra Narrow = Emerald
-  }
+/**********************************\
+|********** DEBUGGING **********|
+\**********************************/
+body{
+  // background-color:#50C878; // Extra Narrow = Emerald
+}
 
-  ///////////// End @include extra_narrow
+///////////// End @include extra_narrow
 
 } ///////////////////////////////////////
