@@ -1,29 +1,65 @@
 @include extra_narrow{
+ :focus{
+  background-color:lime;
+   border:none;
+ }
   body{
     overflow-x: hidden;
   }
   #page{
     position: relative;
-    border-top:20px solid $purple;
+    //border-top:20px solid $purple;
     color: $grey_dark;
   }
 
   /*******************************\
   |********** NAVIGATION *********|
   \*******************************/
-
+  // Navigation Opener
   #nav-opener{
     background-color:$purple;
+    min-height: 55px;
     &.c-buttons{
       margin-bottom: inherit;
       text-align: inherit;
+      h1{
+        font-size: 20px;
+        padding-top: 13px;
+      }
+      .c-button{
+        padding: 10px;
+        width: 6em;
+        float: left;
+      }
+    }
+  }
+  // Navigation Menu
+  #c-menu--slide-left{
+    background-color:$gold_metallic;
+    .menu{ // first level
+    padding-left: 0;
+    .c-menu__item{
+      text-align: left;
+    }
+    .menu{ // second level
+    padding-left: 20px;
+    .menu{ // third level
+    padding-left: 20px;
+  }
+}
+a{
+  &.active{
+    background-color: $purple;
+    color: $grey_light;
+    border-left: 10px solid $gold;
+  }
+}
     }
   }
 
   /******************************\
   |*********** SEARCH ***********|
   \******************************/
-
   .region-search{
     padding-top: 1em;
     color:$grey_dark;
@@ -33,37 +69,10 @@
   }
 
 
-  #search-wrapper{
-    height: 0px;
-    background-color: $grey_dark;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    &.search-visible{
-      height:50px;
-    }
-    .form-type-textfield{
-      margin: 10px;
-      width: 100%;
-      input{
-        width: 210px;
-      }
-    }
 
-    form{
-      color: $grey_dark;
-    }
-    .block{
-      margin-bottom:0px;
-      padding-top: 10px;
-    }
-  }
-
-  /******************************\
+  /****************************\
   |********** HEADER **********|
-  \******************************/
+  \****************************/
 
   #header{
     // Allow for full-color background by removing padding.
@@ -77,11 +86,13 @@
       text-align: inherit;
       margin-bottom: 0px;
       .c-button{
-        padding: 0px;
-        border: none;
+        color: $grey_dark;
+        background-color: rgba($grey_light, 0.85);
+        padding: 5px;
         position: absolute;
         top: 10px;
         right: 10px;
+        border: 1px solid $grey_light;
       }
     }
 
@@ -109,14 +120,11 @@
     }
   }
 
-
-
-
-
   /**********************************************\
   |********** BANNER / SLIDESHOW **********|
   \**********************************************/
   .region-banner{
+    border-bottom: 20px solid $purple;
     h2{
       margin-top:10px;
       margin-bottom: 10px;
@@ -145,7 +153,7 @@
           margin:0;
           padding:0;
           li{
-            height:200px; // <- controls height of slideshow banner
+            height:300px; // <- controls height of slideshow banner
             float: left;
             list-style: none;
             background-repeat: no-repeat;
@@ -171,7 +179,7 @@
                 margin-left:10px;
                 padding-left: 10px;
                 padding-right: 10px;
-                max-width: 70%;
+                max-width: 50%;
                 background-color: rgba($grey_dark, 0.25);
                 border: 2px solid #FFF;
                 a:link, a:visited{

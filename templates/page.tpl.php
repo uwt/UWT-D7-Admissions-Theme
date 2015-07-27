@@ -18,8 +18,8 @@ $themepath = path_to_theme('theme', 'uwtadmissions');
 <img id="header-wordmark" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
 
 <!-- Search Opener -->
-<div class="c-buttons">
-<button id="c-button--push-top" class="c-button">Open Search</button>
+<div id="search-opener" class="c-buttons">
+<button id="c-button--push-top" class="c-button"><i class="fa fa-search"></i> Search</button>
 </div> <!-- c-buttons -->
 <!-- End Search Opener -->
 
@@ -32,7 +32,14 @@ $themepath = path_to_theme('theme', 'uwtadmissions');
 
 <!-- Menu Opener -->
 <div id="nav-opener" class="c-buttons">
-<button id="c-button--slide-left" class="c-button">Open Menu</button>
+<button id="c-button--slide-left" class="c-button"><i class="fa fa-navicon"></i> Menu</button>
+
+<?php print render($title_prefix); ?>
+<?php if ($title): ?>
+<h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+<?php endif; ?>
+<?php print render($title_suffix); ?>
+
 </div> <!-- c-buttons -->
 <!-- End Menu Opener -->
 
@@ -42,16 +49,11 @@ $themepath = path_to_theme('theme', 'uwtadmissions');
 <div id="main">
 <div id="content" class="column" role="main">
 <?php //print render($page['highlighted']); ?>
-<?php //print $breadcrumb; ?>
+<?php print $breadcrumb; ?>
 <a id="main-content"></a>
-<?php print render($title_prefix); ?>
-<?php if ($title): ?>
-<h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-<?php endif; ?>
-<?php print render($title_suffix); ?>
 <?php print $messages; ?>
-<?php //print render($tabs); ?>
-<?php //print render($page['help']); ?>
+<?php print render($tabs); ?>
+<?php print render($page['help']); ?>
 <?php if ($action_links): ?>
 <ul class="action-links"><?php print render($action_links); ?></ul>
 <?php endif; ?>
