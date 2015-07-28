@@ -1,7 +1,7 @@
 @include extra_narrow{
- :focus{
-   border:none;
- }
+  :focus{
+    border:none;
+  }
   body{
     overflow-x: hidden;
   }
@@ -37,10 +37,15 @@
     background-color:$gold_metallic;
     .menu{ // first level
     padding-left: 0;
-    a{
-      i{
-        .element-invisible{
-          display: none;
+    li{
+      &.is-active{
+        border-top: none;
+      }
+      a{
+        i{
+          .element-invisible{
+            display: none;
+          }
         }
       }
     }

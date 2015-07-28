@@ -23,9 +23,15 @@ function uwtadmissions_menu_link(array $variables) {
   $options['attributes'] = array();
   $options['attributes']['class'] = array('c-menu__link');
   // Removing the classes from the <li> tag
+  $active = FALSE;
+  if(array_search('is-active', $element['#attributes']['class']) !== FALSE){
+    $active = TRUE;
+  }
   $element['#attributes']['class'] = array();
   $element['#attributes']['class'][] = 'c-menu__item';
-  
+  if($active){
+    $element['#attributes']['class'][] = 'is-active';
+  }
   // $output is the anchor tag
   $output = l($element['#title'], $element['#href'], $options);
   $ret = '<li' . drupal_attributes($element['#attributes']) . '>';

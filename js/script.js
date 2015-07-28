@@ -11,40 +11,51 @@
 // - https://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
-  // To understand behaviors, see https://drupal.org/node/756722#behaviors
+ // To understand behaviors, see https://drupal.org/node/756722#behaviors
  Drupal.behaviors.searchNavMods = {
 attach: function(){
+
+function applyNavMods(){
+
+// Make iOS devices reload the page.
+// This "closes" the menu that was open when a user clicks
+// the 'back' button on the iOS safari browser.
 $(window).bind("pageshow", function(event) {
   if (event.originalEvent.persisted) {
   window.location.reload() 
   }
   });
+
+// Add the active icon class and css
+var activeIcon = $("<i></i> ");
+activeIcon.css({"margin-right":"5px"});
+activeIcon.addClass("fa fa-chevron-right");
+$(".menu .active").prepend(activeIcon);
+}
+applyNavMods();
 } // End attach property
+
 };
 
-  // Adding the slider functionality
-  // @see http://unslider.com/
-  Drupal.behaviors.bannerSlider = {
-    attach: function(context, settings) {
+// Adding the slider functionality
+// @see http://unslider.com/
+Drupal.behaviors.bannerSlider = {
+attach: function(context, settings) {
 
-      function applyUnSlider(){
-        var wiw = window.innerWidth;
-        $('#banner')
-        .width(wiw)
-        .unslider({
-          speed : 1500,
-          delay : 10000,
-          dots : true,
-          fluid : true
-        });
-      }
-      //$(window).resize(applyUnSlider);
-      applyUnSlider();
-
-
-
-
-    } // end of attach
-  }; // end of bannerSlider
+function applyUnSlider(){
+var wiw = window.innerWidth;
+$('#banner')
+.width(wiw)
+.unslider({
+speed : 1500,
+delay : 10000,
+dots : true,
+fluid : true
+});
+}
+//$(window).resize(applyUnSlider);
+applyUnSlider();
+} // end of attach
+}; // end of bannerSlider
 
 })(jQuery, Drupal, this, this.document);
