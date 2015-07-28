@@ -12,22 +12,15 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
-  Drupal.behaviors.searchNavMods = {
-    attach: function(){
-      // Apply the 'you are here' item
-      $("#c-menu--slide-left .menu a.active").prepend(
-      '<i class="fa fa-hand-o-right" style="font-size:1.25em;"></i> ');
-
-      // Apply the navigation item feedback spinners
-      $("#c-menu--slide-left .menu a").bind('click', function(e){
-        // Remove all existing feedback spinners
-        $("#c-menu--slide-left .menu a i").remove();
-        // Create a new feedback spinner
-        $(this).append(' <i class="fa fa-spinner fa-spin" style="font-size:2em;"></i>');
-      });
-
-    } // End attach property
-  };
+ Drupal.behaviors.searchNavMods = {
+attach: function(){
+$(window).bind("pageshow", function(event) {
+  if (event.originalEvent.persisted) {
+  window.location.reload() 
+  }
+  });
+} // End attach property
+};
 
   // Adding the slider functionality
   // @see http://unslider.com/

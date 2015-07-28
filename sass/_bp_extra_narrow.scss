@@ -1,6 +1,5 @@
 @include extra_narrow{
  :focus{
-  background-color:lime;
    border:none;
  }
   body{
@@ -38,6 +37,13 @@
     background-color:$gold_metallic;
     .menu{ // first level
     padding-left: 0;
+    a{
+      i{
+        .element-invisible{
+          display: none;
+        }
+      }
+    }
     .c-menu__item{
       text-align: left;
     }
