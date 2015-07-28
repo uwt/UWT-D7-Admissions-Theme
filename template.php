@@ -12,9 +12,6 @@
 * Updating jquery
 */
 function uwtadmissions_js_alter(&$javascript){
-  //dpm($javascript, '$javascript');
- //unset($javascript['misc/jquery.js']);
-
   $new_jq = drupal_get_path('theme', 'uwtadmissions') . '/js/jquery-1.11.3.min.js';
   //dpm($new_js, '$new_js');
   $javascript['misc/jquery.js']['data'] = $new_jq;
