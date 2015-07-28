@@ -9,8 +9,23 @@
  */
 
 /**
- * Add several containers to the menu links so that they can be properly
- *   centered horizontally and vertically and support CSS3 flyout menus.
+* Updating jquery
+*/
+function uwtadmissions_js_alter(&$javascript){
+  //dpm($javascript, '$javascript');
+ //unset($javascript['misc/jquery.js']);
+
+  $new_jq = drupal_get_path('theme', 'uwtadmissions') . '/js/jquery-1.11.3.min.js';
+  //dpm($new_js, '$new_js');
+  $javascript['misc/jquery.js']['data'] = $new_jq;
+
+  $jquery_browser_plugin = drupal_get_path('theme', 'uwtadmissions') . '/js/jquery.browser.min.js';
+  drupal_add_js($jquery_browser_plugin);
+
+  }
+
+/**
+ * Modifying the markup of menus to work with theme scripting
  */
 function uwtadmissions_menu_link(array $variables) {
   $element = $variables['element'];
