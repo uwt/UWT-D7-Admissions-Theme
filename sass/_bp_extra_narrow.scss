@@ -181,6 +181,12 @@ a{
               background-repeat: no-repeat;
 
               .adm-slide-content{
+                &.right{
+                  left: 45%;
+                }
+                &.center{
+                  left: 25%;
+                }
                 font-size: 100%;
                 position: relative;
                 top: 15%;
