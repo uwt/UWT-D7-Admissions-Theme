@@ -88,7 +88,13 @@ pushTop.open();
 });
 
 
-
+// Make iOS devices close the menu on page load.
+// This "closes" the menu that was open when a user clicks
+// the 'back' button on the iOS safari browser.
+function closeNav(){
+  slideLeft.close();
+  }
+window.addEventListener("pageshow", closeNav);
 </script>
 
 </body>

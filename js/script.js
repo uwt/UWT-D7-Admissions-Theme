@@ -17,14 +17,6 @@ attach: function(){
 
 function applyNavMods(){
 
-// Make iOS devices reload the page.
-// This "closes" the menu that was open when a user clicks
-// the 'back' button on the iOS safari browser.
-$(window).bind("pageshow", function(event) {
-  if (event.originalEvent.persisted) {
-  window.location.reload() 
-  }
-  });
 
 // Add the active icon class and css
 var activeIcon = $("<i></i> ");
