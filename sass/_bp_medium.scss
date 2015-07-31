@@ -1,10 +1,74 @@
 @include medium{
 
+  /*********************\
+  |***** DEBUGGING *****|
+  \*********************/
+  body {
+    //background-color:maroon; // Maroon = medium
+    #content{
+      *{
+        //color: #fff;
+      }
+    }
+  }
 
+  /***************************\
+  |********** HEADER **********|
+  \***************************/
+  #header{
+    background-color: transparent;
+    z-index: 100;
+    // Hide the narrow-screen header elements
+    #header-block-dub-n{
+      @include hideme;
+    }
+    #header-wordmark-n{
+      @include hideme;
+    }
+    #header-wordmark-w{
+      position: relative !important;
+      display: block;
+      height: 33px;
+      width: 585px;
+      margin-left: 10px;
+      overflow: inherit;
+      clip: inherit;
+    }
+    #search-opener{
+      position:absolute;
+      top: 0px;
+      right: 0px;
+      width: 100px;
+      button{
+        background-color: $gold_metallic;
+        color: $purple;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+      }
+    }
+    h1{
+      background-color: transparent;
+      text-shadow: 1px 1px 1px rgba($grey_dark, 1);
+    }
+  }
+
+  /**
+  *
+  */
+  #nav-opener{
+    h1{
+      @include hideme;
+    }
+  }
   /********************************************
   ********** BANNER / UNSLIDER **********
   ********************************************/
   .region-banner{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 400px;
+    z-index: 0;
     #banner-container{
       #banner{
         ul{
@@ -12,6 +76,7 @@
             height: 400px;
             .adm-slide{
               .adm-slide-content{
+                top: 200px; // Clear the header and nav
                 font-size: 200%;
               }
             }
@@ -21,12 +86,149 @@
     }
   }
 
-
-
-  /*******************************************************************************
-  ******************************* DEBUGGING ***********************************
-  *******************************************************************************/
-  body {
-    //background-color:maroon; // Maroon = medium
+  /*************************\
+  |********** PAGE **********|
+  \*************************/
+  #page{
+    top: 275px; // Clears the banner/unslider
+    #main{
+      #content{
+        #page-title-page{
+          position: relative !important;
+          height: auto;
+          width: 100%;
+          overflow: auto;
+          clip: inherit;
+        }
+      }
+    }
   }
+
+  /***********************\
+  |***** NAVIGATION *******|
+  \***********************/
+
+  #c-menu--slide-left{
+    position: absolute;
+    background-color: transparent;
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    width: 100%;
+    height: 270px;
+    top: 100px;
+    // Hide the "close menu" button on wider screens
+    button{
+      &.c-menu__close{
+        @include hideme;
+        padding: 0px;
+      }
+    }
+    .block{
+      margin-bottom: 0;
+    }
+    .region-navigation{
+      height: 40px;
+      background-color: $purple;
+      .menu{
+        margin: 0 0 0 10px;
+        background-color: $gold_metallic;
+        li:first-child{ // Hiding first menu item "home"
+        @include hideme;
+      }
+      li:last-child a i{ // Hiding the last menu item 15deg line
+      @include hideme;
+    }
+    .c-menu__item{ // First level menu items
+    height: 40px;
+    width: auto;
+    float: left;
+    padding-right: 3px;
+    margin-right: 3px;
+    border-top: 0;
+    border-bottom: 0;
+    //@include vertical-align-center;
+    &.is-active-trail{
+      background-color: rgba(255,255,255,.25);
+      color: #fff;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      i{ // the "you are here icon"
+      @include hideme;
+    }
+  }
+  .c-menu__link{
+    margin: 0;
+    padding: 0 0 0 3px;
+    @include vertical-align-center;
+    //padding-left: 5px;
+    //padding-right: 5px;
+    &.is-active-trail{
+    }
+    i{ // The separator bar
+    display: inline-block;
+    padding-left: 5px;
+    font-style: normal;
+    -ms-transform: rotate(15deg); /* IE 9 */
+    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
+    transform: rotate(15deg);
+  }
+}
+.menu{
+  @include hideme;
+  .menu{
+    @include hideme;
+  }
+}
+&:hover{
+  background-color: $gold_metallic;
+  color: $grey_dark;
+  -webkit-transition: background .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out;
+  -ms-transition: background .3s ease-in-out;
+  -o-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+}
+&.parent-menu:hover{
+  width: 70px;
+  .menu{
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    display:block;
+    position:relative !important;
+    margin-left: 0px;
+    width: 200px;
+    height: auto;
+    overflow: auto;
+    clip: auto;
+    padding-left: 0;
+    .c-menu__item{
+      i{
+        @include hideme;
+      }
+    }
+  }
+}
+}
+}
+  }
+}
+
+x{
+  #c-menu--slide-left{
+    position: absolute;
+    z-index: 10;
+    .menu{
+      a{
+        &.active{
+          border-left: none;
+          color: $gold_metallic;
+        }
+      }
+    }
+  }
+}
+
 } // /@mixin medium

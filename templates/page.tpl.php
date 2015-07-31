@@ -12,10 +12,19 @@
 
 <header class="header" id="header" role="banner">
 <?php
+// Set the path for accessing images
 $themepath = path_to_theme('theme', 'uwtadmissions');
+// Set the path for the home links
+$homelink = url('<front>');
 ?>
-<img id="header-block-w" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
-<img id="header-wordmark" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
+<!-- narrow (-n) screen header elements -->
+<!-- yes, we can use "dub" https://en.wikipedia.org/wiki/W#Name -->
+<a href="<?php print $homelink; ?>">
+<img id="header-block-dub-n" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
+<img id="header-wordmark-n" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
+<!-- wider (-w) screen header elements -->
+<img id="header-wordmark-w" src="/<?php print $themepath . "/images/uwt_wordmark_front_white.png" ?> "/>
+</a>
 
 <!-- Search Opener -->
 <div id="search-opener" class="c-buttons">
@@ -48,6 +57,7 @@ $themepath = path_to_theme('theme', 'uwtadmissions');
 <div id="page">
 <div id="main">
 <div id="content" class="column" role="main">
+<h1 class="page__title title" id="page-title-page"><?php print $title; ?></h1>
 <?php //print render($page['highlighted']); ?>
 <?php print $breadcrumb; ?>
 <a id="main-content"></a>

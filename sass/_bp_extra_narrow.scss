@@ -110,15 +110,20 @@ a{
     .block{
       margin-bottom: 0;
     }
-    #header-block-w{
+    #header-block-dub-n{
       margin: 10px 0px;
       width:59.4px;
       height:40px;
       //natural size image 297x200
     }
-    #header-wordmark{
+    #header-wordmark-n{
 
     }
+    #header-block-dub-w,
+    #header-wordmark-w{
+      @include hideme;
+    }
+
     h1{
       font-size:110%;
       margin-bottom:0;
@@ -256,8 +261,8 @@ a{
 
 #main{
   #content{
-    #page-title{
-      //display:none;
+    #page-title-page{
+      @include hideme;
     }
     .adm-home-block{
       margin: 10px 0;
