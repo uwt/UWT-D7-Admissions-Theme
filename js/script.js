@@ -17,6 +17,19 @@ attach: function(){
 
 function applyNavMods(){
 
+// Make iOS/Touch devices handle the flyout menus
+var menuLinks = $("#c-menu--slide-left .menu .parent-menu").on('touchstart mouseenter focus', function(e){
+  if(e.type == 'touchstart'){
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    var links = $(this).find(".c-menu__link");
+    $.each(links, function(){
+      $(this).on('touchstart', function(){
+        window.location = $(this).attr("href");
+        });
+      });
+    } // e.type
+  }); // on
 
 // Add the active icon class and css
 var activeIcon = $("<i></i> ");
