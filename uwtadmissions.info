@@ -69,7 +69,6 @@ stylesheets[all][] = css/jquery-ui.min.css
 
 ; Optionally add some JavaScripts to your theme.
 scripts[] = js/script.js
-scripts[] = js/menu.min.js
 scripts[] = js/jquery-ui.min.js
 
 
