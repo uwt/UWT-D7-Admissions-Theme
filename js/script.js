@@ -18,40 +18,56 @@ attach: function(){
 function applyNavMods(){
 
 // Make iOS/Touch devices handle the flyout menus
-var menuLinks = $("#c-menu--slide-left .menu .parent-menu").on('touchstart mouseenter focus', function(e){
-  if(e.type == 'touchstart'){
-    e.stopImmediatePropagation();
-    e.preventDefault();
-    var links = $(this).find(".c-menu__link");
-    $.each(links, function(){
-      $(this).on('touchstart', function(){
-        window.location = $(this).attr("href");
-        });
-      });
-    } // e.type
-  }); // on
 
-// Add the active icon class and css
-var activeIcon = $("<i></i> ");
-activeIcon.css({"margin-right":"5px"});
-activeIcon.addClass("fa fa-chevron-right");
-$(".menu .active").prepend(activeIcon);
+    var wiw = window.innerWidth;
+    //console.log(wiw);
+    if(wiw >= 768){
+    $(".menu .parent-menu").on('touchstart', "> a", function(e){
+      //console.log(e.type + " on a");
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      // Create duplicate menu item
+      //console.log($(this).next(".menu"));
+      var menuItem = $("<li></li>").addClass("menu__item is-leaf first leaf c-menu__item");
+      menuItem.attr({"style":"float:none;clear:both;"});
+      //console.log("menuItem initial", menuItem);
+      var cloneLink = $(this).clone();
+      //console.log("cloneLink initial", cloneLink);
+      menuItem.prepend(cloneLink);
+      //console.log("menuItem after prepend()", menuItem);
+      thisSubMenu = $(this).next(".menu");
+      //console.log("thisSubMenu", thisSubMenu);
+      $(thisSubMenu).children().first().removeClass("first");
+      menuItem.prependTo(thisSubMenu);
+      });
+    }
+
+
+
+
+  // Add the active icon class and css
+  var activeIcon = $("<i></i> ");
+  activeIcon.css({"margin-right":"5px"});
+  activeIcon.addClass("fa fa-chevron-right");
+  $(".menu .active").prepend(activeIcon);
 }
 applyNavMods();
+
+
 } // End attach property
 
-};
+}; // searchNavMods behavior
 
 // Adding the slider functionality
 // @see http://unslider.com/
 Drupal.behaviors.bannerSlider = {
 attach: function(context, settings) {
 
-function applyUnSlider(){
-var wiw = window.innerWidth;
-$('#banner')
-.width(wiw)
-.unslider({
+          function applyUnSlider(){
+            var wiw = window.innerWidth;
+            $('#banner')
+              .width(wiw)
+              .unslider({
 speed : 1500,
 delay : 10000,
 dots : true,

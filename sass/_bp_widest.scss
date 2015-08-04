@@ -19,9 +19,11 @@
   /*******************************************************************************
   ******************************* DEBUGGING ***********************************
   *******************************************************************************/
+  @if $debug{
   body{
-    //background-color:#C9A0DC; // Widest = Wisteria
-    //color: $grey_dark;
+    background-color:#C9A0DC; // Widest = Wisteria
+    color: $grey_dark;
   }
+}
 
   } // breakpoint(widest)

@@ -51,6 +51,9 @@
     }
     .c-menu__item{
       text-align: left;
+      i{
+        display:none;
+      }
     }
     .menu{ // second level
     padding-left: 20px;
@@ -293,10 +296,11 @@ a{
 /**********************************\
 |********** DEBUGGING **********|
 \**********************************/
+@if $debug{
 body{
-  // background-color:#50C878; // Extra Narrow = Emerald
+  background-color:#50C878; // Extra Narrow = Emerald
 }
-
+}
 ///////////// End @include extra_narrow
 
 } ///////////////////////////////////////
