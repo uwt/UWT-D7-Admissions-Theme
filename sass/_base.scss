@@ -215,6 +215,15 @@ $indent-amount: 30px;
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+@mixin showme() {
+  position: relative !important;
+  height: auto;
+  width: auto;
+  overflow: auto;
+  clip: auto;
+
+}
+
 /*********************************************************\
 |********** ALPHA BACKGROUND COLORS (USED? NO?) **********|
 \*********************************************************/

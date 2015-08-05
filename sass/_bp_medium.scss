@@ -115,7 +115,7 @@
     transform: translateX(0px);
     -webkit-transform: translateX(0px);
     width: 100%;
-    height: 100%;
+    height: 100%; // 100% shows all menu, but disables the slideshow buttons
     top: 100px;
     // Hide the "close menu" button on wider screens
     button{
