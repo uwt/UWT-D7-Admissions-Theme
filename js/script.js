@@ -19,29 +19,26 @@ function applyNavMods(){
 
 // Make iOS/Touch devices handle the flyout menus
 
-    var wiw = window.innerWidth;
-    //console.log(wiw);
-    if(wiw >= 768){
-    $(".menu .parent-menu").on('touchstart', "> a", function(e){
-      //console.log(e.type + " on a");
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      // Create duplicate menu item
-      //console.log($(this).next(".menu"));
-      var menuItem = $("<li></li>").addClass("menu__item is-leaf first leaf c-menu__item");
-      menuItem.attr({"style":"float:none;clear:both;"});
-      //console.log("menuItem initial", menuItem);
-      var cloneLink = $(this).clone();
-      //console.log("cloneLink initial", cloneLink);
-      menuItem.prepend(cloneLink);
-      //console.log("menuItem after prepend()", menuItem);
-      thisSubMenu = $(this).next(".menu");
-      //console.log("thisSubMenu", thisSubMenu);
-      $(thisSubMenu).children().first().removeClass("first");
-      menuItem.prependTo(thisSubMenu);
-      });
-    }
+$(".parent-menu > a").each(function(i,e){
+  var duplicateRootMenuItem = $("<li></li>").addClass("menu__item c-menu__item");
+  var duplicateRootMenuLink = $(this).clone();
+  $(duplicateRootMenuItem).prepend($(duplicateRootMenuLink));
+  $(this).next(".menu").prepend($(duplicateRootMenuItem));
+  });
 
+$(".parent-menu").on("click", "> a", function(e){
+  e.preventDefault();
+
+  });
+
+/*
+$('.parent-menu > a').each(function() {
+  var clicked = false;
+  $(this).on('click', function() {
+    if(!clicked) return !(clicked = true);
+    });
+  });
+*/
 
 
 
@@ -50,7 +47,7 @@ function applyNavMods(){
   activeIcon.css({"margin-right":"5px"});
   activeIcon.addClass("fa fa-chevron-right");
   $(".menu .active").prepend(activeIcon);
-}
+} // end applyNavMods()
 applyNavMods();
 
 

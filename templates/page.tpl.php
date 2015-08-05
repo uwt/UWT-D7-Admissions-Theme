@@ -28,7 +28,7 @@ $homelink = url('<front>');
 
 <!-- Search Opener -->
 <div id="search-opener" class="c-buttons">
-<button id="c-button--push-top" class="c-button"><i class="fa fa-search"></i> Search</button>
+<button id="c-button--push-top" class="c-button"><i class="fa fa-search"></i> Open Search</button>
 </div> <!-- c-buttons -->
 <!-- End Search Opener -->
 
