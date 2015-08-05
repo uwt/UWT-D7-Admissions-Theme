@@ -55,8 +55,21 @@
         display:none;
       }
     }
+    .submenu-opened{// Root level menu item with a submenu
+      background-color: $grey_dark;
+      color: $grey_light;
+    }
     .menu{ // second level
-    padding-left: 20px;
+    @include hideme;
+    &.showme{
+      @include showme;
+      margin-left: 20px;
+      background-color: $grey_light;
+      a:link,a:visited{
+      color: $grey_dark;
+    }
+    }
+    
     .menu{ // third level
     padding-left: 20px;
   }
@@ -297,9 +310,9 @@ a{
 |********** DEBUGGING **********|
 \**********************************/
 @if $debug{
-body{
-  background-color:#50C878; // Extra Narrow = Emerald
-}
+  body{
+    background-color:#50C878; // Extra Narrow = Emerald
+  }
 }
 ///////////// End @include extra_narrow
 

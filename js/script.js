@@ -20,14 +20,25 @@ function applyNavMods(){
 // Make iOS/Touch devices handle the flyout menus
 
 $(".parent-menu > a").each(function(i,e){
+  // Duplicate the root menu item and add it as the first menu item.
   var duplicateRootMenuItem = $("<li></li>").addClass("menu__item c-menu__item");
   var duplicateRootMenuLink = $(this).clone();
   $(duplicateRootMenuItem).prepend($(duplicateRootMenuLink));
   $(this).next(".menu").prepend($(duplicateRootMenuItem));
+  // Add a open/close indicator
+  var indicator = $("<span></span>")
+  .addClass("fa fa-plus")
+  .css({"margin-right":"5px"});
+  $(this).prepend(indicator);
   });
 
 $(".parent-menu").on("click", "> a", function(e){
   e.preventDefault();
+  $(this).toggleClass("submenu-opened");
+  $(this).next(".menu").toggleClass("showme");
+
+  $(this).children("span.fa").toggleClass("fa-plus");
+  $(this).children("span.fa").toggleClass("fa-minus");
 
   });
 
