@@ -2867,9 +2867,19 @@ html {
   /* line 131, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation {
     height: 40px;
+    background-color: rgba(75, 46, 132, 0.65);
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    -ms-transition: background .3s ease-in-out;
+    -o-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    text-shadow: 1px 1px 1px black;
+  }
+  /* line 140, ../sass/_bp_medium.scss */
+  html #c-menu--slide-left .region-navigation:hover {
     background-color: #4B2E84;
   }
-  /* line 135, ../sass/_bp_medium.scss */
+  /* line 144, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu-block-wrapper > .menu > .c-menu__item:first-child {
     position: absolute !important;
     height: 1px;
@@ -2877,12 +2887,12 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 138, ../sass/_bp_medium.scss */
+  /* line 147, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu {
     margin: 0 0 0 10px;
     background-color: #B7A57A;
   }
-  /* line 141, ../sass/_bp_medium.scss */
+  /* line 150, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu li:last-child a i {
     position: absolute !important;
     height: 1px;
@@ -2890,7 +2900,7 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 144, ../sass/_bp_medium.scss */
+  /* line 153, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item {
     height: 40px;
     width: auto;
@@ -2900,14 +2910,14 @@ html {
     border-top: 0;
     border-bottom: 0;
   }
-  /* line 153, ../sass/_bp_medium.scss */
+  /* line 162, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.is-active-trail {
     background-color: rgba(255, 255, 255, 0.25);
     color: #fff;
     -webkit-border-radius: 2px;
     border-radius: 2px;
   }
-  /* line 158, ../sass/_bp_medium.scss */
+  /* line 167, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.is-active-trail i {
     position: absolute !important;
     height: 1px;
@@ -2915,7 +2925,7 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 162, ../sass/_bp_medium.scss */
+  /* line 171, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-menu__link {
     margin: 0;
     padding: 0 0 0 3px;
@@ -2925,7 +2935,7 @@ html {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  /* line 170, ../sass/_bp_medium.scss */
+  /* line 179, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-menu__link i {
     display: inline-block;
     padding-left: 5px;
@@ -2936,11 +2946,11 @@ html {
     /* Chrome, Safari, Opera */
     transform: rotate(15deg);
   }
-  /* line 178, ../sass/_bp_medium.scss */
+  /* line 187, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-menu__link span {
     display: none;
   }
-  /* line 182, ../sass/_bp_medium.scss */
+  /* line 191, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu {
     position: absolute !important;
     height: 1px;
@@ -2948,15 +2958,15 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 184, ../sass/_bp_medium.scss */
+  /* line 193, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu.showme {
     background-color: #B7A57A;
   }
-  /* line 186, ../sass/_bp_medium.scss */
+  /* line 195, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu.showme a:link, html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu.showme a:visited {
     color: #fff;
   }
-  /* line 190, ../sass/_bp_medium.scss */
+  /* line 199, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu .menu {
     position: absolute !important;
     height: 1px;
@@ -2964,7 +2974,7 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 194, ../sass/_bp_medium.scss */
+  /* line 203, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item:hover {
     background-color: #B7A57A;
     color: #444444;
@@ -2974,11 +2984,11 @@ html {
     -o-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
   }
-  /* line 203, ../sass/_bp_medium.scss */
+  /* line 212, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover {
     width: 140px;
   }
-  /* line 208, ../sass/_bp_medium.scss */
+  /* line 217, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -2994,7 +3004,7 @@ html {
     clip: auto;
     padding-left: 0;
   }
-  /* line 222, ../sass/_bp_medium.scss */
+  /* line 231, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item {
     float: none;
     clear: both;
@@ -3004,7 +3014,7 @@ html {
     height: auto;
     border-bottom: 2px solid #E8E3D3;
   }
-  /* line 230, ../sass/_bp_medium.scss */
+  /* line 239, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item .c-menu__link {
     top: 0%;
     transform: translateY(0%);
@@ -3012,11 +3022,11 @@ html {
     -ms-transform: translateY(0%);
     padding: 5px;
   }
-  /* line 236, ../sass/_bp_medium.scss */
+  /* line 245, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item .c-menu__link:hover, html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item .c-menu__link:focus {
     background-color: #E8E3D3;
   }
-  /* line 240, ../sass/_bp_medium.scss */
+  /* line 249, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item i {
     position: absolute !important;
     height: 1px;
@@ -3024,16 +3034,16 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 247, ../sass/_bp_medium.scss */
+  /* line 256, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .submenu-opened {
     background-color: inherit;
     color: #fff;
   }
-  /* line 250, ../sass/_bp_medium.scss */
+  /* line 259, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .submenu-opened span {
     display: none;
   }
-  /* line 256, ../sass/_bp_medium.scss */
+  /* line 265, ../sass/_bp_medium.scss */
   html #c-menu--slide-left.hovered {
     height: 100%;
   }
@@ -3172,9 +3182,19 @@ html.lt-ie9 html #c-menu--slide-left .block {
 /* line 131, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation {
   height: 40px;
+  background-color: rgba(75, 46, 132, 0.65);
+  -webkit-transition: background .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out;
+  -ms-transition: background .3s ease-in-out;
+  -o-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+  text-shadow: 1px 1px 1px black;
+}
+/* line 140, ../sass/_bp_medium.scss */
+html.lt-ie9 html #c-menu--slide-left .region-navigation:hover {
   background-color: #4B2E84;
 }
-/* line 135, ../sass/_bp_medium.scss */
+/* line 144, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu-block-wrapper > .menu > .c-menu__item:first-child {
   position: absolute !important;
   height: 1px;
@@ -3182,12 +3202,12 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu-block-wrapper > .m
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 138, ../sass/_bp_medium.scss */
+/* line 147, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu {
   margin: 0 0 0 10px;
   background-color: #B7A57A;
 }
-/* line 141, ../sass/_bp_medium.scss */
+/* line 150, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu li:last-child a i {
   position: absolute !important;
   height: 1px;
@@ -3195,7 +3215,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu li:last-child a i 
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 144, ../sass/_bp_medium.scss */
+/* line 153, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item {
   height: 40px;
   width: auto;
@@ -3205,14 +3225,14 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item {
   border-top: 0;
   border-bottom: 0;
 }
-/* line 153, ../sass/_bp_medium.scss */
+/* line 162, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.is-active-trail {
   background-color: rgba(255, 255, 255, 0.25);
   color: #fff;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 158, ../sass/_bp_medium.scss */
+/* line 167, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.is-active-trail i {
   position: absolute !important;
   height: 1px;
@@ -3220,7 +3240,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.is-a
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 162, ../sass/_bp_medium.scss */
+/* line 171, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-menu__link {
   margin: 0;
   padding: 0 0 0 3px;
@@ -3230,7 +3250,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-m
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 170, ../sass/_bp_medium.scss */
+/* line 179, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-menu__link i {
   display: inline-block;
   padding-left: 5px;
@@ -3241,11 +3261,11 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-m
   /* Chrome, Safari, Opera */
   transform: rotate(15deg);
 }
-/* line 178, ../sass/_bp_medium.scss */
+/* line 187, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .c-menu__link span {
   display: none;
 }
-/* line 182, ../sass/_bp_medium.scss */
+/* line 191, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu {
   position: absolute !important;
   height: 1px;
@@ -3253,15 +3273,15 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .men
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 184, ../sass/_bp_medium.scss */
+/* line 193, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu.showme {
   background-color: #B7A57A;
 }
-/* line 186, ../sass/_bp_medium.scss */
+/* line 195, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu.showme a:link, html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu.showme a:visited {
   color: #fff;
 }
-/* line 190, ../sass/_bp_medium.scss */
+/* line 199, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .menu .menu {
   position: absolute !important;
   height: 1px;
@@ -3269,7 +3289,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .men
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 194, ../sass/_bp_medium.scss */
+/* line 203, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item:hover {
   background-color: #B7A57A;
   color: #444444;
@@ -3279,11 +3299,11 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item:hove
   -o-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
 }
-/* line 203, ../sass/_bp_medium.scss */
+/* line 212, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover {
   width: 140px;
 }
-/* line 208, ../sass/_bp_medium.scss */
+/* line 217, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu {
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -3299,7 +3319,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   clip: auto;
   padding-left: 0;
 }
-/* line 222, ../sass/_bp_medium.scss */
+/* line 231, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item {
   float: none;
   clear: both;
@@ -3309,7 +3329,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   height: auto;
   border-bottom: 2px solid #E8E3D3;
 }
-/* line 230, ../sass/_bp_medium.scss */
+/* line 239, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item .c-menu__link {
   top: 0%;
   transform: translateY(0%);
@@ -3317,11 +3337,11 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   -ms-transform: translateY(0%);
   padding: 5px;
 }
-/* line 236, ../sass/_bp_medium.scss */
+/* line 245, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item .c-menu__link:hover, html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item .c-menu__link:focus {
   background-color: #E8E3D3;
 }
-/* line 240, ../sass/_bp_medium.scss */
+/* line 249, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu:hover .menu .c-menu__item i {
   position: absolute !important;
   height: 1px;
@@ -3329,16 +3349,16 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 247, ../sass/_bp_medium.scss */
+/* line 256, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .submenu-opened {
   background-color: inherit;
   color: #fff;
 }
-/* line 250, ../sass/_bp_medium.scss */
+/* line 259, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .submenu-opened span {
   display: none;
 }
-/* line 256, ../sass/_bp_medium.scss */
+/* line 265, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left.hovered {
   height: 100%;
 }
