@@ -130,10 +130,19 @@
     }
     .region-navigation{
       height: 40px;
-      background-color: $purple;
+      background-color: rgba($purple, 0.65);
+      -webkit-transition: background .3s ease-in-out;
+      -moz-transition: background .3s ease-in-out;
+      -ms-transition: background .3s ease-in-out;
+      -o-transition: background .3s ease-in-out;
+      transition: background .3s ease-in-out;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+      &:hover{
+        background-color: $purple;
+      }
       // Hiding the first menu item in the top level nav (i.e. home)
       .menu-block-wrapper > .menu > .c-menu__item:first-child{
-      @include hideme;
+        @include hideme;
       }
       .menu{
         margin: 0 0 0 10px;
