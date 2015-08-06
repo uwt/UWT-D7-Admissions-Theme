@@ -111,11 +111,12 @@
 
   #c-menu--slide-left{
     position: absolute;
+    //background-color: rgba(0,0,0,0.75);
     background-color: transparent;
     transform: translateX(0px);
     -webkit-transform: translateX(0px);
     width: 100%;
-    height: 100%; // 100% shows all menu, but disables the slideshow buttons
+    height: auto; // 100% shows all menu, but disables the slideshow buttons
     top: 100px;
     // Hide the "close menu" button on wider screens
     button{
@@ -174,9 +175,18 @@
       -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
       transform: rotate(15deg);
     }
+    span{// The plus/minus indicator
+      display: none;
+    }
   }
   .menu{
     @include hideme;
+    &.showme{
+      background-color: $gold_metallic;
+      a:link,a:visited{
+        color: #fff;
+      }
+    }
     .menu{
       @include hideme;
     }
@@ -192,6 +202,9 @@
   }
   &.parent-menu:hover{
     width: 140px;
+    > a:link,a:visited{
+      //color: rgba(100,100,100,0.5);
+    }
     .menu{
       -webkit-transition: all .3s ease-in-out;
       -moz-transition: all .3s ease-in-out;
@@ -231,7 +244,17 @@
     }
   }
 }
+.submenu-opened{
+  background-color: inherit;
+  color: #fff;
+  span{
+    display:none;
+  }
+}
 }
   }
+&.hovered{
+  height: 100%;
+}
 }
 } // /@mixin medium
