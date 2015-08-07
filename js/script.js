@@ -47,25 +47,25 @@ $(".parent-menu").on("click", "> a", function(e){
 // At miminum height, the flyout menus don't show up.
 // Ugh.
 $("#c-menu--slide-left .menu-block-wrapper > .menu > li").mouseleave(function(){
-  console.log("mouseleave root li...hopefully");
+  //console.log("mouseleave root li...hopefully");
   $("#c-menu--slide-left").removeClass("hovered");
   });
 
 $(".parent-menu > a").hover(
     function(){
       // mouseenter
-      console.log("mouseenter");
+      //console.log("mouseenter");
       $("#c-menu--slide-left").addClass("hovered");
     },
     function(){
       // mouseleave
-      console.log("mouseleave on .parent-menu > a");
+      //console.log("mouseleave on .parent-menu > a");
       //$("#c-menu--slide-left").removeClass("hovered");
     }
     );
 // Close the nav menu when when it is clicked on
 $("#c-menu--slide-left").on('mouseleave', '.parent-menu .menu',  function(){
-  console.log("bobo mouse leavey", $(this));
+  //console.log("bobo mouse leavey", $(this));
   $("#c-menu--slide-left").removeClass("hovered");
   });
 
