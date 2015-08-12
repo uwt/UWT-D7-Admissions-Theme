@@ -90,9 +90,15 @@ $sidebar_second = render($page['sidebar_second']);
 
 <?php //print render($page['footer']); ?>
 
-</div>
+<div id="shibby">
+<?php if($shiblink != ""): ?>
+<a href="<?php print $shiblink;?>">UWNetID login</a>
+<?php endif;?>
+</div> 
 
 <?php print render($page['bottom']); ?>
+
+</div><!-- #page -->
 
 </div> <!-- o-wrapper -->
 

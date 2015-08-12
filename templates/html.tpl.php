@@ -56,7 +56,6 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <div id="c-mask" class="c-mask"></div>
-
 <script type="text/javascript">
 // Load the menu JS.
 
@@ -98,6 +97,7 @@ pushTop.open();
 // the 'back' button on the iOS safari browser.
 function closeNav(){
   slideLeft.close();
+  pushTop.close();
   }
 window.addEventListener("pageshow", closeNav);
 </script>
