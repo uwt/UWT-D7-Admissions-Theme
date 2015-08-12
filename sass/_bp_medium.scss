@@ -149,7 +149,8 @@
       -o-transition: background .3s ease-in-out;
       transition: background .3s ease-in-out;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-      &:hover{
+      // HOVERME <done>
+      &.hover{
         background-color: $purple;
       }
       // Hiding the first menu item in the top level nav (i.e. home)
@@ -212,7 +213,8 @@
       @include hideme;
     }
   }
-  &:hover{
+  // HOVERME
+  &.hover{
     background-color: $gold_metallic;
     color: $grey_dark;
     -webkit-transition: background .3s ease-in-out;
@@ -222,7 +224,8 @@
     transition: background .3s ease-in-out;
     width: auto;
   }
-  &.parent-menu:hover{
+  // HOVERME
+  &.parent-menu.hover{
     width: 140px;
     > a:link,a:visited{
       //color: rgba(100,100,100,0.5);
@@ -255,7 +258,8 @@
           -webkit-transform: translateY(0%);
           -ms-transform: translateY(0%);
           padding: 5px;
-          &:hover, &:focus{
+          // HOVERME
+          &.hover, &:focus{
             background-color: $gold;
           }
         }

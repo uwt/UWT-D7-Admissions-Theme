@@ -98,7 +98,12 @@ pushTop.open();
 function closeNav(){
   slideLeft.close();
   pushTop.close();
+
+  var parentMenus = document.getElementsByClassName('parent-menu');
+  for(i=0; i < parentMenus.length; i++){
+    parentMenus[i].classList.remove("hover");
   }
+}
 window.addEventListener("pageshow", closeNav);
 </script>
 
