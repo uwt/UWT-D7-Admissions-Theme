@@ -3029,9 +3029,9 @@ html {
   }
   /* line 263, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link.hover, html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link:focus {
-    background-color: lime;
+    background-color: #E8E3D3;
   }
-  /* line 268, ../sass/_bp_medium.scss */
+  /* line 267, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item i {
     position: absolute !important;
     height: 1px;
@@ -3039,21 +3039,21 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 275, ../sass/_bp_medium.scss */
+  /* line 274, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .submenu-opened {
     background-color: inherit;
     color: #fff;
   }
-  /* line 278, ../sass/_bp_medium.scss */
+  /* line 277, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .submenu-opened span {
     display: none;
   }
-  /* line 284, ../sass/_bp_medium.scss */
+  /* line 283, ../sass/_bp_medium.scss */
   html #c-menu--slide-left.hovered {
     background-color: transparent;
     height: 100%;
   }
-  /* line 293, ../sass/_bp_medium.scss */
+  /* line 292, ../sass/_bp_medium.scss */
   html #c-menu--push-top {
     overflow-x: hidden;
   }
@@ -3354,9 +3354,9 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
 }
 /* line 263, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link.hover, html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link:focus {
-  background-color: lime;
+  background-color: #E8E3D3;
 }
-/* line 268, ../sass/_bp_medium.scss */
+/* line 267, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item i {
   position: absolute !important;
   height: 1px;
@@ -3364,21 +3364,21 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 275, ../sass/_bp_medium.scss */
+/* line 274, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .submenu-opened {
   background-color: inherit;
   color: #fff;
 }
-/* line 278, ../sass/_bp_medium.scss */
+/* line 277, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .submenu-opened span {
   display: none;
 }
-/* line 284, ../sass/_bp_medium.scss */
+/* line 283, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left.hovered {
   background-color: transparent;
   height: 100%;
 }
-/* line 293, ../sass/_bp_medium.scss */
+/* line 292, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--push-top {
   overflow-x: hidden;
 }
