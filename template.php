@@ -113,7 +113,29 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
         ),
       );
   drupal_add_html_head($meta_viewport, 'meta_viewport');
+
+
 }
+
+/**
+ * Create a specially formateed Shibboleth link. This link points to the
+ *   shibby login module and redirects to r.php, which then redirects to the
+ *   location that the user was on when the shibby login link was clicked.
+ *
+ * This exists because there is bug in the Drupal Shibby module that doesn't
+ *   set the session properly for the first page load.
+ *   @see https://drupal.org/node/1430242#comment-7775603
+ */
+function _get_shibbylink() {
+  if (module_exists('shib_auth') && module_exists('uwtloginmods') && !user_is_logged_in()) {
+    module_load_include('module', 'uwtloginmods');
+    $shiblink = _uwtloginmods_get_shiblink();
+    return $shiblink;
+  } else {
+    return '';
+  }
+}
+
 
 /**
  * Override or insert variables into the page templates.
@@ -123,11 +145,10 @@ function uwtadmissions_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-   function uwtadmissions_preprocess_page(&$variables, $hook) {
-
-   $variables['bobo'] = "Bobo wuz here, yo.";
-   }
+function uwtadmissions_preprocess_page(&$variables, $hook) {
+  // Adding UW Shibby login links
+  $variables['shiblink'] = _get_shibbylink(); 
+}
 // */
 
 /**

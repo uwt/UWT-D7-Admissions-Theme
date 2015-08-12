@@ -19,6 +19,9 @@
   #header{
     background-color: transparent;
     z-index: 100;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
     // Hide the narrow-screen header elements
     #header-block-dub-n{
       @include hideme;
@@ -76,6 +79,9 @@
           li{
             height: 400px;
             .adm-slide{
+              max-width: 1200px;
+              margin-left: auto;
+              margin-right: auto;
               .adm-slide-content{
                 top: 200px; // Clear the header and nav
                 font-size: 200%;
@@ -112,12 +118,13 @@
   #c-menu--slide-left{
     position: absolute;
     //background-color: rgba(0,0,0,0.75);
-    background-color: transparent;
+    background-color: rgba($purple, 0.65);
     transform: translateX(0px);
     -webkit-transform: translateX(0px);
     width: 100%;
     height: auto; // 100% shows all menu, but disables the slideshow buttons
     top: 100px;
+    overflow-y: hidden;
     // Hide the "close menu" button on wider screens
     button{
       &.c-menu__close{
@@ -130,7 +137,12 @@
     }
     .region-navigation{
       height: 40px;
-      background-color: rgba($purple, 0.65);
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+      //overflow: hidden;
+      //background-color: rgba($purple, 0.65);
+      background-color: transparent;
       -webkit-transition: background .3s ease-in-out;
       -moz-transition: background .3s ease-in-out;
       -ms-transition: background .3s ease-in-out;
@@ -165,7 +177,7 @@
         -webkit-border-radius: 2px;
         border-radius: 2px;
         i{ // the "you are here icon"
-        @include hideme;
+        //@include hideme;
       }
     }
     .c-menu__link{
@@ -208,6 +220,7 @@
     -ms-transition: background .3s ease-in-out;
     -o-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
+    width: auto;
   }
   &.parent-menu:hover{
     width: 140px;
@@ -263,7 +276,16 @@
 }
   }
 &.hovered{
+  background-color: transparent;
   height: 100%;
 }
 }
+
+/************************\
+|***** Search popout *****|
+\************************/
+#c-menu--push-top{
+  overflow-x: hidden;
+}
+
 } // /@mixin medium
