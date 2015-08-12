@@ -51,6 +51,23 @@ $("#c-menu--slide-left .menu-block-wrapper > .menu > li").mouseleave(function(){
   $("#c-menu--slide-left").removeClass("hovered");
   });
 
+// "hover" the main navigation bar
+$(".region-navigation").hover(function(){
+  $(this).addClass("hover");
+  },function(){
+   $(this).removeClass("hover");
+  });
+
+// "hover" the parent menus
+$(".parent-menu").hover(
+  function(){
+  $(this).addClass("hover");
+  },
+  function(){
+  $(this).removeClass("hover");
+  });
+
+// "hover" the parent menu item links
 $(".parent-menu > a").hover(
     function(){
       // mouseenter
