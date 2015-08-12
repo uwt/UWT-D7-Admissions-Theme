@@ -2986,18 +2986,14 @@ html {
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.hover {
     background-color: #B7A57A;
     color: #444444;
+    display: inline;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     -ms-transition: background .3s ease-in-out;
     -o-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
-    width: auto;
   }
-  /* line 228, ../sass/_bp_medium.scss */
-  html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover {
-    width: 140px;
-  }
-  /* line 233, ../sass/_bp_medium.scss */
+  /* line 234, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -3013,7 +3009,7 @@ html {
     clip: auto;
     padding-left: 0;
   }
-  /* line 247, ../sass/_bp_medium.scss */
+  /* line 248, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item {
     float: none;
     clear: both;
@@ -3023,7 +3019,7 @@ html {
     height: auto;
     border-bottom: 2px solid #E8E3D3;
   }
-  /* line 255, ../sass/_bp_medium.scss */
+  /* line 256, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link {
     top: 0%;
     transform: translateY(0%);
@@ -3031,11 +3027,11 @@ html {
     -ms-transform: translateY(0%);
     padding: 5px;
   }
-  /* line 262, ../sass/_bp_medium.scss */
+  /* line 263, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link.hover, html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link:focus {
-    background-color: #E8E3D3;
+    background-color: lime;
   }
-  /* line 266, ../sass/_bp_medium.scss */
+  /* line 268, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item i {
     position: absolute !important;
     height: 1px;
@@ -3043,21 +3039,21 @@ html {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  /* line 273, ../sass/_bp_medium.scss */
+  /* line 275, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .submenu-opened {
     background-color: inherit;
     color: #fff;
   }
-  /* line 276, ../sass/_bp_medium.scss */
+  /* line 278, ../sass/_bp_medium.scss */
   html #c-menu--slide-left .region-navigation .menu .submenu-opened span {
     display: none;
   }
-  /* line 282, ../sass/_bp_medium.scss */
+  /* line 284, ../sass/_bp_medium.scss */
   html #c-menu--slide-left.hovered {
     background-color: transparent;
     height: 100%;
   }
-  /* line 291, ../sass/_bp_medium.scss */
+  /* line 293, ../sass/_bp_medium.scss */
   html #c-menu--push-top {
     overflow-x: hidden;
   }
@@ -3315,18 +3311,14 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item .men
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.hover {
   background-color: #B7A57A;
   color: #444444;
+  display: inline;
   -webkit-transition: background .3s ease-in-out;
   -moz-transition: background .3s ease-in-out;
   -ms-transition: background .3s ease-in-out;
   -o-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
-  width: auto;
 }
-/* line 228, ../sass/_bp_medium.scss */
-html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover {
-  width: 140px;
-}
-/* line 233, ../sass/_bp_medium.scss */
+/* line 234, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu {
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -3342,7 +3334,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   clip: auto;
   padding-left: 0;
 }
-/* line 247, ../sass/_bp_medium.scss */
+/* line 248, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item {
   float: none;
   clear: both;
@@ -3352,7 +3344,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   height: auto;
   border-bottom: 2px solid #E8E3D3;
 }
-/* line 255, ../sass/_bp_medium.scss */
+/* line 256, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link {
   top: 0%;
   transform: translateY(0%);
@@ -3360,11 +3352,11 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   -ms-transform: translateY(0%);
   padding: 5px;
 }
-/* line 262, ../sass/_bp_medium.scss */
+/* line 263, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link.hover, html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item .c-menu__link:focus {
-  background-color: #E8E3D3;
+  background-color: lime;
 }
-/* line 266, ../sass/_bp_medium.scss */
+/* line 268, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.parent-menu.hover .menu .c-menu__item i {
   position: absolute !important;
   height: 1px;
@@ -3372,21 +3364,21 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 273, ../sass/_bp_medium.scss */
+/* line 275, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .submenu-opened {
   background-color: inherit;
   color: #fff;
 }
-/* line 276, ../sass/_bp_medium.scss */
+/* line 278, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .submenu-opened span {
   display: none;
 }
-/* line 282, ../sass/_bp_medium.scss */
+/* line 284, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--slide-left.hovered {
   background-color: transparent;
   height: 100%;
 }
-/* line 291, ../sass/_bp_medium.scss */
+/* line 293, ../sass/_bp_medium.scss */
 html.lt-ie9 html #c-menu--push-top {
   overflow-x: hidden;
 }

@@ -52,14 +52,15 @@ $("#c-menu--slide-left .menu-block-wrapper > .menu > li").mouseleave(function(){
   });
 
 // "hover" the main navigation bar
+/*
 $(".region-navigation").hover(function(){
   $(this).addClass("hover");
   },function(){
    $(this).removeClass("hover");
   });
-
+*/
 // "hover" the parent menus
-$(".parent-menu").hover(
+$(".parent-menu, .c-menu__item, .region-navigation").hover(
   function(){
   $(this).addClass("hover");
   },
@@ -76,8 +77,6 @@ $(".parent-menu > a").hover(
     },
     function(){
       // mouseleave
-      //console.log("mouseleave on .parent-menu > a");
-      //$("#c-menu--slide-left").removeClass("hovered");
     }
     );
 // Close the nav menu when when it is clicked on

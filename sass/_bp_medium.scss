@@ -217,18 +217,19 @@
   &.hover{
     background-color: $gold_metallic;
     color: $grey_dark;
+    display:inline;
+    //width: auto;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     -ms-transition: background .3s ease-in-out;
     -o-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
-    width: auto;
   }
   // HOVERME
   &.parent-menu.hover{
-    width: 140px;
+    //width: 140px;
+
     > a:link,a:visited{
-      //color: rgba(100,100,100,0.5);
     }
     .menu{
       -webkit-transition: all .3s ease-in-out;
@@ -260,7 +261,8 @@
           padding: 5px;
           // HOVERME
           &.hover, &:focus{
-            background-color: $gold;
+            //background-color: $gold;
+            background-color:lime;
           }
         }
         i{
