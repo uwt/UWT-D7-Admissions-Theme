@@ -3001,7 +3001,7 @@ html {
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     display: block;
-    position: relative !important;
+    position: absolute !important;
     margin-left: 0px;
     width: 200px;
     height: auto;
@@ -3326,7 +3326,7 @@ html.lt-ie9 html #c-menu--slide-left .region-navigation .menu .c-menu__item.pare
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   display: block;
-  position: relative !important;
+  position: absolute !important;
   margin-left: 0px;
   width: 200px;
   height: auto;
