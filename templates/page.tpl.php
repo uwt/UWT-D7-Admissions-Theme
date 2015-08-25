@@ -20,10 +20,10 @@ $homelink = url('<front>');
 <!-- narrow (-n) screen header elements -->
 <!-- yes, we can use "dub" https://en.wikipedia.org/wiki/W#Name -->
 <a href="<?php print $homelink; ?>">
-<img id="header-block-dub-n" src="/<?php print $themepath . "/images/W_only_CMYK.png" ?>" />
-<img id="header-wordmark-n" src="/<?php print $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
+<img id="header-block-dub-n" src="<?php print base_path() . $themepath . "/images/W_only_CMYK.png" ?>" />
+<img id="header-wordmark-n" src="<?php print base_path() . $themepath . "/images/wordmark_extra_narrow.png" ?> "/>
 <!-- wider (-w) screen header elements -->
-<img id="header-wordmark-w" src="/<?php print $themepath . "/images/uwt_wordmark_front_white.png" ?> "/>
+<img id="header-wordmark-w" src="<?php print base_path() . $themepath . "/images/uwt_wordmark_front_white.png" ?> "/>
 </a>
 
 <!-- Search Opener -->
