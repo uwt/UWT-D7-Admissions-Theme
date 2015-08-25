@@ -53,7 +53,7 @@ function uwtadmissions_menu_link(array $variables) {
   // Adjusting the href of the link
   $link_prefix = "";
   if(strpos($element['#href'], "node/") === 0){
-    $link_prefix = "/";
+    $link_prefix = base_path();
   }
 
   // $output is the anchor tag
